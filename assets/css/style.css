@@ -8,7 +8,7 @@
 body > *{
     font-family: 'Nanum Gothic', sans-serif;
     font-family: 'Ubuntu', sans-serif;
-    color: #252C3D;
+    color: #FBDD0D;
 }
 /*Index.html style for body background and title*/
 .index {
@@ -23,10 +23,22 @@ img{
 }
 .heading{
     font-size: 55px;
-    color: #FBDD0D;
     text-transform: uppercase;
     text-align: center;
     margin-top: 5%;
+}
+/*Main button*/
+.button{
+  text-align: center;
+  align-items: center;
+  background-color: black;
+  color: #FBDD0D;
+  width: 30%;
+  margin: 10% 35%;
+  height: 100px;
+  font-size: 35px;
+  border: 5px solid #FBDD0D;
+  cursor: pointer;
 }
 
 /*https://www.w3schools.com/howto/howto_css_modals.asp to learn how to buid a modal*/
@@ -41,7 +53,6 @@ img{
   width: 100%; /* Full width */
   height: 200px; /* Full height */
 }
-
 /* Modal Content/Box */
 .modal-content {
   background-color: #F8F6F3 ;
@@ -50,7 +61,6 @@ img{
   border: 3px solid #FBDD0D;
   width: 40%;
 }
-
 /* The Close Button */
 .close {
   color: #aaa;
@@ -58,6 +68,7 @@ img{
   font-size: 28px;
   font-weight: bold;
 }
+
 /*Footer*/
 .container-footer{
   width: 100%;
