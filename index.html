@@ -20,11 +20,17 @@
 <!--Body of the main page with background image, main button to start quiz and footer-->
 
 <body>
-    <!--Div with first button to go to ...-->
-    <div class="button">
-        <h1>
+    <!--Div with heading and form to get user username to go to game.html-->
+    <div class="container">
+        <h1 class="heading">
             Star wars quiz!
         </h1>
+        <form action="game.html">
+            <label for="username">Please insert a username to start the battle!</label>
+            <input class="text-input" id="username" name="username" data-type="text" aria-label="Insert your username here" required>
+            <input class="button" data-type="submit" value="Submit!"
+            aria-label="Click here to submit the form">
+        </form>
     </div>
     <!--Footer with copyright and social media links that open on an external page-->
     <footer>
