@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Playfair+Display&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/73f93bff4b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Star wars quiz</title>
 </head>
@@ -30,29 +31,34 @@
 
     <!--https://www.w3schools.com/howto/howto_css_modals.asp to learn how to buid a modal-->
     <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <p>Welcome to star wars quiz!</p>
-            <form action="game.html">
-                <label for="username">Please insert a username to start the battle!</label>
-                <input class="button" id="username" name="username" data-type="text"
-                    aria-label="Insert your username here" required>
-                <input class="button" data-type="submit" value="Submit!"
-                    aria-label="Click here to submit the username!">
-                <span class="close">&times;</span>
-            </form>
+    <section>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <p>Welcome to star wars quiz!</p>
+                <form action="game.html">
+                    <label for="username">Please insert a username to start the battle!</label>
+                    <input class="button" id="username" name="username" data-type="text"
+                        aria-label="Insert your username here" required>
+                    <input class="button" data-type="submit" value="Submit!"
+                        aria-label="Click here to submit the username!">
+                    <span class="close">&times;</span>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!--Footer with copyright and social media links that open on an external page-->
     <footer>
-        <div>
+        <div class="container-footer">
             <p>
-                Copyright
-                Icon linkedin
-                Icon github
+                Copyright by Michelle Mattera 2023
             </p>
+            <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
+                aria-label="Visit github developer page(opens in a new page)"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
+                    aria-label="Visit linkedin developer page(opens in a new page)"><i
+                        class="fa-brands fa-linkedin"></i></a>
         </div>
     </footer>
 
