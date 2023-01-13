@@ -1,6 +1,7 @@
+<!--The following code contains index.html , comment along main content and small section comment for better understanding-->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,20 +19,23 @@
 </head>
 
 <!--Body of the main page with background image, main button to start quiz and footer-->
-
-<body>
-    <!--Div with heading and form to get user username to go to game.html-->
-    <div class="container">
+<body class="index">
+    <header>
         <h1 class="heading">
             Star wars quiz!
         </h1>
+    </header>
+
+    <!--Div with heading and form to get user username to go to game.html-->
+    <div class="container-username">
         <form action="game.html">
             <label for="username">Please insert a username to start the battle!</label>
-            <input class="text-input" id="username" name="username" data-type="text" aria-label="Insert your username here" required>
+            <input class="button" id="username" name="username" data-type="text" aria-label="Insert your username here" required>
             <input class="button" data-type="submit" value="Submit!"
             aria-label="Click here to submit the form">
         </form>
     </div>
+
     <!--Footer with copyright and social media links that open on an external page-->
     <footer>
         <div>
@@ -42,6 +46,8 @@
             </p>
         </div>
     </footer>
+
+    <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
     <script src="assets/js/script.js"></script>
 </body>
 
