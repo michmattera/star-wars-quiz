@@ -8,8 +8,9 @@
 body > *{
     font-family: 'Nanum Gothic', sans-serif;
     font-family: 'Ubuntu', sans-serif;
-    color: #F8F6F3 ;
+    color: #252C3D;
 }
+/*Index.html style for body background and title*/
 .index {
     background-image: url('../images/battle-ship.jpg');
     background-repeat: no-repeat;
@@ -27,18 +28,36 @@ img{
     text-align: center;
     margin-top: 5%;
 }
-.container-username{
-    text-align: center;
-    background-color: #252C3D;
-    border: 5px solid #FBDD0D;
-    border-radius: 10%;
-    width: 40%;
-    height: 200px;
-    margin: 8% 30%;
+
+/*https://www.w3schools.com/howto/howto_css_modals.asp to learn how to buid a modal*/
+/*Modal main page*/
+/*The Modal (background)*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 200px; /* Full height */
 }
-.container-username > * {
-    margin: 5%;
-    font-size: 28px;
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #F8F6F3 ;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 3px solid #FBDD0D;
+  width: 40%;
 }
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 
 
