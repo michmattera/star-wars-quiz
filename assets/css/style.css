@@ -22,16 +22,15 @@ body>* {
 
 .container-pick-side {
   display: flex;
-
   justify-content: center;
   width: 70%;
   height: 400px;
-  margin: 15%;
+  margin: 2% 15%;
 }
 
 .side {
   width: 45%;
-  height: 400px;
+  height: 350px;
   margin: 5%;
   background-size: cover;
 }
@@ -69,12 +68,18 @@ img {
   object-fit: cover;
 }
 
-/*style for heading*/
+/*style for heading and sub title*/
 .heading {
   font-size: 55px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 3%;
+}
+.sub-title{
+  width: 80%;
+  margin: 3% 10%;
+  text-align: center;
+  font-size: 22px;
 }
 
 /*Main button*/
