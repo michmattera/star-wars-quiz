@@ -63,11 +63,6 @@ body>* {
   border: #fff;
 }
 
-img {
-  max-width: 100%;
-  object-fit: cover;
-}
-
 /*style for heading and sub title*/
 .heading {
   font-size: 55px;

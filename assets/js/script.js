@@ -1,35 +1,53 @@
-$(document).ready(function(){
-  $('#myModal').modal('show');
-});
-
+//$(document).ready(function () {
+// $('#myModal').modal('show');
+//});
+console.log('hello');
 //Starting to write all function of the game for better structure
-function userName(){}
+function userName() {}
 
-function easyModality(){}
+function easyModality() {}
 
-function mediumModality(){}
+function mediumModality() {}
 
-function difficultModality(){}
+function difficultModality() {}
 
-function expertModality(){}
+function expertModality() {}
 
-function chooseDarkSide(){}
+function runGame() {
+  console.log('Running');
+}
 
-function chooseLightSide(){}
+let darkSide = document.getElementsByClassName('dark-side');
+/**
+ * When user click darkSide 
+ * then runGame of DarkSide questions
+ */
+function chooseDarkSide() {
+  darkSide.addEventListener('click', function () {
+    if (('data-type') === "dark") {
+      console.log('yess');
+    }
+  })
+}
 
-function runGame(){}
+/**
+ * When user click lightSide 
+ * then runGame of LightSide questions
+ */
+function chooseLightSide() {
+  let lightSide = document.getElementsByClassName('light-side');
+}
 
-function nextQuestion(){}
+function nextQuestion() {}
 
-function getScore(){}
+function getScore() {}
 
-function incrementPositiveAnswer(){}
+function incrementPositiveAnswer() {}
 
-function incrementNegativeAnswer(){}
+function incrementNegativeAnswer() {}
 
-function calcolateFinalScore(){}
+function calcolateFinalScore() {}
 
-function getSound(){}
+function getSound() {}
 
-function getLeaderboard(){}
-
+function getLeaderboard() {}
