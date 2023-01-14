@@ -19,33 +19,54 @@
     <title>Star wars quiz</title>
 </head>
 
-<!--Body of the main page with background image, main button to start quiz and footer-->
+<!--Body of the game page with background image, main button to start quiz and footer-->
 
-<body>
-    <div class="sides">
-        <div class="side light-side">
-            <p>light</p>
+<body class="index">
+    <div class="page-container">
+
+        <header>
+            <h1 class="heading">
+                Pick your side!
+            </h1>
+        </header>
+        <div class="container-pick-side">
+            <div class="side light-side">
+                <p>Play as a Jedi
+                    <br>
+                    Defeat the dark side!
+                </p>
+            </div>
+            <div class="side dark-side">
+                <p>Play as a sith
+                    <br>
+                    Defeat the light side!
+                </p>
+            </div>
         </div>
-        <div class="side dark-side">
-            <p>dark</p>
-        </div>
+
+        <!--button to start the game-->
+        <section>
+            <form action="#">
+                <input class="button" type="submit" value="Start quiz!" aria-label="Click here to start the quiz">
+            </form>
+        </section>
+
+
+        <!--Footer with copyright and social media links that open on an external page-->
+        <footer>
+            <div class="container-footer">
+                <p>
+                    Copyright by Michelle Mattera 2023
+                </p>
+                <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
+                    aria-label="Visit github developer page(opens in a new page)"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
+                    aria-label="Visit linkedin developer page(opens in a new page)"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
     </div>
-
-
-    <!--Footer with copyright and social media links that open on an external page-->
-    <footer>
-        <div class="container-footer">
-            <p>
-                Copyright by Michelle Mattera 2023
-            </p>
-            <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
-                aria-label="Visit github developer page(opens in a new page)"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
-                aria-label="Visit linkedin developer page(opens in a new page)"><i
-                    class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </footer>
-
     <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
     <script src="assets/js/script.js"></script>
 </body>

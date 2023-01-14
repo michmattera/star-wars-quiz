@@ -12,38 +12,64 @@ body>* {
   color: #FBDD0D;
 }
 
-/*style for body background pictures and title*/
+/*style for body background and character pictures*/
 .index,
 .side {
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
 }
-.sides{
+
+.container-pick-side {
   display: flex;
+
+  justify-content: center;
+  width: 70%;
+  height: 400px;
+  margin: 15%;
 }
+
 .side {
-  width: 50%;
-  height: 650px;
+  width: 45%;
+  height: 400px;
+  margin: 5%;
+  background-size: cover;
 }
 
 .index {
   background-image: url('../images/stars.jpg');
 }
 
+.dark-side,
 .light-side {
-  background-image: url('../images/cut.jpg');
+  border: 5px solid #ffd0d0;
+  border-radius: 20%;
 }
 
+/*Learn how to do shadow https://www.youtube.com/watch?v=XFuilG5FAIc*/
 .dark-side {
   background-image: url('../images/darth-vader.jpg');
+  box-shadow: 0 0 70px #f00;
+}
+
+.light-side {
+  background-image: url('../images/yoda.jpg');
+  box-shadow: 0 0 70px #0f0;
+}
+
+.dark-side:before,
+.light-side:before {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border: #fff;
 }
 
 img {
-  width: 100%;
-  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
 }
 
+/*style for heading*/
 .heading {
   font-size: 55px;
   text-transform: uppercase;
@@ -102,6 +128,11 @@ img {
 }
 
 /*Footer*/
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 .container-footer {
   width: 100%;
   height: 50px;
