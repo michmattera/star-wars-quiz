@@ -61,6 +61,26 @@ function incrementNegativeAnswer() {}
 
 function calcolateFinalScore() {}
 
-function getSound() {}
+//https://stackoverflow.com/questions/9419263/how-to-play-audio
+//Play audio and user decide when to play or stop music
+function getSounds() {
+  var audio = document.getElementById("audio");
+  togglePlay();
+}
+
+let isPlaying = false;
+
+function togglePlay() {
+  isPlaying ? audio.pause() : audio.play();
+};
+
+audio.onplaying = function() {
+  isPlaying = true;
+};
+audio.onpause = function() {
+  isPlaying = false;
+};
+
+
 
 function getLeaderboard() {}
