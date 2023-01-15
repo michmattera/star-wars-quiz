@@ -1,7 +1,7 @@
 //$(document).ready(function () {
 // $('#myModal').modal('show');
 //});
-console.log('hello');
+
 //Starting to write all function of the game for better structure
 function userName() {}
 
@@ -13,26 +13,42 @@ function difficultModality() {}
 
 function expertModality() {}
 
-function runGame() {
-  console.log('Running');
-}
+//Wait for the DOM to finish loading before running the game
+document.addEventListener("DOMContentLoaded", function () {});
 
 /**
- * When user click darkSide 
- * then runGame of DarkSide questions
+ * When chose side in chooseDarkSide or chooseLightSide
+ * displaylightQuestions or displayDarkQuestions
  */
-function chooseDarkSide(){
-let darkSide = document.getElementsByClassName('dark-side');
-console.log('Dark side');
+function runDarkGame() {
+  console.log('dark game');
+}
+
+function runLightGame() {
+  console.log('Light game');
+}
+
+let questions = ['hello'];
+/**
+ * When user click darkSide 
+ * then runGame
+ */
+function chooseDarkSide() {
+  let darkSide = document.getElementsByClassName('dark-side');
+  console.log('Dark side');
+  console.log(questions[0]);
+  runDarkGame()
 }
 
 /**
  * When user click lightSide 
- * then runGame of LightSide questions
+ * then runGame
  */
 function chooseLightSide() {
   let lightSide = document.getElementsByClassName('light-side');
   console.log('Light side');
+  console.log(questions[0]);
+  runLightGame()
 }
 
 function nextQuestion() {}
