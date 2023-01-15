@@ -17,17 +17,13 @@ function runGame() {
   console.log('Running');
 }
 
-let darkSide = document.getElementsByClassName('dark-side');
 /**
  * When user click darkSide 
  * then runGame of DarkSide questions
  */
-function chooseDarkSide() {
-  darkSide.addEventListener('click', function () {
-    if (('data-type') === "dark") {
-      console.log('yess');
-    }
-  })
+function chooseDarkSide(){
+let darkSide = document.getElementsByClassName('dark-side');
+console.log('Dark side');
 }
 
 /**
@@ -36,6 +32,7 @@ function chooseDarkSide() {
  */
 function chooseLightSide() {
   let lightSide = document.getElementsByClassName('light-side');
+  console.log('Light side');
 }
 
 function nextQuestion() {}
