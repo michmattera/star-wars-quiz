@@ -1,0 +1,1 @@
+bug= icon does not change , sound work good.
