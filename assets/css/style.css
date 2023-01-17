@@ -9,7 +9,7 @@
 body>* {
   font-family: 'Nanum Gothic', sans-serif;
   font-family: 'Ubuntu', sans-serif;
-  color: #FBDD0D;
+  color: #bfda46;
 }
 
 /*style for body background and character pictures*/
@@ -23,15 +23,15 @@ body>* {
 .container-pick-side {
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 70%;
   height: 100%;
   margin: 2% 5%;
   align-items: center;
 }
 
 .side {
-  width: 45%;
-  height: 350px;
+  width: 40%;
+  height: 280px;
   margin: 2.5%;
   background-size: cover;
 }
@@ -39,7 +39,7 @@ body>* {
 .page-container {
   background-image: url('../images/space.png');
   width: 100%;
-  height: 100px;
+  height: 100%;
   background-size: cover;
   display: flex;
 }
@@ -104,24 +104,20 @@ body>* {
 
 /*Style for div with questions and answer*/
 .question-container{
-  background-color: #FBDD0D;
-  color: black;
-  width: 100%;
-  height: 100px;
+  background-color: #bfda46;
+  color: #112948;
+  
+ width: 200px;
+ height: 200px;
   
   display: flex;
 }
 .question-container>*{
-  background-color: white;
+  background-color: #0783be;
   width: 50px;
   height: 50px;
-  border: 5px solid black;
+  border: 5px solid #bfda46;
   align-items: center;
-}
-.question-container{
- color: #f00;
- width: 200px;
- height: 200px;
 }
 .hide{
   display: none;
@@ -175,7 +171,7 @@ body>* {
   height: 50px;
   position: absolute;
   bottom: 0;
-  background-color: black;
+  background-color: #112948;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -183,7 +179,7 @@ body>* {
 }
 
 .container-footer>* {
-  color: #FBDD0D;
+  color: #35cdf0;
   margin: 0 2%;
 }
 
