@@ -23,27 +23,56 @@ function incrementNegativeAnswer() {}
 function calcolateFinalScore() {}
 
 // variables to play light game
-let lightQuestions = [
-  { question: "What is the capital of United Kingdom?",
-  choices: [
-    { text: 'Manchester', correct: false},
-    { text: 'London', correct: true},
-    { text: 'Manchester', correct: false},
-    { text: 'Manchester', correct: false},
+let lightQuestions = [{
+  question: "What is the capital of United Kingdom?",
+  choices: [{
+      text: 'Manchester',
+      correct: false
+    },
+    {
+      text: 'London',
+      correct: true
+    },
+    {
+      text: 'Manchester',
+      correct: false
+    },
+    {
+      text: 'Manchester',
+      correct: false
+    },
   ]
-}
-]
+}, {
+  question: "What is the capital of Italy?",
+  choices: [{
+      text: 'Manchester',
+      correct: false
+    },
+    {
+      text: 'Roma',
+      correct: true
+    },
+    {
+      text: 'Manchester',
+      correct: false
+    },
+    {
+      text: 'Manchester',
+      correct: false
+    },
+  ]
 
+}]
 
 
 //Declare variables for game
 const questionContainerElement = document.getElementById('question-container');
 let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
-//let shuffledLightQuestions = lightQuestions.sort(Math.floor(Math.random() - 0.5));
+
+
+let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
-
-
 
 /**
  * When chosen side
@@ -85,7 +114,7 @@ function runLightGame() {
   chosenLightSide.classList.add('hide')
   chosenDarkSide.classList.add('hide')
   questionContainerElement.classList.remove('hide')
-
+  showQuestion()
   nextQuestion()
 
 }
@@ -94,7 +123,8 @@ function nextQuestion() {
   showQuestion(shuffledLightQuestions[currentQuestionsIndex])
 }
 
-function showQuestion(){
+function showQuestion(lightQuestions) {
+  questionContainerElement.innerText = lightQuestions.question[i];
 }
 
 
