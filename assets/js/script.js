@@ -14,8 +14,6 @@ function difficultModality() {}
 
 function expertModality() {}
 
-function nextQuestion() {}
-
 function getScore() {}
 
 function incrementPositiveAnswer() {}
@@ -26,20 +24,44 @@ function calcolateFinalScore() {}
 
 // variables to play light game
 let lightQuestions = [{
-    question: "What is the capital of United Kingdom?",
-    choices: ["Manchester", "Birmingham", "London", "Birmingham"],
-    answer: 2
-  },
+  question: "What is the capital of United Kingdom?",
+  choices: [{
+    text: 'Manchester',
+    correct: false
+  } {
+    text: 'London',
+    correct: true
+  } {
+    text: 'Roma',
+    correct: false
+  } {
+    text: 'Dublin',
+    correct: false
+  }]
+}]
+[{
+  question: "What is bla bla?",
+  choices: [{
+    text: 'two worlds',
+    correct: true
+  } {
+    text: 'three worlds',
+    correct: false
+  } {
+    text: 'four worlds',
+    correct: false
+  } {
+    text: 'five worlds',
+    correct: false
+  }]
+}]
 
-  {
-    question: "What is the capital of United States?",
-    choices: ["California", "New York", "Miami", "Florida"],
-    answer: 1
-  }
-];
 //Declare variables for game
 const questionContainerElement = document.getElementById('question-container');
-let chosenSide = document.getElementById('light-side');
+let chosenLightSide = document.getElementById('light-side');
+let chosenDarkSide = document.getElementById('dark-side');
+let shuffledLightQuestions = lightQuestions.sort(Math.floor(Math.random() - 0.5));
+let currentQuestionsIndex = 0
 
 
 
@@ -62,19 +84,37 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * When chose side in runDarkGame or runLightGame
- * displaylightQuestions or displayDarkQuestions
+ * When chose side in runDarkGame
+ * displayDarkQuestions, nextQuestions and hide chosenLightSide/chosenDarkSide
  */
 function runDarkGame() {
   console.log('dark game');
+  chosenDarkSide.classList.add('hide')
+  chosenLightSide.classList.add('hide')
+  questionContainerElement.classList.remove('hide')
+
+  nextQuestion()
+}
+
+/**
+ * When chose side in runLightGame
+ * displayLightQuestions, nextQuestions and hide chosenLightSide/chosenDarkSide
+ */
+function runLightGame() {
+  console.log('light game')
+  chosenLightSide.classList.add('hide')
+  chosenDarkSide.classList.add('hide')
+  questionContainerElement.classList.remove('hide')
+
+  nextQuestion()
 
 }
 
-function runLightGame() {
-  console.log('light game')
-  chosenSide.classList.add('hide')
-  questionContainerElement.classList.remove('hide')
+function nextQuestion() {
+  showQuestion(shuffledLightQuestions[currentQuestionsIndex])
+}
 
+function showQuestion(){
 }
 
 
