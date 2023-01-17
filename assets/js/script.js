@@ -23,44 +23,24 @@ function incrementNegativeAnswer() {}
 function calcolateFinalScore() {}
 
 // variables to play light game
-let lightQuestions = [{
-  question: "What is the capital of United Kingdom?",
-  choices: [{
-    text: 'Manchester',
-    correct: false
-  } {
-    text: 'London',
-    correct: true
-  } {
-    text: 'Roma',
-    correct: false
-  } {
-    text: 'Dublin',
-    correct: false
-  }]
-}]
-[{
-  question: "What is bla bla?",
-  choices: [{
-    text: 'two worlds',
-    correct: true
-  } {
-    text: 'three worlds',
-    correct: false
-  } {
-    text: 'four worlds',
-    correct: false
-  } {
-    text: 'five worlds',
-    correct: false
-  }]
-}]
+let lightQuestions = [
+  { question: "What is the capital of United Kingdom?",
+  choices: [
+    { text: 'Manchester', correct: false},
+    { text: 'London', correct: true},
+    { text: 'Manchester', correct: false},
+    { text: 'Manchester', correct: false},
+  ]
+}
+]
+
+
 
 //Declare variables for game
 const questionContainerElement = document.getElementById('question-container');
 let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
-let shuffledLightQuestions = lightQuestions.sort(Math.floor(Math.random() - 0.5));
+//let shuffledLightQuestions = lightQuestions.sort(Math.floor(Math.random() - 0.5));
 let currentQuestionsIndex = 0
 
 

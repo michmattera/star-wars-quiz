@@ -19,43 +19,55 @@
     <title>Star wars quiz</title>
 </head>
 
-<!--Body of the main page with background image, main button to start quiz and footer-->
+<!--Body of the game page with background image, main button to start quiz and footer-->
 
 <body class="index">
     <div class="page-container">
+
         <header>
             <h1 class="heading">
-                Star wars quiz!
+                Pick your side!
             </h1>
-        </header>
-
-        <!--button to go to the next page-->
-        <section>
-            <form action="game.html">
-                <input class="button" type="submit" value="Ready for battle!"
-                    aria-label="Click here to go to next page if you are ready">
-            </form>
-        </section>
-        <!--https://www.w3schools.com/howto/howto_css_modals.asp to learn how to buid a modal-->
-        <!-- The Modal -->
-        <section>
-            <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <p>Welcome to star wars quiz!</p>
-                    <form action="game.html">
-                        <label for="username">Please insert a username to start the battle!</label>
-                        <input class="button" id="username" name="username" data-type="text"
-                            aria-label="Insert your username here" required>
-                        <input class="button" data-type="submit" value="Submit!"
-                            aria-label="Click here to submit the username!">
-                        <span class="close">&times;</span>
-                    </form>
-                </div>
+            <div class="sub-title">
+                <p>
+                    Play as a Jedy and defeat the dark side!
+                    <br>
+                    Or
+                    <br>
+                    Play as a Sith and defeat the light side!
+                </p>
             </div>
-        </section>
+        </header>
+        <div class="container-pick-side">
+            <button data-type="light" class="side" id="light-side">
+            </button>
+            <button data-type="dark" class="side" id ="dark-side">
+            </button>
+        </div>
 
+        <div id="question-container" class="hide">
+            <div class="question">question</div>
+            
+            <div class="answer1">answer1</div>
+            <div class="answer2">answer2</div>
+            <div class="answer2">answer3</div>
+            <div class="answer4">answer4</div>
 
+            <div class="score"></div>
+
+        </div>
+        <!--Trying to set audio for game quiz-->
+    <!-- https://stackoverflow.com/questions/56798357/play-sound-when-font-awesome-icon-is-clicked -->
+    <!-- Play Button -->
+    <div class="icons-container"></div>
+    <li>
+        <a class="fa-solid fa-volume-xmark" type="button" onclick="togglePlay()">
+        </a>
+    </li>
+    
+    
+    <audio autoplay id="player" src="assets/audio/star-wars-main.mp3"></audio>
+    </div>
         <!--Footer with copyright and social media links that open on an external page-->
         <footer>
             <div class="container-footer">
@@ -71,6 +83,7 @@
             </div>
         </footer>
     </div>
+    
     <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
     <script src="assets/js/script.js"></script>
 </body>

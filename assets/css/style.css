@@ -26,6 +26,8 @@ body>* {
   width: 70%;
   height: 400px;
   margin: 2% 15%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .side {
@@ -35,8 +37,12 @@ body>* {
   background-size: cover;
 }
 
-.index {
-  background-image: url('../images/stars.jpg');
+.page-container {
+  background-image: url('../images/space.png');
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  display: flex;
 }
 
 #dark-side,
@@ -47,12 +53,12 @@ body>* {
 
 /*Learn how to do shadow https://www.youtube.com/watch?v=XFuilG5FAIc*/
 #dark-side {
-  background-image: url('../images/darth-vader.jpg');
+  background-image: url('../images/darth-vader1.png');
   box-shadow: 0 0 70px #f00;
 }
 
 #light-side {
-  background-image: url('../images/yoda.jpg');
+  background-image: url('../images/yoda1.png');
   box-shadow: 0 0 70px #0f0;
 }
 
@@ -99,7 +105,7 @@ body>* {
 }
 
 /*Style for div with questions and answer*/
-.gameArea{
+.question-container{
   background-color: #FBDD0D;
   color: black;
   width: 100%;
@@ -107,7 +113,7 @@ body>* {
   
   display: flex;
 }
-.gameArea>*{
+.question-container>*{
   background-color: white;
   width: 50px;
   height: 50px;
