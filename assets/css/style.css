@@ -42,6 +42,7 @@ body>* {
   height: 100%;
   background-size: cover;
   display: flex;
+  flex-direction: column;
 }
 
 #dark-side,
@@ -74,7 +75,8 @@ body>* {
   text-align: center;
   margin-top: 3%;
 }
-.sub-title{
+
+.sub-title {
   width: 80%;
   margin: 3% 10%;
   text-align: center;
@@ -96,30 +98,31 @@ body>* {
 }
 
 /*Style for audio*/
-.icons-container{
+.icons-container {
   color: #FBDD0D;
   width: auto;
   height: auto;
 }
 
 /*Style for div with questions and answer*/
-.question-container{
+.game-area {
   background-color: #bfda46;
   color: #112948;
-  
- width: 200px;
- height: 200px;
-  
+  width: 200px;
+  height: 200px;
+
   display: flex;
 }
-.question-container>*{
+
+.game-area>* {
   background-color: #0783be;
   width: 50px;
   height: 50px;
   border: 5px solid #bfda46;
   align-items: center;
 }
-.hide{
+
+.hide {
   display: none;
 }
 
@@ -162,7 +165,6 @@ body>* {
 
 /*Footer*/
 .page-container {
-  position: relative;
   min-height: 100vh;
 }
 
@@ -171,7 +173,7 @@ body>* {
   height: 50px;
   position: absolute;
   bottom: 0;
-  background-color: #112948;
+  background-color: #bfda46;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -179,8 +181,9 @@ body>* {
 }
 
 .container-footer>* {
-  color: #35cdf0;
+  color: #112948;
   margin: 0 2%;
+  font-weight: bold;
 }
 
 i {
