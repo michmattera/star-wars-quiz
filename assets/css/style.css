@@ -23,16 +23,16 @@ body>* {
 .container-pick-side {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 90%;
   height: 100%;
   margin: 2% 5%;
   align-items: center;
 }
 
 .side {
-  width: 40%;
-  height: 280px;
-  margin: 2.5%;
+  width: 30%;
+  height: 340px;
+  margin: 10%;
   background-size: cover;
 }
 
@@ -105,25 +105,37 @@ body>* {
 }
 
 /*Style for div with questions and answer*/
-.game-area {
-  background-color: #bfda46;
-  color: #112948;
-  width: 200px;
-  height: 200px;
-
-  display: flex;
-}
-
-.game-area>* {
+#game-area {
   background-color: #0783be;
-  width: 50px;
-  height: 50px;
-  border: 5px solid #bfda46;
+  color: #112948;
+  width: 80%;
+  height: 300px;
+  margin: 0 10%;
   align-items: center;
+  text-align: center;
+  border: 3px solid #bfda46;
+
 }
 
+button{
+  text-align: center;
+  justify-content: center;
+  background-color: #112948;
+  color: #0783be;
+  font-weight: bold;
+  height: 80px;
+  width: 35%;
+  margin: 2% 5%;
+  font-size: 20px;
+  border: 5px solid #bfda46;
+  border-radius: 20%;
+}
 .hide {
   display: none;
+}
+
+#question{
+  font-size: 30px;
 }
 
 
