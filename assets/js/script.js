@@ -81,8 +81,9 @@ function runDarkGame() {
   chosenDarkSide.classList.add('hide')
   chosenLightSide.classList.add('hide')
   gameAreaElement.classList.remove('hide')
+  showQuestion()
+  showChoices()
 
-  nextQuestion()
 }
 
 /**
@@ -117,7 +118,6 @@ function showQuestion() {
  * show all answer for specific question
  */
 function showChoices(){
-
   const currentQuestion = lightQuestions[questionNumber];
   document.querySelector("#answer-one").innerHTML = currentQuestion.answerOne;
   document.querySelector("#answer-two").innerHTML = currentQuestion.answerTwo;
@@ -125,6 +125,23 @@ function showChoices(){
   document.querySelector("#answer-four").innerHTML = currentQuestion.answerFour;
   
 }
+
+/**
+ * adding function to check if the answer is correct or not
+ */
+function checkAnswer(){
+  let score = 0;
+  let scoreContainer = document.getElementById('score');
+  for (let button of answerContainer) {
+    button.addEventListener('click', function () {
+      if(correctAnswer){
+        console.log('correct')
+      } else {
+        console,log('wrong')
+      }
+    })
+}}
+
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
 
@@ -138,7 +155,3 @@ function togglePlay() {
     audioElem.pause();
   }
 }
-
-
-//isPlaying ? audio.pause() : audio.play();
-function getLeaderboard() {}
