@@ -23,57 +23,36 @@ function incrementNegativeAnswer() {}
 function calcolateFinalScore() {}
 
 // variables to play light game
-let lightQuestions = [{
-  question: "What is the capital of United Kingdom?",
-  choices: [{
-      text: 'Manchester',
-      correct: false
-    },
-    {
-      text: 'London',
-      correct: true
-    },
-    {
-      text: 'Manchester',
-      correct: false
-    },
-    {
-      text: 'Manchester',
-      correct: false
-    },
-  ]
-}, {
-  question: "What is the capital of Italy?",
-  choices: [{
-      text: 'Manchester',
-      correct: false
-    },
-    {
-      text: 'Roma',
-      correct: true
-    },
-    {
-      text: 'Manchester',
-      correct: false
-    },
-    {
-      text: 'Manchester',
-      correct: false
-    },
-  ]
-
-}]
+let lightQuestions = [
+{
+    question: "Which Star wars faction fights against the Empire?",
+    correctAnswer: "answerThree",
+    answerOne: "REBEL LEAGUE",
+    answerTwo: "REBEL CONFEDERATION",
+    answerThree: "REBEL ALLIANCE",
+    answerFour: "REBEL COALITION",
+},
+{
+    question: "What is the name of the mystical power used by Jedi Knights in Star Wars?",
+    correctAnswer: "answerOne",
+    answerOne: "THE FORCE",
+    answerTwo: "THE POWER",
+    answerThree: "THE EFFORT",
+    answerFour: "THE ENERGY",
+},
+];
 
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
 let questionContainer = document.getElementById('question');
+let answerContainer = document.getElementById('answer-buttons');
 let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
 let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
-//try to write i, as well inside not working, as well if i just add lenght of lightquestions question
 let questionNumber = 0;
+
 
 /**
  * When chosen side
@@ -116,6 +95,7 @@ function runLightGame() {
   chosenDarkSide.classList.add('hide')
   gameAreaElement.classList.remove('hide')
   showQuestion()
+  showChoices()
 
 }
 /**
@@ -125,7 +105,6 @@ function nextQuestion() {
   showQuestion(shuffledLightQuestions[currentQuestionsIndex])
 }
 
-
 /**
  * show the questions in the question container
  */
@@ -134,7 +113,18 @@ function showQuestion() {
   console.log(lightQuestions[questionNumber].question);
 
 }
+/**
+ * show all answer for specific question
+ */
+function showChoices(){
 
+  const currentQuestion = lightQuestions[questionNumber];
+  document.querySelector("#answer-one").innerHTML = currentQuestion.answerOne;
+  document.querySelector("#answer-two").innerHTML = currentQuestion.answerTwo;
+  document.querySelector("#answer-three").innerHTML = currentQuestion.answerThree;
+  document.querySelector("#answer-four").innerHTML = currentQuestion.answerFour;
+  
+}
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
 
