@@ -14,8 +14,6 @@ function difficultModality() {}
 
 function expertModality() {}
 
-function getScore() {}
-
 function incrementPositiveAnswer() {}
 
 function incrementNegativeAnswer() {}
@@ -52,7 +50,7 @@ let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * ligh
 let currentQuestionsIndex = 0
 let questionNumber = 0;
 let score = 0;
-
+let correct = lightQuestions[questionNumber].correctAnswer;
 let scoreContainer = document.getElementById('score');
 let currentQuestion = lightQuestions[questionNumber];
 
@@ -124,25 +122,32 @@ function showChoices() {
 
 console.log(lightQuestions[questionNumber].answerOne);
 
-let correct = lightQuestions[questionNumber].correctAnswer;
-console.log(correct)
 /**
- * adding function to check if the answer is correct or not
+ * adding function to check if the button click by the user is correct
+ * if they have same value of correct answer then is correct otherwise incorrect
  */
 function getAnswer() {
   //https://www.3schools.in/2022/03/how-to-get-value-of-clicked-button-%20in.html
   let buttonList = document.querySelectorAll("button");
   buttonList.forEach(function (i) {
     i.addEventListener("click", function (e) {
-      console.log(e.target.innerHTML);
-      if ((e.target.innerHTML) === (lightQuestions[questionNumber].correctAnswer)) {
+      if ((e.target.innerHTML) === (correct)) {
         console.log('correct')
+        nextQuestion()
       } else {
-        console.log('incorrect')
+        console.log('incorrect');
+        nextQuestion()
       }
     })
   })
 
+}
+
+function nextQuestion() {
+  currentQuestionsIndex++;
+  questionNumber++;
+  showQuestion()
+  showChoices()
 }
 
 
