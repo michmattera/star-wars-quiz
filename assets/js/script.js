@@ -20,25 +20,6 @@ function incrementNegativeAnswer() {}
 
 function calcolateFinalScore() {}
 
-// variables to play light game
-let lightQuestions = [{
-    question: "Which Star wars faction fights against the Empire?",
-    correctAnswer: "REBEL ALLIANCE",
-    answerOne: "REBEL LEAGUE",
-    answerTwo: "REBEL CONFEDERATION",
-    answerThree: "REBEL ALLIANCE",
-    answerFour: "REBEL COALITION",
-  },
-  {
-    question: "What is the name of the mystical power used by Jedi Knights in Star Wars?",
-    correctAnswer: "THE FORCE",
-    answerOne: "THE FORCE",
-    answerTwo: "THE POWER",
-    answerThree: "THE EFFORT",
-    answerFour: "THE ENERGY",
-  },
-];
-
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
@@ -52,7 +33,6 @@ let questionNumber = 0;
 let score = 0;
 let correct = lightQuestions[questionNumber].correctAnswer;
 let scoreContainer = document.getElementById('score');
-let currentQuestion = lightQuestions[questionNumber];
 
 
 /**
@@ -113,14 +93,12 @@ function showQuestion() {
  * show all answer for specific question
  */
 function showChoices() {
-  document.querySelector("#answer-one").innerHTML = currentQuestion.answerOne;
-  document.querySelector("#answer-two").innerHTML = currentQuestion.answerTwo;
-  document.querySelector("#answer-three").innerHTML = currentQuestion.answerThree;
-  document.querySelector("#answer-four").innerHTML = currentQuestion.answerFour;
+  document.querySelector("#answer-one").innerHTML = lightQuestions[questionNumber].answerOne;
+  document.querySelector("#answer-two").innerHTML = lightQuestions[questionNumber].answerTwo;
+  document.querySelector("#answer-three").innerHTML = lightQuestions[questionNumber].answerThree;
+  document.querySelector("#answer-four").innerHTML = lightQuestions[questionNumber].answerFour;
 
 }
-
-console.log(lightQuestions[questionNumber].answerOne);
 
 /**
  * adding function to check if the button click by the user is correct
