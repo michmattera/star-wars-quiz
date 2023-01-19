@@ -23,23 +23,22 @@ function incrementNegativeAnswer() {}
 function calcolateFinalScore() {}
 
 // variables to play light game
-let lightQuestions = [
-{
+let lightQuestions = [{
     question: "Which Star wars faction fights against the Empire?",
     correctAnswer: "answerThree",
     answerOne: "REBEL LEAGUE",
     answerTwo: "REBEL CONFEDERATION",
     answerThree: "REBEL ALLIANCE",
     answerFour: "REBEL COALITION",
-},
-{
+  },
+  {
     question: "What is the name of the mystical power used by Jedi Knights in Star Wars?",
-    correctAnswer: "answerOne",
+    correctAnswer: "THE FORCE",
     answerOne: "THE FORCE",
     answerTwo: "THE POWER",
     answerThree: "THE EFFORT",
     answerFour: "THE ENERGY",
-},
+  },
 ];
 
 
@@ -52,6 +51,10 @@ let chosenDarkSide = document.getElementById('dark-side');
 let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
 let questionNumber = 0;
+let score = 0;
+
+let scoreContainer = document.getElementById('score');
+let currentQuestion = lightQuestions[questionNumber];
 
 
 /**
@@ -74,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /**
  * When chose side in runDarkGame
- * display DarkQuestions, nextQuestions and hide chosenLightSide/chosenDarkSide
+ * display DarkQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
  */
 function runDarkGame() {
   console.log('dark game');
@@ -88,7 +91,7 @@ function runDarkGame() {
 
 /**
  * When chose side in runLightGame
- * display LightQuestions, nextQuestions and hide chosenLightSide/chosenDarkSide
+ * display LightQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
  */
 function runLightGame() {
   console.log('light game')
@@ -97,13 +100,7 @@ function runLightGame() {
   gameAreaElement.classList.remove('hide')
   showQuestion()
   showChoices()
-
-}
-/**
- * get nextQuestion from the current question and use shuffledLightQuestions to do it randomly
- */
-function nextQuestion() {
-  showQuestion(shuffledLightQuestions[currentQuestionsIndex])
+  getAnswer()
 }
 
 /**
@@ -117,30 +114,35 @@ function showQuestion() {
 /**
  * show all answer for specific question
  */
-function showChoices(){
-  const currentQuestion = lightQuestions[questionNumber];
+function showChoices() {
   document.querySelector("#answer-one").innerHTML = currentQuestion.answerOne;
   document.querySelector("#answer-two").innerHTML = currentQuestion.answerTwo;
   document.querySelector("#answer-three").innerHTML = currentQuestion.answerThree;
   document.querySelector("#answer-four").innerHTML = currentQuestion.answerFour;
-  
-}
 
+}
+//https://www.3schools.in/2022/03/how-to-get-value-of-clicked-button-%20in.html
+let buttonList = document.querySelectorAll("button");
+  buttonList.forEach(function(i){
+    i.addEventListener("click", function(e){
+     console.log(e.target.innerHTML);
+    })
+  })
+
+console.log(lightQuestions[questionNumber].answerOne);
+
+let correct = lightQuestions[questionNumber].correctAnswer;
+console.log(correct)
 /**
  * adding function to check if the answer is correct or not
  */
-function checkAnswer(){
-  let score = 0;
-  let scoreContainer = document.getElementById('score');
-  for (let button of answerContainer) {
-    button.addEventListener('click', function () {
-      if(correctAnswer){
-        console.log('correct')
-      } else {
-        console,log('wrong')
-      }
-    })
-}}
+function getAnswer() {
+  (answerContainer).click(function() {
+    let fired_button = $(this).val();
+    console.log(fired_button);
+});
+}
+
 
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
