@@ -25,7 +25,7 @@ function calcolateFinalScore() {}
 // variables to play light game
 let lightQuestions = [{
     question: "Which Star wars faction fights against the Empire?",
-    correctAnswer: "answerThree",
+    correctAnswer: "REBEL ALLIANCE",
     answerOne: "REBEL LEAGUE",
     answerTwo: "REBEL CONFEDERATION",
     answerThree: "REBEL ALLIANCE",
@@ -121,13 +121,6 @@ function showChoices() {
   document.querySelector("#answer-four").innerHTML = currentQuestion.answerFour;
 
 }
-//https://www.3schools.in/2022/03/how-to-get-value-of-clicked-button-%20in.html
-let buttonList = document.querySelectorAll("button");
-  buttonList.forEach(function(i){
-    i.addEventListener("click", function(e){
-     console.log(e.target.innerHTML);
-    })
-  })
 
 console.log(lightQuestions[questionNumber].answerOne);
 
@@ -137,10 +130,19 @@ console.log(correct)
  * adding function to check if the answer is correct or not
  */
 function getAnswer() {
-  (answerContainer).click(function() {
-    let fired_button = $(this).val();
-    console.log(fired_button);
-});
+  //https://www.3schools.in/2022/03/how-to-get-value-of-clicked-button-%20in.html
+  let buttonList = document.querySelectorAll("button");
+  buttonList.forEach(function (i) {
+    i.addEventListener("click", function (e) {
+      console.log(e.target.innerHTML);
+      if ((e.target.innerHTML) === (lightQuestions[questionNumber].correctAnswer)) {
+        console.log('correct')
+      } else {
+        console.log('incorrect')
+      }
+    })
+  })
+
 }
 
 
