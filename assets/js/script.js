@@ -31,7 +31,7 @@ let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * ligh
 let currentQuestionsIndex = 0
 let questionNumber = 0;
 let score = 0;
-let correct = lightQuestions[questionNumber].correctAnswer;
+
 let scoreContainer = document.getElementById('score');
 
 
@@ -62,8 +62,6 @@ function runDarkGame() {
   chosenDarkSide.classList.add('hide')
   chosenLightSide.classList.add('hide')
   gameAreaElement.classList.remove('hide')
-  showQuestion()
-  showChoices()
 
 }
 
@@ -78,7 +76,7 @@ function runLightGame() {
   gameAreaElement.classList.remove('hide')
   showQuestion()
   showChoices()
-  getAnswer()
+  checker()
 }
 
 /**
@@ -100,32 +98,87 @@ function showChoices() {
 
 }
 
+
+function checker(event) {
+  let clickedAnswer = event.target.innerHTML;
+  let correctAnswer = lightQuestions[questionNumber].correctAnswer;
+
+  if (clickedAnswer === correctAnswer) {
+    console.log('correct');
+  } else {
+    console.log('NO');
+  }
+  nextQuestion();
+}
+
+const buttonList = document.querySelectorAll("button");
+buttonList.forEach(button => {
+  button.addEventListener('click', checker);
+})
+
+// function getAnswer() {
+
+//   const correct = lightQuestions[questionNumber].correctAnswer;
+//   let buttonList = document.querySelectorAll("button");
+//   buttonList.forEach((button) => {
+
+//     function testFun() {
+//       if ((button.innerHTML) === (correct)) {
+//         console.log('correct')
+//         nextQuestion()
+
+//       } else {
+//         console.log('incorrect');
+//         nextQuestion()
+
+//         console.log(button.innerHTML)
+//       }
+//     }
+
+//     button.removeEventListener('click', testFun());
+//     button.addEventListener('click', testFun());
+
+//   });
+
+// }
+
+
 /**
  * adding function to check if the button click by the user is correct
  * if they have same value of correct answer then is correct otherwise incorrect
- */
+ 
 function getAnswer() {
-  //https://www.3schools.in/2022/03/how-to-get-value-of-clicked-button-%20in.html
+  
+  const correct = lightQuestions[questionNumber].correctAnswer;
   let buttonList = document.querySelectorAll("button");
-  buttonList.forEach(function (i) {
-    i.addEventListener("click", function (e) {
+  buttonList.forEach( button () {
+    //issue the function save previous answer and give all answer as incorrect
+  
+    button.addEventListener("click", function (e) {
       if ((e.target.innerHTML) === (correct)) {
         console.log('correct')
         nextQuestion()
+
       } else {
         console.log('incorrect');
         nextQuestion()
+
+        console.log(e.target.innerHTML)
       }
     })
   })
 
 }
 
+/**
+ * increase question number and currentQuestionIndex, show again new question and answers
+ */
 function nextQuestion() {
   currentQuestionsIndex++;
   questionNumber++;
-  showQuestion()
   showChoices()
+  showQuestion()
+  console.log(lightQuestions[questionNumber].correctAnswer)
 }
 
 
