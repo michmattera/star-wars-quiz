@@ -29,7 +29,7 @@ let questionNumber = 0;
 let score = 0;
 
 let scoreContainer = document.getElementById('score');
-
+let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
 
 /**
  * When chosen side
@@ -112,7 +112,6 @@ function checker(event) {
     this.classList.add('incorrect-answer')
   }
   const myTimeout = setTimeout(nextQuestion, 1000);
-  this.classList.remove('incorrect-answer', 'correct-answer')
 }
 
 /**
@@ -141,12 +140,20 @@ buttonList.forEach(button => {
 /**
  * increase question number and currentQuestionIndex, show again new question and answers
  */
+
 function nextQuestion() {
   currentQuestionsIndex++;
   questionNumber++;
   showChoices()
   showQuestion()
   console.log(lightQuestions[questionNumber].correctAnswer)
+  const answers = document.querySelectorAll('.answer');
+
+for (const answer of answers) {
+  answer.classList.remove('correct-answer',
+  'incorrect-answer'
+  );
+}
 }
 
 
