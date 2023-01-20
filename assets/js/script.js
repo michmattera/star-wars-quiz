@@ -14,10 +14,6 @@ function difficultModality() {}
 
 function expertModality() {}
 
-function incrementPositiveAnswer() {}
-
-function incrementNegativeAnswer() {}
-
 function calcolateFinalScore() {}
 
 
@@ -98,77 +94,49 @@ function showChoices() {
 
 }
 
-
+/**
+ * 
+ * function to check if answer is correct or not
+ * if is correct than incrementPositiveAnswer if not incrementNegativeAnswer
+ * run nextQuestion function
+ */
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
-
   if (clickedAnswer === correctAnswer) {
     console.log('correct');
+    this.classList.add('correct-answer')
   } else {
-    console.log('NO');
+    incrementNegativeAnswer()
+    console.log('incorrect');
+    this.classList.add('incorrect-answer')
   }
-  nextQuestion();
+  const myTimeout = setTimeout(nextQuestion, 1000);
+  this.classList.remove('incorrect-answer', 'correct-answer')
 }
 
+/**
+ * function to increment correct score
+ */
+
+
+function incrementPositiveAnswer() {
+}
+
+
+/**
+ * function to increment incorrect score
+ */
+function incrementNegativeAnswer() {}
+
+
+//add event listener for each button clicked and run function checker to see if is correct or not
 const buttonList = document.querySelectorAll("button");
 buttonList.forEach(button => {
   button.addEventListener('click', checker);
 })
 
-// function getAnswer() {
 
-//   const correct = lightQuestions[questionNumber].correctAnswer;
-//   let buttonList = document.querySelectorAll("button");
-//   buttonList.forEach((button) => {
-
-//     function testFun() {
-//       if ((button.innerHTML) === (correct)) {
-//         console.log('correct')
-//         nextQuestion()
-
-//       } else {
-//         console.log('incorrect');
-//         nextQuestion()
-
-//         console.log(button.innerHTML)
-//       }
-//     }
-
-//     button.removeEventListener('click', testFun());
-//     button.addEventListener('click', testFun());
-
-//   });
-
-// }
-
-
-/**
- * adding function to check if the button click by the user is correct
- * if they have same value of correct answer then is correct otherwise incorrect
- 
-function getAnswer() {
-  
-  const correct = lightQuestions[questionNumber].correctAnswer;
-  let buttonList = document.querySelectorAll("button");
-  buttonList.forEach( button () {
-    //issue the function save previous answer and give all answer as incorrect
-  
-    button.addEventListener("click", function (e) {
-      if ((e.target.innerHTML) === (correct)) {
-        console.log('correct')
-        nextQuestion()
-
-      } else {
-        console.log('incorrect');
-        nextQuestion()
-
-        console.log(e.target.innerHTML)
-      }
-    })
-  })
-
-}
 
 /**
  * increase question number and currentQuestionIndex, show again new question and answers

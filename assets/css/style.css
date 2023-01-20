@@ -138,6 +138,18 @@ button{
   font-size: 30px;
 }
 
+/*Class for correct answer button or incorrect answer button*/
+.correct-answer{
+  background-color: #bfda46;
+  box-shadow: 0 0 70px #0f0;
+
+}
+.incorrect-answer{
+  background-color: rgb(136, 0, 0);
+  
+  box-shadow: 0 0 70px #f00;
+}
+
 
 /*https://www.w3schools.com/howto/howto_css_modals.asp to learn how to buid a modal*/
 /*Modal main page*/
