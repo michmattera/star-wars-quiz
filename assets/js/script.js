@@ -6,16 +6,52 @@
 //Starting to write all function of the game for better structure
 function userName() {}
 
-function easyModality() {}
+function easyModality() {
+  console.log('easy')
+}
 
-function mediumModality() {}
+function mediumModality() {
+  console.log('medium')
+}
 
-function difficultModality() {}
+function difficultModality() {
+  console.log('difficult')
+}
 
-function expertModality() {}
+function expertModality() {
+  console.log('expert')
+}
 
 function calcolateFinalScore() {}
+//Get select object
+//let options = document.getElementById("options");
+function getLevel (){
+  
+let level = document.getElementById("levels");
+let value = level.value;
+let text = level.options[level.selectedIndex].text;
+let easy = level.options[0];
+let medium = level.options[1];
+let difficult = level.options[2];
+let expert = level.options[3];
 
+
+  level.addEventListener('change' , function(){
+    if(level.value === "easy"){
+      easyModality()
+    } else if (level.value === "medium"){
+      mediumModality()
+    } else if(level.value === "difficult"){
+      difficultModality()
+    } else if (level.value === "expert"){
+      expertModality()
+    } else {
+      alert(`difficult unknown`)
+    }
+  })
+}
+
+getLevel()
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
@@ -23,7 +59,7 @@ let questionContainer = document.getElementById('question');
 let answerContainer = document.getElementById('answer-buttons');
 let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
-let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
+//let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
 let questionNumber = 0;
 let score = 0;
@@ -37,6 +73,7 @@ let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
  */
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName('button');
+  let levels = document.getElementById('levels');
 
   for (let button of buttons) {
     button.addEventListener('click', function () {
@@ -47,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
   }
+
 });
 
 /**
@@ -119,8 +157,7 @@ function checker(event) {
  */
 
 
-function incrementPositiveAnswer() {
-}
+function incrementPositiveAnswer() {}
 
 
 /**
@@ -149,11 +186,11 @@ function nextQuestion() {
   console.log(lightQuestions[questionNumber].correctAnswer)
   const answers = document.querySelectorAll('.answer');
 
-for (const answer of answers) {
-  answer.classList.remove('correct-answer',
-  'incorrect-answer'
-  );
-}
+  for (const answer of answers) {
+    answer.classList.remove('correct-answer',
+      'incorrect-answer'
+    );
+  }
 }
 
 
