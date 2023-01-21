@@ -7,7 +7,7 @@
 function userName() {}
 
 function easyModality() {
-  console.log('easy')
+  console.log('easyMOD')
 
 }
 
@@ -35,10 +35,9 @@ let chosenDarkSide = document.getElementById('dark-side');
 let currentQuestionsIndex = 0
 let questionNumber = 0;
 let score = 0;
-
-let lastEasyQuestions = lightQuestions[6].question;
-let lastMediumQuestions = lightQuestions[10].question;
-let lastDifficultQuestions = lightQuestions[14].question;
+let correct = 0;
+let incorrect = 0;
+let lastQuestions = lightQuestions[6];
 let level = document.getElementById("levels");
 let scoreContainer = document.getElementById('score');
 let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
@@ -72,6 +71,7 @@ function getLevel() {
   level.addEventListener('change', function () {
     if (level.value === "easy") {
       console.log('easy')
+      easyModality()
     } else if (level.value === "medium") {
       mediumModality()
     } else if (level.value === "difficult") {
@@ -144,10 +144,14 @@ function checker(event) {
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
   if (clickedAnswer === correctAnswer) {
     console.log('correct');
+    correct++;
+    console.log(correct)
     this.classList.add('correct-answer')
   } else {
     incrementNegativeAnswer()
     console.log('incorrect');
+    incorrect++;
+    console.log(incorrect)
     this.classList.add('incorrect-answer')
   }
   const myTimeout = setTimeout(nextQuestion, 1000);
@@ -183,12 +187,8 @@ function nextQuestion() {
   currentQuestionsIndex++;
   questionNumber++;
   const answers = document.querySelectorAll('.answer');
-  if (questionContainer.innerHTML === lastEasyQuestions) {
-    console.log('last')
-  } else if (questionContainer.innerHTML === lastMediumQuestions) {
-    console.log('last')
-  } else if (questionContainer.innerHTML === lastDifficultQuestions) {
-    console.log('last')
+  if (questionContainer.innerHTML === lastQuestions) {
+    stopGame()
   } else {
 
     showChoices()
@@ -207,6 +207,11 @@ function nextQuestion() {
  */
 function stopGame(){
   alert(`stop`)
+  if(correct > incorrect){
+    alert(`you win`)
+  } else {
+    alert(`you lost`)
+  }
 }
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
