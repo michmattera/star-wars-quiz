@@ -28,9 +28,29 @@
             <h1 class="heading">
                 Star wars quiz!
             </h1>
+
+
+            <!--Test modal for username when page is loaded-->
+            <section class="modal hide">
+                <div class="flex">
+                    <button class="btn-close">⨉</button>
+                </div>
+                <div>
+                    <h3>Instruction:</h3>
+                </div>
+                <p>
+                    Once upon a time there was a galaxy...
+                    In this game you have to etc...
+                </p>
+            </section>
+
+            <div class="overlay hide"></div>
+
+            <button class="btn-open"><i class="fa-solid fa-question"></i></button>
+
             <!--Creating score container and div inside it to have visual for correct or incorrect score -->
-        <div id="score-container">
-        </div>
+            <div id="score-container">
+            </div>
         </header>
         <div class="container-pick-side">
             <button data-type="light" class="side" id="light-side">
@@ -38,7 +58,7 @@
             <button data-type="dark" class="side" id="dark-side">
             </button>
         </div>
- 
+
         <!--Creating form for easy-medium-difficult modality for quiz-->
         <div class="choose-level">
             <form action="">
@@ -89,7 +109,7 @@
     </div>
 
     <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
-    
+
     <script src="assets/js/questions.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

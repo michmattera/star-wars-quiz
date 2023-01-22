@@ -1,6 +1,18 @@
-//$(document).ready(function () {
-// $('#myModal').modal('show');
-//});
+//test modal
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector(".btn-open");
+const closeModalBtn = document.querySelector(".btn-close");
+const openModal = function () {
+  modal.classList.remove("hide");
+  overlay.classList.remove("hide");
+};
+const closeModal = function () {
+  modal.classList.add("hide");
+  overlay.classList.add("hide");
+};
+openModalBtn.addEventListener("click", openModal);
+closeModalBtn.addEventListener("click", closeModal);
 
 
 //Starting to write all function of the game for better structure
