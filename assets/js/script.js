@@ -8,7 +8,6 @@ function userName() {}
 
 function easyModality() {
   console.log('easyMOD')
-
 }
 
 function mediumModality() {
@@ -37,7 +36,6 @@ let questionNumber = 0;
 let score = 0;
 let correct = 0;
 let incorrect = 0;
-let lastQuestions = lightQuestions[6];
 let level = document.getElementById("levels");
 let scoreContainer = document.getElementById('score');
 let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
@@ -84,7 +82,6 @@ function getLevel() {
   })
 }
 
-getLevel()
 
 /**
  * When chose side in runDarkGame
@@ -142,21 +139,28 @@ function showChoices() {
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
+  let scoreDiv = document.getElementById('score-container');
   if (clickedAnswer === correctAnswer) {
     console.log('correct');
-    correct++;
-    console.log(correct)
     this.classList.add('correct-answer')
+    
+    // add div inside score container and style red
+     let scoreBoxes = document.createElement('div')
+    scoreDiv.appendChild(scoreBoxes);
+    scoreBoxes.classList.add('score-box' , 'green')
   } else {
     incrementNegativeAnswer()
     console.log('incorrect');
     incorrect++;
-    console.log(incorrect)
     this.classList.add('incorrect-answer')
+    // add div inside score container and style red
+    let scoreBoxes = document.createElement('div')
+    scoreDiv.appendChild(scoreBoxes);
+    scoreBoxes.classList.add('score-box' , 'red')
   }
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
-
+//resultSquare.classList.add('score-box', 'score-box-correct');
 /**
  * function to increment correct score
  */
@@ -184,17 +188,17 @@ buttonList.forEach(button => {
  */
 
 function nextQuestion() {
-  currentQuestionsIndex++;
-  questionNumber++;
   const answers = document.querySelectorAll('.answer');
-  if (questionContainer.innerHTML === lastQuestions) {
-    stopGame()
-  } else {
+  //if (questionContainer.innerHTML === lastQuestions) {
+   // stopGame()
+ // } else {
 
+    currentQuestionsIndex++;
+    questionNumber++;
     showChoices()
     showQuestion()
     console.log(lightQuestions[questionNumber].correctAnswer)
-  }
+  
   for (const answer of answers) {
     answer.classList.remove('correct-answer',
       'incorrect-answer'

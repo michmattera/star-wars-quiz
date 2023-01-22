@@ -150,6 +150,32 @@ button{
   box-shadow: 0 0 70px #f00;
 }
 
+/*Score container and divs inside to change color when is correct or wrong user answer*/
+#score-container {
+  text-align: center;
+  display: flex;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 16px;
+  color: white;
+  align-items: center;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.score-box {
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 24px;
+  width: 24px;
+  margin-right: 4px;
+}
+.green{
+  background-color: #0f0;
+}
+.red{
+  background-color: #f00;
+}
 
 
 /*https://www.w3schools.com/howto/howto_css_modals.asp to learn how to buid a modal*/
