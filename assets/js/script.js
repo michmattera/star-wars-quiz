@@ -1,4 +1,5 @@
-//test modal
+//constant variables
+const userName = document.getElementById('username');
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const openModalBtn = document.querySelector(".btn-open");
@@ -197,15 +198,8 @@ incrementPositiveAnswer = num => {
 }
 
 function finalScore (){
-  if(positiveScore < (questionNumber % 2)){
-    alert(`You lost`)
-  } else {
-    alert(`you win`)
-  }
+  
 }
-
-
-
 
 /**
  * increase question number and currentQuestionIndex, show again new question and answers
