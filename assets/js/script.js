@@ -120,6 +120,11 @@ function runLightGame() {
   gameAreaElement.classList.remove('hide')
   showQuestion()
   showChoices()
+  //add event listener for each button clicked and run function checker to see if is correct or not
+  const buttonList = document.querySelectorAll("button");
+  buttonList.forEach(button => {
+    button.addEventListener('click', checker);
+  })
   checker()
 }
 
@@ -155,11 +160,11 @@ function checker(event) {
   if (clickedAnswer === correctAnswer) {
     console.log('correct');
     this.classList.add('correct-answer')
-    
+
     // add div inside score container and style red
-     let scoreBoxes = document.createElement('div')
+    let scoreBoxes = document.createElement('div')
     scoreDiv.appendChild(scoreBoxes);
-    scoreBoxes.classList.add('score-box' , 'green')
+    scoreBoxes.classList.add('score-box', 'green')
   } else {
     incrementNegativeAnswer()
     console.log('incorrect');
@@ -168,7 +173,7 @@ function checker(event) {
     // add div inside score container and style red
     let scoreBoxes = document.createElement('div')
     scoreDiv.appendChild(scoreBoxes);
-    scoreBoxes.classList.add('score-box' , 'red')
+    scoreBoxes.classList.add('score-box', 'red')
   }
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
@@ -187,13 +192,6 @@ function incrementPositiveAnswer() {}
 function incrementNegativeAnswer() {}
 
 
-//add event listener for each button clicked and run function checker to see if is correct or not
-const buttonList = document.querySelectorAll("button");
-buttonList.forEach(button => {
-  button.addEventListener('click', checker);
-})
-
-
 
 /**
  * increase question number and currentQuestionIndex, show again new question and answers
@@ -202,15 +200,15 @@ buttonList.forEach(button => {
 function nextQuestion() {
   const answers = document.querySelectorAll('.answer');
   //if (questionContainer.innerHTML === lastQuestions) {
-   // stopGame()
- // } else {
+  // stopGame()
+  // } else {
 
-    currentQuestionsIndex++;
-    questionNumber++;
-    showChoices()
-    showQuestion()
-    console.log(lightQuestions[questionNumber].correctAnswer)
-  
+  currentQuestionsIndex++;
+  questionNumber++;
+  showChoices()
+  showQuestion()
+  console.log(lightQuestions[questionNumber].correctAnswer)
+
   for (const answer of answers) {
     answer.classList.remove('correct-answer',
       'incorrect-answer'
@@ -221,9 +219,9 @@ function nextQuestion() {
 /**
  * function to stop game
  */
-function stopGame(){
+function stopGame() {
   alert(`stop`)
-  if(correct > incorrect){
+  if (correct > incorrect) {
     alert(`you win`)
   } else {
     alert(`you lost`)
