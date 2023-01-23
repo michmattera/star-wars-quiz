@@ -155,13 +155,22 @@ button{
 /*test style modal*/
 /*https://www.freecodecamp.org/news/how-to-build-a-modal-with-javascript/*/
 .modal {
-  width: 300px;
-   height: 300px;
+  width: 700px;
+   height: 600px;
    position: absolute;
    left: 50%;
    top: 50%; 
-   margin-left: -150px;
-   margin-top: -150px;
+   margin-left: -350px;
+   margin-top: -300px;
+   background-color: #d8c6c6;
+   font-size: 23px;
+   color: #112948;
+   border: 5px solid #0783be;
+   border-radius: 10%;
+}
+.modal>*{
+  margin: 5%;
+  line-height: 30px;
 }
 
 .modal .flex {
