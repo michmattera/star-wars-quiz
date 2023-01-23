@@ -45,7 +45,10 @@ let chosenDarkSide = document.getElementById('dark-side');
 //let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
 let questionNumber = 0;
-let score = 0;
+let totalQuestions = 14;
+let positiveScore = 0;
+let negativeScore = 0;
+let correctBonus = 1;
 let correct = 0;
 let incorrect = 0;
 let level = document.getElementById("levels");
@@ -151,12 +154,14 @@ function showChoices() {
  * 
  * function to check if answer is correct or not
  * if is correct than incrementPositiveAnswer if not incrementNegativeAnswer
- * run nextQuestion function
+ * run nextQuestion function with timeout
+ * add style to button clicked 
  */
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
   let scoreDiv = document.getElementById('score-container');
+  //if clicked answer is the same of correctanswer
   if (clickedAnswer === correctAnswer) {
     console.log('correct');
     this.classList.add('correct-answer')
@@ -164,9 +169,12 @@ function checker(event) {
     // add div inside score container and style red
     let scoreBoxes = document.createElement('div')
     scoreDiv.appendChild(scoreBoxes);
-    scoreBoxes.classList.add('score-box', 'green')
+    scoreBoxes.classList.add('score-box', 'green');
+
+    incrementPositiveAnswer(correctBonus);
+
+    //if clicked answer is not the same of correct answer
   } else {
-    incrementNegativeAnswer()
     console.log('incorrect');
     incorrect++;
     this.classList.add('incorrect-answer')
@@ -174,22 +182,28 @@ function checker(event) {
     let scoreBoxes = document.createElement('div')
     scoreDiv.appendChild(scoreBoxes);
     scoreBoxes.classList.add('score-box', 'red')
+
   }
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
-//resultSquare.classList.add('score-box', 'score-box-correct');
+
 /**
  * function to increment correct score
  */
+//https://www.youtube.com/watch?v=BOQLbu_Crc0
+incrementPositiveAnswer = num => {
+ positiveScore+= num;
+ console.log(positiveScore)
+}
 
+function finalScore (){
+  if(positiveScore < (questionNumber % 2)){
+    alert(`You lost`)
+  } else {
+    alert(`you win`)
+  }
+}
 
-function incrementPositiveAnswer() {}
-
-
-/**
- * function to increment incorrect score
- */
-function incrementNegativeAnswer() {}
 
 
 
@@ -199,9 +213,10 @@ function incrementNegativeAnswer() {}
 
 function nextQuestion() {
   const answers = document.querySelectorAll('.answer');
-  //if (questionContainer.innerHTML === lastQuestions) {
-  // stopGame()
-  // } else {
+  if (lightQuestions[questionNumber] == totalQuestions) {
+    finalScore()
+   stopGame()
+   } else {
 
   currentQuestionsIndex++;
   questionNumber++;
@@ -214,6 +229,7 @@ function nextQuestion() {
       'incorrect-answer'
     );
   }
+}
 }
 
 /**
