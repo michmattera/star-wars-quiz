@@ -28,7 +28,8 @@
             <h1 class="heading">
                 Star wars quiz!
             </h1>
-
+            <p id ="openedText"> </p>
+            <p id="savedText"> </p>
 
             <!--Test modal for instruction when clicked on it-->
             <section class="modal-instruction hide">
@@ -76,13 +77,14 @@
                     <h3>
                         Change Jedy!
                     </h3>
-                    <p>
+                    <p >
                         Change the name of your Jedy and save it !
                     </p>
                 <form>
                     <input type="text" name="username" id="username" placeholder="username">
-                    <input class="submit" type="submit" value="Submit">
+                    
                 </form>
+                <button onclick="save()">SAVE</button>
             </div>
             </section>
 

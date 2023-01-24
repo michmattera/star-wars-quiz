@@ -30,6 +30,21 @@ const closeModalUsername = function () {
 openModalUsernameBtn.addEventListener("click",  openModalUsername);
 closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 
+// youtube video on how to store item with local storage
+//https://www.youtube.com/watch?v=6R9SaZdyaVU
+var storedItem = localstorage.getItem("storedItem");
+
+function save(){
+  var Item = document.getElementById("username").value;
+  localStorage.setItem("storedItem", Item);
+  document.getElementById("savedText").innerHTML = Item + "Hello";
+
+}
+
+function get(){
+  localStorage.getItem("storedItem");
+  document.getElementById("openedText").innerHTML = storedItem + "stored";
+}
 //Starting to write all function of the game for better structure
 
 function easyModality() {
@@ -77,6 +92,7 @@ let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
  */
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName('button');
+  get()
   getLevel()
   for (let button of buttons) {
     button.addEventListener('click', function () {
