@@ -32,18 +32,33 @@ closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 
 // youtube video on how to store item with local storage
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
-var storedItem = localstorage.getItem("storedItem");
+var storedUsername = localstorage.getItem("storedUsername");
 
 function save(){
-  var Item = document.getElementById("username").value;
-  localStorage.setItem("storedItem", Item);
-  document.getElementById("savedText").innerHTML = Item + "Hello";
+  var newUsername = document.getElementById("username").value;
+  localStorage.setItem("storedUsername", newUsername);
+  document.getElementById("savedText").innerHTML = newUsername + "Hello";
+
+  if(localStorage.getItem('data') === null){
+    localStorage.setItem('data', '[]')
+  }
+
+  var oldData = JSON.parse(localStorage.getItem('data'));
+  oldData.push(newUsername);
+
+  localStorage.setItem('data', JSON.stringify(oldData))
 
 }
 
+function leaderboard (){
+  if(localStorage.getItem('data') != null){
+    document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('data'));
+  }
+}
+
 function get(){
-  localStorage.getItem("storedItem");
-  document.getElementById("openedText").innerHTML = storedItem + "stored";
+  localStorage.getItem("storedUsername");
+  document.getElementById("openedText").innerHTML = storedUsername + "stored";
 }
 //Starting to write all function of the game for better structure
 
@@ -225,6 +240,8 @@ incrementPositiveAnswer = num => {
  positiveScore+= num;
  console.log(positiveScore)
 }
+
+let newScore = 
 
 function finalScore (){
   
