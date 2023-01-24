@@ -47,7 +47,7 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 
 // youtube video on how to store item with local storage
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
-var storedUsername = localstorage.getItem("storedUsername");
+var storedUsername = localStorage.getItem("storedUsername");
 
 function save(){
   var newUsername = document.getElementById("username").value;
