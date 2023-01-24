@@ -30,6 +30,21 @@ const closeModalUsername = function () {
 openModalUsernameBtn.addEventListener("click",  openModalUsername);
 closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 
+//leaderboard modal
+const modalLeaderboard = document.querySelector(".modal-leaderboard");
+const openModalLeaderboardBtn = document.querySelector(".btn-open-leaderboard");
+const closeModalLeaderboardBtn = document.querySelector(".btn-close-leaderboard");
+const openModalLeaderboard = function () {
+  modalLeaderboard.classList.remove("hide");
+  overlay.classList.remove("hide");
+};
+const closeModalLeaderboard = function () {
+  modalLeaderboard.classList.add("hide");
+  overlay.classList.add("hide");
+};
+openModalLeaderboardBtn.addEventListener("click",  openModalLeaderboard);
+closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
+
 // youtube video on how to store item with local storage
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
 var storedUsername = localstorage.getItem("storedUsername");

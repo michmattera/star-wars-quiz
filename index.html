@@ -28,7 +28,7 @@
             <h1 class="heading">
                 Star wars quiz!
             </h1>
-            <p id ="openedText"> </p>
+            <p id="openedText"> </p>
             <p id="savedText"> </p>
 
             <!--Test modal for instruction when clicked on it-->
@@ -77,37 +77,42 @@
                     <h3>
                         Change Jedy!
                     </h3>
-                    <p >
+                    <p>
                         Change the name of your Jedy and save it !
                     </p>
-                <form>
-                    <input type="text" name="username" id="username" placeholder="username">
-                    
-                </form>
-                <button onclick="save()">SAVE</button>
-            </div>
+                    <form>
+                        <input type="text" name="username" id="username" placeholder="username">
+
+                    </form>
+                    <button class="save" onclick="save()">SAVE</button>
+                </div>
             </section>
 
             <div class="overlay hide"></div>
             <button class="btn-open-username"><i class="fa-solid fa-user"></i></button>
 
             <!--Modal for leaderboard when user click on icon-->
-            <section class="modal hide">
+            <section class="modal-leaderboard hide">
                 <div class="flex">
-                    <button class="btn-close">⨉</button>
+                    <button class="btn-close-leaderboard">⨉</button>
                 </div>
                 <div>
-                    <form>
-                        <input type="text" name="" id="" placeholder="">
-                    </form>
-            </section>
-            <button class="btn-open" onclick="leaderboard();"><i class="fa-solid fa-trophy"></i></button>
-            
-            <div class="overlay hide"></div>
+                    <h3>
+                        Leaderboard light Jedy
+                    </h3>
 
-            <p id="board">
-here
-            </p>
+                    <ul>
+                        <li>list light Jedy</li>
+                        
+                    </ul>
+                    <p id="board">
+                        here
+                    </p>
+                </div>
+            </section>
+            <button class="btn-open-leaderboard" onclick="leaderboard();"><i class="fa-solid fa-trophy"></i></button>
+
+            <div class="overlay hide"></div>
 
             <!--Creating score container and div inside it to have visual for correct or incorrect score -->
             <div id="score-container">
