@@ -1,23 +1,36 @@
-//constant variables
-//const userName = document.getElementById('username');
-const modal = document.querySelector(".modal");
+//constant variables for different modals
+// Instruction modal
+const modalInstruction = document.querySelector(".modal-instruction");
 const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector(".btn-open");
-const closeModalBtn = document.querySelector(".btn-close");
-const openModal = function () {
-  modal.classList.remove("hide");
+const openModalInstructionBtn = document.querySelector(".btn-open-instruction");
+const closeModalInstructionBtn = document.querySelector(".btn-close-instruction");
+const openModalInstruction = function () {
+  modalInstruction.classList.remove("hide");
   overlay.classList.remove("hide");
 };
-const closeModal = function () {
-  modal.classList.add("hide");
+const closeModalInstruction = function () {
+  modalInstruction.classList.add("hide");
   overlay.classList.add("hide");
 };
-openModalBtn.addEventListener("click", openModal);
-closeModalBtn.addEventListener("click", closeModal);
+openModalInstructionBtn.addEventListener("click", openModalInstruction);
+closeModalInstructionBtn.addEventListener("click", closeModalInstruction);
 
+//username modal
+const modalUsername = document.querySelector(".modal-username");
+const openModalUsernameBtn = document.querySelector(".btn-open-username");
+const closeModalUsernameBtn = document.querySelector(".btn-close-username");
+const openModalUsername = function () {
+  modalUsername.classList.remove("hidden");
+  overlay.classList.remove("hide");
+};
+const closeModalUsername = function () {
+  modalUsername.classList.add("hidden");
+  overlay.classList.add("hide");
+};
+openModalUsernameBtn.addEventListener("click",  openModalUsername);
+closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 
 //Starting to write all function of the game for better structure
-function userName() {}
 
 function easyModality() {
   console.log('easyMOD')

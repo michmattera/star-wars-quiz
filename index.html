@@ -31,9 +31,9 @@
 
 
             <!--Test modal for instruction when clicked on it-->
-            <section class="modal hide">
+            <section class="modal-instruction hide">
                 <div class="flex">
-                    <button class="btn-close">⨉</button>
+                    <button class="btn-close-instruction">⨉</button>
                 </div>
                 <div>
                     <h3>Instruction:</h3>
@@ -65,20 +65,29 @@
             </section>
 
             <div class="overlay hide"></div>
-            <button class="btn-open"><i class="fa-solid fa-question"></i></button>
-            
+            <button class="btn-open-instruction"><i class="fa-solid fa-question"></i></button>
+
             <!--Test modal for username when page is loaded-->
-            <section class="modal hide">
+            <section class="modal-username hidden">
                 <div class="flex">
-                    <button class="btn-close">⨉</button>
+                    <button class="btn-close-username">⨉</button>
                 </div>
+                <div>
+                    <h3>
+                        Change Jedy!
+                    </h3>
+                    <p>
+                        Change the name of your Jedy and save it !
+                    </p>
                 <form>
                     <input type="text" name="username" id="username" placeholder="username">
+                    <input class="submit" type="submit" value="Submit">
                 </form>
+            </div>
             </section>
 
             <div class="overlay hide"></div>
-            <button class="btn-open"><i class="fa-solid fa-user"></i></button>
+            <button class="btn-open-username"><i class="fa-solid fa-user"></i></button>
 
             <!--Modal for leaderboard when user click on icon-->
             <section class="modal hide">
@@ -87,7 +96,7 @@
                 </div>
                 <div>
                     <form>
-                        <input type="text" name="username" id="username" placeholder="username">
+                        <input type="text" name="" id="" placeholder="">
                     </form>
             </section>
 
