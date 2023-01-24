@@ -49,25 +49,25 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
 var storedUsername = localStorage.getItem("storedUsername");
 
-function save(){
+function saveName(){
   var newUsername = document.getElementById("username").value;
   localStorage.setItem("storedUsername", newUsername);
   document.getElementById("savedText").innerHTML = newUsername + "Hello";
 
-  if(localStorage.getItem('data') === null){
-    localStorage.setItem('data', '[]')
+  if(localStorage.getItem('username') === null){
+    localStorage.setItem('username', '[]')
   }
 
-  var oldData = JSON.parse(localStorage.getItem('data'));
+  var oldData = JSON.parse(localStorage.getItem('username'));
   oldData.push(newUsername);
 
-  localStorage.setItem('data', JSON.stringify(oldData))
+  localStorage.setItem('username', JSON.stringify(oldData))
 
 }
 
 function leaderboard (){
-  if(localStorage.getItem('data') != null){
-    document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('data'));
+  if(localStorage.getItem('username') != null){
+    document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('username'));
   }
 }
 
@@ -110,6 +110,7 @@ let negativeScore = 0;
 let correctBonus = 1;
 let correct = 0;
 let incorrect = 0;
+let score;
 let level = document.getElementById("levels");
 let scoreContainer = document.getElementById('score');
 let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
@@ -230,7 +231,6 @@ function checker(event) {
     let scoreBoxes = document.createElement('div')
     scoreDiv.appendChild(scoreBoxes);
     scoreBoxes.classList.add('score-box', 'green');
-
     incrementPositiveAnswer(correctBonus);
 
     //if clicked answer is not the same of correct answer
@@ -256,7 +256,23 @@ incrementPositiveAnswer = num => {
  console.log(positiveScore)
 }
 
-let newScore = 
+//var storedScore = localStorage.getItem("storedScore");
+/** 
+function saveScore(){
+  var newScore = document.getElementById("username").value;
+  localStorage.setItem("storedScore", newScore);
+  document.getElementById("savedTextScore").innerHTML = newScore + "Hello";
+
+  if(localStorage.getItem('score') === null){
+    localStorage.setItem('score', '[]')
+  }
+
+  var oldScore = JSON.parse(localStorage.getItem('score'));
+  oldScore.push(newScore);
+
+  localStorage.setItem('score', JSON.stringify(oldScore))
+
+}
 
 function finalScore (){
   

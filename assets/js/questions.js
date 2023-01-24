@@ -130,3 +130,118 @@ let lightQuestions = [{
     answerFour: "BESKAR",
   },
 ];
+
+// variables to play dark game
+let darkQuestions = [{
+  //Easy questions
+  question: "What planet does the Empire choose to destroy first, in order to demonstrate the destructive capability of the Death Star?",
+  correctAnswer: "ALDERAAN",
+  answerOne: "ALDERAAN",
+  answerTwo: "YAVIN",
+  answerThree: "BESPIN",
+  answerFour: "DDANTOOINEAT",
+},
+{
+  question: "What is the name of the bounty hunter that delivered a frozen Han Solo to Jabba The HUTT?",
+  correctAnswer: " BOBA FETT",
+  answerOne: " BOBA FETT",
+  answerTwo: "BOSSK",
+  answerThree: "IG-88",
+  answerFour: "GREEDO",
+},{
+  question: "Where does Darth Vader tell Luke that he is his father? ",
+  correctAnswer: "CLOUD CITY",
+  answerOne: "DEATH STAR",
+  answerTwo: "ENDOR",
+  answerThree: "CLOUD CITY",
+  answerFour: "DEATH STAR II",
+},{
+  question: "What is the name of the empire's soldiers line up during the battle of Hoth?",
+  correctAnswer: "SNOWTROOPERS",
+  answerOne: "SNOWTROOPERS",
+  answerTwo: "SPACETROOPERS",
+  answerThree: "SNOW LEGIONNAIRS",
+  answerFour: "STORMTOOPERS",
+},{
+  question: "What is the main color of Darth Vader's lightsaber? ",
+  correctAnswer: "RED",
+  answerOne: "PURPLE",
+  answerTwo: "BLUE",
+  answerThree: "RED",
+  answerFour: "WHITE",
+},{
+  question: "What superweapon does the Galactic Empire control?",
+  correctAnswer: "DEATH STAR",
+  answerOne: "DEATH STAR",
+  answerTwo: "STAR DESTROYER",
+  answerThree: "MOON DESTROYER",
+  answerFour: "BLACK STAR",
+},{
+  question: "The second Death Star is constructed near which forest moon?",
+  correctAnswer: "ENDOR",
+  answerOne: "YAVIN IV",
+  answerTwo: "DAGOBAH",
+  answerThree: "BESPIN",
+  answerFour: "ENDOR",
+},
+{//medium questions
+  question: "Which of these characters gets killed by Darth Vader in “ A New Hope”?",
+  correctAnswer: "OBI WAN KENOBI",
+  answerOne: "YODA",
+  answerTwo: "CHEWBACCA",
+  answerThree: "OBI WAN KENOBI",
+  answerFour: "HAN SOLO",
+},
+{
+  question: "What is the name of The Emperor of the Galactic Empire in Star Wars?",
+  correctAnswer: "PALPATINE",
+  answerOne: "ANAKIN",
+  answerTwo: "DARTH VADER ",
+  answerThree: "PALPATINE",
+  answerFour: "PLAGUEIS",
+},{
+  question: "What was the name of Vader's Super Star Destroyer?",
+  correctAnswer: "EXECUTOR",
+  answerOne: "DEVASTATOR",
+  answerTwo: "EXECUTOR",
+  answerThree: "CONQUEROR",
+  answerFour: "IMPERATOR",
+},{
+  question: "What is the name of the giant four-legged walkers used by the Empire during the battle of Hoth?",
+  correctAnswer: " AT-AT",
+  answerOne: "AT_ST",
+  answerTwo: "FIGHTERS",
+  answerThree: " AT-AT",
+  answerFour: "INTERCEPTOR",
+},
+//difficult questions
+{
+  question: "What was the name of Baba Fett's ship?",
+  correctAnswer: "SLAVE I ",
+  answerOne: "SLAVE I ",
+  answerTwo: "NEBULON I",
+  answerThree: "SLAVE II",
+  answerFour: "BOUNTY I",
+},{
+  question: "What is the name of the giant beast species that lives under Jabba's throne room?",
+  correctAnswer: "RANCOR",
+  answerOne: "WAMPA",
+  answerTwo: "TAUNTAUN",
+  answerThree: "RANCOR",
+  answerFour: "SARLAC",
+},{
+  question: "Which character is the commander of the Death Star?",
+  correctAnswer: "MOFF TARKIN",
+  answerOne: "ADMIRAL OZZEL",
+  answerTwo: "MOFF TARKIN",
+  answerThree: "GENERAL VEERS",
+  answerFour: "LORD NEEDA",
+},{
+  question: "What creature lived in the trash compactor of the Death Star?",
+  correctAnswer: "DIANOGA",
+  answerOne: "SARLAC",
+  answerTwo: "RANCOR",
+  answerThree: "TUSKEN",
+  answerFour: "DIANOGA",
+}
+]
