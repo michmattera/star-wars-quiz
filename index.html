@@ -130,13 +130,17 @@
         <div class="choose-level">
             <form action="">
                 <select name="levels" id="levels">
-                    <option class="level1" value="easy">Easy</option>
-                    <option class="level2" value="medium">Medium</option>
-                    <option class="level3" value="difficult">Difficult</option>
-                    <option class="level4" value="expert">Expert</option>
+                    <option id="easy" class="level1" value="easy">Easy</option>
+                    <option id="medium" class="level2" value="medium">Medium</option>
+                    <option id="difficult" class="level3" value="difficult">Difficult</option>
+                    <option id="expert" class="level4" value="expert">Expert</option>
                 </select>
             </form>
         </div>
+         <!--Creating div for when the level has been chosen to test difficulty js-->
+         <div id="playing-level">
+            <p>Current level: </p>
+         </div>
         <div id="game-area" class="hide">
             <div id="question">questionTest</div>
 

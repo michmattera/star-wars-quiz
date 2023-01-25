@@ -77,9 +77,9 @@ function get(){
 }
 //Starting to write all function of the game for better structure
 
-function easyModality() {
-  console.log('easyMOD')
-}
+//function easyModality() {
+ // console.log('easyMOD')
+//}
 
 function mediumModality() {
   console.log('medium')
@@ -158,7 +158,59 @@ function getLevel() {
   })
 }
 
+//variables to get difficulty level
+var storedEasyLevel = localStorage.getItem("storedEasyLevel");
+var storedMediumLevel = localStorage.getItem("storedMediumLevel");
+var storedDifficultLevel = localStorage.getItem("storedDifficultLevel");
+var storedExpertLevel = localStorage.getItem("storedExpertLevel");
 
+/**
+ * store easy modality and print it in game level chosen
+ */
+function easyModality(){
+  let chosenLevel = document.getElementById('easy').value;
+  localStorage.setItem("storedEasyLevel", chosenLevel);
+  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenLevel + "" + "modality";
+  if(localStorage.getItem('easy') === null){
+    localStorage.setItem('easy', '[]')
+  }
+  var oldData = JSON.parse(localStorage.getItem('easy'));
+  oldData.push(chosenLevel);
+  localStorage.setItem('easy', JSON.stringify(oldData))
+}
+/**
+ * store medium modality and print it in game level chosen
+ */
+function mediumModality(){
+  let chosenMediumLevel = document.getElementById('medium').value;
+  localStorage.setItem("storedMediumLevel", chosenMediumLevel);
+  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenMediumLevel + "" + "modality";
+  var oldData = JSON.parse(localStorage.getItem('medium'));
+  oldData.push(chosenLevel);
+  localStorage.setItem('medium', JSON.stringify(oldData))
+}
+/**
+ * store difficult modality and print it in game level chosen
+ */
+function difficultModality(){
+  let chosenDifficultLevel = document.getElementById('difficult').value;
+  localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
+  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenDifficultLevel + "" + "modality";
+  var oldData = JSON.parse(localStorage.getItem('difficult'));
+  oldData.push(chosenLevel);
+  localStorage.setItem('difficult', JSON.stringify(oldData))
+}
+/**
+ * store difficult modality and print it in game level chosen
+ */
+function expertModality(){
+  let chosenExpertLevel = document.getElementById('expert').value;
+  localStorage.setItem("storedExpertLevel", chosenExpertLevel);
+  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenExpertLevel + "" + "modality";
+  var oldData = JSON.parse(localStorage.getItem('expert'));
+  oldData.push(chosenLevel);
+  localStorage.setItem('expert', JSON.stringify(oldData))
+}
 /**
  * When chose side in runDarkGame
  * display DarkQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
