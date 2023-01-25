@@ -75,23 +75,6 @@ function get(){
   localStorage.getItem("storedUsername");
   document.getElementById("openedText").innerHTML = storedUsername + "stored";
 }
-//Starting to write all function of the game for better structure
-
-//function easyModality() {
- // console.log('easyMOD')
-//}
-
-function mediumModality() {
-  console.log('medium')
-}
-
-function difficultModality() {
-  console.log('difficult')
-}
-
-function expertModality() {
-  console.log('expert')
-}
 
 function calcolateFinalScore() {}
 
@@ -184,10 +167,10 @@ function easyModality(){
 function mediumModality(){
   let chosenMediumLevel = document.getElementById('medium').value;
   localStorage.setItem("storedMediumLevel", chosenMediumLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenMediumLevel + "" + "modality";
+  document.getElementById("playing-level").innerHTML = "You are playing" + chosenMediumLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('medium'));
   oldData.push(chosenLevel);
-  localStorage.setItem('medium', JSON.stringify(oldData))
+  localStorage.setItem('medium', JSON.stringify(oldData));
 }
 /**
  * store difficult modality and print it in game level chosen
@@ -195,7 +178,7 @@ function mediumModality(){
 function difficultModality(){
   let chosenDifficultLevel = document.getElementById('difficult').value;
   localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenDifficultLevel + "" + "modality";
+  document.getElementById("playing-level").innerHTML = "You are playing" +  chosenDifficultLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('difficult'));
   oldData.push(chosenLevel);
   localStorage.setItem('difficult', JSON.stringify(oldData))
@@ -206,7 +189,7 @@ function difficultModality(){
 function expertModality(){
   let chosenExpertLevel = document.getElementById('expert').value;
   localStorage.setItem("storedExpertLevel", chosenExpertLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenExpertLevel + "" + "modality";
+  document.getElementById("playing-level").innerHTML = "You are playing" + chosenExpertLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('expert'));
   oldData.push(chosenLevel);
   localStorage.setItem('expert', JSON.stringify(oldData))
@@ -332,6 +315,7 @@ function finalScore (){
 
 /**
  * increase question number and currentQuestionIndex, show again new question and answers
+ * trying to set for different modalities different number of questions
  */
 
 function nextQuestion() {
@@ -360,11 +344,6 @@ function nextQuestion() {
  */
 function stopGame() {
   alert(`stop`)
-  if (correct > incorrect) {
-    alert(`you win`)
-  } else {
-    alert(`you lost`)
-  }
 }
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music

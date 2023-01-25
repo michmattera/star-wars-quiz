@@ -55,10 +55,8 @@ let lightQuestions = [{
     answerTwo: "ANDERAN",
     answerThree: "DAGOBAH",
     answerFour: "DANTOOINE",
-  }];
-
-  //Medium difficulty
-  let lightMediumQuestions =[ {
+  },
+  {//Medium difficulty
     question: "What species does Chewbacca belong to?",
     correctAnswer: "WOOKIEE",
     answerOne: "EWOK",
