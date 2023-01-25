@@ -153,13 +153,15 @@ var storedExpertLevel = localStorage.getItem("storedExpertLevel");
 function easyModality(){
   let chosenLevel = document.getElementById('easy').value;
   localStorage.setItem("storedEasyLevel", chosenLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing" + "" + chosenLevel + "" + "modality";
+  document.getElementById("playing-level").innerHTML = chosenLevel;
   if(localStorage.getItem('easy') === null){
     localStorage.setItem('easy', '[]')
   }
   var oldData = JSON.parse(localStorage.getItem('easy'));
-  oldData.push(chosenLevel);
-  localStorage.setItem('easy', JSON.stringify(oldData))
+  //oldData.push(chosenLevel);
+  localStorage.setItem('easy', JSON.stringify(oldData));
+
+
 }
 /**
  * store medium modality and print it in game level chosen
@@ -169,7 +171,7 @@ function mediumModality(){
   localStorage.setItem("storedMediumLevel", chosenMediumLevel);
   document.getElementById("playing-level").innerHTML = "You are playing" + chosenMediumLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('medium'));
-  oldData.push(chosenLevel);
+  //oldData.push(chosenLevel);
   localStorage.setItem('medium', JSON.stringify(oldData));
 }
 /**
@@ -180,7 +182,7 @@ function difficultModality(){
   localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
   document.getElementById("playing-level").innerHTML = "You are playing" +  chosenDifficultLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('difficult'));
-  oldData.push(chosenLevel);
+  //oldData.push(chosenLevel);
   localStorage.setItem('difficult', JSON.stringify(oldData))
 }
 /**
@@ -191,7 +193,7 @@ function expertModality(){
   localStorage.setItem("storedExpertLevel", chosenExpertLevel);
   document.getElementById("playing-level").innerHTML = "You are playing" + chosenExpertLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('expert'));
-  oldData.push(chosenLevel);
+  //oldData.push(chosenLevel);
   localStorage.setItem('expert', JSON.stringify(oldData))
 }
 /**
@@ -317,28 +319,58 @@ function finalScore (){
  * increase question number and currentQuestionIndex, show again new question and answers
  * trying to set for different modalities different number of questions
  */
-
 function nextQuestion() {
   const answers = document.querySelectorAll('.answer');
-  if (lightQuestions[questionNumber] == totalQuestions) {
-    finalScore()
-   stopGame()
-   } else {
+  //function to check if the value selected from the getLevel was easy and if so when finish the game
+  if(document.querySelector('#levels').value === "easy"){
+    console.log('test');
+    if(currentQuestionsIndex == 6){
+      alert(`stop game`);
+    } else {
+      currentQuestionsIndex++;
+      questionNumber++;
+      showChoices()
+      showQuestion()
+      console.log(lightQuestions[questionNumber].correctAnswer);
+    }
+  }
 
-  currentQuestionsIndex++;
-  questionNumber++;
-  showChoices()
-  showQuestion()
-  console.log(lightQuestions[questionNumber].correctAnswer)
-
+  //function to check if the value selected from the getLevel was medium and if so when finish the game
+  if(document.querySelector('#levels').value === "medium"){
+    console.log('test');
+    if(currentQuestionsIndex == 10){
+      alert(`stop game`);
+    } else {
+      currentQuestionsIndex++;
+      questionNumber++;
+      showChoices()
+      showQuestion()
+      console.log(lightQuestions[questionNumber].correctAnswer);
+    }
+  }
+  //function to check if the value selected from the getLevel was difficult and if so when finish the game
+  if(document.querySelector('#levels').value === "difficult"){
+    console.log('test');
+    if(currentQuestionsIndex == 14){
+      alert(`stop game`);
+    } else {
+      currentQuestionsIndex++;
+      questionNumber++;
+      showChoices()
+      showQuestion()
+      console.log(lightQuestions[questionNumber].correctAnswer);
+    }
+  }
   for (const answer of answers) {
     answer.classList.remove('correct-answer',
       'incorrect-answer'
     );
   }
 }
-}
 
+
+//let easy = lightquestions.slice(0,8)
+//let medium = lightquestions.slice(0,12)
 /**
  * function to stop game
  */
