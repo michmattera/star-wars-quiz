@@ -27,7 +27,7 @@ const closeModalUsername = function () {
   modalUsername.classList.add("hidden");
   overlay.classList.add("hide");
 };
-openModalUsernameBtn.addEventListener("click",  openModalUsername);
+openModalUsernameBtn.addEventListener("click", openModalUsername);
 closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 
 //leaderboard modal
@@ -42,19 +42,19 @@ const closeModalLeaderboard = function () {
   modalLeaderboard.classList.add("hide");
   overlay.classList.add("hide");
 };
-openModalLeaderboardBtn.addEventListener("click",  openModalLeaderboard);
+openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 
 // youtube video on how to store item with local storage
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
 var storedUsername = localStorage.getItem("storedUsername");
 
-function saveName(){
+function saveName() {
   var newUsername = document.getElementById("username").value;
   localStorage.setItem("storedUsername", newUsername);
   document.getElementById("savedText").innerHTML = newUsername + "Hello";
 
-  if(localStorage.getItem('username') === null){
+  if (localStorage.getItem('username') === null) {
     localStorage.setItem('username', '[]')
   }
 
@@ -65,13 +65,13 @@ function saveName(){
 
 }
 
-function leaderboard (){
-  if(localStorage.getItem('username') != null){
+function leaderboard() {
+  if (localStorage.getItem('username') != null) {
     document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('username'));
   }
 }
 
-function get(){
+function get() {
   localStorage.getItem("storedUsername");
 }
 
@@ -89,8 +89,6 @@ let totalQuestions = 14;
 let positiveScore = 0;
 let negativeScore = 0;
 let correctBonus = 1;
-let correct = 0;
-let incorrect = 0;
 let score;
 let level = document.getElementById("levels");
 let scoreContainer = document.getElementById('score');
@@ -148,11 +146,11 @@ var storedExpertLevel = localStorage.getItem("storedExpertLevel");
 /**
  * store easy modality and print it in game level chosen
  */
-function easyModality(){
+function easyModality() {
   let chosenLevel = document.getElementById('easy').value;
   localStorage.setItem("storedEasyLevel", chosenLevel);
   document.getElementById("playing-level").innerHTML = "You are playing : " + chosenLevel;
-  if(localStorage.getItem('easy') === null){
+  if (localStorage.getItem('easy') === null) {
     localStorage.setItem('easy', '[]')
   }
   var oldData = JSON.parse(localStorage.getItem('easy'));
@@ -164,7 +162,7 @@ function easyModality(){
 /**
  * store medium modality and print it in game level chosen
  */
-function mediumModality(){
+function mediumModality() {
   let chosenMediumLevel = document.getElementById('medium').value;
   localStorage.setItem("storedMediumLevel", chosenMediumLevel);
   document.getElementById("playing-level").innerHTML = "You are playing : " + chosenMediumLevel;
@@ -175,10 +173,10 @@ function mediumModality(){
 /**
  * store difficult modality and print it in game level chosen
  */
-function difficultModality(){
+function difficultModality() {
   let chosenDifficultLevel = document.getElementById('difficult').value;
   localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing : " +  chosenDifficultLevel;
+  document.getElementById("playing-level").innerHTML = "You are playing : " + chosenDifficultLevel;
   var oldData = JSON.parse(localStorage.getItem('difficult'));
   //oldData.push(chosenLevel);
   localStorage.setItem('difficult', JSON.stringify(oldData))
@@ -186,7 +184,7 @@ function difficultModality(){
 /**
  * store difficult modality and print it in game level chosen
  */
-function expertModality(){
+function expertModality() {
   let chosenExpertLevel = document.getElementById('expert').value;
   localStorage.setItem("storedExpertLevel", chosenExpertLevel);
   document.getElementById("playing-level").innerHTML = "You are playing" + chosenExpertLevel + "modality";
@@ -204,6 +202,15 @@ function runDarkGame() {
   chosenLightSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
+  
+  showDarkQuestion()
+  showDarkChoices()
+  //add event listener for each button clicked and run function checker to see if is correct or not
+  const buttonList = document.querySelectorAll(".answer");
+  buttonList.forEach(answer => {
+    answer.addEventListener('click', checker);
+  })
+  checker()
 
 }
 
@@ -217,7 +224,7 @@ function runLightGame() {
   chosenDarkSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
-  
+
   showQuestion()
   showChoices()
   //add event listener for each button clicked and run function checker to see if is correct or not
@@ -228,6 +235,10 @@ function runLightGame() {
   checker()
 }
 
+function changeSide(){
+  runDarkGame()
+}
+
 /**
  * show the questions in the question container
  */
@@ -235,6 +246,10 @@ function showQuestion() {
   questionContainer.innerText = lightQuestions[questionNumber].question;
   console.log(lightQuestions[questionNumber].question);
 
+}
+function showDarkQuestion(){
+  questionContainer.innerText = darkQuestions[questionNumber].question;
+  console.log(darkQuestions[questionNumber].question);
 }
 /**
  * show all answer for specific question
@@ -244,7 +259,12 @@ function showChoices() {
   document.querySelector("#answer-two").innerHTML = lightQuestions[questionNumber].answerTwo;
   document.querySelector("#answer-three").innerHTML = lightQuestions[questionNumber].answerThree;
   document.querySelector("#answer-four").innerHTML = lightQuestions[questionNumber].answerFour;
-
+}
+function showDarkChoices(){
+  document.querySelector("#answer-one").innerHTML = darkQuestions[questionNumber].answerOne;
+  document.querySelector("#answer-two").innerHTML = darkQuestions[questionNumber].answerTwo;
+  document.querySelector("#answer-three").innerHTML = darkQuestions[questionNumber].answerThree;
+  document.querySelector("#answer-four").innerHTML = darkQuestions[questionNumber].answerFour;
 }
 
 /**
@@ -256,10 +276,14 @@ function showChoices() {
  */
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
+
+
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
+  let correctDarkAnswer = darkQuestions[questionNumber].correctAnswer;
+  
   let scoreDiv = document.getElementById('score-container');
   //if clicked answer is the same of correctanswer
-  if (clickedAnswer === correctAnswer) {
+  if ((clickedAnswer === correctAnswer) || (clickedAnswer === correctDarkAnswer)) {
     console.log('correct');
     this.classList.add('correct-answer')
 
@@ -272,7 +296,6 @@ function checker(event) {
     //if clicked answer is not the same of correct answer
   } else {
     console.log('incorrect');
-    incorrect++;
     this.classList.add('incorrect-answer')
     // add div inside score container and style red
     let scoreBoxes = document.createElement('div')
@@ -288,30 +311,8 @@ function checker(event) {
  */
 //https://www.youtube.com/watch?v=BOQLbu_Crc0
 incrementPositiveAnswer = num => {
- positiveScore+= num;
- console.log(positiveScore)
-}
-
-//var storedScore = localStorage.getItem("storedScore");
-/** 
-function saveScore(){
-  var newScore = document.getElementById("username").value;
-  localStorage.setItem("storedScore", newScore);
-  document.getElementById("savedTextScore").innerHTML = newScore + "Hello";
-
-  if(localStorage.getItem('score') === null){
-    localStorage.setItem('score', '[]')
-  }
-
-  var oldScore = JSON.parse(localStorage.getItem('score'));
-  oldScore.push(newScore);
-
-  localStorage.setItem('score', JSON.stringify(oldScore))
-
-}
-
-function finalScore (){
-  
+  positiveScore += num;
+  console.log(positiveScore)
 }
 
 /**
@@ -321,23 +322,32 @@ function finalScore (){
 function nextQuestion() {
   const answers = document.querySelectorAll('.answer');
   //function to check if the value selected from the getLevel was easy and if so when finish the game
-  if(document.querySelector('#levels').value === "easy"){
-    if(currentQuestionsIndex == 6){
-      stopGame()
+  if (document.querySelector('#levels').value === "easy") {
+    if (currentQuestionsIndex == 6) {
+      if (positiveScore > 3) {
+        winGame()
+      } else {
+        loseGame()
+      }
     } else {
       currentQuestionsIndex++;
       questionNumber++;
       showChoices()
       showQuestion()
-      console.log(lightQuestions[questionNumber].correctAnswer);
+      showDarkChoices()
+      showDarkQuestion()
     }
   }
 
   //function to check if the value selected from the getLevel was medium and if so when finish the game
-  if(document.querySelector('#levels').value === "medium"){
+  if (document.querySelector('#levels').value === "medium") {
     console.log('test');
-    if(currentQuestionsIndex == 10){
-      stopGame()
+    if (currentQuestionsIndex == 10) {
+      if (positiveScore > 5) {
+        winGame()
+      } else {
+        loseGame()
+      }
     } else {
       currentQuestionsIndex++;
       questionNumber++;
@@ -347,10 +357,14 @@ function nextQuestion() {
     }
   }
   //function to check if the value selected from the getLevel was difficult and if so when finish the game
-  if(document.querySelector('#levels').value === "difficult"){
+  if (document.querySelector('#levels').value === "difficult") {
     console.log('test');
-    if(currentQuestionsIndex == 14){
-      stopGame()
+    if (currentQuestionsIndex == 14) {
+      if (positiveScore > 7) {
+        winGame()
+      } else {
+        loseGame()
+      }
     } else {
       currentQuestionsIndex++;
       questionNumber++;
@@ -366,24 +380,10 @@ function nextQuestion() {
   }
 }
 
-
-//let easy = lightquestions.slice(0,8)
-//let medium = lightquestions.slice(0,12)
-/**
- * function to stop game
- */
-function stopGame() {
-  if(correctBonus <= (currentQuestionsIndex / 2)){
-    loseGame()
-  } else {
-    winGame()
-  }
-}
-
 /**
  * function to win game and bring the player to win page
  */
-function winGame(){
+function winGame() {
   let winMessage = document.getElementById('won');
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
@@ -391,7 +391,7 @@ function winGame(){
   winningMessage.innerText = `Congratulation you won the battle master ${storedUsername}! You got ${positiveScore} points`;
 }
 
-function loseGame(){
+function loseGame() {
   let lostContainer = document.getElementById('lost');
   lostContainer.classList.remove('hide');
   gameAreaElement.classList.add('hide');
@@ -400,19 +400,11 @@ function loseGame(){
 }
 
 //home button
-document.querySelector('.home-btn').addEventListener('click', function(){
+document.querySelector('.home-btn').addEventListener('click', function () {
   window.location.reload();
   return false;
 });
 
-//change side button if player played light game then runDarkGame or viceversa
-document.querySelector('.change-side').addEventListener('click', function(){
-  if("data-type" === "light"){
-    runDarkGame()
-  } else if("data-type" === "dark"){
-    runLightGame()
-  }
-});
 
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
