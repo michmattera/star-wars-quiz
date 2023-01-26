@@ -115,10 +115,29 @@
 
             <div class="overlay hide"></div>
 
-            <!--Creating score container and div inside it to have visual for correct or incorrect score -->
+            <!--Creating score container for correct or incorrect score -->
             <div id="score-container">
             </div>
         </header>
+
+        <!--Div showing when user finish to play-->
+        <section>
+            <div id="won" class="hide">
+                <p id="winning-message">
+                </p>
+                <button>Home</button>
+                <button>Change side!</button>
+                <button>Change difficulty</button>
+            </div>
+            <div id="lost" class="hide">
+                <p id="lost-message">
+                </p>
+                <button>Play again!</button>
+                <button>Change side</button>
+                <button>Change difficulty</button>
+            </div>
+        </section>
+        
         <div class="container-pick-side">
             <button data-type="light" class="side" id="light-side">
             </button>

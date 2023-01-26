@@ -325,7 +325,7 @@ function nextQuestion() {
   if(document.querySelector('#levels').value === "easy"){
     console.log('test');
     if(currentQuestionsIndex == 6){
-      alert(`stop game`);
+      stopGame()
     } else {
       currentQuestionsIndex++;
       questionNumber++;
@@ -339,7 +339,7 @@ function nextQuestion() {
   if(document.querySelector('#levels').value === "medium"){
     console.log('test');
     if(currentQuestionsIndex == 10){
-      alert(`stop game`);
+      stopGame()
     } else {
       currentQuestionsIndex++;
       questionNumber++;
@@ -352,7 +352,7 @@ function nextQuestion() {
   if(document.querySelector('#levels').value === "difficult"){
     console.log('test');
     if(currentQuestionsIndex == 14){
-      alert(`stop game`);
+      stopGame()
     } else {
       currentQuestionsIndex++;
       questionNumber++;
@@ -375,8 +375,32 @@ function nextQuestion() {
  * function to stop game
  */
 function stopGame() {
-  alert(`stop`)
+  if(correctBonus <= (currentQuestionsIndex / 2)){
+    loseGame()
+  } else {
+    winGame()
+  }
 }
+
+/**
+ * function to win game and bring the player to win page
+ */
+function winGame(){
+  let winMessage = document.getElementById('won');
+  winMessage.classList.remove('hide');
+  gameAreaElement.classList.add('hide');
+  let winningMessage = document.getElementById('winning-message');
+  winningMessage.innerText = `Congratulation you won! You got ${positiveScore} points`;
+}
+
+function loseGame(){
+  let lostContainer = document.getElementById('lost');
+  lostContainer.classList.remove('hide');
+  gameAreaElement.classList.add('hide');
+  let lostMessage = document.getElementById('lost-message');
+  lostMessage.innerText = `Oh no! You lost the battle! You got ${positiveScore} points`;
+}
+
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
 
