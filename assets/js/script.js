@@ -221,9 +221,9 @@ function runLightGame() {
   showQuestion()
   showChoices()
   //add event listener for each button clicked and run function checker to see if is correct or not
-  const buttonList = document.querySelectorAll("button");
-  buttonList.forEach(button => {
-    button.addEventListener('click', checker);
+  const buttonList = document.querySelectorAll(".answer");
+  buttonList.forEach(answer => {
+    answer.addEventListener('click', checker);
   })
   checker()
 }
@@ -322,7 +322,6 @@ function nextQuestion() {
   const answers = document.querySelectorAll('.answer');
   //function to check if the value selected from the getLevel was easy and if so when finish the game
   if(document.querySelector('#levels').value === "easy"){
-    console.log('test');
     if(currentQuestionsIndex == 6){
       stopGame()
     } else {
@@ -404,6 +403,15 @@ function loseGame(){
 document.querySelector('.home-btn').addEventListener('click', function(){
   window.location.reload();
   return false;
+});
+
+//change side button if player played light game then runDarkGame or viceversa
+document.querySelector('.change-side').addEventListener('click', function(){
+  if("data-type" === "light"){
+    runDarkGame()
+  } else if("data-type" === "dark"){
+    runLightGame()
+  }
 });
 
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
