@@ -104,7 +104,7 @@
 
                     <ul>
                         <li>list light Jedy</li>
-                        
+
                     </ul>
                     <p id="board">
                         here
@@ -120,24 +120,6 @@
             </div>
         </header>
 
-        <!--Div showing when user finish to play-->
-        <section>
-            <div id="won" class="hide">
-                <p id="winning-message">
-                </p>
-                <button>Home</button>
-                <button>Change side!</button>
-                <button>Change difficulty</button>
-            </div>
-            <div id="lost" class="hide">
-                <p id="lost-message">
-                </p>
-                <button>Play again!</button>
-                <button>Change side</button>
-                <button>Change difficulty</button>
-            </div>
-        </section>
-        
         <div class="container-pick-side">
             <button data-type="light" class="side" id="light-side">
             </button>
@@ -145,21 +127,44 @@
             </button>
         </div>
 
-        <!--Creating form for easy-medium-difficult modality for quiz-->
-        <div class="choose-level">
-            <form action="">
-                <select name="levels" id="levels">
-                    <option id="easy" class="level1" value="easy">Easy</option>
-                    <option id="medium" class="level2" value="medium">Medium</option>
-                    <option id="difficult" class="level3" value="difficult">Difficult</option>
-                    <option id="expert" class="level4" value="expert">Expert</option>
-                </select>
-            </form>
-        </div>
-         <!--Creating div for when the level has been chosen to test difficulty js-->
-         <div id="playing-level">
-            <p>Current level: </p>
-         </div>
+        <!--Div showing when user finish to play-->
+        <section class="message">
+            <div id="won" class="hide">
+                <p id="winning-message">
+                </p>
+                <button>Save score</button>
+                <button class="home-btn">Home</button>
+                <button>Change side!</button>
+                <button>Change difficulty</button>
+            </div>
+            <div id="lost" class="hide">
+                <p id="lost-message">
+                </p>
+                <button>Save score</button>
+                <button>Restart Game</button>
+                <button id="change-side">Change side</button>
+                <button id="change-difficulty">Change difficulty</button>
+            </div>
+        </section>
+
+        <section>
+            <!--Creating div for when the level has been chosen to test difficulty js-->
+            <div id="playing-level">
+                <p></p>
+            </div>
+            <!--Creating form for easy-medium-difficult modality for quiz-->
+            <div class="choose-level">
+                <form action="">
+                    <select name="levels" id="levels">
+                        <option id="easy" class="level1" value="easy">Easy</option>
+                        <option id="medium" class="level2" value="medium">Medium</option>
+                        <option id="difficult" class="level3" value="difficult">Difficult</option>
+                        <option id="expert" class="level4" value="expert">Expert</option>
+                    </select>
+                </form>
+            </div>
+        </section>
+
         <div id="game-area" class="hide">
             <div id="question">questionTest</div>
 

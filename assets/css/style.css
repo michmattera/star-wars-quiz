@@ -269,6 +269,26 @@ input {
   display: block;
 }
 
+/*container finish game winning or losing message */
+.message{
+  display: flex;
+  width: 80%;
+  margin: 5% 10%;
+  background-color: #0783be;
+  color: #ddd;
+  text-align: center;
+  align-items: center;
+  font-size: inherit;
+}
+
+/*Style text when chosen modality to play*/
+#playing-level{
+  font-size: 20px;
+  float: right;
+  width: 10%;
+  margin-left: 5%;
+}
+
 /*Footer*/
 .page-container {
   min-height: 100vh;

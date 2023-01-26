@@ -73,10 +73,8 @@ function leaderboard (){
 
 function get(){
   localStorage.getItem("storedUsername");
-  document.getElementById("openedText").innerHTML = storedUsername + "stored";
 }
 
-function calcolateFinalScore() {}
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
@@ -153,7 +151,7 @@ var storedExpertLevel = localStorage.getItem("storedExpertLevel");
 function easyModality(){
   let chosenLevel = document.getElementById('easy').value;
   localStorage.setItem("storedEasyLevel", chosenLevel);
-  document.getElementById("playing-level").innerHTML = chosenLevel;
+  document.getElementById("playing-level").innerHTML = "You are playing : " + chosenLevel;
   if(localStorage.getItem('easy') === null){
     localStorage.setItem('easy', '[]')
   }
@@ -169,7 +167,7 @@ function easyModality(){
 function mediumModality(){
   let chosenMediumLevel = document.getElementById('medium').value;
   localStorage.setItem("storedMediumLevel", chosenMediumLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing" + chosenMediumLevel + "modality";
+  document.getElementById("playing-level").innerHTML = "You are playing : " + chosenMediumLevel;
   var oldData = JSON.parse(localStorage.getItem('medium'));
   //oldData.push(chosenLevel);
   localStorage.setItem('medium', JSON.stringify(oldData));
@@ -180,7 +178,7 @@ function mediumModality(){
 function difficultModality(){
   let chosenDifficultLevel = document.getElementById('difficult').value;
   localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
-  document.getElementById("playing-level").innerHTML = "You are playing" +  chosenDifficultLevel + "modality";
+  document.getElementById("playing-level").innerHTML = "You are playing : " +  chosenDifficultLevel;
   var oldData = JSON.parse(localStorage.getItem('difficult'));
   //oldData.push(chosenLevel);
   localStorage.setItem('difficult', JSON.stringify(oldData))
@@ -219,6 +217,7 @@ function runLightGame() {
   chosenDarkSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
+  
   showQuestion()
   showChoices()
   //add event listener for each button clicked and run function checker to see if is correct or not
@@ -390,7 +389,7 @@ function winGame(){
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let winningMessage = document.getElementById('winning-message');
-  winningMessage.innerText = `Congratulation you won! You got ${positiveScore} points`;
+  winningMessage.innerText = `Congratulation you won the battle master ${storedUsername}! You got ${positiveScore} points`;
 }
 
 function loseGame(){
@@ -398,8 +397,14 @@ function loseGame(){
   lostContainer.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let lostMessage = document.getElementById('lost-message');
-  lostMessage.innerText = `Oh no! You lost the battle! You got ${positiveScore} points`;
+  lostMessage.innerText = `Oh no! You lost the battle master ${storedUsername} You got ${positiveScore} points`;
 }
+
+//home button
+document.querySelector('.home-btn').addEventListener('click', function(){
+  window.location.reload();
+  return false;
+});
 
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
 //Play audio and user decide when to play or stop music
