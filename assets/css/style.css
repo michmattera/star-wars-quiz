@@ -80,22 +80,22 @@ body>* {
 
 /*Style for div with questions and answer*/
 #game-area {
-  background-color: #0783be;
-  color: #112948;
+  background-color: transparent;
+  color: #ddd;
   width: 70%;
   height: 400px;
   margin: 0 15%;
   align-items: center;
   text-align: center;
-  border: 3px solid #d8c6c6;
 }
 
 /*Main button*/
+/*have to change just background of chose side*/
 button{
   text-align: center;
   justify-content: center;
-  background-color: #112948;
-  color: #0783be;
+  background-color: #ddd;
+  color: #112948;
   font-weight: bold;
   height: 80px;
   width: 35%;
@@ -134,7 +134,6 @@ button{
 }
 .incorrect-answer{
   background-color: rgb(136, 0, 0);
-  
   box-shadow: 0 0 70px #f00;
 }
 
@@ -145,23 +144,24 @@ button{
   border-radius: 4px;
   padding: 8px;
   margin: 0 16px;
-  align-items: center;
-  width: 50%;
-  margin: 0 25%;
+  width: auto;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .score-box {
-  border: 1px solid black;
   border-radius: 4px;
-  height: 24px;
-  width: 24px;
-  margin-right: 4px;
+  height: 25px;
+  width: 50px;
+  margin-right: 2px;
 }
 .green{
   background-color: #0f0;
+  box-shadow: 0 0 20px #0f0;
 }
 .red{
   background-color: #f00;
+  box-shadow: 0 0 20px #f00;
 }
 
 /*test style modal*/
@@ -272,13 +272,20 @@ input {
 /*container finish game winning or losing message */
 .message{
   display: flex;
-  width: 80%;
-  margin: 5% 10%;
+  width: 50%;
+  margin: 5% 25%;
   background-color: #0783be;
   color: #ddd;
   text-align: center;
   align-items: center;
   font-size: inherit;
+}
+
+#winning-message,
+#lost-message{
+  text-align: center;
+  font-size: 27px;
+  margin: 3%;
 }
 
 /*Style text when chosen modality to play*/

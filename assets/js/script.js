@@ -156,8 +156,6 @@ function easyModality() {
   var oldData = JSON.parse(localStorage.getItem('easy'));
   //oldData.push(chosenLevel);
   localStorage.setItem('easy', JSON.stringify(oldData));
-
-
 }
 /**
  * store medium modality and print it in game level chosen
@@ -235,8 +233,24 @@ function runLightGame() {
   checker()
 }
 
+//function to change side still not working , bug found
 function changeSide(){
   runDarkGame()
+}
+
+//function to restart game once is finished
+function restartGame(){
+
+ currentQuestionsIndex = 0
+ questionNumber = 0;
+ totalQuestions = 14;
+ positiveScore = 0;
+ negativeScore = 0;
+ correctBonus = 1;
+ score;
+scoreContainer ;
+buttonAnswerOne;
+runLightGame()
 }
 
 /**
@@ -276,8 +290,6 @@ function showDarkChoices(){
  */
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
-
-
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
   let correctDarkAnswer = darkQuestions[questionNumber].correctAnswer;
   
@@ -334,8 +346,8 @@ function nextQuestion() {
       questionNumber++;
       showChoices()
       showQuestion()
-      showDarkChoices()
-      showDarkQuestion()
+      //showDarkChoices()
+      //showDarkQuestion() showing error in display light side now
     }
   }
 
@@ -388,7 +400,8 @@ function winGame() {
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let winningMessage = document.getElementById('winning-message');
-  winningMessage.innerText = `Congratulation you won the battle master ${storedUsername}! You got ${positiveScore} points`;
+  winningMessage.innerText = `Congratulation you won the battle master ${storedUsername}!
+   You got ${positiveScore} points`;
 }
 
 function loseGame() {
@@ -396,7 +409,8 @@ function loseGame() {
   lostContainer.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let lostMessage = document.getElementById('lost-message');
-  lostMessage.innerText = `Oh no! You lost the battle master ${storedUsername} You got ${positiveScore} points`;
+  lostMessage.innerText = `Oh no! You lost the battle master ${storedUsername}
+   You got ${positiveScore} points`;
 }
 
 //home button
