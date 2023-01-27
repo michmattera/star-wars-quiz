@@ -50,6 +50,9 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
 
 
+let playerInfo = (localStorage.getItem('storedUsername')) + JSON.parse(localStorage.getItem('score'));
+
+let highScores = (localStorage.getItem("highScores"));
 var storedUsername = localStorage.getItem("storedUsername");
 var storedScore = localStorage.getItem("storedScore");
 function saveNameScore() {
@@ -64,11 +67,12 @@ function saveNameScore() {
   localStorage.setItem('username', JSON.stringify(oldData));
 
   var newScore = localStorage.setItem("score", positiveScore);
+  
+  localStorage.setItem("highScores", playerInfo);
 }
 
 
 /*
-const highScores = JSON.parse(localStorage.getItem("highScores"));
 
 
 var storedScore = localStorage.getItem("save-score")
@@ -95,8 +99,7 @@ saveHighScore = (e) => {
 };
 **/
 function leaderboard() {
-  
-board.innerHTML = (localStorage.getItem('storedUsername')) + JSON.parse(localStorage.getItem('score'));
+  board.innerHTML = playerInfo;
   
 }
 
