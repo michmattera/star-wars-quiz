@@ -48,9 +48,11 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 
 // youtube video on how to store item with local storage
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
-var storedUsername = localStorage.getItem("storedUsername");
 
-function saveName() {
+
+var storedUsername = localStorage.getItem("storedUsername");
+var storedScore = localStorage.getItem("storedScore");
+function saveNameScore() {
   var newUsername = document.getElementById("username").value;
   localStorage.setItem("storedUsername", newUsername);
   document.getElementById("savedText").innerHTML = newUsername + "Hello";
@@ -59,28 +61,27 @@ function saveName() {
   }
   var oldData = JSON.parse(localStorage.getItem('username'));
   oldData.push(newUsername);
-  localStorage.setItem('username', JSON.stringify(oldData))
+  localStorage.setItem('username', JSON.stringify(oldData));
+
+  var newScore = localStorage.setItem("score", positiveScore);
 }
 
 
+/*
+const highScores = JSON.parse(localStorage.getItem("highScores"));
+
+
+var storedScore = localStorage.getItem("save-score")
 const saveScore = document.getElementById("save-score");
 username.addEventListener("keyup", () => {
   saveScore.disabled = !username.value;
-});
-
-/**
-* Change tooltip for enabled button
-*/
-saveScore.addEventListener("mouseover", () => {
-  saveScore.setAttribute("title", "Click to save!");
-});
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+}); 
 
 saveHighScore = (e) => {
 
   const userEndResult = {
-      score: positiveScore
-      //name: newUsername.value
+      score: positiveScore,
+      name: storedUsername
   };
 
   //Scores getting sorted from highest to lowest
@@ -89,25 +90,14 @@ saveHighScore = (e) => {
   // Show at max 6 high scores
   highScores.splice(5);
   localStorage.setItem("highScores", JSON.stringify(highScores));
-  leaderboard()
-};
-/*
-var storedScore = localStorage.getItem("storedScore");
-function saveScore(){
-  var newScore = positiveScore;
-  var newPlayerScore = {newScore, newUsername}
-  localStorage.setItem("storedScore", newScore);
+  localStorage.setItem("userEndResult", JSON.stringify(score))
   
-  storedScore.push(newScore);
-  localStorage.setItem('newScore', JSON.stringify(storedScore))
-}
+};
 **/
 function leaderboard() {
-  if (localStorage.getItem('username') != null) {
-    document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('username'));
-    
-  document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('highScores'));
-  }
+  
+board.innerHTML = (localStorage.getItem('storedUsername')) + JSON.parse(localStorage.getItem('score'));
+  
 }
 
 function get() {
@@ -441,6 +431,8 @@ function winGame() {
   let winningMessage = document.getElementById('winning-message');
   winningMessage.innerText = `Congratulation you won the battle master ${storedUsername}!
    You got ${positiveScore} points`;
+
+   saveNameScore()
 }
 
 function loseGame() {
@@ -450,6 +442,8 @@ function loseGame() {
   let lostMessage = document.getElementById('lost-message');
   lostMessage.innerText = `Oh no! You lost the battle master ${storedUsername}
    You got ${positiveScore} points`;
+
+   saveNameScore()
 }
 
 //home button
