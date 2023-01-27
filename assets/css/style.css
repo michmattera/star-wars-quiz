@@ -38,6 +38,7 @@ body>* {
 
 .page-container {
   background-image: url('../images/space.png');
+  background-position: bottom;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -49,6 +50,7 @@ body>* {
 #light-side {
   border: 5px solid #ffd0d0;
   border-radius: 20%;
+  background-color: transparent;
 }
 
 /*Learn how to do shadow https://www.youtube.com/watch?v=XFuilG5FAIc*/
@@ -249,7 +251,7 @@ input {
 
 .btn-open-instruction,
 .btn-open-username,
-.btn-open-leaderboard {
+.btn-open-leaderboard{
   background-color: #0783be;
   color: #ddd;
   height: 60px;
@@ -268,7 +270,27 @@ input {
   float: right;
   display: block;
 }
-
+/*form level */
+select#levels {
+  height: 30px;
+  font-size: 15px;
+  background-color: #0783be;
+  color: #ddd;
+  font-weight: bold;
+  display: flex;
+  border-radius: 15%;
+  border: 4px solid #bfda46;
+}
+#button-container{
+  display: flex;
+  align-items: center;
+}
+.push {
+  margin-left: auto;
+}
+#button-container div:last-child {
+  margin-right: auto;
+}
 /*container finish game winning or losing message */
 .message{
   display: flex;

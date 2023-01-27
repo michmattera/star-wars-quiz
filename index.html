@@ -19,7 +19,7 @@
     <title>Star wars quiz</title>
 </head>
 
-<!--Body of the game page with background image, main button to start quiz and footer-->
+<!--Body of the game page with background image, main button to start quiz picking the side, modals to have different information and footer-->
 
 <body class="index">
     <div class="page-container">
@@ -31,7 +31,7 @@
             <p id="savedTextScore"></p>
             <p id="openedText"> </p>
             <p id="savedText"> </p>
-
+<div id="button-container">
             <!--Test modal for instruction when clicked on it-->
             <section class="modal-instruction hide">
                 <div class="flex">
@@ -115,6 +115,24 @@
 
             <div class="overlay hide"></div>
 
+            <section>
+                <!--Creating div for when the level has been chosen to test difficulty js-->
+                <div id="playing-level">
+                    <p></p>
+                </div>
+                <!--Creating form for easy-medium-difficult modality for quiz-->
+                <div class="choose-level push" >
+                    <form action="">
+                        <select name="levels" id="levels">
+                            <option id="easy" class="level1" value="easy">Easy</option>
+                            <option id="medium" class="level2" value="medium">Medium</option>
+                            <option id="difficult" class="level3" value="difficult">Difficult</option>
+                            <option id="expert" class="level4" value="expert">Expert</option>
+                        </select>
+                    </form>
+                </div>
+            </section>
+            </div>
             <!--Creating score container for correct or incorrect score -->
             <div id="score-container">
             </div>
@@ -132,34 +150,16 @@
             <div id="won" class="hide">
                 <p id="winning-message">
                 </p>
-                <button class="home-btn">Home</button>               
-                <button  class="btn-open-leaderboard" id="save-score" onclick="saveNameScore()">Save score</button>
+                <button class="home-btn">Home</button>
+                <button class="btn-open-leaderboard" id="save-score" onclick="saveNameScore()">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side!</button>
             </div>
             <div id="lost" class="hide">
                 <p id="lost-message">
                 </p>
                 <button onclick="restartGame()">Restart Game</button>
-                <button class="btn-open-leaderboard" id="save-score"  onclick="saveNameScore()">Save score</button>
+                <button class="btn-open-leaderboard" id="save-score" onclick="saveNameScore()">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side</button>
-            </div>
-        </section>
-
-        <section>
-            <!--Creating div for when the level has been chosen to test difficulty js-->
-            <div id="playing-level">
-                <p></p>
-            </div>
-            <!--Creating form for easy-medium-difficult modality for quiz-->
-            <div class="choose-level">
-                <form action="">
-                    <select name="levels" id="levels">
-                        <option id="easy" class="level1" value="easy">Easy</option>
-                        <option id="medium" class="level2" value="medium">Medium</option>
-                        <option id="difficult" class="level3" value="difficult">Difficult</option>
-                        <option id="expert" class="level4" value="expert">Expert</option>
-                    </select>
-                </form>
             </div>
         </section>
 
