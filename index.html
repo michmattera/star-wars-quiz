@@ -133,14 +133,14 @@
                 <p id="winning-message">
                 </p>
                 <button class="home-btn">Home</button>               
-                <button>Save score</button>
+                <button  class="btn-open-leaderboard" onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side!</button>
             </div>
             <div id="lost" class="hide">
                 <p id="lost-message">
                 </p>
                 <button onclick="restartGame()">Restart Game</button>
-                <button>Save score</button>
+                <button class="btn-open-leaderboard" id="save-score"  onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side</button>
             </div>
         </section>

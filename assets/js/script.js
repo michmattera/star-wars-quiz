@@ -33,6 +33,7 @@ closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 //leaderboard modal
 const modalLeaderboard = document.querySelector(".modal-leaderboard");
 const openModalLeaderboardBtn = document.querySelector(".btn-open-leaderboard");
+//const openModalLeaderboardBtnTwo = document.querySelector(".btn-open-leaderboard");
 const closeModalLeaderboardBtn = document.querySelector(".btn-close-leaderboard");
 const openModalLeaderboard = function () {
   modalLeaderboard.classList.remove("hide");
@@ -53,21 +54,59 @@ function saveName() {
   var newUsername = document.getElementById("username").value;
   localStorage.setItem("storedUsername", newUsername);
   document.getElementById("savedText").innerHTML = newUsername + "Hello";
-
   if (localStorage.getItem('username') === null) {
     localStorage.setItem('username', '[]')
   }
-
   var oldData = JSON.parse(localStorage.getItem('username'));
   oldData.push(newUsername);
-
   localStorage.setItem('username', JSON.stringify(oldData))
-
 }
 
+
+const saveScore = document.getElementById("save-score");
+username.addEventListener("keyup", () => {
+  saveScore.disabled = !username.value;
+});
+
+/**
+* Change tooltip for enabled button
+*/
+saveScore.addEventListener("mouseover", () => {
+  saveScore.setAttribute("title", "Click to save!");
+});
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+saveHighScore = (e) => {
+
+  const userEndResult = {
+      score: positiveScore
+      //name: newUsername.value
+  };
+
+  //Scores getting sorted from highest to lowest
+  highScores.push(userEndResult);
+  highScores.sort((a, b) => b.score - a.score);
+  // Show at max 6 high scores
+  highScores.splice(5);
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+  leaderboard()
+};
+/*
+var storedScore = localStorage.getItem("storedScore");
+function saveScore(){
+  var newScore = positiveScore;
+  var newPlayerScore = {newScore, newUsername}
+  localStorage.setItem("storedScore", newScore);
+  
+  storedScore.push(newScore);
+  localStorage.setItem('newScore', JSON.stringify(storedScore))
+}
+**/
 function leaderboard() {
   if (localStorage.getItem('username') != null) {
     document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('username'));
+    
+  document.getElementById('board').innerHTML = JSON.parse(localStorage.getItem('highScores'));
   }
 }
 
