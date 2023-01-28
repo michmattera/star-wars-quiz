@@ -50,14 +50,14 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 //https://www.youtube.com/watch?v=DFhmNLKwwGw
 const highScoresList = document.getElementById("highScoresList");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var username = document.getElementById("username");
 
-var newUsername = document.getElementById("username").value;
 /**
  * Show High Score List
  * Return name, scor
  */
 highScoresList.innerHTML = highScores.map((score) => {
-    return `
+  return `
         <tr>
             <td>${score.name}</td>
             <td>${score.score}</td>
@@ -69,8 +69,8 @@ saveHighScore = (e) => {
   e.preventDefault();
 
   const userEndResult = {
-      score: positiveScore,
-      name: newUsername
+    score: positiveScore,
+    name: username.value
   };
 
   //Scores getting sorted from highest to lowest
@@ -80,6 +80,7 @@ saveHighScore = (e) => {
   highScores.splice(6);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
+  
 };
 
 /*
@@ -151,8 +152,9 @@ function get() {
 }
 **/
 function leaderboard() {
+
   board.innerHTML = highScores;
-  
+  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 }
 
 
@@ -162,6 +164,7 @@ let questionContainer = document.getElementById('question');
 let answerContainer = document.getElementById('answer-buttons');
 let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
+let iconsContainer = document.getElementsByClassName('button-container');
 //let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
 let questionNumber = 0;
@@ -182,7 +185,7 @@ let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
  */
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName('button');
-  
+
   getLevel()
   for (let button of buttons) {
     button.addEventListener('click', function () {
@@ -280,7 +283,7 @@ function runDarkGame() {
   chosenLightSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
-  
+
   showDarkQuestion()
   showDarkChoices()
   //add event listener for each button clicked and run function checker to see if is correct or not
@@ -314,23 +317,23 @@ function runLightGame() {
 }
 
 //function to change side still not working , bug found
-function changeSide(){
+function changeSide() {
   runDarkGame()
 }
 
 //function to restart game once is finished
-function restartGame(){
+function restartGame() {
 
- currentQuestionsIndex = 0
- questionNumber = 0;
- totalQuestions = 14;
- positiveScore = 0;
- negativeScore = 0;
- correctBonus = 1;
- score;
-scoreContainer ;
-buttonAnswerOne;
-runLightGame()
+  currentQuestionsIndex = 0
+  questionNumber = 0;
+  totalQuestions = 14;
+  positiveScore = 0;
+  negativeScore = 0;
+  correctBonus = 1;
+  score;
+  scoreContainer;
+  buttonAnswerOne;
+  runLightGame()
 }
 
 /**
@@ -341,7 +344,8 @@ function showQuestion() {
   console.log(lightQuestions[questionNumber].question);
 
 }
-function showDarkQuestion(){
+
+function showDarkQuestion() {
   questionContainer.innerText = darkQuestions[questionNumber].question;
   console.log(darkQuestions[questionNumber].question);
 }
@@ -354,7 +358,8 @@ function showChoices() {
   document.querySelector("#answer-three").innerHTML = lightQuestions[questionNumber].answerThree;
   document.querySelector("#answer-four").innerHTML = lightQuestions[questionNumber].answerFour;
 }
-function showDarkChoices(){
+
+function showDarkChoices() {
   document.querySelector("#answer-one").innerHTML = darkQuestions[questionNumber].answerOne;
   document.querySelector("#answer-two").innerHTML = darkQuestions[questionNumber].answerTwo;
   document.querySelector("#answer-three").innerHTML = darkQuestions[questionNumber].answerThree;
@@ -372,7 +377,7 @@ function checker(event) {
   let clickedAnswer = event.target.innerHTML;
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
   let correctDarkAnswer = darkQuestions[questionNumber].correctAnswer;
-  
+
   let scoreDiv = document.getElementById('score-container');
   //if clicked answer is the same of correctanswer
   if ((clickedAnswer === correctAnswer) || (clickedAnswer === correctDarkAnswer)) {
@@ -454,7 +459,7 @@ function nextQuestion() {
     if (currentQuestionsIndex == 14) {
       if (positiveScore > 7) {
         winGame()
-        
+
       } else {
         loseGame()
       }
@@ -481,9 +486,9 @@ function winGame() {
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let winningMessage = document.getElementById('winning-message');
-  winningMessage.innerText = `Congratulation you won the battle master ${newUsername}!
+  winningMessage.innerText = `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
-   
+   iconsContainer.classList.add('hide');
 }
 
 function loseGame() {
@@ -491,16 +496,16 @@ function loseGame() {
   lostContainer.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let lostMessage = document.getElementById('lost-message');
-  lostMessage.innerText = `Oh no! You lost the battle master ${newUsername}
+  lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
-
-   
+   iconsContainer.classList.add('hide');
 }
 
 //home button
 document.querySelector('.home-btn').addEventListener('click', function () {
   window.location.reload();
   return false;
+
 });
 
 
