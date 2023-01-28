@@ -46,14 +46,61 @@ const closeModalLeaderboard = function () {
 openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 
+
+//https://www.youtube.com/watch?v=DFhmNLKwwGw
+const highScoresList = document.getElementById("highScoresList");
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+var newUsername = document.getElementById("username").value;
+/**
+ * Show High Score List
+ * Return name, scor
+ */
+highScoresList.innerHTML = highScores.map((score) => {
+    return `
+        <tr>
+            <td>${score.name}</td>
+            <td>${score.score}</td>
+        </tr>
+    `;
+}).join("");
+
+saveHighScore = (e) => {
+  e.preventDefault();
+
+  const userEndResult = {
+      score: positiveScore,
+      name: newUsername
+  };
+
+  //Scores getting sorted from highest to lowest
+  highScores.push(userEndResult);
+  highScores.sort((a, b) => b.score - a.score);
+  // Show at max 6 high scores
+  highScores.splice(6);
+
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+};
+
+/*
+function saveData (){
+  localStorage.setItem("storedUsername", newUsername);
+  document.getElementById("savedText").innerHTML = newUsername + "Hello";
+  if (localStorage.getItem('username') === null) {
+    localStorage.setItem('username', '[]')
+  }
+  var oldData = JSON.parse(localStorage.getItem('username'));
+  oldData.push(newUsername);
+  localStorage.setItem('username', JSON.stringify(oldData));
+}
+
+
+
+function getData (){}
 // youtube video on how to store item with local storage
 //https://www.youtube.com/watch?v=6R9SaZdyaVU
-
-
-let playerInfo = (localStorage.getItem('storedUsername')) + JSON.parse(localStorage.getItem('score'));
-
+/*
 let highScores = (localStorage.getItem("highScores"));
-var storedUsername = localStorage.getItem("storedUsername");
 var storedScore = localStorage.getItem("storedScore");
 function saveNameScore() {
   var newUsername = document.getElementById("username").value;
@@ -68,6 +115,7 @@ function saveNameScore() {
 
   var newScore = localStorage.setItem("score", positiveScore);
   
+let playerInfo = (localStorage.getItem('storedUsername')) + JSON.parse(localStorage.getItem('score'));
   localStorage.setItem("highScores", playerInfo);
 }
 
@@ -97,14 +145,14 @@ saveHighScore = (e) => {
   localStorage.setItem("userEndResult", JSON.stringify(score))
   
 };
-**/
-function leaderboard() {
-  board.innerHTML = playerInfo;
-  
-}
 
 function get() {
   localStorage.getItem("storedUsername");
+}
+**/
+function leaderboard() {
+  board.innerHTML = highScores;
+  
 }
 
 
@@ -134,7 +182,7 @@ let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
  */
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName('button');
-  get()
+  
   getLevel()
   for (let button of buttons) {
     button.addEventListener('click', function () {
@@ -406,6 +454,7 @@ function nextQuestion() {
     if (currentQuestionsIndex == 14) {
       if (positiveScore > 7) {
         winGame()
+        
       } else {
         loseGame()
       }
@@ -432,10 +481,9 @@ function winGame() {
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let winningMessage = document.getElementById('winning-message');
-  winningMessage.innerText = `Congratulation you won the battle master ${storedUsername}!
+  winningMessage.innerText = `Congratulation you won the battle master ${newUsername}!
    You got ${positiveScore} points`;
-
-   saveNameScore()
+   
 }
 
 function loseGame() {
@@ -443,10 +491,10 @@ function loseGame() {
   lostContainer.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   let lostMessage = document.getElementById('lost-message');
-  lostMessage.innerText = `Oh no! You lost the battle master ${storedUsername}
+  lostMessage.innerText = `Oh no! You lost the battle master ${newUsername}
    You got ${positiveScore} points`;
 
-   saveNameScore()
+   
 }
 
 //home button

@@ -29,7 +29,6 @@
                 Star wars quiz!
             </h1>
             <p id="savedTextScore"></p>
-            <p id="openedText"> </p>
             <p id="savedText"> </p>
             <div id="button-container">
                 <!--Test modal for instruction when clicked on it-->
@@ -88,7 +87,7 @@
                             <input type="text" name="username" id="username" placeholder="username">
 
                         </form>
-                        <button class="save" onclick="saveNameScore()">SAVE</button>
+                        <button class="save">SAVE</button>
                     </div>
                 </section>
 
@@ -105,9 +104,8 @@
                             Leaderboard light Jedy
                         </h3>
 
-                        <ul>
+                        <ul id="highScoresList">
                             <li>list light Jedy</li>
-
                         </ul>
                         <p id="board">
                             here
@@ -152,14 +150,14 @@
                 <p id="winning-message">
                 </p>
                 <button class="home-btn">Home</button>
-                <button class="btn-open-leaderboard" id="save-score" onclick="saveNameScore()">Save score</button>
+                <button class="btn-open-leaderboard" id="save-score" onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side!</button>
             </div>
             <div id="lost" class="hide">
                 <p id="lost-message">
                 </p>
                 <button onclick="restartGame()">Restart Game</button>
-                <button class="btn-open-leaderboard" id="save-score" onclick="saveNameScore()">Save score</button>
+                <button class="btn-open-leaderboard" id="save-score" onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side</button>
             </div>
         </section>
