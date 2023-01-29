@@ -146,7 +146,7 @@
         </div>
 
         <!--Div showing when user finish to play-->
-        <section class="message">
+        <section id="message">
             <div id="won" class="hide">
                 <p id="winning-message">
                 </p>
@@ -157,7 +157,7 @@
             <div id="lost" class="hide">
                 <p id="lost-message">
                 </p>
-                <button onclick="restartGame()">Restart Game</button>
+                <button id="restart" onclick="restartGame()">Restart Game</button>
                 <button class="btn-open-leaderboard" id="save-score" onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side</button>
             </div>

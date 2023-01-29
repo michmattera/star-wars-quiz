@@ -164,7 +164,7 @@ let questionContainer = document.getElementById('question');
 let answerContainer = document.getElementById('answer-buttons');
 let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
-let iconsContainer = document.getElementsByClassName('button-container');
+let iconsContainer = document.getElementById('button-container');
 //let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
 let currentQuestionsIndex = 0
 let questionNumber = 0;
@@ -176,6 +176,11 @@ let score;
 let level = document.getElementById("levels");
 let scoreContainer = document.getElementById('score');
 let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
+let messageContainer = document.getElementById('message');
+let winMessage = document.getElementById('won');
+let lostContainer = document.getElementById('lost');
+
+let restartBtn = document.getElementById('restart')
 
 /**
  * Wait for dom to be loaded
@@ -283,7 +288,6 @@ function runDarkGame() {
   chosenLightSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
-
   showDarkQuestion()
   showDarkChoices()
   let dark = document.getElementById('pickedSide');
@@ -294,7 +298,6 @@ function runDarkGame() {
     answer.addEventListener('click', checker);
   })
   checker()
-
 }
 
 /**
@@ -309,10 +312,8 @@ function runLightGame() {
   gameAreaElement.classList.remove('hide')
   let light = document.getElementById('pickedSide');
   light.innerText = "light";
-
   showQuestion()
   showChoices()
-
   //add event listener for each button clicked and run function checker to see if is correct or not
   const buttonList = document.querySelectorAll(".answer");
   buttonList.forEach(answer => {
@@ -323,22 +324,29 @@ function runLightGame() {
 
 //function to change side still not working , bug found
 function changeSide() {
-  runDarkGame()
+  if(pickedSide === "light"){
+    runDarkGame()
+  } else {
+    runLightGame()
+  }
+  
 }
 
 //function to restart game once is finished
 function restartGame() {
-
-  currentQuestionsIndex = 0
+  lostMessage.classList.add('hide');
+  lostContainer.classList.add('hide');
+  winningMessage.classList.add('hide');
+  clickedAnswer = 0;
+  currentQuestionsIndex = 0;
   questionNumber = 0;
-  totalQuestions = 14;
   positiveScore = 0;
-  negativeScore = 0;
-  correctBonus = 1;
-  score;
-  scoreContainer;
-  buttonAnswerOne;
-  runLightGame()
+  score = 0;
+  if(pickedSide === "light"){
+    runDarkGame()
+  } else {
+    runLightGame()
+  }
 }
 
 /**
@@ -407,7 +415,6 @@ function checker(event) {
   }
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
-
 /**
  * function to increment correct score
  */
@@ -498,23 +505,21 @@ function nextQuestion() {
  * function to win game and bring the player to win page
  */
 function winGame() {
-  let winMessage = document.getElementById('won');
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
-  let winningMessage = document.getElementById('winning-message');
   winningMessage.innerText = `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
-  iconsContainer.classList.add('hide');
+  iconsContainer.classList.add('hide')
 }
 
+let lostMessage = document.getElementById('lost-message');
+let winningMessage = document.getElementById('winning-message');
 function loseGame() {
-  let lostContainer = document.getElementById('lost');
   lostContainer.classList.remove('hide');
   gameAreaElement.classList.add('hide');
-  let lostMessage = document.getElementById('lost-message');
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
-  iconsContainer.classList.add('hide');
+   iconsContainer.classList.add('hide')
 }
 
 //home button

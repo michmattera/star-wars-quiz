@@ -293,7 +293,7 @@ select#levels {
   margin-right: auto;
 }
 /*container finish game winning or losing message */
-.message{
+#message{
   display: flex;
   width: 50%;
   margin: 5% 25%;
