@@ -324,12 +324,20 @@ function runLightGame() {
 
 //function to change side still not working , bug found
 function changeSide() {
-  if(pickedSide === "light"){
+  lostMessage.classList.add('hide');
+  lostContainer.classList.add('hide');
+  winningMessage.classList.add('hide');
+  winMessage.classList.add('hide');
+  clickedAnswer = 0;
+  currentQuestionsIndex = 0;
+  questionNumber = 0;
+  positiveScore = 0;
+  score = 0;
+  if(pickedSide.innerText === "light"){
     runDarkGame()
   } else {
     runLightGame()
   }
-  
 }
 
 //function to restart game once is finished
@@ -337,12 +345,13 @@ function restartGame() {
   lostMessage.classList.add('hide');
   lostContainer.classList.add('hide');
   winningMessage.classList.add('hide');
+  winMessage.classList.add('hide');
   clickedAnswer = 0;
   currentQuestionsIndex = 0;
   questionNumber = 0;
   positiveScore = 0;
   score = 0;
-  if(pickedSide === "light"){
+  if(pickedSide.innerText === "dark"){
     runDarkGame()
   } else {
     runLightGame()
