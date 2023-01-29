@@ -80,7 +80,7 @@ saveHighScore = (e) => {
   highScores.splice(6);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
-  
+
 };
 
 /*
@@ -286,6 +286,8 @@ function runDarkGame() {
 
   showDarkQuestion()
   showDarkChoices()
+  let dark = document.getElementById('pickedSide');
+  dark.innerText = "dark";
   //add event listener for each button clicked and run function checker to see if is correct or not
   const buttonList = document.querySelectorAll(".answer");
   buttonList.forEach(answer => {
@@ -305,9 +307,12 @@ function runLightGame() {
   chosenDarkSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
+  let light = document.getElementById('pickedSide');
+  light.innerText = "light";
 
   showQuestion()
   showChoices()
+
   //add event listener for each button clicked and run function checker to see if is correct or not
   const buttonList = document.querySelectorAll(".answer");
   buttonList.forEach(answer => {
@@ -429,10 +434,13 @@ function nextQuestion() {
     } else {
       currentQuestionsIndex++;
       questionNumber++;
-      showChoices()
-      showQuestion()
-      //showDarkChoices()
-      //showDarkQuestion() showing error in display light side now
+      if (pickedSide.innerText === "light") {
+        showChoices()
+        showQuestion()
+      } else {
+        showDarkChoices()
+        showDarkQuestion()
+      }
     }
   }
 
@@ -448,9 +456,13 @@ function nextQuestion() {
     } else {
       currentQuestionsIndex++;
       questionNumber++;
-      showChoices()
-      showQuestion()
-      console.log(lightQuestions[questionNumber].correctAnswer);
+      if (pickedSide.innerText === "light") {
+        showChoices()
+        showQuestion()
+      } else {
+        showDarkChoices()
+        showDarkQuestion()
+      }
     }
   }
   //function to check if the value selected from the getLevel was difficult and if so when finish the game
@@ -466,9 +478,13 @@ function nextQuestion() {
     } else {
       currentQuestionsIndex++;
       questionNumber++;
-      showChoices()
-      showQuestion()
-      console.log(lightQuestions[questionNumber].correctAnswer);
+      if (pickedSide.innerText === "light") {
+        showChoices()
+        showQuestion()
+      } else {
+        showDarkChoices()
+        showDarkQuestion()
+      }
     }
   }
   for (const answer of answers) {
@@ -488,7 +504,7 @@ function winGame() {
   let winningMessage = document.getElementById('winning-message');
   winningMessage.innerText = `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
-   iconsContainer.classList.add('hide');
+  iconsContainer.classList.add('hide');
 }
 
 function loseGame() {
@@ -498,7 +514,7 @@ function loseGame() {
   let lostMessage = document.getElementById('lost-message');
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
-   iconsContainer.classList.add('hide');
+  iconsContainer.classList.add('hide');
 }
 
 //home button
