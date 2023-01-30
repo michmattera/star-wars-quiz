@@ -111,12 +111,13 @@ let correctBonus = 1;
 let score;
 let level = document.getElementById("levels");
 let scoreContainer = document.getElementById('score');
-let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
 let messageContainer = document.getElementById('message');
 let winMessage = document.getElementById('won');
 let lostContainer = document.getElementById('lost');
 let restartBtn = document.getElementById('restart');
-let levels = document.getElementsByClassName('choose-level');
+let levels = document.getElementById('levels')
+
+const answers = document.querySelectorAll('.answer');
 
 /**
  * Wait for dom to be loaded
@@ -228,6 +229,10 @@ function runDarkGame() {
   openModalLeaderboardBtn.classList.add('border-red');
   levels.classList.remove('border-blue');
   levels.classList.add('border-red');
+  for (const answer of answers) {
+    answer.classList.remove('border-green')
+    answer.classList.add('border-red')
+  }
 
   chosenDarkSide.classList.add('hide')
   chosenLightSide.classList.add('hide')
@@ -235,6 +240,7 @@ function runDarkGame() {
   gameAreaElement.classList.remove('hide')
   showDarkQuestion()
   showDarkChoices()
+
   let dark = document.getElementById('pickedSide');
   dark.innerText = "dark";
   //add event listener for each button clicked and run function checker to see if is correct or not
@@ -251,11 +257,19 @@ function runDarkGame() {
  */
 function runLightGame() {
   console.log('light game')
-
+  openModalInstructionBtn.classList.remove('border-blue');
+  openModalInstructionBtn.classList.add('border-green');
+  openModalUsernameBtn.classList.remove('border-blue');
+  openModalUsernameBtn.classList.add('border-green');
+  openModalLeaderboardBtn.classList.remove('border-blue');
+  openModalLeaderboardBtn.classList.add('border-green');
+  levels.classList.remove('border-blue');
+  levels.classList.add('border-green');
   chosenLightSide.classList.add('hide')
   chosenDarkSide.classList.add('hide')
   level.classList.add('hide')
   gameAreaElement.classList.remove('hide')
+
   let light = document.getElementById('pickedSide');
   light.innerText = "light";
   showQuestion()
@@ -270,6 +284,9 @@ function runLightGame() {
 
 //function to change side still not working , bug found
 function changeSide() {
+  
+  messageContainer.classList.add('hide');
+  messageContainer.classList.remove('flex');
   lostMessage.classList.add('hide');
   lostContainer.classList.add('hide');
   winningMessage.classList.add('hide');
@@ -280,6 +297,18 @@ function changeSide() {
   positiveScore = 0;
   score = 0;
   if(pickedSide.innerText === "light"){
+    openModalInstructionBtn.classList.remove('border-blue');
+  openModalInstructionBtn.classList.add('border-red');
+  openModalUsernameBtn.classList.remove('border-blue');
+  openModalUsernameBtn.classList.add('border-red');
+  openModalLeaderboardBtn.classList.remove('border-blue');
+  openModalLeaderboardBtn.classList.add('border-red');
+  levels.classList.remove('border-blue');
+  levels.classList.add('border-red');
+  for (const answer of answers) {
+    answer.classList.remove('border-green')
+    answer.classList.add('border-red')
+  }
     runDarkGame()
   } else {
     runLightGame()
@@ -303,6 +332,14 @@ function restartGame() {
   if(pickedSide.innerText === "dark"){
     runDarkGame()
   } else {
+    openModalInstructionBtn.classList.remove('border-blue');
+    openModalInstructionBtn.classList.add('border-green');
+    openModalUsernameBtn.classList.remove('border-blue');
+    openModalUsernameBtn.classList.add('border-green');
+    openModalLeaderboardBtn.classList.remove('border-blue');
+    openModalLeaderboardBtn.classList.add('border-green');
+    levels.classList.remove('border-blue');
+    levels.classList.add('border-green');
     runLightGame()
   }
 }
@@ -360,6 +397,7 @@ function checker(event) {
   //if clicked answer is the same of correctanswer
   if ((clickedAnswer === correctAnswer) || (clickedAnswer === correctDarkAnswer)) {
     console.log('correct');
+    this.classList.remove('button:hover')
     this.classList.add('correct-answer')
 
     // add div inside score container and style red

@@ -285,7 +285,7 @@ input {
 }
 /*form level */
 select#levels {
-  height: 30px;
+  height: 35px;
   font-size: 15px;
   background-color: #112948;
   color: #ddd;
