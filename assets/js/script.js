@@ -115,7 +115,8 @@ let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
 let messageContainer = document.getElementById('message');
 let winMessage = document.getElementById('won');
 let lostContainer = document.getElementById('lost');
-let restartBtn = document.getElementById('restart')
+let restartBtn = document.getElementById('restart');
+let levels = document.getElementsByClassName('choose-level');
 
 /**
  * Wait for dom to be loaded
@@ -219,6 +220,15 @@ function expertModality() {
  */
 function runDarkGame() {
   console.log('dark game');
+  openModalInstructionBtn.classList.remove('border-blue');
+  openModalInstructionBtn.classList.add('border-red');
+  openModalUsernameBtn.classList.remove('border-blue');
+  openModalUsernameBtn.classList.add('border-red');
+  openModalLeaderboardBtn.classList.remove('border-blue');
+  openModalLeaderboardBtn.classList.add('border-red');
+  levels.classList.remove('border-blue');
+  levels.classList.add('border-red');
+
   chosenDarkSide.classList.add('hide')
   chosenLightSide.classList.add('hide')
   level.classList.add('hide')
@@ -241,6 +251,7 @@ function runDarkGame() {
  */
 function runLightGame() {
   console.log('light game')
+
   chosenLightSide.classList.add('hide')
   chosenDarkSide.classList.add('hide')
   level.classList.add('hide')

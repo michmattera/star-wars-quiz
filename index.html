@@ -71,7 +71,7 @@
                 </section>
                 <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
                 <div class="overlay hide"></div>
-                <button class="btn-open-instruction"><i class="fa-solid fa-question"></i></button>
+                <button class="btn-open-instruction border-blue"><i class="fa-solid fa-question"></i></button>
 
                 <!--Modal for username to insert and save-->
                 <section class="modal-username hidden">
@@ -94,7 +94,7 @@
                 </section>
                 <!--BTN for username to be outside of div and section otherwise would not be displayed-->
                 <div class="overlay hide"></div>
-                <button class="btn-open-username"><i class="fa-solid fa-user"></i></button>
+                <button class="btn-open-username border-blue"><i class="fa-solid fa-user"></i></button>
 
                 <!--Modal for leaderboard when user click on icon-->
                 <section class="modal-leaderboard hide">
@@ -114,7 +114,7 @@
                     </div>
                 </section>
                 <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
-                <button class="btn-open-leaderboard" onclick="leaderboard();"><i
+                <button class="btn-open-leaderboard border-blue" onclick="leaderboard();"><i
                         class="fa-solid fa-trophy"></i></button>
 
                 <section>
@@ -122,7 +122,7 @@
                     <!--Creating form for easy-medium-difficult modality for quiz-->
                     <div class="choose-level push">
                         <form action="">
-                            <select name="levels" id="levels">
+                            <select name="levels" id="levels" class="border-blue">
                                 <option id="easy" class="level1" value="easy">Easy</option>
                                 <option id="medium" class="level2" value="medium">Medium</option>
                                 <option id="difficult" class="level3" value="difficult">Difficult</option>
@@ -179,7 +179,7 @@
 
             </div>
         </section>
-        
+
         <!--Creating score container for correct or incorrect score -->
         <div id="score-container">
 
@@ -193,22 +193,20 @@
             </a>
         </li>
         <audio autoplay id="player" src="assets/audio/star-wars-main.mp3"></audio>
-        <!--Footer with copyright and social media links that open on an external page-->
-        <footer>
-            <div class="container-footer">
-                <p>
-                    Copyright by Michelle Mattera 2023
-                </p>
-                <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
-                    aria-label="Visit github developer page(opens in a new page)"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
-                    aria-label="Visit linkedin developer page(opens in a new page)"><i
-                        class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </footer>
     </div>
-
+    <!--Footer with copyright and social media links that open on an external page-->
+    <footer>
+        <div class="container-footer">
+            <p>
+                Copyright by Michelle Mattera 2023
+            </p>
+            <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
+                aria-label="Visit github developer page(opens in a new page)"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
+                aria-label="Visit linkedin developer page(opens in a new page)"><i
+                    class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </footer>
     <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
 
     <script src="assets/js/questions.js"></script>
