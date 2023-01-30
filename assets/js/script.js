@@ -422,14 +422,6 @@ function checker(event) {
     scoreBoxes.classList.add('score-box', 'green');
     incrementPositiveAnswer(correctBonus);
 
-/*
-          if (document.querySelector('#levels').value === "expert") {
-            if (currentQuestionsIndex == 6){
-                while (scoreDiv.firstChild) {
-                    scoreDiv.removeChild(scoreDiv.firstChild);
-                }
-            }};
-  **/
     //if clicked answer is not the same of correct answer
   } else {
     console.log('incorrect');
@@ -560,12 +552,14 @@ function winGame() {
   gameAreaElement.classList.add('hide');
   winningMessage.innerText = `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
+  winningMessage.classList.remove('hide');
 }
 
 let lostMessage = document.getElementById('lost-message');
 let winningMessage = document.getElementById('winning-message');
 function loseGame() {
   lostContainer.classList.remove('hide');
+  lostMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
