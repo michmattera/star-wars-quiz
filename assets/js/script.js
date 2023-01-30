@@ -83,74 +83,10 @@ saveHighScore = (e) => {
 
 };
 
-/*
-function saveData (){
-  localStorage.setItem("storedUsername", newUsername);
-  document.getElementById("savedText").innerHTML = newUsername + "Hello";
-  if (localStorage.getItem('username') === null) {
-    localStorage.setItem('username', '[]')
-  }
-  var oldData = JSON.parse(localStorage.getItem('username'));
-  oldData.push(newUsername);
-  localStorage.setItem('username', JSON.stringify(oldData));
-}
-
-
-
-function getData (){}
-// youtube video on how to store item with local storage
-//https://www.youtube.com/watch?v=6R9SaZdyaVU
-/*
-let highScores = (localStorage.getItem("highScores"));
-var storedScore = localStorage.getItem("storedScore");
-function saveNameScore() {
-  var newUsername = document.getElementById("username").value;
-  localStorage.setItem("storedUsername", newUsername);
-  document.getElementById("savedText").innerHTML = newUsername + "Hello";
-  if (localStorage.getItem('username') === null) {
-    localStorage.setItem('username', '[]')
-  }
-  var oldData = JSON.parse(localStorage.getItem('username'));
-  oldData.push(newUsername);
-  localStorage.setItem('username', JSON.stringify(oldData));
-
-  var newScore = localStorage.setItem("score", positiveScore);
-  
-let playerInfo = (localStorage.getItem('storedUsername')) + JSON.parse(localStorage.getItem('score'));
-  localStorage.setItem("highScores", playerInfo);
-}
-
-
-/*
-
-
-var storedScore = localStorage.getItem("save-score")
-const saveScore = document.getElementById("save-score");
-username.addEventListener("keyup", () => {
-  saveScore.disabled = !username.value;
-}); 
-
-saveHighScore = (e) => {
-
-  const userEndResult = {
-      score: positiveScore,
-      name: storedUsername
-  };
-
-  //Scores getting sorted from highest to lowest
-  highScores.push(userEndResult);
-  highScores.sort((a, b) => b.score - a.score);
-  // Show at max 6 high scores
-  highScores.splice(5);
-  localStorage.setItem("highScores", JSON.stringify(highScores));
-  localStorage.setItem("userEndResult", JSON.stringify(score))
-  
-};
-
 function get() {
-  localStorage.getItem("storedUsername");
+  localStorage.getItem("highScores");
 }
-**/
+
 function leaderboard() {
 
   board.innerHTML = highScores;
@@ -342,9 +278,8 @@ function changeSide() {
 let scoreBox = document.getElementsByClassName('score-box');
 //function to restart game once is finished
 function restartGame() {
-  //scoreDiv.classList.add('hide');
-  //scoreBox.classList.add('hide')
-  //scoreBoxes.classList.remove('score-box', 'red', 'green')
+  messageContainer.classList.add('hide');
+  messageContainer.classList.remove('flex');
   lostMessage.classList.add('hide');
   lostContainer.classList.add('hide');
   winningMessage.classList.add('hide');
@@ -548,6 +483,8 @@ function nextQuestion() {
  * function to win game and bring the player to win page
  */
 function winGame() {
+  messageContainer.classList.remove('hide');
+  messageContainer.classList.add('flex');
   winMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
   winningMessage.innerText = `Congratulation you won the battle master ${username.value}!
@@ -557,7 +494,10 @@ function winGame() {
 
 let lostMessage = document.getElementById('lost-message');
 let winningMessage = document.getElementById('winning-message');
+
 function loseGame() {
+  messageContainer.classList.remove('hide');
+  messageContainer.classList.add('flex');
   lostContainer.classList.remove('hide');
   lostMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');

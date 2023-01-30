@@ -23,7 +23,7 @@
 
 <body class="index">
     <div class="page-container">
-
+        <!--Header that containes: main title , container for modal buttons-->
         <header>
             <h1 class="heading">
                 Star wars quiz!
@@ -31,8 +31,10 @@
             <p id="savedTextScore"></p>
             <p id="savedText"> </p>
             <p id="pickedSide"></p>
+
+            <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
             <div id="button-container">
-                <!--Test modal for instruction when clicked on it-->
+                <!--Modal for instruction of quiz-->
                 <section class="modal-instruction hide">
                     <div class="flex">
                         <button class="btn-close-instruction">⨉</button>
@@ -66,13 +68,12 @@
                             Your goal is to win and answer at least more than half of the questions.
                         </p>
                     </div>
-
                 </section>
-
+                <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
                 <div class="overlay hide"></div>
                 <button class="btn-open-instruction"><i class="fa-solid fa-question"></i></button>
 
-                <!--Test modal for username when page is loaded-->
+                <!--Modal for username to insert and save-->
                 <section class="modal-username hidden">
                     <div class="flex">
                         <button class="btn-close-username">⨉</button>
@@ -88,10 +89,10 @@
                             <input type="text" name="username" id="username" placeholder="username">
 
                         </form>
-                        <button class="save">SAVE</button>
+                        <button class="save btn-close-username">SAVE</button>
                     </div>
                 </section>
-
+                <!--BTN for username to be outside of div and section otherwise would not be displayed-->
                 <div class="overlay hide"></div>
                 <button class="btn-open-username"><i class="fa-solid fa-user"></i></button>
 
@@ -104,22 +105,20 @@
                         <h3>
                             Leaderboard light Jedy
                         </h3>
-
+                        <!--Text with username and saved score from javscript-->
                         <ul id="highScoresList">
                             <li>list light Jedy</li>
                         </ul>
                         <p id="board">
-                            here
                         </p>
                     </div>
                 </section>
+                <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
                 <button class="btn-open-leaderboard" onclick="leaderboard();"><i
                         class="fa-solid fa-trophy"></i></button>
 
-                <div class="overlay hide"></div>
-
                 <section>
-
+                    <div class="overlay hide"></div>
                     <!--Creating form for easy-medium-difficult modality for quiz-->
                     <div class="choose-level push">
                         <form action="">
@@ -132,25 +131,27 @@
                         </form>
                     </div>
                 </section>
-            </div>
-            <!--Creating score container for correct or incorrect score -->
-            <div id="score-container">
+                <!--Creating div for when the level has been chosen and add text from JS-->
             </div>
         </header>
-
-        <div class="container-pick-side">
-            <button data-type="light" class="side" id="light-side">
-            </button>
-            <button data-type="dark" class="side" id="dark-side">
-            </button>
-        </div>
-
-        <!--Div showing when user finish to play-->
-        <section id="message">
+        <!--Container for choosing which side to play( each side has different questions -->
+        <section>
+            <div class="container-pick-side">
+                <button data-type="light" class="side" id="light-side">
+                </button>
+                <button data-type="dark" class="side" id="dark-side">
+                </button>
+            </div>
+        </section>
+        <!--Div showing when user finish to play with different buttons to restart game, save score, play for the other side or go to home-->
+        <section id="message" class="hide">
             <div id="won" class="hide">
+                <div id="playing-level">
+                    <p></p>
+                </div>
                 <p id="winning-message">
                 </p>
-                
+
                 <button id="restart" onclick="restartGame()">Restart Game</button>
                 <button class="home-btn">Home</button>
                 <button class="btn-open-leaderboard" id="save-score" onclick="saveHighScore(event)">Save score</button>
@@ -164,16 +165,23 @@
                 <button class="change-side" onclick="changeSide()">Change side</button>
             </div>
         </section>
+        <!--Creating div area with question div and answer div to display main game -->
+        <section>
+            <div id="game-area" class="hide">
+                <div id="question">questionTest</div>
 
-        <div id="game-area" class="hide">
-            <div id="question">questionTest</div>
+                <div id="answer-buttons">
+                    <button id="answer-one" class="answer" value="answer-one">Answer 1</button>
+                    <button id="answer-two" class="answer" value="answer-two">Answer 2</button>
+                    <button id="answer-three" class="answer" value="answer-three">Answer 3</button>
+                    <button id="answer-four" class="answer" value="answer-four">Answer 4</button>
+                </div>
 
-            <div id="answer-buttons">
-                <button id="answer-one" class="answer" value="answer-one">Answer 1</button>
-                <button id="answer-two" class="answer" value="answer-two">Answer 2</button>
-                <button id="answer-three" class="answer" value="answer-three">Answer 3</button>
-                <button id="answer-four" class="answer" value="answer-four">Answer 4</button>
             </div>
+        </section>
+        
+        <!--Creating score container for correct or incorrect score -->
+        <div id="score-container">
 
         </div>
         <!--Trying to set audio for game quiz-->
@@ -185,24 +193,20 @@
             </a>
         </li>
         <audio autoplay id="player" src="assets/audio/star-wars-main.mp3"></audio>
-    </div>
-    <!--Creating div for when the level has been chosen to test difficulty js-->
-    <div id="playing-level">
-        <p></p>
-    </div>
-    <!--Footer with copyright and social media links that open on an external page-->
-    <footer>
-        <div class="container-footer">
-            <p>
-                Copyright by Michelle Mattera 2023
-            </p>
-            <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
-                aria-label="Visit github developer page(opens in a new page)"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
-                aria-label="Visit linkedin developer page(opens in a new page)"><i
-                    class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </footer>
+        <!--Footer with copyright and social media links that open on an external page-->
+        <footer>
+            <div class="container-footer">
+                <p>
+                    Copyright by Michelle Mattera 2023
+                </p>
+                <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
+                    aria-label="Visit github developer page(opens in a new page)"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
+                    aria-label="Visit linkedin developer page(opens in a new page)"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
     </div>
 
     <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
