@@ -326,8 +326,10 @@ function changeSide() {
 }
 
 let scoreBox = document.getElementsByClassName('score-box');
+let scoreDiv = document.getElementById('score-container');
 //function to restart game once is finished
 function restartGame() {
+  removeChild();
   messageContainer.classList.add('hide');
   messageContainer.classList.remove('flex');
   lostMessage.classList.add('hide');
@@ -385,7 +387,7 @@ function showDarkChoices() {
  * remove as well score div
  */
 
-let scoreDiv = document.getElementById('score-container');
+//let scoreDiv = document.getElementById('score-container');
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
@@ -414,32 +416,33 @@ function checker(event) {
 
   }
 //for each difficulty when arrive at last question , remove again all scoreBoxes
-function removeChild(){
-if (document.querySelector('#levels').value === "easy") {
-  if (currentQuestionsIndex == 6){
-      while (scoreDiv.firstChild) {
-          scoreDiv.removeChild(scoreDiv.firstChild);
-      }
-  }};
 
-  if (document.querySelector('#levels').value === "medium") {
-    if (currentQuestionsIndex == 10){
+  const myTimeout = setTimeout(nextQuestion, 1000);
+  //try to set timeout when 
+ // const timeout = setTimeout(removeChild, 12000);
+}
+function removeChild(){
+  if (document.querySelector('#levels').value === "easy") {
+    if (currentQuestionsIndex == 6){
         while (scoreDiv.firstChild) {
             scoreDiv.removeChild(scoreDiv.firstChild);
         }
     }};
-
-    if (document.querySelector('#levels').value === "difficult") {
-      if (currentQuestionsIndex == 14){
+  
+    if (document.querySelector('#levels').value === "medium") {
+      if (currentQuestionsIndex == 10){
           while (scoreDiv.firstChild) {
               scoreDiv.removeChild(scoreDiv.firstChild);
           }
       }};
-    }
-  const myTimeout = setTimeout(nextQuestion, 1000);
-  //try to set timeout when 
-  const timeout = setTimeout(removeChild, 12000);
-}
+  
+      if (document.querySelector('#levels').value === "difficult") {
+        if (currentQuestionsIndex == 14){
+            while (scoreDiv.firstChild) {
+                scoreDiv.removeChild(scoreDiv.firstChild);
+            }
+        }};
+      }
 /**
  * function to increment correct score
  */
