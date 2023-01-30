@@ -19,6 +19,7 @@ closeModalInstructionBtn.addEventListener("click", closeModalInstruction);
 const modalUsername = document.querySelector(".modal-username");
 const openModalUsernameBtn = document.querySelector(".btn-open-username");
 const closeModalUsernameBtn = document.querySelector(".btn-close-username");
+const saveButton = document.querySelector(".save");
 const openModalUsername = function () {
   modalUsername.classList.remove("hidden");
   overlay.classList.remove("hide");
@@ -27,6 +28,7 @@ const closeModalUsername = function () {
   modalUsername.classList.add("hidden");
   overlay.classList.add("hide");
 };
+saveButton.addEventListener("click", closeModalUsername);
 openModalUsernameBtn.addEventListener("click", openModalUsername);
 closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 
@@ -54,7 +56,7 @@ var username = document.getElementById("username");
 
 /**
  * Show High Score List
- * Return name, scor
+ * Return name, score
  */
 highScoresList.innerHTML = highScores.map((score) => {
   return `
@@ -88,9 +90,7 @@ function get() {
 }
 
 function leaderboard() {
-
-  board.innerHTML = highScores;
-  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+ // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 }
 
 
@@ -127,7 +127,6 @@ const answers = document.querySelectorAll('.answer');
  */
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName('button');
-
   getLevel()
   for (let button of buttons) {
     button.addEventListener('click', function () {
@@ -348,13 +347,6 @@ function restartGame() {
   }
 }
 
-//home button
-document.querySelector('.home-btn').addEventListener('click', function () {
-  window.location.reload();
-  return false;
-
-});
-
 /**
  * show the questions in the question container
  */
@@ -388,9 +380,10 @@ function showDarkChoices() {
 /**
  * 
  * function to check if answer is correct or not
- * if is correct than incrementPositiveAnswer if not incrementNegativeAnswer
+ * if is correct than incrementPositiveAnswer
  * run nextQuestion function with timeout
  * add style to button clicked 
+ * remove as well score div
  */
 
 let scoreDiv = document.getElementById('score-container');
@@ -444,7 +437,8 @@ if (document.querySelector('#levels').value === "easy") {
       }};
     }
   const myTimeout = setTimeout(nextQuestion, 1000);
-  const timeout = setTimeout(removeChild, 9000)
+  //try to set timeout when 
+  const timeout = setTimeout(removeChild, 12000);
 }
 /**
  * function to increment correct score
@@ -458,6 +452,7 @@ incrementPositiveAnswer = num => {
 /**
  * increase question number and currentQuestionIndex, show again new question and answers
  * trying to set for different modalities different number of questions
+ * if last question and depending on the score winGame() or loseGame()
  */
 function nextQuestion() {
   const answers = document.querySelectorAll('.answer');
@@ -557,6 +552,12 @@ function loseGame() {
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
 }
+
+//home button
+document.querySelector('.home-btn').addEventListener('click', function () {
+  window.location.reload()
+
+});
 
 
 //https://stackoverflow.com/questions/9419263/how-to-play-audio

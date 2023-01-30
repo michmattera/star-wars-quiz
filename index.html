@@ -30,7 +30,7 @@
             </h1>
             <p id="savedTextScore"></p>
             <p id="savedText"> </p>
-            <p id="pickedSide"></p>
+            <p id="pickedSide" class="hide"></p>
 
             <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
             <div id="button-container">
@@ -77,19 +77,17 @@
                 <section class="modal-username hidden">
                     <div class="flex">
                         <button class="btn-close-username">⨉</button>
-                    </div>
-                    <div>
                         <h3>
-                            Change Jedy!
+                            Choose player!
                         </h3>
                         <p>
-                            Change the name of your Jedy and save it !
+                            Change the name of your Jedy/Sith and save it !
                         </p>
                         <form>
                             <input type="text" name="username" id="username" placeholder="username">
 
                         </form>
-                        <button class="save btn-close-username">SAVE</button>
+                        <button class="save">SAVE</button>
                     </div>
                 </section>
                 <!--BTN for username to be outside of div and section otherwise would not be displayed-->
@@ -100,8 +98,6 @@
                 <section class="modal-leaderboard hide">
                     <div class="flex">
                         <button class="btn-close-leaderboard">⨉</button>
-                    </div>
-                    <div>
                         <h3>
                             Leaderboard light Jedy
                         </h3>
@@ -146,7 +142,7 @@
         <!--Div showing when user finish to play with different buttons to restart game, save score, play for the other side or go to home-->
         <section id="message" class="hide">
             <div id="won" class="hide">
-                <div id="playing-level">
+                <div id="playing-level" class="hide">
                     <p></p>
                 </div>
                 <p id="winning-message">
@@ -154,14 +150,15 @@
 
                 <button id="restart" onclick="restartGame()">Restart Game</button>
                 <button class="home-btn">Home</button>
-                <button class="btn-open-leaderboard" id="save-score" onclick="saveHighScore(event)">Save score</button>
+                <button id="save-score" onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side!</button>
             </div>
             <div id="lost" class="hide">
                 <p id="lost-message">
                 </p>
                 <button id="restart" onclick="restartGame()">Restart Game</button>
-                <button class="btn-open-leaderboard" id="save-score" onclick="saveHighScore(event)">Save score</button>
+                <button class="home-btn">Home</button>
+                <button id="save-score" onclick="saveHighScore(event)">Save score</button>
                 <button class="change-side" onclick="changeSide()">Change side</button>
             </div>
         </section>
