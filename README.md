@@ -44,17 +44,14 @@ bug = when clicking on change side onclick button it shows previous question of 
 ## Introduction
 This is a quiz build for all **Star Wars** fan.
 It tests all star wars fan for knowledge on how much they know the Star Wars world.
-
+ 
 The main goal of the user is answering correctly at least half of the total of questions to win the quiz.
-
-The username and the score are then saved using localStorage.
 
 The questions are divided in:
 - The side chosen : You have 15 differrent questions for each side(In the main page you can chose either the light side or the dark side).
 - You have different numbers of questions depending on the difficulty level the user chose.
 
-This quiz was made for the second of five Milestone projects required to complete the Diploma in Software development (eCommerce Applications) program at The Code Institute. 
-
+This is a fun and interactive quiz created for the second of five Milestone projects required to complete the Diploma in Software development (eCommerce Applications) program at The Code Institute.
 The main requirements of this project are to use all the technologies learned so far, **HTML5** , **CSS3** AND **JAVASCRIPT**. 
 
 ## UX
@@ -66,12 +63,59 @@ The ideal player for this quiz is:
 
 ### Player Goals
 #### New Player
-This quiz is for people that would like to have fun and get tested their knowledge on **star wars**.
-1. As a new player I would like to get visual stimulated by Star wars symbols.
-2. As a new player I would like to easy navigate the main page and find all features as : Instruction on how to play and start the game
+
+This quiz is for users that would like to have fun and get their knowledge tested on **star wars**.
+1. As a new player I would like to get visual stimulated by Star wars symbols at first impact.
+2. As a new player I would like to easy navigate the main page and find all features that reminds me of a game such as : 
+    - Leaderboard
+    - Instructions on how to play
+    - Inserting username to save
+    - Sound
+    - Automated questions and answers
+    - Fun and correct questions on main topic
 
 #### Old Player
-This quiz is for people that would like to have fun and get tested their knowledge on **star wars**.
-1. As an older player I would like to get updated score in leaderboard to be updated and to try and get the same or better score.
+
+This quiz is for users that have already played.
+1. As an older player I would like to play again and update my score , trying to reach the top.
+2. As an older player I would like to be able to change username and play again.
+
+## Development Planes
+
+To build an interactive front-end site , that the user can interact with and get back datas.
+For this purpose I chose an interactive quiz , set in the : **Star wars** world.
+All website presents data and information based on main topic.
+
+Development planes were made in the following order:
+- Strategy
+- Scope
+- Structure
+- Skeleton
+
+
+### Strategy
+Used to determine business goals and user needs.
+
+Business goals:
+- Get the user to play.
+- Get the user to insert unsername.
+- Get the user to save score and try different levels of quiz.
+- Get the player to try both side of game quiz.
+- Stimulate user with audio, visual effect and images.
+
+User needs were determined based on different target audiences: 
+
+- **Roles:**
+    - New player
+    - Old player
+
+- **Demographic:**
+    - No minimum age
+    - From all over the world
+
+- **Psychographic:**
+    - Star wars fan
+    - Quiz lovers
+
 
 

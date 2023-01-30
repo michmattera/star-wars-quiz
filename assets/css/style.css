@@ -269,7 +269,8 @@ input {
 
 .btn-open-instruction,
 .btn-open-username,
-.btn-open-leaderboard{
+.btn-open-leaderboard,
+.button-home{
   background-color: #112948;
   color: #ddd;
   height: 60px;
@@ -279,7 +280,8 @@ input {
 
 .btn-close-instruction,
 .btn-close-username,
-.btn-close-leaderboard {
+.btn-close-leaderboard,
+.button-home {
   background-color: #ddd;
   height: 30px;
   width: 30px;

@@ -116,7 +116,6 @@ let winMessage = document.getElementById('won');
 let lostContainer = document.getElementById('lost');
 let restartBtn = document.getElementById('restart');
 let levels = document.getElementById('levels')
-
 const answers = document.querySelectorAll('.answer');
 
 /**
@@ -406,6 +405,7 @@ function checker(event) {
     //if clicked answer is not the same of correct answer
   } else {
     console.log('incorrect');
+    this.classList.remove('button:hover')
     this.classList.add('incorrect-answer')
     // add div inside score container and style red
     let scoreBoxes = document.createElement('div')
@@ -556,7 +556,10 @@ function loseGame() {
 //home button
 document.querySelector('.home-btn').addEventListener('click', function () {
   window.location.reload()
-
+});
+//home button two - issue if using the same name did not work - fix it using two different classes
+document.querySelector('.home-btn-two').addEventListener('click', function () {
+  window.location.reload()
 });
 
 
