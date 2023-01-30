@@ -77,7 +77,7 @@ saveHighScore = (e) => {
   highScores.push(userEndResult);
   highScores.sort((a, b) => b.score - a.score);
   // Show at max 6 high scores
-  highScores.splice(6);
+  highScores.splice(5);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
 
@@ -179,7 +179,6 @@ let buttonAnswerOne = lightQuestions[questionNumber].answerOne;
 let messageContainer = document.getElementById('message');
 let winMessage = document.getElementById('won');
 let lostContainer = document.getElementById('lost');
-
 let restartBtn = document.getElementById('restart')
 
 /**
@@ -340,8 +339,12 @@ function changeSide() {
   }
 }
 
+let scoreBox = document.getElementsByClassName('score-box');
 //function to restart game once is finished
 function restartGame() {
+  //scoreDiv.classList.add('hide');
+  //scoreBox.classList.add('hide')
+  //scoreBoxes.classList.remove('score-box', 'red', 'green')
   lostMessage.classList.add('hide');
   lostContainer.classList.add('hide');
   winningMessage.classList.add('hide');
@@ -357,6 +360,13 @@ function restartGame() {
     runLightGame()
   }
 }
+
+//home button
+document.querySelector('.home-btn').addEventListener('click', function () {
+  window.location.reload();
+  return false;
+
+});
 
 /**
  * show the questions in the question container
@@ -395,12 +405,12 @@ function showDarkChoices() {
  * run nextQuestion function with timeout
  * add style to button clicked 
  */
+
+let scoreDiv = document.getElementById('score-container');
 function checker(event) {
   let clickedAnswer = event.target.innerHTML;
   let correctAnswer = lightQuestions[questionNumber].correctAnswer;
   let correctDarkAnswer = darkQuestions[questionNumber].correctAnswer;
-
-  let scoreDiv = document.getElementById('score-container');
   //if clicked answer is the same of correctanswer
   if ((clickedAnswer === correctAnswer) || (clickedAnswer === correctDarkAnswer)) {
     console.log('correct');
@@ -412,6 +422,14 @@ function checker(event) {
     scoreBoxes.classList.add('score-box', 'green');
     incrementPositiveAnswer(correctBonus);
 
+/*
+          if (document.querySelector('#levels').value === "expert") {
+            if (currentQuestionsIndex == 6){
+                while (scoreDiv.firstChild) {
+                    scoreDiv.removeChild(scoreDiv.firstChild);
+                }
+            }};
+  **/
     //if clicked answer is not the same of correct answer
   } else {
     console.log('incorrect');
@@ -419,10 +437,34 @@ function checker(event) {
     // add div inside score container and style red
     let scoreBoxes = document.createElement('div')
     scoreDiv.appendChild(scoreBoxes);
-    scoreBoxes.classList.add('score-box', 'red')
+    scoreBoxes.classList.add('score-box', 'red');
 
   }
+//for each difficulty when arrive at last question , remove again all scoreBoxes
+function removeChild(){
+if (document.querySelector('#levels').value === "easy") {
+  if (currentQuestionsIndex == 6){
+      while (scoreDiv.firstChild) {
+          scoreDiv.removeChild(scoreDiv.firstChild);
+      }
+  }};
+
+  if (document.querySelector('#levels').value === "medium") {
+    if (currentQuestionsIndex == 10){
+        while (scoreDiv.firstChild) {
+            scoreDiv.removeChild(scoreDiv.firstChild);
+        }
+    }};
+
+    if (document.querySelector('#levels').value === "difficult") {
+      if (currentQuestionsIndex == 14){
+          while (scoreDiv.firstChild) {
+              scoreDiv.removeChild(scoreDiv.firstChild);
+          }
+      }};
+    }
   const myTimeout = setTimeout(nextQuestion, 1000);
+  const timeout = setTimeout(removeChild, 9000)
 }
 /**
  * function to increment correct score
@@ -518,7 +560,6 @@ function winGame() {
   gameAreaElement.classList.add('hide');
   winningMessage.innerText = `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
-  iconsContainer.classList.add('hide')
 }
 
 let lostMessage = document.getElementById('lost-message');
@@ -528,15 +569,7 @@ function loseGame() {
   gameAreaElement.classList.add('hide');
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
-   iconsContainer.classList.add('hide')
 }
-
-//home button
-document.querySelector('.home-btn').addEventListener('click', function () {
-  window.location.reload();
-  return false;
-
-});
 
 
 //https://stackoverflow.com/questions/9419263/how-to-play-audio
