@@ -284,7 +284,6 @@ function runLightGame() {
 
 //function to change side still not working , bug found
 function changeSide() {
-  
   messageContainer.classList.add('hide');
   messageContainer.classList.remove('flex');
   lostMessage.classList.add('hide');
@@ -296,14 +295,15 @@ function changeSide() {
   questionNumber = 0;
   positiveScore = 0;
   score = 0;
+
   if(pickedSide.innerText === "light"){
-    openModalInstructionBtn.classList.remove('border-blue');
+    openModalInstructionBtn.classList.remove('border-blue', 'border-green');
   openModalInstructionBtn.classList.add('border-red');
-  openModalUsernameBtn.classList.remove('border-blue');
+  openModalUsernameBtn.classList.remove('border-blue', 'border-green');
   openModalUsernameBtn.classList.add('border-red');
-  openModalLeaderboardBtn.classList.remove('border-blue');
+  openModalLeaderboardBtn.classList.remove('border-blue', 'border-green');
   openModalLeaderboardBtn.classList.add('border-red');
-  levels.classList.remove('border-blue');
+  levels.classList.remove('border-blue', 'border-green');
   levels.classList.add('border-red');
   for (const answer of answers) {
     answer.classList.remove('border-green')
@@ -311,6 +311,18 @@ function changeSide() {
   }
     runDarkGame()
   } else {
+    openModalInstructionBtn.classList.remove('border-blue', 'border-red');
+    openModalInstructionBtn.classList.add('border-green');
+    openModalUsernameBtn.classList.remove('border-blue', 'border-red');
+    openModalUsernameBtn.classList.add('border-green');
+    openModalLeaderboardBtn.classList.remove('border-blue', 'border-red');
+    openModalLeaderboardBtn.classList.add('border-green');
+    levels.classList.remove('border-blue', 'border-red');
+    levels.classList.add('border-green');
+    for (const answer of answers) {
+      answer.classList.add('border-green')
+      answer.classList.remove('border-red')
+    }
     runLightGame()
   }
 }
@@ -332,14 +344,6 @@ function restartGame() {
   if(pickedSide.innerText === "dark"){
     runDarkGame()
   } else {
-    openModalInstructionBtn.classList.remove('border-blue');
-    openModalInstructionBtn.classList.add('border-green');
-    openModalUsernameBtn.classList.remove('border-blue');
-    openModalUsernameBtn.classList.add('border-green');
-    openModalLeaderboardBtn.classList.remove('border-blue');
-    openModalLeaderboardBtn.classList.add('border-green');
-    levels.classList.remove('border-blue');
-    levels.classList.add('border-green');
     runLightGame()
   }
 }
