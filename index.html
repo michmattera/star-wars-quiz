@@ -34,6 +34,7 @@
 
             <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
             <div id="button-container">
+                <div id="button-container-child-one">
                 <!--Modal for instruction of quiz-->
                 <section onclick="close(event);" class="modal-instruction hide border-blue">
                     <div class="flex">
@@ -107,6 +108,13 @@
                 <div class="overlay hide"></div>
                 <button class="btn-open-username border-blue"><i class="fa-solid fa-user"></i></button>
 
+
+                <!-- Home button -->
+                <div>
+                    <button class="home-btn border-blue flex">
+                        <i class="fa-solid fa-house"></i></button>
+                </div>
+
                 <!--Modal for leaderboard when user click on icon-->
                 <section class="modal-leaderboard hide">
                     <div class="flex">
@@ -120,24 +128,35 @@
                         </ul>
                     </div>
                 </section>
+
                 <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
                 <button class="btn-open-leaderboard border-blue" onclick="leaderboard();"><i
                         class="fa-solid fa-trophy"></i></button>
 
-                <section>
-                    <div class="overlay hide"></div>
-                    <!--Creating form for easy-medium-difficult modality for quiz-->
-                    <div class="choose-level push">
-                        <form action="">
-                            <select name="levels" id="levels" class="border-blue">
-                                <option id="easy" class="level1" value="easy">Easy</option>
-                                <option id="medium" class="level2" value="medium">Medium</option>
-                                <option id="difficult" class="level3" value="difficult">Difficult</option>
-                                <option id="expert" class="level4" value="expert">Expert</option>
-                            </select>
-                        </form>
+                <div class="overlay hide"></div>
+                </div>
+                <!--Child container two containing two icons buttons to push them to opposite side-->
+                <!-- Sound Button -->
+                    <div id="button-container-child-two">
+                        <div id="player" class="sound-btn border-blue" onclick="togglePlay();">
+                            <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
+                            <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
+                        </div>
+                        <!--Creating form for easy-medium-difficult modality for quiz-->
+                        <div class="choose-level">
+                            <form action="">
+                                <select name="levels" id="levels" class="border-blue">
+                                    <option id="easy" class="level1" value="easy">Easy</option>
+                                    <option id="medium" class="level2" value="medium">Medium</option>
+                                    <option id="difficult" class="level3" value="difficult">Difficult</option>
+                                    <option id="expert" class="level4" value="expert">Expert</option>
+                                </select>
+                            </form>
+                        </div>
                     </div>
-                </section>
+
+
+
                 <!--Creating div for when the level has been chosen and add text from JS-->
             </div>
         </header>
@@ -192,23 +211,7 @@
         <div id="score-container">
 
         </div>
-        <!--Trying to set audio for game quiz-->
-        <!-- https://stackoverflow.com/questions/56798357/play-sound-when-font-awesome-icon-is-clicked
-        
-        <div class="icon-container"></div>
-        <li>
-            <a class="fa-solid fa-volume-xmark" type="button" onclick="togglePlay()" >
-                <audio autoplay id="player" src="assets/audio/star-wars-main.mp3"></audio>
-            </a>
-        </li>
-    </div>-->
-        <!-- Play Button -->
-    <div id="player" class="icon-container" onclick="togglePlay();">
-        <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
-        <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
     </div>
-
-    
     <!-- Audio-->
     <audio id="audio" src="assets/audio/star-wars-main.mp3" preload="none"></audio>
     <!--Footer with copyright and social media links that open on an external page-->

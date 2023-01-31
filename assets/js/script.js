@@ -578,7 +578,6 @@ document.querySelector('.home-btn-two').addEventListener('click', function () {
 Created using information from Stackflow
 https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link*/
 const audioPlayer = document.getElementById("player");
-
 const myAudio = document.getElementById("audio");
 const audioOffIcon = document.getElementById("sound-off");
 const audioOnIcon = document.getElementById("sound-on");
