@@ -14,7 +14,15 @@ const closeModalInstruction = function () {
 };
 openModalInstructionBtn.addEventListener("click", openModalInstruction);
 closeModalInstructionBtn.addEventListener("click", closeModalInstruction);
-
+// When the user clicks anywhere outside of the modal, close it
+/*
+window.onclick = function(event) {
+  if (event.target == modalInstruction) {
+    modalInstruction.classList.add("hide");
+    overlay.classList.add("hide");
+  }
+}
+**/
 //username modal
 const modalUsername = document.querySelector(".modal-username");
 const openModalUsernameBtn = document.querySelector(".btn-open-username");
@@ -566,10 +574,26 @@ document.querySelector('.home-btn-two').addEventListener('click', function () {
   window.location.reload()
 });
 
+/*Audio Player 
+Created using information from Stackflow
+https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link*/
+const audioPlayer = document.getElementById("player");
 
-//https://stackoverflow.com/questions/9419263/how-to-play-audio
-//Play audio and user decide when to play or stop music
-
+const myAudio = document.getElementById("audio");
+const audioOffIcon = document.getElementById("sound-off");
+const audioOnIcon = document.getElementById("sound-on");
+function togglePlay() {
+  if (myAudio.paused) {
+      myAudio.play();
+      audioOffIcon.classList.remove("hide");
+      audioOnIcon.classList.add("hide");
+  } else {
+      myAudio.pause();
+      audioOffIcon.classList.add("hide");
+      audioOnIcon.classList.remove("hide");
+  }
+}
+/** 
 function togglePlay() {
   let audioElem = document.getElementById('player');
   if (audioElem.paused) {
@@ -580,3 +604,4 @@ function togglePlay() {
     audioElem.pause();
   }
 }
+*/
