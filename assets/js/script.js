@@ -35,7 +35,6 @@ closeModalUsernameBtn.addEventListener("click", closeModalUsername);
 //leaderboard modal
 const modalLeaderboard = document.querySelector(".modal-leaderboard");
 const openModalLeaderboardBtn = document.querySelector(".btn-open-leaderboard");
-//const openModalLeaderboardBtnTwo = document.querySelector(".btn-open-leaderboard");
 const closeModalLeaderboardBtn = document.querySelector(".btn-close-leaderboard");
 const openModalLeaderboard = function () {
   modalLeaderboard.classList.remove("hide");
@@ -90,7 +89,7 @@ function get() {
 }
 
 function leaderboard() {
- // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 }
 
 
@@ -294,19 +293,19 @@ function changeSide() {
   positiveScore = 0;
   score = 0;
 
-  if(pickedSide.innerText === "light"){
+  if (pickedSide.innerText === "light") {
     openModalInstructionBtn.classList.remove('border-blue', 'border-green');
-  openModalInstructionBtn.classList.add('border-red');
-  openModalUsernameBtn.classList.remove('border-blue', 'border-green');
-  openModalUsernameBtn.classList.add('border-red');
-  openModalLeaderboardBtn.classList.remove('border-blue', 'border-green');
-  openModalLeaderboardBtn.classList.add('border-red');
-  levels.classList.remove('border-blue', 'border-green');
-  levels.classList.add('border-red');
-  for (const answer of answers) {
-    answer.classList.remove('border-green')
-    answer.classList.add('border-red')
-  }
+    openModalInstructionBtn.classList.add('border-red');
+    openModalUsernameBtn.classList.remove('border-blue', 'border-green');
+    openModalUsernameBtn.classList.add('border-red');
+    openModalLeaderboardBtn.classList.remove('border-blue', 'border-green');
+    openModalLeaderboardBtn.classList.add('border-red');
+    levels.classList.remove('border-blue', 'border-green');
+    levels.classList.add('border-red');
+    for (const answer of answers) {
+      answer.classList.remove('border-green')
+      answer.classList.add('border-red')
+    }
     runDarkGame()
   } else {
     openModalInstructionBtn.classList.remove('border-blue', 'border-red');
@@ -341,7 +340,7 @@ function restartGame() {
   questionNumber = 0;
   positiveScore = 0;
   score = 0;
-  if(pickedSide.innerText === "dark"){
+  if (pickedSide.innerText === "dark") {
     runDarkGame()
   } else {
     runLightGame()
@@ -415,34 +414,36 @@ function checker(event) {
     scoreBoxes.classList.add('score-box', 'red');
 
   }
-//for each difficulty when arrive at last question , remove again all scoreBoxes
-
+  //set timeout for nextQuestion( to display once clicked an answer)
   const myTimeout = setTimeout(nextQuestion, 1000);
-  //try to set timeout when 
- // const timeout = setTimeout(removeChild, 12000);
 }
-function removeChild(){
+
+function removeChild() {
   if (document.querySelector('#levels').value === "easy") {
-    if (currentQuestionsIndex == 6){
-        while (scoreDiv.firstChild) {
-            scoreDiv.removeChild(scoreDiv.firstChild);
-        }
-    }};
-  
-    if (document.querySelector('#levels').value === "medium") {
-      if (currentQuestionsIndex == 10){
-          while (scoreDiv.firstChild) {
-              scoreDiv.removeChild(scoreDiv.firstChild);
-          }
-      }};
-  
-      if (document.querySelector('#levels').value === "difficult") {
-        if (currentQuestionsIndex == 14){
-            while (scoreDiv.firstChild) {
-                scoreDiv.removeChild(scoreDiv.firstChild);
-            }
-        }};
+    if (currentQuestionsIndex == 6) {
+      while (scoreDiv.firstChild) {
+        scoreDiv.removeChild(scoreDiv.firstChild);
       }
+    }
+  };
+
+  if (document.querySelector('#levels').value === "medium") {
+    if (currentQuestionsIndex == 10) {
+      while (scoreDiv.firstChild) {
+        scoreDiv.removeChild(scoreDiv.firstChild);
+      }
+    }
+  };
+
+  if (document.querySelector('#levels').value === "difficult") {
+    if (currentQuestionsIndex == 14) {
+      while (scoreDiv.firstChild) {
+        scoreDiv.removeChild(scoreDiv.firstChild);
+      }
+    }
+  };
+}
+
 /**
  * function to increment correct score
  */

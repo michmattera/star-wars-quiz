@@ -136,7 +136,7 @@ select#levels:hover {
   background-color: #0783be;
   color: #d8c6c6;
   width: 80%;
-  margin: 5% 10%;
+  margin: 2.5% 10% 5% 10%;
   height: 40px;
   border: 3px solid #d8c6c6;
   border-radius: 5%;
@@ -211,7 +211,7 @@ select#levels:hover {
 }
 input {
   width: 80%;
-  margin: 5% 10%;
+  margin: 5% 10% 2.5% 10%;
   height: 30px;
 }
 .modal-instructions .modal-username .modal-leaderboard .flex {
@@ -236,7 +236,7 @@ input {
 
 .modal-username{
   width: 300px;
-  height: 300px;
+  height: auto;
   position: absolute;
   left: 50%;
   top: 50%; 
@@ -289,7 +289,7 @@ input {
   border: 3px solid #0783be;
   float: right;
   display: block;
-  margin: 6%;
+  margin: 5% 5% 5% 10%;
 }
 /*form level */
 select#levels {
