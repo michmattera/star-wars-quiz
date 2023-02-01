@@ -63,27 +63,6 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var username = document.getElementById("username");
 
 
-
-highScoresList.innerHTML = highScores[light].map((score) => {
-  return `
-        <tr>
-            <td>${score.name}</td>
-            <td>${score.score}</td>
-            <td>${score.side}</td>
-        </tr>
-    `;
-}).join("");
-
-highScoresListTwo.innerHTML = highScores[dark].map((score) => {
-  return `
-        <tr>
-            <td>${score.name}</td>
-            <td>${score.score}</td>
-            <td>${score.side}</td>
-        </tr>
-    `;
-}).join("");
-
 saveHighScore = (e) => {
   e.preventDefault();
   const userEndResult = {
@@ -97,9 +76,10 @@ saveHighScore = (e) => {
   // Show at max 6 high scores
   highScores.splice(5);
  
-   localStorage.setItem("highScores", JSON.stringify(highScores));
-   
+   //localStorage.setItem("highScores", JSON.stringify(highScores));
 }
+
+
 function getHighScore(){
   let highScores = localStorage.getItem('highScores');
   if(highScores){
@@ -121,7 +101,6 @@ function getHighScore(){
 
   addToHighScore('dark', {"score": 1})
  addToHighScore('light', {"score": 1})
-
 
 //var side = document.getElementById("pickedSide").innerHTML;;
 /**
@@ -168,11 +147,11 @@ saveHighScore = (e) => {
 function get() {
   localStorage.getItem("highScores");
 }
-*/
+
 function leaderboard() {
   // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 }
-
+*/
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
