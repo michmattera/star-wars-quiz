@@ -63,7 +63,7 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var username = document.getElementById("username");
 const light = JSON.parse(localStorage.getItem("highScores"));
 console.log(light.light[0]);
-
+const dark = JSON.parse(localStorage.getItem("highScores"));
 /** 
 function displayLightScore(){
   for (let i = 0; i < 5; i++){
@@ -205,7 +205,8 @@ function leaderboard() {
   // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
  // displayLightScore()
  
-highScoresList.innerText = (JSON.stringify(light.light[0]))
+highScoresList.innerText = (JSON.stringify(light.light[0].score)) + ((light.light[0].name)) ;
+highScoresListTwo.innerText = (JSON.stringify(dark.dark[0].score)) + ((dark.dark[0].name)) ;
 }
 
 
