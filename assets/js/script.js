@@ -58,30 +58,104 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 
 //https://www.youtube.com/watch?v=DFhmNLKwwGw
 const highScoresList = document.getElementById("highScoresList");
+const highScoresListTwo = document.getElementById("highScoresListTwo");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var username = document.getElementById("username");
 
-/**
- * Show High Score List
- * Return name, score
- */
-highScoresList.innerHTML = highScores.map((score) => {
+
+
+highScoresList.innerHTML = highScores[light].map((score) => {
   return `
         <tr>
             <td>${score.name}</td>
             <td>${score.score}</td>
+            <td>${score.side}</td>
+        </tr>
+    `;
+}).join("");
+
+highScoresListTwo.innerHTML = highScores[dark].map((score) => {
+  return `
+        <tr>
+            <td>${score.name}</td>
+            <td>${score.score}</td>
+            <td>${score.side}</td>
         </tr>
     `;
 }).join("");
 
 saveHighScore = (e) => {
   e.preventDefault();
-
   const userEndResult = {
     score: positiveScore,
-    name: username.value
+    name: username.value,
+    side: pickedSide.innerText
+  };
+  //Scores getting sorted from highest to lowest
+  highScores.push(userEndResult);
+  highScores.sort((a, b) => b.score - a.score);
+  // Show at max 6 high scores
+  highScores.splice(5);
+ 
+   localStorage.setItem("highScores", JSON.stringify(highScores));
+   
+}
+function getHighScore(){
+  let highScores = localStorage.getItem('highScores');
+  if(highScores){
+    return JSON.parse(highScores);
+  } else return{
+"light": [], "dark": []}
   };
 
+  function addToHighScore(light, score){
+    let highScores = getHighScore();
+    highScores[light].push(score);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+  }
+  function addToHighScore(dark, score){
+    let highScores = getHighScore();
+    highScores[dark].push(score);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+  }
+
+  addToHighScore('dark', {"score": 1})
+ addToHighScore('light', {"score": 1})
+
+
+//var side = document.getElementById("pickedSide").innerHTML;;
+/**
+ * Show High Score List
+ * Return name, score
+ 
+highScoresList.innerHTML = highScores.map((score) => {
+  return `
+        <tr>
+            <td>${score.name}</td>
+            <td>${score.score}</td>
+            <td>${score.side}</td>
+        </tr>
+    `;
+}).join("");
+/** 
+  highScoresListTwo.innerHTML = highScores.map((score) => {
+    return `
+          <tr>
+              <td>${score.name}</td>
+              <td>${score.score}</td>
+              <td>${score.side}</td>
+          </tr>
+      `;
+  }).join("");
+
+saveHighScore = (e) => {
+  e.preventDefault();
+  const userEndResult = {
+    score: positiveScore,
+    name: username.value,
+    side: pickedSide.innerText
+  };
+//trying to create two list with hiscores based on the side chosen
   //Scores getting sorted from highest to lowest
   highScores.push(userEndResult);
   highScores.sort((a, b) => b.score - a.score);
@@ -91,11 +165,10 @@ saveHighScore = (e) => {
   localStorage.setItem("highScores", JSON.stringify(highScores));
 
 };
-
 function get() {
   localStorage.getItem("highScores");
 }
-
+*/
 function leaderboard() {
   // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 }
