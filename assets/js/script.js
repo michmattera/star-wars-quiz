@@ -61,53 +61,30 @@ const highScoresList = document.getElementById("highScoresList");
 const highScoresListTwo = document.getElementById("highScoresListTwo");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var username = document.getElementById("username");
+const light = JSON.parse(localStorage.getItem("highScores"));
+console.log(light.light[0]);
 
-
-saveHighScore = (e) => {
-  e.preventDefault();
-  const userEndResult = {
-    score: positiveScore,
-    name: username.value,
-    side: pickedSide.innerText
-  };
-  //Scores getting sorted from highest to lowest
-  highScores.push(userEndResult);
-  highScores.sort((a, b) => b.score - a.score);
-  // Show at max 6 high scores
-  highScores.splice(5);
- 
-   //localStorage.setItem("highScores", JSON.stringify(highScores));
+/** 
+function displayLightScore(){
+  for (let i = 0; i < 5; i++){
+    console.log(light.light[i])
+    highScoresListTwo.innerHTML = (light.light[i]).map((score) => {
+      return `
+            <tr>
+                <td>${score.name}</td>
+                <td>${score.score}</td>
+                <td>${score.side}</td>
+            </tr>
+        `;
+    }).join("");
+  }
 }
+*/
 
-
-function getHighScore(){
-  let highScores = localStorage.getItem('highScores');
-  if(highScores){
-    return JSON.parse(highScores);
-  } else return{
-"light": [], "dark": []}
-  };
-
-  function addToHighScore(light, score){
-    let highScores = getHighScore();
-    highScores[light].push(score);
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-  }
-  function addToHighScore(dark, score){
-    let highScores = getHighScore();
-    highScores[dark].push(score);
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-  }
-
-  addToHighScore('dark', {"score": 1})
- addToHighScore('light', {"score": 1})
-
-//var side = document.getElementById("pickedSide").innerHTML;;
 /**
- * Show High Score List
- * Return name, score
- 
-highScoresList.innerHTML = highScores.map((score) => {
+ * 
+
+highScoresListTwo.innerHTML = highScores.map((score) => {
   return `
         <tr>
             <td>${score.name}</td>
@@ -116,6 +93,71 @@ highScoresList.innerHTML = highScores.map((score) => {
         </tr>
     `;
 }).join("");
+ */
+/**
+ * 
+
+highScoresListTwo.innerHTML = light.map((score) => {
+  return `
+        <tr>
+            <td>${score.name}</td>
+            <td>${score.score}</td>
+            <td>${score.side}</td>
+        </tr>
+    `;
+}).join("");
+ */
+saveHighScore = (e) => {
+  e.preventDefault();
+  //Scores getting sorted from highest to lowest
+  //highScores.push(userEndResult);
+  //highScores.sort((a, b) => b.score - a.score);
+  // Show at max 6 high scores
+  //highScores.splice(5);
+  //localStorage.setItem("highScores", JSON.stringify(highScores));
+
+  function addToHighScore(light, score) {
+    let highScores = getHighScore()
+    highScores[light].push(score);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+  }
+
+  function addToHighScore(dark, score) {
+    let highScores = getHighScore()
+    highScores[dark].push(score);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+  }
+
+  function getHighScore() {
+    let highScores = localStorage.getItem('highScores');
+    if (highScores) {
+      return JSON.parse(highScores);
+    } else return {
+      "light": [],
+      "dark": []
+    }
+    
+  };
+
+  if (pickedSide.innerText === "light") {
+    addToHighScore('light', {
+      score: positiveScore,
+      name: username.value,
+      side: pickedSide.innerText
+    })
+  } else {
+    addToHighScore('dark', {
+      score: positiveScore,
+      name: username.value,
+      side: pickedSide.innerText
+    });
+  }
+}
+
+//var side = document.getElementById("pickedSide").innerHTML;;
+/**
+ * Show High Score List
+ * Return name, score
 /** 
   highScoresListTwo.innerHTML = highScores.map((score) => {
     return `
@@ -127,6 +169,15 @@ highScoresList.innerHTML = highScores.map((score) => {
       `;
   }).join("");
 
+    highScoresListTwo.innerHTML = light.map((score) => {
+    return `
+          <tr>
+              <td>${score.name}</td>
+              <td>${score.score}</td>
+              <td>${score.side}</td>
+          </tr>
+      `;
+  }).join("");
 saveHighScore = (e) => {
   e.preventDefault();
   const userEndResult = {
@@ -144,14 +195,19 @@ saveHighScore = (e) => {
   localStorage.setItem("highScores", JSON.stringify(highScores));
 
 };
+*/
 function get() {
   localStorage.getItem("highScores");
+  localStorage.getItem('highscores[light]');
 }
 
 function leaderboard() {
   // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+ // displayLightScore()
+ 
+highScoresList.innerText = (JSON.stringify(light.light[0]))
 }
-*/
+
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
@@ -633,15 +689,16 @@ const audioPlayer = document.getElementById("player");
 const myAudio = document.getElementById("audio");
 const audioOffIcon = document.getElementById("sound-off");
 const audioOnIcon = document.getElementById("sound-on");
+
 function togglePlay() {
   if (myAudio.paused) {
-      myAudio.play();
-      audioOffIcon.classList.remove("hide");
-      audioOnIcon.classList.add("hide");
+    myAudio.play();
+    audioOffIcon.classList.remove("hide");
+    audioOnIcon.classList.add("hide");
   } else {
-      myAudio.pause();
-      audioOffIcon.classList.add("hide");
-      audioOnIcon.classList.remove("hide");
+    myAudio.pause();
+    audioOffIcon.classList.add("hide");
+    audioOnIcon.classList.remove("hide");
   }
 }
 /** 
