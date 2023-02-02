@@ -60,10 +60,8 @@ closeModalLeaderboardBtn.addEventListener("click", closeModalLeaderboard);
 const highScoresList = document.getElementById("highScoresList");
 const highScoresListTwo = document.getElementById("highScoresListTwo");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-var username = document.getElementById("username");
 const light = JSON.parse(localStorage.getItem("highScores"));
-console.log(light.light[0]);
-const dark = JSON.parse(localStorage.getItem("highScores"));
+var username = document.getElementById("username");
 /** 
 function displayLightScore(){
   for (let i = 0; i < 5; i++){
@@ -203,6 +201,7 @@ function get() {
 }
 
 function leaderboard() {
+  /** 
   playerOne.innerHTML =  `
   <tr>
       <td>${light.light[0].name}</td>
@@ -265,13 +264,22 @@ playerFiveDark.innerHTML =  `
     <td>${dark.dark[4].score}</td>
 </tr>
 `;
+*/
+  for (i = 0; i < lightBest.length; i++) {
+    if (lightBest[i].side === "light") {
+      let bestScore = (lightBest[i].name + "," + lightBest[i].score);
+      console.log(bestScore);
+      let list = document.createElement('li');
+      list.innerText= bestScore;
+      document.querySelector('#board').appendChild(list);
+    }
+  }
 }
-
-
-//let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
+let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
 //console.log(lightBest);
 //let lightBestStringify = (JSON.stringify(lightBest));
 //console.log(light.light[2].name)
+
 
 
 
@@ -767,15 +775,3 @@ function togglePlay() {
     audioOnIcon.classList.remove("hide");
   }
 }
-/** 
-function togglePlay() {
-  let audioElem = document.getElementById('player');
-  if (audioElem.paused) {
-    audioElem.className = ("fa-solid fa-volume-high");
-    audioElem.play();
-  } else {
-    audioElem.className = ("fa-solid fa-volume-xmark");
-    audioElem.pause();
-  }
-}
-*/
