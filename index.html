@@ -35,128 +35,140 @@
             <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
             <div id="button-container">
                 <div id="button-container-child-one">
-                <!--Modal for instruction of quiz-->
-                <section onclick="close(event);" class="modal-instruction hide border-blue">
-                    <div class="flex">
-                        <button class="btn-close-instruction">⨉</button>
-                        <h3>Instruction:</h3>
-                        <br>
-                        <p>
-                            Once upon a time there was a galaxy...
+                    <!--Modal for instruction of quiz-->
+                    <section onclick="close(event);" class="modal-instruction hide border-blue">
+                        <div class="flex">
+                            <button class="btn-close-instruction">⨉</button>
+                            <h3>Instruction:</h3>
                             <br>
-                            In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
-                                empire</strong>.
-                            <br>
-                            <ul>
-                                <li> If you chose the rebels , then you will have to click on the left figure ( master
-                                    Yoda
-                                    ) and you
-                                    will play against the Empire.
-                                </li>
-                                <li>
-                                    If you chose the Empire then you will have to click on the right figure (Darth
-                                    Vader)
-                                    and you
-                                    will
-                                    play against the rebellion.
-                                </li>
-                            </ul>
-                            <br>
-                            For each side you will have few questions related to the side chosen.
-                            <br>
-                            You have as well different level that you may choose:
-                            <ul>
-                                <li>
-                                    <strong>Easy :</strong> You will have 7 different questions.
-                                </li>
-                                <li>
-                                    <strong>Medium :</strong> You will have11 different questions.
-                                </li>
-                                <li>
-                                    <strong>Difficult :</strong> You will have 15 different questions.
-                                </li>
-                            </ul>
-                            <br>
-                            Your goal is to win and answer at least more than half of the questions.
-                            <br>
-                            May the force be with you ...
-                        </p>
+                            <p>
+                                Once upon a time there was a galaxy...
+                                <br>
+                                In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
+                                    empire</strong>.
+                                <br>
+                                <ul>
+                                    <li> If you chose the rebels , then you will have to click on the left figure (
+                                        master
+                                        Yoda
+                                        ) and you
+                                        will play against the Empire.
+                                    </li>
+                                    <li>
+                                        If you chose the Empire then you will have to click on the right figure (Darth
+                                        Vader)
+                                        and you
+                                        will
+                                        play against the rebellion.
+                                    </li>
+                                </ul>
+                                <br>
+                                For each side you will have few questions related to the side chosen.
+                                <br>
+                                You have as well different level that you may choose:
+                                <ul>
+                                    <li>
+                                        <strong>Easy :</strong> You will have 7 different questions.
+                                    </li>
+                                    <li>
+                                        <strong>Medium :</strong> You will have11 different questions.
+                                    </li>
+                                    <li>
+                                        <strong>Difficult :</strong> You will have 15 different questions.
+                                    </li>
+                                </ul>
+                                <br>
+                                Your goal is to win and answer at least more than half of the questions.
+                                <br>
+                                May the force be with you ...
+                            </p>
+                        </div>
+                    </section>
+                    <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
+                    <div class="overlay hide"></div>
+                    <button class="btn-open-instruction border-blue"><i class="fa-solid fa-question"></i></button>
+
+                    <!--Modal for username to insert and save-->
+                    <section class="modal-username hidden">
+                        <div class="flex">
+                            <button class="btn-close-username">⨉</button>
+                            <h3>
+                                Choose player!
+                            </h3>
+                            <p>
+                                Change the name of your Jedy/Sith and save it !
+                            </p>
+                            <form>
+                                <input type="text" name="username" id="username" placeholder="username">
+
+                            </form>
+                            <button class="save">SAVE</button>
+                        </div>
+                    </section>
+                    <!--BTN for username to be outside of div and section otherwise would not be displayed-->
+                    <div class="overlay hide"></div>
+                    <button class="btn-open-username border-blue"><i class="fa-solid fa-user"></i></button>
+
+
+                    <!-- Home button -->
+                    <div>
+                        <button class="home-btn border-blue flex">
+                            <i class="fa-solid fa-house"></i></button>
                     </div>
-                </section>
-                <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
-                <div class="overlay hide"></div>
-                <button class="btn-open-instruction border-blue"><i class="fa-solid fa-question"></i></button>
 
-                <!--Modal for username to insert and save-->
-                <section class="modal-username hidden">
-                    <div class="flex">
-                        <button class="btn-close-username">⨉</button>
-                        <h3>
-                            Choose player!
-                        </h3>
-                        <p>
-                            Change the name of your Jedy/Sith and save it !
-                        </p>
-                        <form>
-                            <input type="text" name="username" id="username" placeholder="username">
+                    <!--Modal for leaderboard when user click on icon-->
+                    <section class="modal-leaderboard hide">
+                        <div class="flex">
+                            <button class="btn-close-leaderboard">⨉</button>
+                            <h3>
+                                Leaderboard light Jedy
+                            </h3>
+                            <!--Text with username and saved score from javscript-->
+                            <div id="highScoresList">
+                                <ul id="board">
+                                    <li id="playerOne" class="player"></li>
+                                    <li id="playerTwo" class="player"></li>
+                                    <li id="playerThree" class="player"></li>
+                                    <li id="playerFour" class="player"></li>
+                                    <li id="playerFive" class="player"></li>
+                                </ul>
+                                <ul>
+                                    <li id="playerOneDark" class="player"></li>
+                                    <li id="playerTwoDark" class="player"></li>
+                                    <li id="playerThreeDark" class="player"></li>
+                                    <li id="playerFourDark" class="player"></li>
+                                    <li id="playerFiveDark" class="player"></li>
+                                </ul>
+                            </div>
 
-                        </form>
-                        <button class="save">SAVE</button>
-                    </div>
-                </section>
-                <!--BTN for username to be outside of div and section otherwise would not be displayed-->
-                <div class="overlay hide"></div>
-                <button class="btn-open-username border-blue"><i class="fa-solid fa-user"></i></button>
+                        </div>
+                    </section>
 
+                    <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
+                    <button class="btn-open-leaderboard border-blue" onclick="leaderboard();"><i
+                            class="fa-solid fa-trophy"></i></button>
 
-                <!-- Home button -->
-                <div>
-                    <button class="home-btn border-blue flex">
-                        <i class="fa-solid fa-house"></i></button>
-                </div>
-
-                <!--Modal for leaderboard when user click on icon-->
-                <section class="modal-leaderboard hide">
-                    <div class="flex">
-                        <button class="btn-close-leaderboard">⨉</button>
-                        <h3>
-                            Leaderboard light Jedy
-                        </h3>
-                        <!--Text with username and saved score from javscript-->
-                        <ul id="highScoresList">
-                            <li id="board">list light Jedy</li>
-                        </ul>
-                        <ul id="highScoresListTwo">
-                            <li id="board">list dark Jedy</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
-                <button class="btn-open-leaderboard border-blue" onclick="leaderboard();"><i
-                        class="fa-solid fa-trophy"></i></button>
-
-                <div class="overlay hide"></div>
+                    <div class="overlay hide"></div>
                 </div>
                 <!--Child container two containing two icons buttons to push them to opposite side-->
                 <!-- Sound Button -->
-                    <div id="button-container-child-two">
-                        <div id="player" class="sound-btn border-blue" onclick="togglePlay();">
-                            <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
-                            <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
-                        </div>
-                        <!--Creating form for easy-medium-difficult modality for quiz-->
-                        <div class="choose-level">
-                            <form action="">
-                                <select name="levels" id="levels" class="border-blue">
-                                    <option id="easy" class="level1" value="easy">Easy</option>
-                                    <option id="medium" class="level2" value="medium">Medium</option>
-                                    <option id="difficult" class="level3" value="difficult">Difficult</option>
-                                    <option id="expert" class="level4" value="expert">Expert</option>
-                                </select>
-                            </form>
-                        </div>
+                <div id="button-container-child-two">
+                    <div id="player" class="sound-btn border-blue" onclick="togglePlay();">
+                        <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
+                        <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
                     </div>
+                    <!--Creating form for easy-medium-difficult modality for quiz-->
+                    <div class="choose-level">
+                        <form action="">
+                            <select name="levels" id="levels" class="border-blue">
+                                <option id="easy" class="level1" value="easy">Easy</option>
+                                <option id="medium" class="level2" value="medium">Medium</option>
+                                <option id="difficult" class="level3" value="difficult">Difficult</option>
+                                <option id="expert" class="level4" value="expert">Expert</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
 
 
 

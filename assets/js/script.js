@@ -136,7 +136,7 @@ saveHighScore = (e) => {
       "light": [],
       "dark": []
     }
-    
+
   };
 
   if (pickedSide.innerText === "light") {
@@ -199,15 +199,80 @@ saveHighScore = (e) => {
 function get() {
   localStorage.getItem("highScores");
   localStorage.getItem('highscores[light]');
+  localStorage.getItem('highscores[dark]');
 }
 
 function leaderboard() {
-  // const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
- // displayLightScore()
- 
-highScoresList.innerText = (JSON.stringify(light.light[0].score)) + ((light.light[0].name)) ;
-highScoresListTwo.innerText = (JSON.stringify(dark.dark[0].score)) + ((dark.dark[0].name)) ;
+  playerOne.innerHTML =  `
+  <tr>
+      <td>${light.light[0].name}</td>
+      <td>${light.light[0].score}</td>
+  </tr>
+`;
+playerTwo.innerHTML =  `
+<tr>
+    <td>${light.light[1].name}</td>
+    <td>${light.light[1].score}</td>
+</tr>
+`;
+playerThree.innerHTML =  `
+<tr>
+    <td>${light.light[2].name}</td>
+    <td>${light.light[2].score}</td>
+</tr>
+`;
+playerFour.innerHTML =  `
+<tr>
+    <td>${light.light[3].name}</td>
+    <td>${light.light[3].score}</td>
+</tr>
+`;
+playerFive.innerHTML =  `
+<tr>
+    <td>${light.light[4].name}</td>
+    <td>${light.light[4].score}</td>
+</tr>
+`;
+
+//players dark side saving username and score
+playerOneDark.innerHTML =  `
+  <tr>
+      <td>${dark.dark[0].name}</td>
+      <td>${dark.dark[0].score}</td>
+  </tr>
+`;
+playerTwoDark.innerHTML =  `
+<tr>
+    <td>${dark.dark[1].name}</td>
+    <td>${dark.dark[1].score}</td>
+</tr>
+`;
+playerThreeDark.innerHTML =  `
+<tr>
+    <td>${dark.dark[2].name}</td>
+    <td>${dark.dark[2].score}</td>
+</tr>
+`;
+playerFourDark.innerHTML =  `
+<tr>
+    <td>${dark.dark[3].name}</td>
+    <td>${dark.dark[3].score}</td>
+</tr>
+`;
+playerFiveDark.innerHTML =  `
+<tr>
+    <td>${dark.dark[4].name}</td>
+    <td>${dark.dark[4].score}</td>
+</tr>
+`;
 }
+
+
+//let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
+//console.log(lightBest);
+//let lightBestStringify = (JSON.stringify(lightBest));
+//console.log(light.light[2].name)
+
 
 
 //Declare variables for game
