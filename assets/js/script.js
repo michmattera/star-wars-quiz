@@ -63,49 +63,7 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const light = JSON.parse(localStorage.getItem("highScores"));
 const dark = JSON.parse(localStorage.getItem("highScores"));
 var username = document.getElementById("username");
-/** 
-function displayLightScore(){
-  for (let i = 0; i < 5; i++){
-    console.log(light.light[i])
-    highScoresListTwo.innerHTML = (light.light[i]).map((score) => {
-      return `
-            <tr>
-                <td>${score.name}</td>
-                <td>${score.score}</td>
-                <td>${score.side}</td>
-            </tr>
-        `;
-    }).join("");
-  }
-}
-*/
 
-/**
- * 
-
-highScoresListTwo.innerHTML = highScores.map((score) => {
-  return `
-        <tr>
-            <td>${score.name}</td>
-            <td>${score.score}</td>
-            <td>${score.side}</td>
-        </tr>
-    `;
-}).join("");
- */
-/**
- * 
-
-highScoresListTwo.innerHTML = light.map((score) => {
-  return `
-        <tr>
-            <td>${score.name}</td>
-            <td>${score.score}</td>
-            <td>${score.side}</td>
-        </tr>
-    `;
-}).join("");
- */
 saveHighScore = (e) => {
   e.preventDefault();
   //Scores getting sorted from highest to lowest
@@ -116,13 +74,13 @@ saveHighScore = (e) => {
   //localStorage.setItem("highScores", JSON.stringify(highScores));
 
   function addToHighScore(light, score) {
-    let highScores = getHighScore()
+    let highScores = getHighScore();
     highScores[light].push(score);
     localStorage.setItem('highScores', JSON.stringify(highScores));
   }
 
   function addToHighScore(dark, score) {
-    let highScores = getHighScore()
+    let highScores = getHighScore();
     highScores[dark].push(score);
     localStorage.setItem('highScores', JSON.stringify(highScores));
   }
@@ -135,7 +93,6 @@ saveHighScore = (e) => {
       "light": [],
       "dark": []
     }
-
   };
 
   if (pickedSide.innerText === "light") {
@@ -153,48 +110,7 @@ saveHighScore = (e) => {
   }
 }
 
-//var side = document.getElementById("pickedSide").innerHTML;;
-/**
- * Show High Score List
- * Return name, score
-/** 
-  highScoresListTwo.innerHTML = highScores.map((score) => {
-    return `
-          <tr>
-              <td>${score.name}</td>
-              <td>${score.score}</td>
-              <td>${score.side}</td>
-          </tr>
-      `;
-  }).join("");
 
-    highScoresListTwo.innerHTML = light.map((score) => {
-    return `
-          <tr>
-              <td>${score.name}</td>
-              <td>${score.score}</td>
-              <td>${score.side}</td>
-          </tr>
-      `;
-  }).join("");
-saveHighScore = (e) => {
-  e.preventDefault();
-  const userEndResult = {
-    score: positiveScore,
-    name: username.value,
-    side: pickedSide.innerText
-  };
-//trying to create two list with hiscores based on the side chosen
-  //Scores getting sorted from highest to lowest
-  highScores.push(userEndResult);
-  highScores.sort((a, b) => b.score - a.score);
-  // Show at max 6 high scores
-  highScores.splice(5);
-
-  localStorage.setItem("highScores", JSON.stringify(highScores));
-
-};
-*/
 function get() {
   localStorage.getItem("highScores");
   localStorage.getItem('highscores[light]');
@@ -202,19 +118,26 @@ function get() {
 }
 
 function leaderboard() {
-  displayDarkScore()
-  displayLightScore()
-}
+  if ((localStorage.getItem("highScores") === null)) {
 
-let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
-let darkBest = [(dark.dark[0]), (dark.dark[1]), (dark.dark[2]), (dark.dark[3]), (dark.dark[4])];
+  } else {
+    displayLightScore()
+    displayDarkScore()
+  }
+}
 
 
 function displayDarkScore() {
-  for (j = 0; j < lightBest.length; j++) {
+// Declaring varibale of darkBest from array of localstorage light highScores - 
+// Max number of localstorage to save and then sort is 8.
+  let darkBest = [(dark.dark[0]), (dark.dark[1]), (dark.dark[2]), (dark.dark[3]), (dark.dark[4]), (dark.dark[5]), (dark.dark[6]), (dark.dark[7])];
+  darkBest.sort((a, b) => b.score - a.score);
+
+  for (j = 0; j < darkBest.length; j++) {
     if (darkBest[j].side === "dark") {
-      let bestScore = (darkBest[j].name + "," + darkBest[j].score);
+      let bestScore = (darkBest[j].name + "" + darkBest[j].score);
       console.log(bestScore);
+      darkBest.splice(5);
       let listTwo = document.createElement('li');
       listTwo.innerText = bestScore;
       document.querySelector('#boardTwo').appendChild(listTwo);
@@ -223,9 +146,16 @@ function displayDarkScore() {
 }
 
 function displayLightScore() {
+// Declaring varibale of lightBest from array of localstorage light highScores - 
+// Max number of localstorage to save and then sort is 8.
+  let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4]), (light.light[5]), (light.light[6]), (light.light[7])];
+  lightBest.sort((a, b) => b.score - a.score);
+
   for (i = 0; i < lightBest.length; i++) {
     if (lightBest[i].side === "light") {
-      let bestScore = (lightBest[i].name + "," + lightBest[i].score);
+      
+      lightBest.splice(5);
+      let bestScore = (lightBest[i].name + "" + lightBest[i].score);
       console.log(bestScore);
       let list = document.createElement('li');
       list.innerText = bestScore;
