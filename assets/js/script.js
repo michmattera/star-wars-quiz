@@ -61,6 +61,7 @@ const highScoresList = document.getElementById("highScoresList");
 const highScoresListTwo = document.getElementById("highScoresListTwo");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const light = JSON.parse(localStorage.getItem("highScores"));
+const dark = JSON.parse(localStorage.getItem("highScores"));
 var username = document.getElementById("username");
 /** 
 function displayLightScore(){
@@ -265,6 +266,27 @@ playerFiveDark.innerHTML =  `
 </tr>
 `;
 */
+ displayDarkScore()
+  displayLightScore()
+}
+let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
+let darkBest = [(dark.dark[0]), (dark.dark[1]), (dark.dark[2]), (dark.dark[3]), (dark.dark[4])];
+//console.log(lightBest);
+//let lightBestStringify = (JSON.stringify(lightBest));
+//console.log(light.light[2].name)
+function displayDarkScore(){
+  for (j = 0; j < lightBest.length; j++) {
+    if (darkBest[j].side === "dark") {
+      let bestScore = (darkBest[j].name + "," + darkBest[j].score);
+      console.log(bestScore);
+      let listTwo = document.createElement('li');
+      listTwo.innerText= bestScore;
+      document.querySelector('#boardTwo').appendChild(listTwo);
+    }
+  }
+}
+
+function displayLightScore(){
   for (i = 0; i < lightBest.length; i++) {
     if (lightBest[i].side === "light") {
       let bestScore = (lightBest[i].name + "," + lightBest[i].score);
@@ -275,13 +297,6 @@ playerFiveDark.innerHTML =  `
     }
   }
 }
-let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
-//console.log(lightBest);
-//let lightBestStringify = (JSON.stringify(lightBest));
-//console.log(light.light[2].name)
-
-
-
 
 //Declare variables for game
 const gameAreaElement = document.getElementById('game-area');
