@@ -14,6 +14,7 @@ body>* {
 
 li {
   margin: 1% 5%;
+  list-style: none;
 }
 h3{
   text-align: center;
@@ -242,9 +243,7 @@ input {
   top: 50%; 
   margin-left: -350px;
   margin-top: -300px;
-  background-color: #d8c6c6;
-  font-size: 23px;
-  color: #112948;
+  font-size: 26px;
   border-radius: 10%;
 }
 
@@ -310,8 +309,18 @@ input {
 .btn-close-instruction{
   margin: 0 1%;
 }
+.btn-close-leaderboard:hover{
+  background-color: #bfda46;
+  color: rgb(136, 0, 0);
+  border: 3px solid rgb(136, 0, 0);
+}
+.btn-close-leaderboard{
+  margin: 0;
+  background-color: rgb(136, 0, 0);
+  color: #bfda46;
+  border: 3px solid #bfda46;
+}
 .btn-close-username,
-.btn-close-leaderboard,
 .button-home {
   margin: 5% 5% 2% 10%;
 }
@@ -406,4 +415,38 @@ select#levels {
 
 i {
   font-size: 170%;
+}
+
+/*Style leaderboard container and children*/
+.players{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+}
+.row{
+  flex-direction: row;
+}
+.lightPlayers{
+  background-color: #bfda46;
+  
+  box-shadow: 0 0 70px #0f0;
+  color: #112948;
+}
+.darkPlayers{
+  background-color: rgb(136, 0, 0);
+  box-shadow: 0 0 70px #f00;
+  color: #ddd;
+}
+.lightPlayers,
+.darkPlayers{
+  width: 85%;
+  min-height: 300px;
+  line-height: 40px;
+  margin: 7.5%;
+  border-radius: 15%;
+  border: 5px solid #ddd;
+
 }

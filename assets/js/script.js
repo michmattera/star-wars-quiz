@@ -202,97 +202,33 @@ function get() {
 }
 
 function leaderboard() {
-  /** 
-  playerOne.innerHTML =  `
-  <tr>
-      <td>${light.light[0].name}</td>
-      <td>${light.light[0].score}</td>
-  </tr>
-`;
-playerTwo.innerHTML =  `
-<tr>
-    <td>${light.light[1].name}</td>
-    <td>${light.light[1].score}</td>
-</tr>
-`;
-playerThree.innerHTML =  `
-<tr>
-    <td>${light.light[2].name}</td>
-    <td>${light.light[2].score}</td>
-</tr>
-`;
-playerFour.innerHTML =  `
-<tr>
-    <td>${light.light[3].name}</td>
-    <td>${light.light[3].score}</td>
-</tr>
-`;
-playerFive.innerHTML =  `
-<tr>
-    <td>${light.light[4].name}</td>
-    <td>${light.light[4].score}</td>
-</tr>
-`;
-
-//players dark side saving username and score
-playerOneDark.innerHTML =  `
-  <tr>
-      <td>${dark.dark[0].name}</td>
-      <td>${dark.dark[0].score}</td>
-  </tr>
-`;
-playerTwoDark.innerHTML =  `
-<tr>
-    <td>${dark.dark[1].name}</td>
-    <td>${dark.dark[1].score}</td>
-</tr>
-`;
-playerThreeDark.innerHTML =  `
-<tr>
-    <td>${dark.dark[2].name}</td>
-    <td>${dark.dark[2].score}</td>
-</tr>
-`;
-playerFourDark.innerHTML =  `
-<tr>
-    <td>${dark.dark[3].name}</td>
-    <td>${dark.dark[3].score}</td>
-</tr>
-`;
-playerFiveDark.innerHTML =  `
-<tr>
-    <td>${dark.dark[4].name}</td>
-    <td>${dark.dark[4].score}</td>
-</tr>
-`;
-*/
- displayDarkScore()
+  displayDarkScore()
   displayLightScore()
 }
+
 let lightBest = [(light.light[0]), (light.light[1]), (light.light[2]), (light.light[3]), (light.light[4])];
 let darkBest = [(dark.dark[0]), (dark.dark[1]), (dark.dark[2]), (dark.dark[3]), (dark.dark[4])];
-//console.log(lightBest);
-//let lightBestStringify = (JSON.stringify(lightBest));
-//console.log(light.light[2].name)
-function displayDarkScore(){
+
+
+function displayDarkScore() {
   for (j = 0; j < lightBest.length; j++) {
     if (darkBest[j].side === "dark") {
       let bestScore = (darkBest[j].name + "," + darkBest[j].score);
       console.log(bestScore);
       let listTwo = document.createElement('li');
-      listTwo.innerText= bestScore;
+      listTwo.innerText = bestScore;
       document.querySelector('#boardTwo').appendChild(listTwo);
     }
   }
 }
 
-function displayLightScore(){
+function displayLightScore() {
   for (i = 0; i < lightBest.length; i++) {
     if (lightBest[i].side === "light") {
       let bestScore = (lightBest[i].name + "," + lightBest[i].score);
       console.log(bestScore);
       let list = document.createElement('li');
-      list.innerText= bestScore;
+      list.innerText = bestScore;
       document.querySelector('#board').appendChild(list);
     }
   }
