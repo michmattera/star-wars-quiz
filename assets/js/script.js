@@ -487,10 +487,23 @@ function checker(event) {
     scoreBoxes.classList.add('score-box', 'red');
 
   }
+  
+  const answers = document.querySelectorAll('.answer');
+  let answersAudio = document.getElementById('answersAudio');
+  answers.forEach(answer => {
+    answer.addEventListener("click", () => {
+      answersAudio.play();
+    });
+  });
   //set timeout for nextQuestion( to display once clicked an answer)
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
+/***
+ * //try to set audio for each answer clicked by user
+const answerSound = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+const buttons = document.querySelectorAll("answer");
 
+ */
 function removeChild() {
   if (document.querySelector('#levels').value === "easy") {
     if (currentQuestionsIndex == 6) {
@@ -601,7 +614,7 @@ function nextQuestion() {
     answer.classList.remove('correct-answer',
       'incorrect-answer'
     );
-  }
+  };
 }
 
 /**
