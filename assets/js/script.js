@@ -357,6 +357,7 @@ function runLightGame() {
 
 //function to change side still not working , bug found
 function changeSide() {
+  removeChild();
   messageContainer.classList.add('hide');
   messageContainer.classList.remove('flex');
   lostMessage.classList.add('hide');
