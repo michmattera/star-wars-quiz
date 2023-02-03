@@ -190,6 +190,7 @@ let restartBtn = document.getElementById('restart');
 let levels = document.getElementById('levels')
 const answers = document.querySelectorAll('.answer');
 
+let changeButtons = document.querySelectorAll('.change-color');
 /**
  * Wait for dom to be loaded
  * getLevel function to see what level is selected
@@ -290,15 +291,11 @@ function expertModality() {
  * display DarkQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
  */
 function runDarkGame() {
-  console.log('dark game');
-  openModalInstructionBtn.classList.remove('border-blue');
-  openModalInstructionBtn.classList.add('border-red');
-  openModalUsernameBtn.classList.remove('border-blue');
-  openModalUsernameBtn.classList.add('border-red');
-  openModalLeaderboardBtn.classList.remove('border-blue');
-  openModalLeaderboardBtn.classList.add('border-red');
-  levels.classList.remove('border-blue');
-  levels.classList.add('border-red');
+  Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
+    changeButtons.classList.remove('border-blue');
+    changeButtons.classList.add('border-red');
+});
+
   for (const answer of answers) {
     answer.classList.remove('border-green')
     answer.classList.add('border-red')
@@ -326,15 +323,11 @@ function runDarkGame() {
  * display LightQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
  */
 function runLightGame() {
-  console.log('light game')
-  openModalInstructionBtn.classList.remove('border-blue');
-  openModalInstructionBtn.classList.add('border-green');
-  openModalUsernameBtn.classList.remove('border-blue');
-  openModalUsernameBtn.classList.add('border-green');
-  openModalLeaderboardBtn.classList.remove('border-blue');
-  openModalLeaderboardBtn.classList.add('border-green');
-  levels.classList.remove('border-blue');
-  levels.classList.add('border-green');
+  Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
+    changeButtons.classList.remove('border-blue');
+    changeButtons.classList.add('border-green');
+});
+
   chosenLightSide.classList.add('hide')
   chosenDarkSide.classList.add('hide')
   level.classList.add('hide')
@@ -367,28 +360,20 @@ function changeSide() {
   score = 0;
 
   if (pickedSide.innerText === "light") {
-    openModalInstructionBtn.classList.remove('border-blue', 'border-green');
-    openModalInstructionBtn.classList.add('border-red');
-    openModalUsernameBtn.classList.remove('border-blue', 'border-green');
-    openModalUsernameBtn.classList.add('border-red');
-    openModalLeaderboardBtn.classList.remove('border-blue', 'border-green');
-    openModalLeaderboardBtn.classList.add('border-red');
-    levels.classList.remove('border-blue', 'border-green');
-    levels.classList.add('border-red');
+    Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
+      changeButtons.classList.remove('border-blue', 'border-green');
+      changeButtons.classList.add('border-red');
+  });
     for (const answer of answers) {
       answer.classList.remove('border-green')
       answer.classList.add('border-red')
     }
     runDarkGame()
   } else {
-    openModalInstructionBtn.classList.remove('border-blue', 'border-red');
-    openModalInstructionBtn.classList.add('border-green');
-    openModalUsernameBtn.classList.remove('border-blue', 'border-red');
-    openModalUsernameBtn.classList.add('border-green');
-    openModalLeaderboardBtn.classList.remove('border-blue', 'border-red');
-    openModalLeaderboardBtn.classList.add('border-green');
-    levels.classList.remove('border-blue', 'border-red');
-    levels.classList.add('border-green');
+    Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
+      changeButtons.classList.remove('border-blue', 'border-red');
+      changeButtons.classList.add('border-green');
+  });
     for (const answer of answers) {
       answer.classList.add('border-green')
       answer.classList.remove('border-red')
