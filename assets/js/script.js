@@ -121,8 +121,10 @@ function leaderboard() {
   if ((localStorage.getItem("highScores") === null)) {
 
   } else {
-    displayLightScore()
-    displayDarkScore()
+    
+  const timeoutLight = setTimeout(displayLightScore, 500);
+   
+  const timeoutDark = setTimeout(displayDarkScore, 500);
   }
 }
 
@@ -634,6 +636,10 @@ document.querySelector('.home-btn').addEventListener('click', function () {
 });
 //home button two - issue if using the same name did not work - fix it using two different classes
 document.querySelector('.home-btn-two').addEventListener('click', function () {
+  window.location.reload()
+});
+//add event listener to close leaderboard to avoid duplication of list in displayLightScore() - displayDarkScore()
+document.querySelector('.btn-close-leaderboard').addEventListener('click', function () {
   window.location.reload()
 });
 
