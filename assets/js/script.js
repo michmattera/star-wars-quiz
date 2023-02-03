@@ -137,12 +137,18 @@ function displayDarkScore() {
 
   for (j = 0; j < darkBest.length; j++) {
     if (darkBest[j].side === "dark") {
-      let bestScore = (darkBest[j].name + "" + darkBest[j].score);
-      console.log(bestScore);
+      
+      let bestName = (darkBest[j].name);
+      let bestScore= ( darkBest[j].score)
+
       darkBest.splice(5);
-      let listTwo = document.createElement('li');
-      listTwo.innerText = bestScore;
-      document.querySelector('#boardTwo').appendChild(listTwo);
+
+      let listTwoName = document.createElement('li'); 
+      listTwoName.innerText = bestName;
+      let listTwoScore = document.createElement('li');
+      listTwoScore.innerText = bestScore;
+      document.querySelector('#boardTwo-score').appendChild(listTwoScore);
+      document.querySelector('#boardTwo-name').appendChild(listTwoName);
     }
   }
 }
@@ -157,11 +163,15 @@ function displayLightScore() {
     if (lightBest[i].side === "light") {
       
       lightBest.splice(5);
-      let bestScore = (lightBest[i].name + "" + lightBest[i].score);
-      console.log(bestScore);
-      let list = document.createElement('li');
-      list.innerText = bestScore;
-      document.querySelector('#board').appendChild(list);
+      let bestName = (lightBest[i].name);
+      let bestScore= ( lightBest[i].score)
+
+      let listScore = document.createElement('li');
+      listScore.innerText = bestScore;
+      let listName = document.createElement('li');
+      listName.innerText = bestName;
+      document.querySelector('#board-score').appendChild(listScore);
+      document.querySelector('#board-name').appendChild(listName);
     }
   }
 }
@@ -483,12 +493,8 @@ function checker(event) {
   //set timeout for nextQuestion( to display once clicked an answer)
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
-/***
- * //try to set audio for each answer clicked by user
-const answerSound = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
-const buttons = document.querySelectorAll("answer");
 
- */
+
 function removeChild() {
   if (document.querySelector('#levels').value === "easy") {
     if (currentQuestionsIndex == 6) {
