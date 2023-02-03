@@ -483,14 +483,7 @@ function checker(event) {
     scoreBoxes.classList.add('score-box', 'red');
 
   }
-  
-  const answers = document.querySelectorAll('.answer');
-  let answersAudio = document.getElementById('answersAudio');
-  answers.forEach(answer => {
-    answer.addEventListener("click", () => {
-      answersAudio.play();
-    });
-  });
+ 
   //set timeout for nextQuestion( to display once clicked an answer)
   const myTimeout = setTimeout(nextQuestion, 1000);
 }
@@ -607,6 +600,7 @@ function nextQuestion() {
       'incorrect-answer'
     );
   };
+  answerSound()
 }
 
 /**
@@ -667,3 +661,16 @@ function togglePlay() {
     audioOnIcon.classList.remove("hide");
   }
 }
+/**
+ * function to add sound every time user click on an answer
+ */
+ function answerSound(){
+  const answers = document.querySelectorAll('.answer');
+let answersAudio = document.getElementById('answersAudio');
+answers.forEach(answer => {
+  answer.addEventListener("click", () => {
+    answersAudio.play();
+  });
+});
+ }
+
