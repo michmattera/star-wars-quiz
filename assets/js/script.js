@@ -202,7 +202,7 @@ let lostContainer = document.getElementById("lost");
 let restartBtn = document.getElementById("restart");
 let levels = document.getElementById("levels");
 const answers = document.querySelectorAll(".answer");
-
+let pickSideBox = document.getElementsByClassName("pick-side");
 let changeButtons = document.querySelectorAll(".change-color");
 /**
  * Wait for dom to be loaded
@@ -641,7 +641,6 @@ function winGame() {
 
 let lostMessage = document.getElementById("lost-message");
 let winningMessage = document.getElementById("winning-message");
-
 function loseGame() {
   messageContainer.classList.remove("hide");
   messageContainer.classList.add("flex");
@@ -650,7 +649,7 @@ function loseGame() {
   gameAreaElement.classList.add("hide");
   level.classList.remove("disabled");
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
-   You got ${positiveScore} points`;
+   You got just ${positiveScore} points`;
 }
 
 //home button
