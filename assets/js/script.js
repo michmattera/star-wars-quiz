@@ -92,15 +92,16 @@ saveHighScore = (e) => {
     } else return {
       "light": [],
       "dark": []
-    }
-  };
+    };
+  }
 
   if (pickedSide.innerText === "light") {
     addToHighScore('light', {
       score: positiveScore,
       name: username.value,
       side: pickedSide.innerText
-    })
+    });
+    
   } else {
     addToHighScore('dark', {
       score: positiveScore,
@@ -108,7 +109,7 @@ saveHighScore = (e) => {
       side: pickedSide.innerText
     });
   }
-}
+};
 
 
 function get() {
@@ -139,7 +140,7 @@ function displayDarkScore() {
     if (darkBest[j].side === "dark") {
       
       let bestName = (darkBest[j].name);
-      let bestScore= ( darkBest[j].score)
+      let bestScore= ( darkBest[j].score);
 
       darkBest.splice(5);
 
@@ -164,7 +165,7 @@ function displayLightScore() {
       
       lightBest.splice(5);
       let bestName = (lightBest[i].name);
-      let bestScore= ( lightBest[i].score)
+      let bestScore= ( lightBest[i].score);
 
       let listScore = document.createElement('li');
       listScore.innerText = bestScore;
@@ -184,7 +185,7 @@ let chosenLightSide = document.getElementById('light-side');
 let chosenDarkSide = document.getElementById('dark-side');
 let iconsContainer = document.getElementById('button-container');
 //let shuffledLightQuestions = lightQuestions.sort[Math.floor(Math.random() * lightQuestions.length)];
-let currentQuestionsIndex = 0
+let currentQuestionsIndex = 0;
 let questionNumber = 0;
 let totalQuestions = 14;
 let positiveScore = 0;
@@ -197,7 +198,7 @@ let messageContainer = document.getElementById('message');
 let winMessage = document.getElementById('won');
 let lostContainer = document.getElementById('lost');
 let restartBtn = document.getElementById('restart');
-let levels = document.getElementById('levels')
+let levels = document.getElementById('levels');
 const answers = document.querySelectorAll('.answer');
 
 let changeButtons = document.querySelectorAll('.change-color');
@@ -209,7 +210,7 @@ let changeButtons = document.querySelectorAll('.change-color');
  */
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName('button');
-  getLevel()
+  getLevel();
   for (let button of buttons) {
     button.addEventListener('click', function () {
       if (this.getAttribute("data-type") === "light") {
@@ -217,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (this.getAttribute("data-type") === "dark") {
         runDarkGame();
       }
-    })
+    });
   }
 
 });
@@ -229,18 +230,18 @@ function getLevel() {
 
   level.addEventListener('change', function () {
     if (level.value === "easy") {
-      console.log('easy')
-      easyModality()
+      console.log('easy');
+      easyModality();
     } else if (level.value === "medium") {
-      mediumModality()
+      mediumModality();
     } else if (level.value === "difficult") {
-      difficultModality()
+      difficultModality();
     } else if (level.value === "expert") {
-      expertModality()
+      expertModality();
     } else {
-      alert(`difficult unknown`)
+      alert(`difficult unknown`);
     }
-  })
+  });
 }
 
 //variables to get difficulty level
@@ -257,7 +258,7 @@ function easyModality() {
   localStorage.setItem("storedEasyLevel", chosenLevel);
   document.getElementById("playing-level").innerHTML = "You are playing : " + chosenLevel;
   if (localStorage.getItem('easy') === null) {
-    localStorage.setItem('easy', '[]')
+    localStorage.setItem('easy', '[]');
   }
   var oldData = JSON.parse(localStorage.getItem('easy'));
   //oldData.push(chosenLevel);
@@ -283,7 +284,7 @@ function difficultModality() {
   document.getElementById("playing-level").innerHTML = "You are playing : " + chosenDifficultLevel;
   var oldData = JSON.parse(localStorage.getItem('difficult'));
   //oldData.push(chosenLevel);
-  localStorage.setItem('difficult', JSON.stringify(oldData))
+  localStorage.setItem('difficult', JSON.stringify(oldData));
 }
 /**
  * store difficult modality and print it in game level chosen
@@ -294,7 +295,7 @@ function expertModality() {
   document.getElementById("playing-level").innerHTML = "You are playing" + chosenExpertLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem('expert'));
   //oldData.push(chosenLevel);
-  localStorage.setItem('expert', JSON.stringify(oldData))
+  localStorage.setItem('expert', JSON.stringify(oldData));
 }
 /**
  * When chose side in runDarkGame
@@ -304,19 +305,20 @@ function runDarkGame() {
   Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
     changeButtons.classList.remove('border-blue');
     changeButtons.classList.add('border-red');
+    level.classList.add('disabled');
 });
 
   for (const answer of answers) {
-    answer.classList.remove('border-green')
-    answer.classList.add('border-red')
+    answer.classList.remove('border-green');
+    answer.classList.add('border-red');
   }
 
-  chosenDarkSide.classList.add('hide')
-  chosenLightSide.classList.add('hide')
-  level.classList.add('hide')
-  gameAreaElement.classList.remove('hide')
-  showDarkQuestion()
-  showDarkChoices()
+  chosenDarkSide.classList.add('hide');
+  chosenLightSide.classList.add('hide');
+  level.classList.add('hide');
+  gameAreaElement.classList.remove('hide');
+  showDarkQuestion();
+  showDarkChoices();
 
   let dark = document.getElementById('pickedSide');
   dark.innerText = "dark";
@@ -324,8 +326,8 @@ function runDarkGame() {
   const buttonList = document.querySelectorAll(".answer");
   buttonList.forEach(answer => {
     answer.addEventListener('click', checker);
-  })
-  checker()
+  });
+  checker();
 }
 
 /**
@@ -336,23 +338,24 @@ function runLightGame() {
   Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
     changeButtons.classList.remove('border-blue');
     changeButtons.classList.add('border-green');
+    level.classList.add('disabled');
 });
 
-  chosenLightSide.classList.add('hide')
-  chosenDarkSide.classList.add('hide')
-  level.classList.add('hide')
-  gameAreaElement.classList.remove('hide')
+  chosenLightSide.classList.add('hide');
+  chosenDarkSide.classList.add('hide');
+  level.classList.add('hide');
+  gameAreaElement.classList.remove('hide');
 
   let light = document.getElementById('pickedSide');
   light.innerText = "light";
-  showQuestion()
-  showChoices()
+  showQuestion();
+  showChoices();
   //add event listener for each button clicked and run function checker to see if is correct or not
   const buttonList = document.querySelectorAll(".answer");
   buttonList.forEach(answer => {
     answer.addEventListener('click', checker);
-  })
-  checker()
+  });
+  checker();
 }
 
 //function to change side still not working , bug found
@@ -376,20 +379,20 @@ function changeSide() {
       changeButtons.classList.add('border-red');
   });
     for (const answer of answers) {
-      answer.classList.remove('border-green')
-      answer.classList.add('border-red')
+      answer.classList.remove('border-green');
+      answer.classList.add('border-red');
     }
-    runDarkGame()
+    runDarkGame();
   } else {
     Array.from(document.querySelectorAll('.change-color')).forEach(function(changeButtons) { 
       changeButtons.classList.remove('border-blue', 'border-red');
       changeButtons.classList.add('border-green');
   });
     for (const answer of answers) {
-      answer.classList.add('border-green')
-      answer.classList.remove('border-red')
+      answer.classList.add('border-green');
+      answer.classList.remove('border-red');
     }
-    runLightGame()
+    runLightGame();
   }
 }
 
@@ -410,9 +413,9 @@ function restartGame() {
   positiveScore = 0;
   score = 0;
   if (pickedSide.innerText === "dark") {
-    runDarkGame()
+    runDarkGame();
   } else {
-    runLightGame()
+    runLightGame();
   }
 }
 
@@ -463,11 +466,11 @@ function checker(event) {
   //if clicked answer is the same of correctanswer
   if ((clickedAnswer === correctAnswer) || (clickedAnswer === correctDarkAnswer)) {
     console.log('correct');
-    this.classList.remove('button:hover')
-    this.classList.add('correct-answer')
+    this.classList.remove('button:hover');
+    this.classList.add('correct-answer');
 
     // add div inside score container and style red
-    let scoreBoxes = document.createElement('div')
+    let scoreBoxes = document.createElement('div');
     scoreDiv.appendChild(scoreBoxes);
     scoreBoxes.classList.add('score-box', 'green');
     incrementPositiveAnswer(correctBonus);
@@ -475,10 +478,10 @@ function checker(event) {
     //if clicked answer is not the same of correct answer
   } else {
     console.log('incorrect');
-    this.classList.remove('button:hover')
-    this.classList.add('incorrect-answer')
+    this.classList.remove('button:hover');
+    this.classList.add('incorrect-answer');
     // add div inside score container and style red
-    let scoreBoxes = document.createElement('div')
+    let scoreBoxes = document.createElement('div');
     scoreDiv.appendChild(scoreBoxes);
     scoreBoxes.classList.add('score-box', 'red');
 
@@ -496,7 +499,7 @@ function removeChild() {
         scoreDiv.removeChild(scoreDiv.firstChild);
       }
     }
-  };
+  }
 
   if (document.querySelector('#levels').value === "medium") {
     if (currentQuestionsIndex == 10) {
@@ -504,7 +507,7 @@ function removeChild() {
         scoreDiv.removeChild(scoreDiv.firstChild);
       }
     }
-  };
+  }
 
   if (document.querySelector('#levels').value === "difficult") {
     if (currentQuestionsIndex == 14) {
@@ -512,7 +515,7 @@ function removeChild() {
         scoreDiv.removeChild(scoreDiv.firstChild);
       }
     }
-  };
+  }
 }
 
 /**
@@ -521,8 +524,8 @@ function removeChild() {
 //https://www.youtube.com/watch?v=BOQLbu_Crc0
 incrementPositiveAnswer = num => {
   positiveScore += num;
-  console.log(positiveScore)
-}
+  console.log(positiveScore);
+};
 
 /**
  * increase question number and currentQuestionIndex, show again new question and answers
@@ -535,19 +538,19 @@ function nextQuestion() {
   if (document.querySelector('#levels').value === "easy") {
     if (currentQuestionsIndex == 6) {
       if (positiveScore > 3) {
-        winGame()
+        winGame();
       } else {
-        loseGame()
+        loseGame();
       }
     } else {
       currentQuestionsIndex++;
       questionNumber++;
       if (pickedSide.innerText === "light") {
-        showChoices()
-        showQuestion()
+        showChoices();
+        showQuestion();
       } else {
-        showDarkChoices()
-        showDarkQuestion()
+        showDarkChoices();
+        showDarkQuestion();
       }
     }
   }
@@ -557,19 +560,19 @@ function nextQuestion() {
     console.log('test');
     if (currentQuestionsIndex == 10) {
       if (positiveScore > 5) {
-        winGame()
+        winGame();
       } else {
-        loseGame()
+        loseGame();
       }
     } else {
       currentQuestionsIndex++;
       questionNumber++;
       if (pickedSide.innerText === "light") {
-        showChoices()
-        showQuestion()
+        showChoices();
+        showQuestion();
       } else {
-        showDarkChoices()
-        showDarkQuestion()
+        showDarkChoices();
+        showDarkQuestion();
       }
     }
   }
@@ -578,20 +581,20 @@ function nextQuestion() {
     console.log('test');
     if (currentQuestionsIndex == 14) {
       if (positiveScore > 7) {
-        winGame()
+        winGame();
 
       } else {
-        loseGame()
+        loseGame();
       }
     } else {
       currentQuestionsIndex++;
       questionNumber++;
       if (pickedSide.innerText === "light") {
-        showChoices()
-        showQuestion()
+        showChoices();
+        showQuestion();
       } else {
-        showDarkChoices()
-        showDarkQuestion()
+        showDarkChoices();
+        showDarkQuestion();
       }
     }
   }
@@ -599,7 +602,7 @@ function nextQuestion() {
     answer.classList.remove('correct-answer',
       'incorrect-answer'
     );
-  };
+  }
 }
 
 /**
@@ -624,21 +627,23 @@ function loseGame() {
   lostContainer.classList.remove('hide');
   lostMessage.classList.remove('hide');
   gameAreaElement.classList.add('hide');
+  
+  level.classList.remove('disabled');
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got ${positiveScore} points`;
 }
 
 //home button
 document.querySelector('.home-btn').addEventListener('click', function () {
-  window.location.reload()
+  window.location.reload();
 });
 //home button two - issue if using the same name did not work - fix it using two different classes
 document.querySelector('.home-btn-two').addEventListener('click', function () {
-  window.location.reload()
+  window.location.reload();
 });
 //add event listener to close leaderboard to avoid duplication of list in displayLightScore() - displayDarkScore()
 document.querySelector('.btn-close-leaderboard').addEventListener('click', function () {
-  window.location.reload()
+  window.location.reload();
 });
 
 /*Audio Player 

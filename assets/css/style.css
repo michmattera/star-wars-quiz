@@ -503,6 +503,12 @@ i {
   border: 5px solid #ffd0d0;
 
 }
+/*style for disabled buttons*/
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 
 /*For screen with max-width of 1065 px-tablet size*/
 @media screen and (max-width: 1100px) {
