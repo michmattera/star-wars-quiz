@@ -600,7 +600,7 @@ function nextQuestion() {
       'incorrect-answer'
     );
   };
-  answerSound()
+  //answerSound()
 }
 
 /**
@@ -653,10 +653,12 @@ const audioOnIcon = document.getElementById("sound-on");
 function togglePlay() {
   if (myAudio.paused) {
     myAudio.play();
+    answerSound();
     audioOffIcon.classList.remove("hide");
     audioOnIcon.classList.add("hide");
   } else {
     myAudio.pause();
+    answersAudio.pause();
     audioOffIcon.classList.add("hide");
     audioOnIcon.classList.remove("hide");
   }
