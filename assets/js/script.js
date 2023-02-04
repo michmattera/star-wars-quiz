@@ -485,7 +485,7 @@ function checker(event) {
   }
  
   //set timeout for nextQuestion( to display once clicked an answer)
-  const myTimeout = setTimeout(nextQuestion, 1000);
+  const myTimeout = setTimeout(nextQuestion, 600);
 }
 
 
@@ -600,7 +600,6 @@ function nextQuestion() {
       'incorrect-answer'
     );
   };
-  //answerSound()
 }
 
 /**
@@ -665,12 +664,14 @@ function togglePlay() {
 }
 /**
  * function to add sound every time user click on an answer
+ * add currenttime 0 so the sound also if is not finished will restart on next click
  */
  function answerSound(){
   const answers = document.querySelectorAll('.answer');
 let answersAudio = document.getElementById('answersAudio');
 answers.forEach(answer => {
   answer.addEventListener("click", () => {
+    answersAudio.currentTime = 0;
     answersAudio.play();
   });
 });
