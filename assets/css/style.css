@@ -347,6 +347,7 @@ input {
   font-size: 20px;
   font-weight: bold;
   box-shadow: 0 0 20px #0783be;
+  cursor: pointer;
 
 }
 
@@ -399,7 +400,8 @@ select#levels {
 
 #button-container-child-one,
 #button-container-child-two {
-  width: 50%;
+  width: 48%;
+  margin: 1%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -535,7 +537,7 @@ i {
     margin: 1%;
   }
   .page-container {
-    min-height: 65vh;
+    min-height: 75vh;
 }
   .side {
     width: 50%;
@@ -607,7 +609,7 @@ i {
   }
 }
 
-/*For screen with max-width of 1065 px-tablet size*/
+/*For screen with max-width of 650 px-tablet size*/
 @media screen and (max-width: 650px) {
   .container-pick-side {
     flex-direction: column-reverse;
@@ -635,4 +637,41 @@ i {
   #question {
     font-size: 25px;
   }
+}
+/*For screen with max-width of 1065 px-tablet size*/
+@media screen and (max-width: 350px) {
+  .container-pick-side {
+    flex-direction: column-reverse;
+  }
+  #game-area {
+    width: 95%;
+    height: 300px;
+    margin: 0 2.5%;
+}
+.page-container {
+  min-height: 100vh;
+}
+#question {
+  font-size: 20px;
+  margin: 15% 3%;
+}
+button {
+  font-size: 10px;
+}
+button {
+  height: 50px;
+}
+.heading {
+  font-size: 37px;
+}
+.container-footer>* {
+  font-size: 12px;
+}
+.score-box {
+  height: 20px;
+  width: 25px;
+}
+#winning-message, #lost-message {
+  font-size: 20px;
+}
 }
