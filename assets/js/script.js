@@ -3,58 +3,61 @@
 const modalInstruction = document.querySelector(".modal-instruction");
 const overlay = document.querySelector(".overlay");
 const openModalInstructionBtn = document.querySelector(".btn-open-instruction");
-const clsModalInstructionBtn = document.querySelector(".btn-close-instruction");
+const closeButtons = document.querySelectorAll(".btn-close");
+//username modal
+const modalUsername = document.querySelector(".modal-username");
+const openModalUsernameBtn = document.querySelector(".btn-open-username");
+const saveButton = document.querySelector(".save");
+//leaderboard modal
+const modalLeaderboard = document.querySelector(".modal-leaderboard");
+const openModalLeaderboardBtn = document.querySelector(".btn-open-leaderboard");
+
+//open modal instruction
 const openModalInstruction = function () {
   modalInstruction.classList.remove("hide");
   overlay.classList.remove("hide");
 };
-const clsModalInstruction = function () {
-  modalInstruction.classList.add("hide");
-  overlay.classList.add("hide");
-};
-openModalInstructionBtn.addEventListener("click", openModalInstruction);
-clsModalInstructionBtn.addEventListener("click", clsModalInstruction);
-// When the user clicks anywhere outside of the modal, close it
-/*
-window.onclick = function(event) {
-  if (event.target == modalInstruction) {
-    modalInstruction.classList.add("hide");
-    overlay.classList.add("hide");
-  }
-}
-**/
-//username modal
-const modalUsername = document.querySelector(".modal-username");
-const openModalUsernameBtn = document.querySelector(".btn-open-username");
-const closeModalUsernameBtn = document.querySelector(".btn-close-username");
-const saveButton = document.querySelector(".save");
+//open modal username 
 const openModalUsername = function () {
   modalUsername.classList.remove("hidden");
   overlay.classList.remove("hide");
 };
-const closeModalUsername = function () {
-  modalUsername.classList.add("hidden");
-  overlay.classList.add("hide");
-};
-saveButton.addEventListener("click", closeModalUsername);
-openModalUsernameBtn.addEventListener("click", openModalUsername);
-closeModalUsernameBtn.addEventListener("click", closeModalUsername);
-
-//leaderboard modal
-const modalLeaderboard = document.querySelector(".modal-leaderboard");
-const openModalLeaderboardBtn = document.querySelector(".btn-open-leaderboard");
-const clsModalLeaderboardBtn = document.querySelector(".btn-close-leaderboard");
+//open modal leaderboard
 const openModalLeaderboard = function () {
   modalLeaderboard.classList.remove("hide");
   overlay.classList.remove("hide");
 };
-const clsModalLeaderboard = function () {
+
+//close all modal when clicked on closeButtons
+function clsModal() {
+  modalUsername.classList.add("hidden");
+  modalInstruction.classList.add("hide");
   modalLeaderboard.classList.add("hide");
   overlay.classList.add("hide");
 };
-openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
-clsModalLeaderboardBtn.addEventListener("click", clsModalLeaderboard);
+//select all modals to add same close function clsModal when clicked
+Array.from(document.querySelectorAll(".btn-close")).forEach(closeButtons => {
+  closeButtons.addEventListener("click", clsModal);
+});
 
+//add event listener to open modals
+openModalInstructionBtn.addEventListener("click", openModalInstruction);
+saveButton.addEventListener("click", closeButtons);
+openModalUsernameBtn.addEventListener("click", openModalUsername);
+openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
+
+
+let modal = document.querySelectorAll(".modal");
+window.onclick = function(event) {
+  if (event.target == modal) {
+  }else {
+    clsModal()
+  }
+}
+// When the user clicks anywhere outside of the modal, close it
+/*
+
+**/
 
 //https://www.youtube.com/watch?v=DFhmNLKwwGw
 const highScoresList = document.getElementById("highScoresList");
@@ -115,29 +118,30 @@ function leaderboard() {
   if ((localStorage.getItem("highScores") === null)) {
 
   } else {
-  const timeoutLight = setTimeout(displayLightScore, 500);
-  const timeoutDark = setTimeout(displayDarkScore, 500);
+    const timeoutLight = setTimeout(displayLightScore, 500);
+    const timeoutDark = setTimeout(displayDarkScore, 500);
   }
 }
 
 
 function displayDarkScore() {
-// Declaring varibale of darkBest from array of localstorage light highScores
-// Max number of localstorage to save and then sort is 8.
+  // Declaring varibale of darkBest from array of localstorage light highScores
+  // Max number of localstorage to save and then sort is 8.
   let darkBest = [(dark.dark[0]),
-                  (dark.dark[1]),
-                  (dark.dark[2]),
-                  (dark.dark[3]),
-                  (dark.dark[4]),
-                  (dark.dark[5]),
-                  (dark.dark[6]),
-                  (dark.dark[7])];
+    (dark.dark[1]),
+    (dark.dark[2]),
+    (dark.dark[3]),
+    (dark.dark[4]),
+    (dark.dark[5]),
+    (dark.dark[6]),
+    (dark.dark[7])
+  ];
   darkBest.sort((a, b) => b.score - a.score);
 
   for (j = 0; j < darkBest.length; j++) {
     if (darkBest[j].side === "dark") {
       let bestName = (darkBest[j].name);
-      let bestScore= ( darkBest[j].score);
+      let bestScore = (darkBest[j].score);
 
       darkBest.splice(5);
 
@@ -152,23 +156,24 @@ function displayDarkScore() {
 }
 
 function displayLightScore() {
-// Declaring varibale of lightBest from array of localstorage light highScores
-// Max number of localstorage to save and then sort is 8.
+  // Declaring varibale of lightBest from array of localstorage light highScores
+  // Max number of localstorage to save and then sort is 8.
   let lightBest = [(light.light[0]),
-                   (light.light[1]),
-                   (light.light[2]),
-                   (light.light[3]),
-                   (light.light[4]),
-                   (light.light[5]),
-                   (light.light[6]),
-                   (light.light[7])];
+    (light.light[1]),
+    (light.light[2]),
+    (light.light[3]),
+    (light.light[4]),
+    (light.light[5]),
+    (light.light[6]),
+    (light.light[7])
+  ];
   lightBest.sort((a, b) => b.score - a.score);
 
   for (i = 0; i < lightBest.length; i++) {
     if (lightBest[i].side === "light") {
       lightBest.splice(5);
       let bestName = (lightBest[i].name);
-      let bestScore= ( lightBest[i].score);
+      let bestScore = (lightBest[i].score);
 
       let listScore = document.createElement("li");
       listScore.innerText = bestScore;
@@ -259,7 +264,7 @@ function easyModality() {
   let chosenLevel = document.getElementById("easy").value;
   localStorage.setItem("storedEasyLevel", chosenLevel);
   document.getElementById("playing-level").innerHTML =
-      "You are playing : " + chosenLevel;
+    "You are playing : " + chosenLevel;
   if (localStorage.getItem("easy") === null) {
     localStorage.setItem("easy", "[]");
   }
@@ -274,7 +279,7 @@ function mediumModality() {
   let chosenMediumLevel = document.getElementById("medium").value;
   localStorage.setItem("storedMediumLevel", chosenMediumLevel);
   document.getElementById("playing-level").innerHTML =
-      "You are playing : " + chosenMediumLevel;
+    "You are playing : " + chosenMediumLevel;
   var oldData = JSON.parse(localStorage.getItem("medium"));
   //oldData.push(chosenLevel);
   localStorage.setItem("medium", JSON.stringify(oldData));
@@ -286,7 +291,7 @@ function difficultModality() {
   let chosenDifficultLevel = document.getElementById("difficult").value;
   localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
   document.getElementById("playing-level").innerHTML =
-      "You are playing : " + chosenDifficultLevel;
+    "You are playing : " + chosenDifficultLevel;
   var oldData = JSON.parse(localStorage.getItem("difficult"));
   //oldData.push(chosenLevel);
   localStorage.setItem("difficult", JSON.stringify(oldData));
@@ -298,7 +303,7 @@ function expertModality() {
   let chosenExpertLevel = document.getElementById("expert").value;
   localStorage.setItem("storedExpertLevel", chosenExpertLevel);
   document.getElementById("playing-level").innerHTML =
-      "You are playing" + chosenExpertLevel + "modality";
+    "You are playing" + chosenExpertLevel + "modality";
   var oldData = JSON.parse(localStorage.getItem("expert"));
   //oldData.push(chosenLevel);
   localStorage.setItem("expert", JSON.stringify(oldData));
@@ -309,11 +314,11 @@ function expertModality() {
  */
 function runDarkGame() {
   Array.from(document.querySelectorAll(".change-color"))
-      .forEach(function(changeButtons){
-    changeButtons.classList.remove("border-blue");
-    changeButtons.classList.add("border-red");
-    level.classList.add("disabled");
-});
+    .forEach(function (changeButtons) {
+      changeButtons.classList.remove("border-blue");
+      changeButtons.classList.add("border-red");
+      level.classList.add("disabled");
+    });
 
   for (const answer of answers) {
     answer.classList.remove("border-green");
@@ -344,11 +349,11 @@ function runDarkGame() {
  */
 function runLightGame() {
   Array.from(document.querySelectorAll(".change-color"))
-      .forEach(function(changeButtons){
-    changeButtons.classList.remove("border-blue");
-    changeButtons.classList.add("border-green");
-    level.classList.add("disabled");
-});
+    .forEach(function (changeButtons) {
+      changeButtons.classList.remove("border-blue");
+      changeButtons.classList.add("border-green");
+      level.classList.add("disabled");
+    });
 
   chosenLightSide.classList.add("hide");
   chosenDarkSide.classList.add("hide");
@@ -385,10 +390,10 @@ function changeSide() {
 
   if (pickedSide.innerText === "light") {
     Array.from(document.querySelectorAll(".change-color"))
-        .forEach(function(changeButtons){
-      changeButtons.classList.remove("border-blue", "border-green");
-      changeButtons.classList.add("border-red");
-  });
+      .forEach(function (changeButtons) {
+        changeButtons.classList.remove("border-blue", "border-green");
+        changeButtons.classList.add("border-red");
+      });
     for (const answer of answers) {
       answer.classList.remove("border-green");
       answer.classList.add("border-red");
@@ -396,10 +401,10 @@ function changeSide() {
     runDarkGame();
   } else {
     Array.from(document.querySelectorAll(".change-color"))
-        .forEach(function(changeButtons){
-      changeButtons.classList.remove("border-blue", "border-red");
-      changeButtons.classList.add("border-green");
-  });
+      .forEach(function (changeButtons) {
+        changeButtons.classList.remove("border-blue", "border-red");
+        changeButtons.classList.add("border-green");
+      });
     for (const answer of answers) {
       answer.classList.add("border-green");
       answer.classList.remove("border-red");
@@ -449,24 +454,24 @@ function showDarkQuestion() {
  */
 function showChoices() {
   document.querySelector("#answer-one").innerHTML =
-      lightQuestions[questionNumber].answerOne;
+    lightQuestions[questionNumber].answerOne;
   document.querySelector("#answer-two").innerHTML =
-      lightQuestions[questionNumber].answerTwo;
+    lightQuestions[questionNumber].answerTwo;
   document.querySelector("#answer-three").innerHTML =
-      lightQuestions[questionNumber].answerThree;
+    lightQuestions[questionNumber].answerThree;
   document.querySelector("#answer-four").innerHTML =
-      lightQuestions[questionNumber].answerFour;
+    lightQuestions[questionNumber].answerFour;
 }
 
 function showDarkChoices() {
   document.querySelector("#answer-one").innerHTML =
-      darkQuestions[questionNumber].answerOne;
+    darkQuestions[questionNumber].answerOne;
   document.querySelector("#answer-two").innerHTML =
-      darkQuestions[questionNumber].answerTwo;
+    darkQuestions[questionNumber].answerTwo;
   document.querySelector("#answer-three").innerHTML =
-      darkQuestions[questionNumber].answerThree;
+    darkQuestions[questionNumber].answerThree;
   document.querySelector("#answer-four").innerHTML =
-      darkQuestions[questionNumber].answerFour;
+    darkQuestions[questionNumber].answerFour;
 }
 
 /**
@@ -484,8 +489,8 @@ function checker(event) {
   let correctDarkAnswer = darkQuestions[questionNumber].correctAnswer;
   //if clicked answer is the same of correctanswer
   if ((clickedAnswer === correctAnswer) ||
-      (clickedAnswer === correctDarkAnswer))
-  { console.log("correct");
+    (clickedAnswer === correctDarkAnswer)) {
+    console.log("correct");
     this.classList.remove("button:hover");
     this.classList.add("correct-answer");
 
@@ -634,13 +639,14 @@ function winGame() {
   winMessage.classList.remove("hide");
   gameAreaElement.classList.add("hide");
   winningMessage.innerText =
-      `Congratulation you won the battle master ${username.value}!
+    `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
   winningMessage.classList.remove("hide");
 }
 
 let lostMessage = document.getElementById("lost-message");
 let winningMessage = document.getElementById("winning-message");
+
 function loseGame() {
   messageContainer.classList.remove("hide");
   messageContainer.classList.add("flex");
@@ -663,10 +669,10 @@ document.querySelector(".home-btn-two").addEventListener("click", function () {
 });
 //add event listener to close leaderboard
 //to avoid duplication of list in displayLightScore() - displayDarkScore()
-document.querySelector(".btn-close-leaderboard")
-    .addEventListener("click", function () {
-  window.location.reload();
-});
+document.querySelector(".leaderboard")
+  .addEventListener("click", function () {
+    window.location.reload();
+  });
 
 /*Audio Player
 Created using information from Stackflow
@@ -695,14 +701,13 @@ function togglePlay() {
  * add currenttime 0 so the sound
  *if is not finished will restart on next click
  */
- function answerSound(){
+function answerSound() {
   const answers = document.querySelectorAll(".answer");
-let answersAudio = document.getElementById("answersAudio");
-answers.forEach(answer => {
-  answer.addEventListener("click", () => {
-    answersAudio.currentTime = 0;
-    answersAudio.play();
+  let answersAudio = document.getElementById("answersAudio");
+  answers.forEach(answer => {
+    answer.addEventListener("click", () => {
+      answersAudio.currentTime = 0;
+      answersAudio.play();
+    });
   });
-});
- }
-
+}

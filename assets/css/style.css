@@ -139,10 +139,19 @@ button {
   cursor: pointer;
 }
 
-button:hover,
+.btn-open-instruction:hover,
+.btn-open-username:hover,
+.btn-open-leaderboard:hover,
+.button-home:hover,
+.home-btn:hover,
+.sound-btn:hover,
 select#levels:hover {
   background-color: #ddd;
   color: #112948;
+}
+
+.answer:hover {
+  transform: scale(1.2);
 }
 
 .hide,
@@ -223,8 +232,8 @@ select#levels:hover {
   font-size: 23px;
   color: #ddd;
   border-radius: 10%;
+  transition: all .10s;
 }
-
 .modal-instruction>* {
   margin: 5%;
   line-height: 26px;
@@ -424,9 +433,10 @@ select#levels {
   margin: 3%;
   border: none;
 }
-#lost-message{
+
+#lost-message {
   color: rgb(136, 0, 0);
-  
+
   text-shadow: 1px 1px 2px #d8c6c6, 0 0 1em rgb(136, 0, 0), 0 0 0.2em #d8c6c6;
 }
 
@@ -503,6 +513,7 @@ i {
   border: 5px solid #ffd0d0;
 
 }
+
 /*style for disabled buttons*/
 .disabled {
   pointer-events: none;
@@ -546,7 +557,8 @@ i {
     height: 25px;
     font-size: 12px;
   }
+
   .border-blue {
     border: 3px solid #0783be;
-}
+  }
 }
