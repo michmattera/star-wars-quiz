@@ -38,7 +38,7 @@
                     <!--Modal for instruction of quiz-->
                     <section onclick="close(event);" class="modal-instruction hide border-blue">
                         <div class="flex">
-                            <button class="btn-close">⨉</button>
+                            <button class="btn-close instruction">⨉</button>
                             <h3>Instruction:</h3>
                             <br>
                             <p>
@@ -89,9 +89,9 @@
                     <button class="btn-open-instruction border-blue change-color "><i class="fa-solid fa-question"></i></button>
 
                     <!--Modal for username to insert and save-->
-                    <section class="modal-username modal hidden">
+                    <section class="modal-username hidden">
                         <div class="flex">
-                            <button class="btn-close">⨉</button>
+                            <button class="btn-close username">⨉</button>
                             <h3>
                                 Choose player!
                             </h3>
@@ -187,18 +187,16 @@
                 <p id="winning-message">
                 </p>
 
-                <button id="restart" onclick="restartGame()">Restart Game</button>
-                <button class="home-btn">Home</button>
-                <button id="save-score" onclick="saveHighScore(event)">Save score</button>
-                <button class="change-side" onclick="changeSide()">Change side!</button>
+                <button id="restart" class="final-btn" onclick="restartGame()">Restart Game</button>
+                <button id="save-score" class="final-btn" onclick="saveHighScore(event)">Save score</button>
+                <button class="change-side final-btn" onclick="changeSide()"><i class="fa-solid fa-rotate"></i> Change side!</button>
             </div>
             <div id="lost" class="hide">
                 <p id="lost-message">
                 </p>
-                <button id="restart" onclick="restartGame()">Restart Game</button>
-                <button class="home-btn-two">Home</button>
-                <button id="save-score" onclick="saveHighScore(event)">Save score</button>
-                <button class="change-side" onclick="changeSide()">Change side</button>
+                <button id="restart" class="final-btn" onclick="restartGame()">Restart Game</button>
+                <button id="save-score" class="final-btn" onclick="saveHighScore(event)">Save score</button>
+                <button class="change-side final-btn" onclick="changeSide()"><i class="fa-solid fa-rotate"></i> Change side</button>
             </div>
         </section>
         <!--Creating div area with question div and answer div to display main game -->

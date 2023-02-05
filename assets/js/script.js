@@ -46,14 +46,6 @@ saveButton.addEventListener("click", closeButtons);
 openModalUsernameBtn.addEventListener("click", openModalUsername);
 openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 
-
-let modal = document.querySelectorAll(".modal");
-window.onclick = function(event) {
-  if (event.target == modal) {
-  }else {
-    clsModal()
-  }
-}
 // When the user clicks anywhere outside of the modal, close it
 /*
 
@@ -342,7 +334,7 @@ function runDarkGame() {
   });
   checker();
 }
-
+let containerPickSide  = document.getElementsByClassName("container-pick-side");
 /**
  * When chose side in runLightGame
  * display LightQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
@@ -354,7 +346,6 @@ function runLightGame() {
       changeButtons.classList.add("border-green");
       level.classList.add("disabled");
     });
-
   chosenLightSide.classList.add("hide");
   chosenDarkSide.classList.add("hide");
   level.classList.add("hide");
@@ -662,11 +653,7 @@ function loseGame() {
 document.querySelector(".home-btn").addEventListener("click", function () {
   window.location.reload();
 });
-//home button two - issue if using the same name did not work
-//fix it using two different classes
-document.querySelector(".home-btn-two").addEventListener("click", function () {
-  window.location.reload();
-});
+
 //add event listener to close leaderboard
 //to avoid duplication of list in displayLightScore() - displayDarkScore()
 document.querySelector(".leaderboard")
