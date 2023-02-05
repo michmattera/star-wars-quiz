@@ -321,6 +321,9 @@ function runDarkGame() {
   chosenLightSide.classList.add("hide");
   level.classList.add("hide");
   gameAreaElement.classList.remove("hide");
+  
+  lostMessage.classList.add("red-text");
+  winningMessage.classList.add("red-text");
   showDarkQuestion();
   showDarkChoices();
 
@@ -350,7 +353,6 @@ function runLightGame() {
   chosenDarkSide.classList.add("hide");
   level.classList.add("hide");
   gameAreaElement.classList.remove("hide");
-
   let light = document.getElementById("pickedSide");
   light.innerText = "light";
   showQuestion();
@@ -373,6 +375,9 @@ function changeSide() {
   lostContainer.classList.add("hide");
   winningMessage.classList.add("hide");
   winMessage.classList.add("hide");
+  
+  lostMessage.classList.remove("red-text");
+  winningMessage.classList.remove("red-text");
   clickedAnswer = 0;
   currentQuestionsIndex = 0;
   questionNumber = 0;
@@ -646,7 +651,7 @@ function loseGame() {
   gameAreaElement.classList.add("hide");
   level.classList.remove("disabled");
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
-   You got just ${positiveScore} points`;
+   You got just ${positiveScore} right`;
 }
 
 //home button

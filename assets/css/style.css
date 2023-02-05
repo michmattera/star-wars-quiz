@@ -137,10 +137,11 @@ button {
   font-size: 20px;
   border-radius: 20%;
   cursor: pointer;
-}
-.final-btn,
-.change-color{
   box-shadow: 0 0 20px #0783be;
+}
+.final-btn:hover{
+  color: #112948;
+  background-color: #ddd;
 }
 
 .btn-open-instruction:hover,
@@ -429,7 +430,7 @@ select#levels {
   background-color: #112948;
   border: 5px solid #d8c6c6;
   border-radius: 15%;
-  
+  text-shadow: 0 0 4px #ddd;
   box-shadow: 0 0 20px #0783be;
 }
 
@@ -443,15 +444,11 @@ select#levels {
 #lost-message {
   text-align: center;
   font-size: 45px;
-  text-shadow: 1px 1px 2px #0783be, 0 0 1em #112948, 0 0 0.2em #d8c6c6;
   margin: 3%;
   border: none;
 }
-
-#lost-message {
-  color: rgb(136, 0, 0);
-
-  text-shadow: 1px 1px 2px #d8c6c6, 0 0 1em rgb(136, 0, 0), 0 0 0.2em #d8c6c6;
+.red-text{
+  color: rgb(189, 10, 10);
 }
 
 /*Style text when chosen modality to play*/
