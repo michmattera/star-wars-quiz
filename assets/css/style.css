@@ -42,9 +42,11 @@ h3 {
 .flex {
   display: flex;
 }
-.flex-direction{
+
+.flex-direction {
   flex-direction: column;
 }
+
 .side {
   width: 30%;
   height: 340px;
@@ -112,14 +114,17 @@ h3 {
   align-items: center;
   text-align: center;
 }
+
 .answer:hover {
   transform: scale(1.2);
 }
+
 #question {
   font-size: 33px;
   margin: 3%;
   text-shadow: 1px 1px 2px #0783be, 0 0 1em #112948, 0 0 0.2em #d8c6c6;
 }
+
 /*different border for main page, green if picked light side and red for dark side add from js*/
 .border-blue {
   border: 5px solid #0783be;
@@ -250,12 +255,14 @@ select#levels:hover {
   text-align: center;
   font-size: xx-large;
 }
+
 /*style modal username and leaderboard*/
 .modal-username>*,
 .modal-leaderboard {
   margin: 0;
   line-height: 30px;
 }
+
 .modal-leaderboard {
   width: 700px;
   height: auto;
@@ -299,6 +306,7 @@ input {
   align-items: center;
   justify-content: space-between;
 }
+
 /*overlay effect for modal*/
 .overlay {
   position: fixed;
@@ -318,6 +326,7 @@ input {
 .modal-leaderboard {
   z-index: 2;
 }
+
 /*style for btn to open modals*/
 .btn-open-instruction,
 .btn-open-username,
@@ -392,6 +401,7 @@ select#levels {
   cursor: pointer;
   box-shadow: 0 0 20px #0783be;
 }
+
 /*div in header where are all buttons style container to divide icons left and right*/
 #button-container {
   display: flex;
@@ -528,6 +538,11 @@ i {
   pointer-events: none;
   opacity: 0.3;
 }
+/*Hamburger menu*/
+#menu__toggle {
+
+  display: none;
+}
 
 
 /*For screen with max-width of 1065 px-tablet size*/
@@ -536,17 +551,21 @@ i {
     width: 98%;
     margin: 1%;
   }
+
   .page-container {
     min-height: 75vh;
-}
+  }
+
   .side {
     width: 50%;
     margin: 5% 3%;
   }
-.heading{
-  font-size: 47px;
-  margin-bottom: 3%;
-}
+
+  .heading {
+    font-size: 47px;
+    margin-bottom: 3%;
+  }
+
   .btn-open-instruction,
   .btn-open-username,
   .btn-open-leaderboard,
@@ -601,10 +620,13 @@ i {
   #game-area {
     height: 350px;
   }
-  #winning-message, #lost-message {
+
+  #winning-message,
+  #lost-message {
     font-size: 34px;
   }
-  .container-footer{
+
+  .container-footer {
     height: 45px;
   }
 }
@@ -637,41 +659,135 @@ i {
   #question {
     font-size: 25px;
   }
-}
-/*For screen with max-width of 1065 px-tablet size*/
-@media screen and (max-width: 350px) {
-  .container-pick-side {
-    flex-direction: column-reverse;
+  /*Hamburger menu https://alvarotrigo.com/blog/hamburger-menu-css/*/
+  #menu__toggle {
+    opacity: 0;
+    display: flex;
   }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 25px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #112948;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 18px;
+    color: #ddd;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+}
+
+/*For screen with max-width of 1065 px-tablet size*/
+@media screen and (max-width: 400px) {
   #game-area {
     width: 95%;
     height: 300px;
     margin: 0 2.5%;
+  }
+
+  .page-container {
+    min-height: 100vh;
+  }
+
+  #question {
+    font-size: 20px;
+    margin: 15% 3%;
+  }
+
+  .answer:hover {
+    transform: none;
+  }
+
+  button {
+    font-size: 10px;
+  }
+
+  button {
+    height: 50px;
+  }
+
+  .heading {
+    font-size: 37px;
+  }
+
+  .container-footer>* {
+    font-size: 12px;
+  }
+
+  .score-box {
+    height: 20px;
+    width: 25px;
+  }
+   #message,
+   #won>*,
+    #lost>* {
+    border: 2px solid #d8c6c6;
 }
-.page-container {
-  min-height: 100vh;
-}
-#question {
+#winning-message,
+#lost-message {
   font-size: 20px;
-  margin: 15% 3%;
+  border: none;
 }
-button {
-  font-size: 10px;
+#message {
+  margin: 10% 15%;
 }
-button {
-  height: 50px;
-}
-.heading {
-  font-size: 37px;
-}
-.container-footer>* {
-  font-size: 12px;
-}
-.score-box {
-  height: 20px;
-  width: 25px;
-}
-#winning-message, #lost-message {
-  font-size: 20px;
+#dark-side, #light-side {
+  border: 3px solid #ffd0d0;
 }
 }

@@ -24,6 +24,20 @@
 <body class="index">
     <div class="page-container">
         <!--Header that containes: main title , container for modal buttons-->
+        <div class="hamburger-menu ">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+
+            <ul class="menu__box">
+                <li><a class="menu__item btn-open-instruction"><i class="fa-solid fa-question"></i></a></li>
+                <li><a class="menu__item btn-open-username"><i class="fa-solid fa-user"></i></a></li>
+                <li><a class="menu__item home-btn"><i class="fa-solid fa-house"></i></a></li>
+                <li><a onclick="leaderboard();" class="menu__item btn-open-leaderboard"><i class="fa-solid fa-trophy"></i></a></li>
+                
+            </ul>
+        </div>
         <header>
             <h1 class="heading">
                 Star wars quiz!
@@ -86,7 +100,8 @@
                     </section>
                     <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
                     <div class="overlay hide"></div>
-                    <button class="btn-open-instruction border-blue change-color "><i class="fa-solid fa-question"></i></button>
+                    <button class="btn-open-instruction border-blue change-color "><i
+                            class="fa-solid fa-question"></i></button>
 
                     <!--Modal for username to insert and save-->
                     <section class="modal-username hidden">
@@ -118,7 +133,7 @@
 
                     <!--Modal for leaderboard when user click on icon-->
                     <section class="modal-leaderboard hide">
-                        
+
                         <button class="btn-close leaderboard">⨉</button>
                         <div class="flex row">
                             <!--Text with username and saved score from javscript-->
@@ -189,7 +204,8 @@
 
                 <button id="restart" class="final-btn" onclick="restartGame()">Restart Game</button>
                 <button id="save-score" class="final-btn" onclick="saveHighScore(event)">Save score</button>
-                <button class="change-side final-btn" onclick="changeSide()"><i class="fa-solid fa-rotate"></i> Change side!</button>
+                <button class="change-side final-btn" onclick="changeSide()"><i class="fa-solid fa-rotate"></i> Change
+                    side!</button>
             </div>
             <div id="lost" class="hide">
                 <p id="lost-message">
