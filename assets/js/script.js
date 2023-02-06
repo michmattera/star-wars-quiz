@@ -197,7 +197,6 @@ let scoreContainer = document.getElementById("score");
 let messageContainer = document.getElementById("message");
 let winMessage = document.getElementById("won");
 let lostContainer = document.getElementById("lost");
-let restartBtn = document.getElementById("restart");
 let levels = document.getElementById("levels");
 const answers = document.querySelectorAll(".answer");
 let pickSideBox = document.getElementsByClassName("pick-side");
