@@ -24,20 +24,6 @@
 <body class="index">
     <div class="page-container">
         <!--Header that containes: main title , container for modal buttons-->
-        <div class="hamburger-menu ">
-            <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
-                <span></span>
-            </label>
-
-            <ul class="menu__box">
-                <li><a class="menu__item btn-open-instruction"><i class="fa-solid fa-question"></i></a></li>
-                <li><a class="menu__item btn-open-username"><i class="fa-solid fa-user"></i></a></li>
-                <li><a class="menu__item home-btn"><i class="fa-solid fa-house"></i></a></li>
-                <li><a onclick="leaderboard();" class="menu__item btn-open-leaderboard"><i class="fa-solid fa-trophy"></i></a></li>
-                
-            </ul>
-        </div>
         <header>
             <h1 class="heading">
                 Star wars quiz!
@@ -100,7 +86,7 @@
                     </section>
                     <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
                     <div class="overlay hide"></div>
-                    <button class="btn-open-instruction border-blue change-color "><i
+                    <button class="btn-open-instruction border-blue change-color"><i
                             class="fa-solid fa-question"></i></button>
 
                     <!--Modal for username to insert and save-->
@@ -135,7 +121,7 @@
                     <section class="modal-leaderboard hide">
 
                         <button class="btn-close leaderboard">⨉</button>
-                        <div class="flex row">
+                        <div class="container-players flex row">
                             <!--Text with username and saved score from javscript-->
                             <div class=" players lightPlayers">
                                 <ul id="board-score"><strong>Score</strong>
@@ -235,6 +221,22 @@
 
         </div>
     </div>
+<!--
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+
+        <ul class="menu__box">
+            <li><a class="menu__item btn-open-instruction"><i class="fa-solid fa-question"></i></a></li>
+            <li><a class="menu__item btn-open-username"><i class="fa-solid fa-user"></i></a></li>
+            <li><a class="menu__item home-btn"><i class="fa-solid fa-house"></i></a></li>
+            <li><a onclick="leaderboard();" class="menu__item btn-open-leaderboard"><i class="fa-solid fa-trophy"></i></a></li>
+            
+        </ul>
+    </div>
+    -->
     <!-- Audio-->
     <audio loop id="audio" src="assets/audio/star-wars-main.mp3" preload="none"></audio>
 

@@ -629,10 +629,19 @@ i {
   .container-footer {
     height: 45px;
   }
+  .modal-instruction {
+    font-size: 19px;
+    margin-top: -300px;
+}
+.modal-instruction>* {
+  margin: 3% 1%;
+  line-height: 23px;
+  text-align: center;
+}
 }
 
-/*For screen with max-width of 650 px-tablet size*/
-@media screen and (max-width: 650px) {
+/*For screen with max-width of 700 px-tablet size*/
+@media screen and (max-width: 700px) {
   .container-pick-side {
     flex-direction: column-reverse;
   }
@@ -646,98 +655,57 @@ i {
   .btn-open-username,
   .btn-open-leaderboard,
   .button-home,
-  .home-btn {
+  .home-btn{
     height: 35px;
     width: 35px;
     margin: 0 2%;
-  }
+  } 
+  .sound-btn {
+    height: 25px;
+    width: 25px;
+    margin: 0 2%;
+    font-size: 10px;
+}
 
   button {
     font-size: 13px;
   }
+  select#levels {
+    height: 25px;
+    font-size: 8px;
+}
 
   #question {
     font-size: 25px;
   }
-  /*Hamburger menu https://alvarotrigo.com/blog/hamburger-menu-css/*/
-  #menu__toggle {
-    opacity: 0;
-    display: flex;
+  .modal-leaderboard {
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -150px;
+    font-size: 24px;
   }
-  #menu__toggle:checked + .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    left: 0 !important;
-  }
-  .menu__btn {
-    position: fixed;
-    top: 25px;
-    left: 10px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 1;
-  }
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #ddd;
-    transition-duration: .25s;
-  }
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
-  .menu__box {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 80px;
-    height: 100%;
-    margin: 0;
-    padding: 80px 0;
-    list-style: none;
-    background-color: #112948;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-  }
-  .menu__item {
-    display: block;
-    padding: 12px 18px;
-    color: #ddd;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    transition-duration: .25s;
-  }
-  .menu__item:hover {
-    background-color: #CFD8DC;
-  }
+  .lightPlayers, .darkPlayers {
+    width: 95%;
+    line-height: 35px;
+    margin: 2.5%;
+    border: 4px solid #ffd0d0;
+}
+.modal-instruction {
+  width: 400px;
+  margin-left: -200px;
+}
+.modal-instruction>*{
+  
+  font-size: 16px;
+}
+ 
 }
 
-/*For screen with max-width of 1065 px-tablet size*/
-@media screen and (max-width: 400px) {
+/*For screen with max-width of 450 px-tablet size*/
+@media screen and (max-width: 450px) {
   #game-area {
     width: 95%;
-    height: 300px;
+    height: 400px;
     margin: 0 2.5%;
   }
 
@@ -747,7 +715,7 @@ i {
 
   #question {
     font-size: 20px;
-    margin: 15% 3%;
+    margin: 10% 3% 5% 3%;
   }
 
   .answer:hover {
@@ -759,7 +727,9 @@ i {
   }
 
   button {
-    height: 50px;
+    height: 55px;
+    width: 80%;
+    margin: 5% 10%;
   }
 
   .heading {
@@ -781,7 +751,7 @@ i {
 }
 #winning-message,
 #lost-message {
-  font-size: 20px;
+  font-size: 17px;
   border: none;
 }
 #message {
@@ -789,5 +759,52 @@ i {
 }
 #dark-side, #light-side {
   border: 3px solid #ffd0d0;
+}
+#score-container{
+  padding: 80px 8px;
+}
+.modal-leaderboard {
+  width: 400px;
+  margin-left: -200px;
+  margin-top: -150px;
+  font-size: 20px;
+}
+.lightPlayers, .darkPlayers {
+  line-height: 32px;
+  border: 3px solid #ffd0d0;
+  min-height: 250px;
+}
+.leaderboard {
+  margin: 1%;
+  height: 20px;
+  width: 20px;
+}
+.container-players{
+  display: flex;
+  flex-direction: column;
+}
+.lightPlayers, .darkPlayers {
+  width: 60%;
+  margin: 5% 23%;
+  border: 3px solid #ffd0d0;
+}
+.modal-username {
+  width: 200px;
+  margin-left: -100px;
+  font-size: 16px;
+}
+.btn-close, .button-home {
+  height: 25px;
+  width: 25px;
+}
+.save {
+  width: 80%;
+  margin: 2.5% 10% 5% 10%;
+  height: 35px;
+  font-size: 17px;
+}
+.modal-instruction {
+  width: 250px;
+  margin-left: -125px;
 }
 }
