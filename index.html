@@ -100,10 +100,10 @@
                                 Change the name of your Jedy/Sith and save it !
                             </p>
                             <form>
-                                <input type="text" name="username" id="username" placeholder="username">
+                                <input type="text" name="username" id="username" placeholder="username" maxlength="15">
 
                             </form>
-                            <button class="save">SAVE</button>
+                            <button class="save btn-close">SAVE</button>
                         </div>
                     </section>
                     <!--BTN for username to be outside of div and section otherwise would not be displayed-->
@@ -120,8 +120,9 @@
                     <!--Modal for leaderboard when user click on icon-->
                     <section class="modal-leaderboard hide">
 
-                        <button class="btn-close leaderboard">⨉</button>
                         <div class="container-players flex row">
+                            
+                        <button class="btn-close leaderboard">⨉</button>
                             <!--Text with username and saved score from javscript-->
                             <div class=" players lightPlayers">
                                 <ul id="board-score"><strong>Score</strong>
@@ -159,7 +160,6 @@
                                 <option id="easy" class="level1" value="easy">Easy</option>
                                 <option id="medium" class="level2" value="medium">Medium</option>
                                 <option id="difficult" class="level3" value="difficult">Difficult</option>
-                                <option id="expert" class="level4" value="expert">Expert</option>
                             </select>
                         </form>
                     </div>

@@ -616,7 +616,7 @@ function winGame() {
   messageContainer.classList.add("flex");
   winMessage.classList.remove("hide");
   gameAreaElement.classList.add("hide");
-  //containerPickSide.classList.add("hide");
+  level.classList.remove("disabled");
   winningMessage.innerText =
     `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;

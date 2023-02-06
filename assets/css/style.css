@@ -237,10 +237,10 @@ select#levels:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -350px;
-  margin-top: -350px;
+  margin-left: -355px;
+  margin-top: -300px;
   background-color: #112948;
-  font-size: 23px;
+  font-size: 21px;
   color: #ddd;
   border-radius: 10%;
   transition: all .10s;
@@ -365,7 +365,7 @@ input {
 .button-home {
   background-color: #ddd;
   height: 30px;
-  width: 30px;
+  width: 50px;
   color: #0783be;
   border: 3px solid #0783be;
   float: right;
@@ -373,7 +373,7 @@ input {
 }
 
 .instruction {
-  margin: 0 1%;
+  margin: 0 5%;
 }
 
 .leaderboard:hover {
@@ -545,7 +545,7 @@ i {
 }
 
 
-/*For screen with max-width of 1065 px-tablet size*/
+/*For screen with max-width of 1100 px-tablet size*/
 @media screen and (max-width: 1100px) {
   .container-pick-side {
     width: 98%;
@@ -553,7 +553,7 @@ i {
   }
 
   .page-container {
-    min-height: 75vh;
+    min-height: 100vh;
   }
 
   .side {
@@ -611,6 +611,7 @@ i {
     width: 70%;
     margin: 1% 15%;
     text-align: center;
+    padding: 5px;
   }
 
   .modal-instruction {
@@ -637,6 +638,7 @@ i {
   margin: 3% 1%;
   line-height: 23px;
   text-align: center;
+  padding: 5px;
 }
 }
 
@@ -666,7 +668,11 @@ i {
     margin: 0 2%;
     font-size: 10px;
 }
-
+.btn-close,
+.button-home {
+  height: 30px;
+  width: 50px;
+}
   button {
     font-size: 13px;
   }
@@ -701,8 +707,8 @@ i {
  
 }
 
-/*For screen with max-width of 450 px-tablet size*/
-@media screen and (max-width: 450px) {
+/*For screen with max-width of 500 px-tablet size*/
+@media screen and (max-width: 500px) {
   #game-area {
     width: 95%;
     height: 400px;
@@ -741,8 +747,8 @@ i {
   }
 
   .score-box {
-    height: 20px;
-    width: 25px;
+    height: 14px;
+    width: 16px;
   }
    #message,
    #won>*,
@@ -764,9 +770,9 @@ i {
   padding: 80px 8px;
 }
 .modal-leaderboard {
-  width: 400px;
-  margin-left: -200px;
-  margin-top: -150px;
+  width: 350px;
+  margin-left: -175px;
+  margin-top: -300px;
   font-size: 20px;
 }
 .lightPlayers, .darkPlayers {
@@ -775,7 +781,7 @@ i {
   min-height: 250px;
 }
 .leaderboard {
-  margin: 1%;
+  margin: 0 25%;
   height: 20px;
   width: 20px;
 }
@@ -785,12 +791,12 @@ i {
 }
 .lightPlayers, .darkPlayers {
   width: 60%;
-  margin: 5% 23%;
+  margin: 10% 10% 10% 20%;
   border: 3px solid #ffd0d0;
 }
 .modal-username {
-  width: 200px;
-  margin-left: -100px;
+  width: 220px;
+  margin-left: -110px;
   font-size: 16px;
 }
 .btn-close, .button-home {
