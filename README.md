@@ -117,5 +117,54 @@ User needs were determined based on different target audiences:
     - Star wars fan
     - Quiz lovers
 
+### Scope
+
+The scope plane, based on the goals established on the strategy plane, identified the following two categories.
+- Content Requirements:
+    - The user will be looking for:
+        - Information about star wars
+        - Different modalities to play
+        - Instructions on how to play
+- Functionality Requirements:
+    - The user will be able to:
+        - Be able to insert username and save score .
+        - Play again
+
+### Structure
+
+The structure was then created like a game-based interface with all the features on just one page.
+ Clicking different icons and buttons will show the user different information and presents him with different choice.
+
+The page was then structured in 3 different sections:
+    - The heading = With the main title, and a container with main icons for game
+    - Center = with the rapresentation of two buttons where the user click to decide which game and questions to answer
+    - End = footer with copyright information and developer social media
+
+
+### Skeleton
+
+Wireframes were made to organize and make the skeleton of the website. The wireframes were created using app.uizard .
+
+
+<details>
+<summary>Skeleton Plane - UIzard-Wireframes</summary>
+
+![Structure map](/assets/images/read-me-images/wirefra)
+
+</details>
+
+## Features
+
+### Used features
+- The heading 
+- The navigation bar with the following icons on the left:
+    - Questions mark = Instruction of the game
+    - User = To insert uername and save it
+    - House = To bring the user home whenever he wants
+    - Cup = Leaderboard to see the score saved
+- The navigation bar with the following icons on the right:
+    - Sound = Sound for clicked button and soundtrack for game
+    - Level form = To chose difficulty 
+
 
 
