@@ -46,12 +46,8 @@ saveButton.addEventListener("click", closeButtons);
 openModalUsernameBtn.addEventListener("click", openModalUsername);
 openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 
-// When the user clicks anywhere outside of the modal, close it
-/*
-
-**/
-
 //https://www.youtube.com/watch?v=DFhmNLKwwGw
+// video youtube 
 const highScoresList = document.getElementById("highScoresList");
 const highScoresListTwo = document.getElementById("highScoresListTwo");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -59,8 +55,13 @@ const light = JSON.parse(localStorage.getItem("highScores"));
 const dark = JSON.parse(localStorage.getItem("highScores"));
 var username = document.getElementById("username");
 
+/**
+ * function saveHighScore() to get highscore from localstorage
+ * then divide it in light and dark list and push it again 
+ */
 saveHighScore = (e) => {
   e.preventDefault();
+
   function addToHighScore(light, score) {
     var highScores = getHighScore();
     highScores[light].push(score);
@@ -98,13 +99,18 @@ saveHighScore = (e) => {
   }
 };
 
-
+/**
+ * function to get the items from local storage
+ */
 function get() {
   localStorage.getItem("highScores");
   localStorage.getItem("highscores[light]");
   localStorage.getItem("highscores[dark]");
 }
-
+/**
+ * if there is no highscores then show nothing when modal is open
+ * otherwise after 500 milliseconds display the light or the dark scores
+ */
 function leaderboard() {
   if ((localStorage.getItem("highScores") === null)) {
 
@@ -114,9 +120,12 @@ function leaderboard() {
   }
 }
 
-
+/**
+ * display from localstorage the list inside the dark highscores
+ * create then list in html to display it
+ */
 function displayDarkScore() {
-  // Declaring varibale of darkBest from array of localstorage light highScores
+  // Declaring variable of darkBest from array of localstorage
   // Max number of localstorage to save and then sort is 8.
   let darkBest = [(dark.dark[0]),
     (dark.dark[1]),
@@ -133,9 +142,8 @@ function displayDarkScore() {
     if (darkBest[j].side === "dark") {
       let bestName = (darkBest[j].name);
       let bestScore = (darkBest[j].score);
-
+      //get just best 5 highscores
       darkBest.splice(5);
-
       let listTwoName = document.createElement("li");
       listTwoName.innerText = bestName;
       let listTwoScore = document.createElement("li");
@@ -146,6 +154,10 @@ function displayDarkScore() {
   }
 }
 
+/**
+ * display from localstorage the list inside the light highscores
+ * create then list in html to display it
+ */
 function displayLightScore() {
   // Declaring varibale of lightBest from array of localstorage light highScores
   // Max number of localstorage to save and then sort is 8.
@@ -165,7 +177,6 @@ function displayLightScore() {
       lightBest.splice(5);
       let bestName = (lightBest[i].name);
       let bestScore = (lightBest[i].score);
-
       let listScore = document.createElement("li");
       listScore.innerText = bestScore;
       let listName = document.createElement("li");
@@ -200,6 +211,9 @@ let levels = document.getElementById("levels");
 const answers = document.querySelectorAll(".answer");
 let pickSideBox = document.getElementsByClassName("pick-side");
 let changeButtons = document.querySelectorAll(".change-color");
+let scoreBox = document.getElementsByClassName("score-box");
+let scoreDiv = document.getElementById("score-container");
+
 /**
  * Wait for dom to be loaded
  * getLevel function to see what level is selected
@@ -242,63 +256,6 @@ function getLevel() {
   });
 }
 
-//variables to get difficulty level
-var storedEasyLevel = localStorage.getItem("storedEasyLevel");
-var storedMediumLevel = localStorage.getItem("storedMediumLevel");
-var storedDifficultLevel = localStorage.getItem("storedDifficultLevel");
-var storedExpertLevel = localStorage.getItem("storedExpertLevel");
-
-/**
- * store easy modality and print it in game level chosen
- */
-function easyModality() {
-  let chosenLevel = document.getElementById("easy").value;
-  localStorage.setItem("storedEasyLevel", chosenLevel);
-  document.getElementById("playing-level").innerHTML =
-    "You are playing : " + chosenLevel;
-  if (localStorage.getItem("easy") === null) {
-    localStorage.setItem("easy", "[]");
-  }
-  var oldData = JSON.parse(localStorage.getItem("easy"));
-  //oldData.push(chosenLevel);
-  localStorage.setItem("easy", JSON.stringify(oldData));
-}
-/**
- * store medium modality and print it in game level chosen
- */
-function mediumModality() {
-  let chosenMediumLevel = document.getElementById("medium").value;
-  localStorage.setItem("storedMediumLevel", chosenMediumLevel);
-  document.getElementById("playing-level").innerHTML =
-    "You are playing : " + chosenMediumLevel;
-  var oldData = JSON.parse(localStorage.getItem("medium"));
-  //oldData.push(chosenLevel);
-  localStorage.setItem("medium", JSON.stringify(oldData));
-}
-/**
- * store difficult modality and print it in game level chosen
- */
-function difficultModality() {
-  let chosenDifficultLevel = document.getElementById("difficult").value;
-  localStorage.setItem("storedDifficultLevel", chosenDifficultLevel);
-  document.getElementById("playing-level").innerHTML =
-    "You are playing : " + chosenDifficultLevel;
-  var oldData = JSON.parse(localStorage.getItem("difficult"));
-  //oldData.push(chosenLevel);
-  localStorage.setItem("difficult", JSON.stringify(oldData));
-}
-/**
- * store difficult modality and print it in game level chosen
- */
-function expertModality() {
-  let chosenExpertLevel = document.getElementById("expert").value;
-  localStorage.setItem("storedExpertLevel", chosenExpertLevel);
-  document.getElementById("playing-level").innerHTML =
-    "You are playing" + chosenExpertLevel + "modality";
-  var oldData = JSON.parse(localStorage.getItem("expert"));
-  //oldData.push(chosenLevel);
-  localStorage.setItem("expert", JSON.stringify(oldData));
-}
 /**
  * When chose side in runDarkGame
  * display DarkQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
@@ -320,7 +277,6 @@ function runDarkGame() {
   chosenLightSide.classList.add("hide");
   level.classList.add("hide");
   gameAreaElement.classList.remove("hide");
-  
   lostMessage.classList.add("red-text");
   winningMessage.classList.add("red-text");
   showDarkQuestion();
@@ -364,7 +320,12 @@ function runLightGame() {
   checker();
 }
 
-//function to change side still not working , bug found
+/**
+ * function to change side when finished quiz
+ * removeChild() used for removing score from game finished
+ * if was runLightGame() then runDarkGame and viceversa
+ * for side selected resetting all buttons and change again style
+ */
 function changeSide() {
   removeChild();
   messageContainer.classList.add("hide");
@@ -373,7 +334,7 @@ function changeSide() {
   lostContainer.classList.add("hide");
   winningMessage.classList.add("hide");
   winMessage.classList.add("hide");
-  
+
   lostMessage.classList.remove("red-text");
   winningMessage.classList.remove("red-text");
   clickedAnswer = 0;
@@ -407,11 +368,13 @@ function changeSide() {
   }
 }
 
-let scoreBox = document.getElementsByClassName("score-box");
-let scoreDiv = document.getElementById("score-container");
-//function to restart game once is finished
+/**
+ * function to restart quiz when finished quiz
+ * removeChild() used for removing score from game finished
+ * if was light then run light if dark than run dark
+ */
 function restartGame() {
-  
+
   removeChild();
   messageContainer.classList.add("hide");
   messageContainer.classList.remove("flex");
@@ -432,7 +395,7 @@ function restartGame() {
 }
 
 /**
- * show the questions in the question container
+ * show the questions in the question container when runLightGame is selected
  */
 function showQuestion() {
   questionContainer.innerText = lightQuestions[questionNumber].question;
@@ -440,12 +403,15 @@ function showQuestion() {
 
 }
 
+/**
+ * show the questions in the question container when runDarkGame() is selected
+ */
 function showDarkQuestion() {
   questionContainer.innerText = darkQuestions[questionNumber].question;
   console.log(darkQuestions[questionNumber].question);
 }
 /**
- * show all answer for specific question
+ * show all answer for specific question in light game
  */
 function showChoices() {
   document.querySelector("#answer-one").innerHTML =
@@ -458,6 +424,9 @@ function showChoices() {
     lightQuestions[questionNumber].answerFour;
 }
 
+/**
+ * show all answer for specific question in dark game
+ */
 function showDarkChoices() {
   document.querySelector("#answer-one").innerHTML =
     darkQuestions[questionNumber].answerOne;
@@ -474,7 +443,6 @@ function showDarkChoices() {
  * if is correct than incrementPositiveAnswer
  * run nextQuestion function with timeout
  * add style to button clicked
- * remove as well score div
  */
 
 //let scoreDiv = document.getElementById('score-container');
@@ -528,8 +496,9 @@ incrementPositiveAnswer = num => {
 
 /**
  * increase question number and currentQuestionIndex
- *show again new question and answers
- * trying to set for different modalities different number of questions
+ * remove style from answer clicked
+ * show again new question and answers
+ * set for different modalities different number of questions
  * if last question and depending on the score winGame() or loseGame()
  */
 function nextQuestion() {

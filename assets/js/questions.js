@@ -1,4 +1,5 @@
 // variables to play light game
+//one question, four possible answer and 1 correct answer 
 let lightQuestions = [{
     //Easy questions
     question: "Which Star wars faction fights against the Empire?",
@@ -132,6 +133,7 @@ let lightQuestions = [{
 ];
 
 // variables to play dark game
+//one question, four possible answer and 1 correct answer 
 let darkQuestions = [{
   //Easy questions
   question: "What planet does the Empire choose to destroy first, in order to demonstrate the destructive capability of the Death Star?",
