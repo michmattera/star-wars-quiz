@@ -61,7 +61,6 @@ var username = document.getElementById("username");
 
 saveHighScore = (e) => {
   e.preventDefault();
-
   function addToHighScore(light, score) {
     var highScores = getHighScore();
     highScores[light].push(score);
@@ -638,6 +637,16 @@ function loseGame() {
 
 //home button
 document.querySelector(".home-btn").addEventListener("click", function () {
+  window.location.reload();
+});
+
+//save button to bring you to home and have leaderboard() with username and score
+document.querySelector(".save-score").addEventListener("click", function () {
+  window.location.reload();
+});
+
+//save button to bring you to home and have leaderboard() with username and score
+document.querySelector(".save-score-two").addEventListener("click", function () {
   window.location.reload();
 });
 

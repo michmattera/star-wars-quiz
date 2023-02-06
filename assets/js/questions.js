@@ -139,7 +139,7 @@ let darkQuestions = [{
   answerOne: "ALDERAAN",
   answerTwo: "YAVIN",
   answerThree: "BESPIN",
-  answerFour: "DDANTOOINEAT",
+  answerFour: "DANTOOINE",
 },
 {
   question: "What is the name of the bounty hunter that delivered a frozen Han Solo to Jabba The HUTT?",

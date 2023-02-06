@@ -175,18 +175,6 @@ select#levels:hover {
   display: none;
 }
 
-.save {
-  background-color: #0783be;
-  color: #d8c6c6;
-  width: 80%;
-  margin: 2.5% 10% 5% 10%;
-  height: 40px;
-  border: 3px solid #d8c6c6;
-  border-radius: 5%;
-  font-size: 20px;
-  box-shadow: none;
-}
-
 /*Class for correct answer button or incorrect answer button when clicked*/
 .correct-answer {
   background-color: #bfda46;
@@ -214,7 +202,7 @@ select#levels:hover {
 .score-box {
   border-radius: 4px;
   height: 25px;
-  width: 50px;
+  width: 44px;
   margin-right: 2px;
 }
 
@@ -283,9 +271,9 @@ select#levels:hover {
   top: 50%;
   margin-left: -150px;
   margin-top: -150px;
-  background-color: #d8c6c6;
+  background-color: #112948;
   font-size: 20px;
-  color: #112948;
+  color: #d8c6c6;
   border-radius: 10%;
   text-align: center;
 }
@@ -371,7 +359,17 @@ input {
   float: right;
   display: block;
 }
-
+.save {
+  background-color: #0783be;
+  color: #d8c6c6;
+  width: 80%;
+  margin: 2.5% 10% 5% 10%;
+  height: 35px;
+  border: 3px solid #d8c6c6;
+  border-radius: 5%;
+  font-size: 20px;
+  box-shadow: none;
+}
 .instruction {
   margin: 0 5%;
 }
@@ -433,6 +431,7 @@ select#levels {
 #message {
   width: 50%;
   margin: 1% 25%;
+  flex-direction: column;
   text-align: center;
   background-color: #112948;
   border: 5px solid #d8c6c6;
@@ -662,16 +661,32 @@ i {
     width: 35px;
     margin: 0 2%;
   } 
-  .sound-btn {
-    height: 25px;
-    width: 25px;
-    margin: 0 2%;
-    font-size: 10px;
+.sound-btn {
+  height: 30px;
+  width: 30px;
+  margin: 0 2%;
+  font-size: 10px;
 }
 .btn-close,
 .button-home {
   height: 30px;
-  width: 50px;
+  width: 30px;
+}
+.save {
+  width: 80%;
+  margin: 2.5% 10% 5% 10%;
+  height: 35px;
+  font-size: 17px;
+}
+#won>*, #lost>* {
+  border: 3px solid #d8c6c6;
+}
+#winning-message,
+#lost-message {
+  border: none;
+}
+#message {
+  border: 4px solid #d8c6c6;
 }
   button {
     font-size: 13px;
@@ -704,6 +719,10 @@ i {
   
   font-size: 16px;
 }
+.score-box {
+  height: 18px;
+  width: 25px;
+}
  
 }
 
@@ -714,6 +733,9 @@ i {
     height: 400px;
     margin: 0 2.5%;
   }
+  .side {
+    height: 250px;
+}
 
   .page-container {
     min-height: 100vh;
@@ -737,7 +759,10 @@ i {
     width: 80%;
     margin: 5% 10%;
   }
-
+  .sound-btn {
+    height: 28px;
+    width: 28px;
+}
   .heading {
     font-size: 37px;
   }
