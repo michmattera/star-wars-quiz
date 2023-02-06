@@ -32,7 +32,6 @@ h3 {
 }
 
 .container-pick-side {
-  display: flex;
   justify-content: center;
   width: 90%;
   height: 100%;
@@ -42,9 +41,10 @@ h3 {
 
 .flex {
   display: flex;
+}
+.flex-direction{
   flex-direction: column;
 }
-
 .side {
   width: 30%;
   height: 340px;
@@ -97,7 +97,7 @@ h3 {
   font-size: 55px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 3%;
+  margin-top: 2%;
   color: #0783be;
   text-shadow: 1px 1px 2px white, 0 0 1em #0783be, 0 0 0.2em #0783be;
 }
@@ -401,7 +401,7 @@ select#levels {
 #button-container-child-one,
 #button-container-child-two {
   width: 48%;
-  margin: 1%;
+  margin: 0 1%;
   display: flex;
   align-items: center;
   justify-content: flex-start;

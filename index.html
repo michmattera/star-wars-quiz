@@ -37,7 +37,7 @@
                 <div id="button-container-child-one">
                     <!--Modal for instruction of quiz-->
                     <section onclick="close(event);" class="modal-instruction hide border-blue">
-                        <div class="flex">
+                        <div class="flex flex-direction">
                             <button class="btn-close instruction">⨉</button>
                             <h3>Instruction:</h3>
                             <br>
@@ -90,7 +90,7 @@
 
                     <!--Modal for username to insert and save-->
                     <section class="modal-username hidden">
-                        <div class="flex">
+                        <div class="flex flex-direction">
                             <button class="btn-close username">⨉</button>
                             <h3>
                                 Choose player!
@@ -171,7 +171,7 @@
         </header>
         <!--Container for choosing which side to play( each side has different questions -->
         <section>
-            <div class="container-pick-side">
+            <div class="container-pick-side flex">
                 <button data-type="light" class="side" id="light-side">
                 </button>
                 <button data-type="dark" class="side" id="dark-side">

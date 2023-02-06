@@ -183,6 +183,7 @@ let questionContainer = document.getElementById("question");
 let answerContainer = document.getElementById("answer-buttons");
 let chosenLightSide = document.getElementById("light-side");
 let chosenDarkSide = document.getElementById("dark-side");
+let containerPickSide = document.getElementsByClassName("container-pick-side");
 let iconsContainer = document.getElementById("button-container");
 let currentQuestionsIndex = 0;
 let questionNumber = 0;
@@ -337,7 +338,6 @@ function runDarkGame() {
   });
   checker();
 }
-let containerPickSide  = document.getElementsByClassName("container-pick-side");
 /**
  * When chose side in runLightGame
  * display LightQuestions, showQuestions and hide chosenLightSide/chosenDarkSide
@@ -413,6 +413,7 @@ let scoreBox = document.getElementsByClassName("score-box");
 let scoreDiv = document.getElementById("score-container");
 //function to restart game once is finished
 function restartGame() {
+  
   removeChild();
   messageContainer.classList.add("hide");
   messageContainer.classList.remove("flex");
@@ -510,33 +511,14 @@ function checker(event) {
   const myTimeout = setTimeout(nextQuestion, 600);
 }
 
-
+/**
+ * function to remove score div childs when game is finished
+ */
 function removeChild() {
-  if (document.querySelector("#levels").value === "easy") {
-    if (currentQuestionsIndex == 6) {
-      while (scoreDiv.firstChild) {
-        scoreDiv.removeChild(scoreDiv.firstChild);
-      }
-    }
-  }
-
-  if (document.querySelector("#levels").value === "medium") {
-    if (currentQuestionsIndex == 10) {
-      while (scoreDiv.firstChild) {
-        scoreDiv.removeChild(scoreDiv.firstChild);
-      }
-    }
-  }
-
-  if (document.querySelector("#levels").value === "difficult") {
-    if (currentQuestionsIndex == 14) {
-      while (scoreDiv.firstChild) {
-        scoreDiv.removeChild(scoreDiv.firstChild);
-      }
-    }
+  while (scoreDiv.firstChild) {
+    scoreDiv.removeChild(scoreDiv.firstChild);
   }
 }
-
 /**
  * function to increment correct score
  */
@@ -634,6 +616,7 @@ function winGame() {
   messageContainer.classList.add("flex");
   winMessage.classList.remove("hide");
   gameAreaElement.classList.add("hide");
+  //containerPickSide.classList.add("hide");
   winningMessage.innerText =
     `Congratulation you won the battle master ${username.value}!
    You got ${positiveScore} points`;
