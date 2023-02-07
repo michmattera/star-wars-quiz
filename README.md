@@ -27,10 +27,9 @@ bug = when clicking on change side onclick button it shows previous question of 
     2. [Player Goals](#player-goals) 
 3. [Development Planes](#development-planes)
 4. [Features](#features)  
-    1. [Used Features](#used-features)
-    2. [Common Features](#common-features)
-    3. [Existing Features](#existing-features)
-    2. [Future features](#future-features)
+    1. [General Features](#general-features)
+    2. [Pages Features](#pages-features)
+    3. [Future features](#future-features)
 5. [Design](#design)
     1. [ Color Palette](#color-palette)
     2. [ Typography](#typography)
@@ -156,14 +155,15 @@ The structure was then created like a game-based interface with all the features
  Clicking different icons and buttons will show the user different information and presents him with different choices.
 
 The page was then structured into 3 different sections:
-    - The heading = That included the main title, and a container with main icons for game
-    - Center = That includes the rapresentation of two buttons where the user clicks to decide which game and questions to answer
-    - End = footer with copyright information and developer social media
+1. The heading = That included the main title, and a container with main icons for game
+2. Center = That includes the rapresentation of two buttons where the user clicks to decide which game and questions to answer
+3. End = footer with copyright information and developer social media
 
 
 ### Skeleton
 
-Wireframes were made to organize and make the skeleton of the website. The wireframes were created using the free platform[Uizard](https://app.uizard.io/prototypes)).
+Wireframes were made to organize and make the skeleton of the website. The wireframes were created using the free platform 
+[Uizard](https://app.uizard.io/prototypes).
 
 From the original idea wireframes were then changed by the developer for better structure.
 In the original idea before the Homapage there was a single page with three different buttons containing:
@@ -214,15 +214,19 @@ But having everything on a single page.
 
 ## Features
 
-### Used features
-- The heading 
-- The navigation bar with the following icons on the left:
-    - Questions mark = Instruction of the game
-    - User = To insert username and save it
-    - House = To bring the user home whenever he wants
-    - Cup = Leaderboard to see the score saved
-- The navigation bar with the following icons on the right:
-    - Sound = Sound for clicked button and soundtrack for the game
-    - Level form = To chose difficulty 
+### General features
+
+1. **Fully responsive** = Each section of the webiste is fully responsive and easy to navigate for user.
+2. **Sound effects** = Implemented sound effect such as soundtrack for game and sound effects when clicking an answer.
+3. **Navigation bar** :
+    1. The navigation bar with the following icons on the left:
+        - Questions mark = Instruction of the game
+        - User = To insert username and save it
+        - House = To bring the user home whenever he wants
+        - Cup = Leaderboard to see the score saved
+    2. The navigation bar with the following icons on the right:
+        - Sound = Sound for clicked button and soundtrack for the game
+        - Level form = To chose difficulty 
+    3. **404 / 505 page** = To redirect user if wrong url was clicked.
 
 
