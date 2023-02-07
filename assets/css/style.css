@@ -35,7 +35,7 @@ h3 {
   justify-content: center;
   width: 90%;
   height: 100%;
-  margin: 2% 5%;
+  margin: 5% 5% 1%;
   align-items: center;
 }
 
@@ -48,9 +48,9 @@ h3 {
 }
 
 .side {
-  width: 30%;
-  height: 340px;
-  margin: 2% 10%;
+  width: 40%;
+  height: 440px;
+  margin: 7% 5% 5%;
   background-size: cover;
   background-position: center;
 }
@@ -147,7 +147,7 @@ button {
   font-weight: bold;
   height: 80px;
   width: 35%;
-  margin: 2% 5%;
+  margin: 5%;
   font-size: 20px;
   border-radius: 20%;
   cursor: pointer;
@@ -537,27 +537,23 @@ i {
   pointer-events: none;
   opacity: 0.3;
 }
-/*Hamburger menu*/
-#menu__toggle {
-
-  display: none;
-}
 
 
 /*For screen with max-width of 1100 px-tablet size*/
 @media screen and (max-width: 1100px) {
   .container-pick-side {
     width: 98%;
-    margin: 1%;
-  }
+    margin: 5% 1% 1%;
+}
 
   .page-container {
     min-height: 100vh;
   }
 
   .side {
-    width: 50%;
+    width: 70%;
     margin: 5% 3%;
+    height: 400px;
   }
 
   .heading {
@@ -638,6 +634,32 @@ i {
   line-height: 23px;
   text-align: center;
   padding: 5px;
+}
+}
+/*For screen with max-width of 850 px-tablet size*/
+@media screen and (max-width: 850px) {
+  .container-pick-side {
+    flex-direction: column-reverse;
+  }
+  #question {
+    margin: 4% 3%;
+}
+#score-container{
+  margin: 5%;
+}
+.modal-leaderboard{
+  margin-top: -400px;
+}
+#game-area{
+  height: auto;
+}
+button {
+  height: 100px;
+  width: 80%;
+  margin: 5% 10%;
+}
+.answer:hover {
+  transform: none;
 }
 }
 
@@ -742,12 +764,8 @@ i {
   }
 
   #question {
-    font-size: 20px;
+    font-size: 19px;
     margin: 10% 3% 5% 3%;
-  }
-
-  .answer:hover {
-    transform: none;
   }
 
   button {
@@ -757,7 +775,7 @@ i {
   button {
     height: 55px;
     width: 80%;
-    margin: 5% 10%;
+    margin: 4% 10%;
   }
   .sound-btn {
     height: 28px;
@@ -792,7 +810,7 @@ i {
   border: 3px solid #ffd0d0;
 }
 #score-container{
-  padding: 80px 8px;
+  margin: auto;
 }
 .modal-leaderboard {
   width: 350px;
@@ -837,5 +855,10 @@ i {
 .modal-instruction {
   width: 250px;
   margin-left: -125px;
+}
+}
+@media screen and (max-width: 350px){
+.heading {
+    font-size: 30px;
 }
 }
