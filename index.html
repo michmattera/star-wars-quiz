@@ -33,10 +33,10 @@
                     <div id="button-container-child-one">
                         <!--Modal for instruction of quiz-->
                         <section onclick="close(event);" class="modal-instruction hide border-blue"
-                        aria-labelledby="modalTitle" aria-describedby='modalDescription'>
+                        aria-labelledby="modalTitle" aria-describedby='modalDescription' role="dialog">
                             <div class="flex flex-direction">
                                 <button type="button" class="btn-close instruction" 
-                                aria-label="Click here to close instruction">⨉</button>
+                                aria-label="Close instruction">⨉</button>
                                 <h3 id="modalTitle">Instruction:</h3>
                                 <br>
                                 <p id="modalDescription">
@@ -86,15 +86,17 @@
                         <button class="btn-open-instruction border-blue change-color"
                          aria-label="Click here to open instruction" type="button"><i
                             class="fa-solid fa-question"></i></button>
+
                         <!--Modal for username to insert and save-->
-                        <section class="modal-username hidden" role="dialog">
+                        <section class="modal-username hidden" aria-labelledBy="usernameTitle"
+                        aria-describedby="usernameText" role="dialog">
                             <div class="flex flex-direction">
                                 <button class="btn-close username" aria-label="Click here to close username"
                                 type="button">⨉</button>
-                                <h3>
+                                <h3 id="usernameTitle">
                                     Choose player!
                                 </h3>
-                                <p>
+                                <p id="usernameText">
                                     Change the name of your Jedy/Sith and save it !
                                 </p>
                                 <form>
@@ -109,19 +111,21 @@
                         <div class="overlay hide"></div>
                         <button class="btn-open-username border-blue change-color" type="button"
                         aria-label="Click here to open modal username"><i class="fa-solid fa-user"></i></button>
+
                         <!-- Home button -->
                         <div>
                             <button class="home-btn border-blue flex change-color" aria-label="Click here to go to home page"
                             type="button">
                             <i class="fa-solid fa-house"></i></button>
                         </div>
-                        <!--Modal for leaderboard when user click on icon-->
-                        <div class="modal-leaderboard hide">
-                            <div class="container-players flex row">
+
+                        <!--Modal to show leaderboard when user click on icon-->
+                        <div class="modal-leaderboard hide" aria-labelledby="leaderboardLists" aria-describedby="listOne">
+                            <div class="container-players flex row" id="leaderboardLists" role="dialog">
                                 <button class="btn-close leaderboard" aria-label="Click here to close modal leaderboard"
                                 type="button">⨉</button>
                                 <!--Text with username and saved score from javscript of player-->
-                                <div class=" players lightPlayers">
+                                <div id="listOne" class=" players lightPlayers">
                                     <p id="board-score">Score
                                     </p>
                                     <p id="board-name">Jedy
@@ -141,6 +145,7 @@
                             class="fa-solid fa-trophy"></i></button>
                         <div class="overlay hide"></div>
                     </div>
+
                     <!--Child container two containing two icons buttons to push them to opposite side-->
                     <!-- Sound Button -->
                     <div id="button-container-child-two">
