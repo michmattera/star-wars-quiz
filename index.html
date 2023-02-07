@@ -31,61 +31,12 @@
                 <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
                 <nav id="button-container">
                     <div id="button-container-child-one">
-                        <!--Modal for instruction of quiz-->
-                        <section onclick="close(event);" class="modal-instruction hide border-blue"
-                        aria-labelledby="modalTitle" aria-describedby='modalDescription' role="dialog">
-                            <div class="flex flex-direction">
-                                <button type="button" class="btn-close instruction" 
-                                aria-label="Close instruction">⨉</button>
-                                <h3 id="modalTitle">Instruction:</h3>
-                                <br>
-                                <p id="modalDescription">
-                                    Once upon a time there was a galaxy...
-                                    <br>
-                                    In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
-                                    empire</strong>.
-                                    <br>
-                                <ul>
-                                    <li> If you chose the rebels , then you will have to click on the green figure (
-                                        master
-                                        Yoda
-                                        ) and you
-                                        will play against the Empire.
-                                    </li>
-                                    <li>
-                                        If you chose the Empire then you will have to click on the red figure (Darth
-                                        Vader)
-                                        and you
-                                        will
-                                        play against the rebellion.
-                                    </li>
-                                </ul>
-                                <br>
-                                For each side you will have few questions related to the side chosen.
-                                <br>
-                                You have as well different level that you may choose:
-                                <ul>
-                                    <li>
-                                        <strong>Easy :</strong> You will have 7 different questions.
-                                    </li>
-                                    <li>
-                                        <strong>Medium :</strong> You will have11 different questions.
-                                    </li>
-                                    <li>
-                                        <strong>Difficult :</strong> You will have 15 different questions.
-                                    </li>
-                                </ul>
-                                <br>
-                                Your goal is to win and answer at least more than half of the questions.
-                                <br>
-                                May the force be with you ...
-                            </div>
-                        </section>
-                        <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
-                        <div class="overlay hide"></div>
-                        <button class="btn-open-instruction border-blue change-color"
-                         aria-label="Click here to open instruction" type="button"><i
-                            class="fa-solid fa-question"></i></button>
+                        <!-- Home button -->
+                        <div>
+                            <button class="home-btn border-blue flex change-color" aria-label="Click here to go to home page"
+                            type="button">
+                            <i class="fa-solid fa-house"></i></button>
+                        </div>
 
                         <!--Modal for username to insert and save-->
                         <section class="modal-username hidden" aria-labelledBy="usernameTitle"
@@ -111,13 +62,64 @@
                         <div class="overlay hide"></div>
                         <button class="btn-open-username border-blue change-color" type="button"
                         aria-label="Click here to open modal username"><i class="fa-solid fa-user"></i></button>
-
-                        <!-- Home button -->
-                        <div>
-                            <button class="home-btn border-blue flex change-color" aria-label="Click here to go to home page"
-                            type="button">
-                            <i class="fa-solid fa-house"></i></button>
-                        </div>
+                        <!--Modal for instruction of quiz-->
+                        <section onclick="close(event);" class="modal-instruction hide border-blue"
+                        aria-labelledby="modalTitle" aria-describedby='modalDescription' role="dialog">
+                            <div class="flex flex-direction">
+                                <button type="button" class="btn-close instruction" 
+                                aria-label="Close instruction">⨉</button>
+                                <h3 id="modalTitle">Instruction:</h3>
+                                <br>
+                                <p id="modalDescription">
+                                    Once upon a time there was a galaxy...
+                                    <br>
+                                    In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
+                                    empire</strong>.
+                                    <br>
+                                <ul>
+                                    <i class="fa-solid fa-jedi"></i>
+                                    <li>
+                                        If you chose the rebels , then you will have to click on the green figure (
+                                        master
+                                        Yoda
+                                        ) and you
+                                        will play against the Empire.
+                                    </li>
+                                    <i class="fa-brands fa-empire"></i>
+                                    <li>
+                                        If you chose the Empire then you will have to click on the red figure (Darth
+                                        Vader)
+                                        and you
+                                        will
+                                        play against the rebellion.
+                                    </li>
+                                </ul>
+                                <br>
+                                For each side you will have few questions related to the side chosen.
+                                <br>
+                                You have as well different level that you may choose:
+                                <ul>
+                                    <li>
+                                        | <strong>Easy :</strong> You will have 7 different questions.
+                                    </li>
+                                    <li>
+                                        || <strong>Medium :</strong> You will have11 different questions.
+                                    </li>
+                                    <li>
+                                        ||| <strong>Difficult :</strong> You will have 15 different questions.
+                                    </li>
+                                </ul>
+                                <br>
+                                Your goal is to win and answer at least more than half of the questions.
+                                <br>
+                                May the force be with you ...
+                            </div>
+                        </section>
+                        <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
+                        <div class="overlay hide"></div>
+                        <button class="btn-open-instruction border-blue change-color"
+                         aria-label="Click here to open instruction" type="button"><i
+                            class="fa-solid fa-question"></i></button>
 
                         <!--Modal to show leaderboard when user click on icon-->
                         <div class="modal-leaderboard hide" aria-labelledby="leaderboardLists" aria-describedby="listOne">

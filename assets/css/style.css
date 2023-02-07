@@ -350,7 +350,7 @@ input {
 .button-home {
   background-color: #ddd;
   height: 30px;
-  width: 30px;
+  width: 10%;
   color: #0783be;
   border: 3px solid #0783be;
   float: right;
