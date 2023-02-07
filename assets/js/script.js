@@ -1,192 +1,3 @@
-//constant variables for different modals
-// Instruction modal
-const modalInstruction = document.querySelector(".modal-instruction");
-const overlay = document.querySelector(".overlay");
-const openModalInstructionBtn = document.querySelector(".btn-open-instruction");
-const closeButtons = document.querySelectorAll(".btn-close");
-//username modal
-const modalUsername = document.querySelector(".modal-username");
-const openModalUsernameBtn = document.querySelector(".btn-open-username");
-const saveButton = document.querySelector(".save");
-//leaderboard modal
-const modalLeaderboard = document.querySelector(".modal-leaderboard");
-const openModalLeaderboardBtn = document.querySelector(".btn-open-leaderboard");
-
-//open modal instruction
-const openModalInstruction = function () {
-  modalInstruction.classList.remove("hide");
-  overlay.classList.remove("hide");
-};
-//open modal username 
-const openModalUsername = function () {
-  modalUsername.classList.remove("hidden");
-  overlay.classList.remove("hide");
-};
-//open modal leaderboard
-const openModalLeaderboard = function () {
-  modalLeaderboard.classList.remove("hide");
-  overlay.classList.remove("hide");
-};
-
-//close all modal when clicked on closeButtons
-function clsModal() {
-  modalUsername.classList.add("hidden");
-  modalInstruction.classList.add("hide");
-  modalLeaderboard.classList.add("hide");
-  overlay.classList.add("hide");
-};
-//select all modals to add same close function clsModal when clicked
-Array.from(document.querySelectorAll(".btn-close")).forEach(closeButtons => {
-  closeButtons.addEventListener("click", clsModal);
-});
-
-//add event listener to open modals
-openModalInstructionBtn.addEventListener("click", openModalInstruction);
-saveButton.addEventListener("click", closeButtons);
-openModalUsernameBtn.addEventListener("click", openModalUsername);
-openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
-
-//https://www.youtube.com/watch?v=DFhmNLKwwGw
-// video youtube 
-const highScoresList = document.getElementById("highScoresList");
-const highScoresListTwo = document.getElementById("highScoresListTwo");
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-const light = JSON.parse(localStorage.getItem("highScores"));
-const dark = JSON.parse(localStorage.getItem("highScores"));
-var username = document.getElementById("username");
-
-/**
- * function saveHighScore() to get highscore from localstorage
- * then divide it in light and dark list and push it again 
- */
-saveHighScore = (e) => {
-  e.preventDefault();
-
-  function addToHighScore(light, score) {
-    var highScores = getHighScore();
-    highScores[light].push(score);
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-  }
-
-  function addToHighScore(dark, score) {
-    var highScores = getHighScore();
-    highScores[dark].push(score);
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-  }
-
-  function getHighScore() {
-    var highScores = localStorage.getItem("highScores");
-    if (highScores) {
-      return JSON.parse(highScores);
-    } else return {
-      "light": [],
-      "dark": []
-    };
-  }
-
-  if (pickedSide.innerText === "light") {
-    addToHighScore("light", {
-      score: positiveScore,
-      name: username.value,
-      side: pickedSide.innerText
-    });
-  } else {
-    addToHighScore("dark", {
-      score: positiveScore,
-      name: username.value,
-      side: pickedSide.innerText
-    });
-  }
-};
-
-/**
- * function to get the items from local storage
- */
-function get() {
-  localStorage.getItem("highScores");
-  localStorage.getItem("highscores[light]");
-  localStorage.getItem("highscores[dark]");
-}
-/**
- * if there is no highscores then show nothing when modal is open
- * otherwise after 500 milliseconds display the light or the dark scores
- */
-function leaderboard() {
-  if ((localStorage.getItem("highScores") === null)) {
-
-  } else {
-    const timeoutLight = setTimeout(displayLightScore, 500);
-    const timeoutDark = setTimeout(displayDarkScore, 500);
-  }
-}
-
-/**
- * display from localstorage the list inside the dark highscores
- * create then list in html to display it
- */
-function displayDarkScore() {
-  // Declaring variable of darkBest from array of localstorage
-  // Max number of localstorage to save and then sort is 8.
-  let darkBest = [(dark.dark[0]),
-    (dark.dark[1]),
-    (dark.dark[2]),
-    (dark.dark[3]),
-    (dark.dark[4]),
-    (dark.dark[5]),
-    (dark.dark[6]),
-    (dark.dark[7])
-  ];
-  darkBest.sort((a, b) => b.score - a.score);
-
-  for (j = 0; j < darkBest.length; j++) {
-    if (darkBest[j].side === "dark") {
-      let bestName = (darkBest[j].name);
-      let bestScore = (darkBest[j].score);
-      //get just best 5 highscores
-      darkBest.splice(5);
-      let listTwoName = document.createElement("li");
-      listTwoName.innerText = bestName;
-      let listTwoScore = document.createElement("li");
-      listTwoScore.innerText = bestScore;
-      document.querySelector("#boardTwo-score").appendChild(listTwoScore);
-      document.querySelector("#boardTwo-name").appendChild(listTwoName);
-    }
-  }
-}
-
-/**
- * display from localstorage the list inside the light highscores
- * create then list in html to display it
- */
-function displayLightScore() {
-  // Declaring varibale of lightBest from array of localstorage light highScores
-  // Max number of localstorage to save and then sort is 8.
-  let lightBest = [(light.light[0]),
-    (light.light[1]),
-    (light.light[2]),
-    (light.light[3]),
-    (light.light[4]),
-    (light.light[5]),
-    (light.light[6]),
-    (light.light[7])
-  ];
-  lightBest.sort((a, b) => b.score - a.score);
-
-  for (i = 0; i < lightBest.length; i++) {
-    if (lightBest[i].side === "light") {
-      lightBest.splice(5);
-      let bestName = (lightBest[i].name);
-      let bestScore = (lightBest[i].score);
-      let listScore = document.createElement("li");
-      listScore.innerText = bestScore;
-      let listName = document.createElement("li");
-      listName.innerText = bestName;
-      document.querySelector("#board-score").appendChild(listScore);
-      document.querySelector("#board-name").appendChild(listName);
-    }
-  }
-}
-
 //Declare variables for game
 const gameAreaElement = document.getElementById("game-area");
 let questionContainer = document.getElementById("question");
@@ -213,6 +24,8 @@ let pickSideBox = document.getElementsByClassName("pick-side");
 let changeButtons = document.querySelectorAll(".change-color");
 let scoreBox = document.getElementsByClassName("score-box");
 let scoreDiv = document.getElementById("score-container");
+let lostMessage = document.getElementById("lost-message");
+let winningMessage = document.getElementById("winning-message");
 
 /**
  * Wait for dom to be loaded
@@ -239,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
  * function getLevel to select from dropdown the modality to play quiz
  */
 function getLevel() {
-
   level.addEventListener("change", function () {
     if (level.value === "easy") {
       console.log("easy");
@@ -272,7 +84,6 @@ function runDarkGame() {
     answer.classList.remove("border-green");
     answer.classList.add("border-red");
   }
-
   chosenDarkSide.classList.add("hide");
   chosenLightSide.classList.add("hide");
   level.classList.add("hide");
@@ -281,7 +92,6 @@ function runDarkGame() {
   winningMessage.classList.add("red-text");
   showDarkQuestion();
   showDarkChoices();
-
   let dark = document.getElementById("pickedSide");
   dark.innerText = "dark";
   //add event listener for each button clicked
@@ -334,7 +144,6 @@ function changeSide() {
   lostContainer.classList.add("hide");
   winningMessage.classList.add("hide");
   winMessage.classList.add("hide");
-
   lostMessage.classList.remove("red-text");
   winningMessage.classList.remove("red-text");
   clickedAnswer = 0;
@@ -374,7 +183,6 @@ function changeSide() {
  * if was light then run light if dark than run dark
  */
 function restartGame() {
-
   removeChild();
   messageContainer.classList.add("hide");
   messageContainer.classList.remove("flex");
@@ -400,7 +208,6 @@ function restartGame() {
 function showQuestion() {
   questionContainer.innerText = lightQuestions[questionNumber].question;
   console.log(lightQuestions[questionNumber].question);
-
 }
 
 /**
@@ -590,9 +397,6 @@ function winGame() {
   winningMessage.classList.remove("hide");
 }
 
-let lostMessage = document.getElementById("lost-message");
-let winningMessage = document.getElementById("winning-message");
-
 function loseGame() {
   messageContainer.classList.remove("hide");
   messageContainer.classList.add("flex");
@@ -602,64 +406,4 @@ function loseGame() {
   level.classList.remove("disabled");
   lostMessage.innerText = `Oh no! You lost the battle master ${username.value}
    You got just ${positiveScore} right`;
-}
-
-//home button
-document.querySelector(".home-btn").addEventListener("click", function () {
-  window.location.reload();
-});
-
-//save button to bring you to home and have leaderboard() with username and score
-document.querySelector(".save-score").addEventListener("click", function () {
-  window.location.reload();
-});
-
-//save button to bring you to home and have leaderboard() with username and score
-document.querySelector(".save-score-two").addEventListener("click", function () {
-  window.location.reload();
-});
-
-//add event listener to close leaderboard
-//to avoid duplication of list in displayLightScore() - displayDarkScore()
-document.querySelector(".leaderboard")
-  .addEventListener("click", function () {
-    window.location.reload();
-  });
-
-/*Audio Player
-Created using information from Stackflow
-https://stackoverflow.com/questions/27368778/
-how-to-toggle-audio-play-pause-with-one-button-or-link*/
-const audioPlayer = document.getElementById("player");
-const myAudio = document.getElementById("audio");
-const audioOffIcon = document.getElementById("sound-off");
-const audioOnIcon = document.getElementById("sound-on");
-
-function togglePlay() {
-  if (myAudio.paused) {
-    myAudio.play();
-    answerSound();
-    audioOffIcon.classList.remove("hide");
-    audioOnIcon.classList.add("hide");
-  } else {
-    myAudio.pause();
-    answersAudio.pause();
-    audioOffIcon.classList.add("hide");
-    audioOnIcon.classList.remove("hide");
-  }
-}
-/**
- * function to add sound every time user click on an answer
- * add currenttime 0 so the sound
- *if is not finished will restart on next click
- */
-function answerSound() {
-  const answers = document.querySelectorAll(".answer");
-  let answersAudio = document.getElementById("answersAudio");
-  answers.forEach(answer => {
-    answer.addEventListener("click", () => {
-      answersAudio.currentTime = 0;
-      answersAudio.play();
-    });
-  });
 }
