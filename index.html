@@ -29,7 +29,7 @@
                 <p id="savedText"> </p>
                 <p id="pickedSide" class="hide"></p>
                 <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
-                <div id="button-container">
+                <nav id="button-container">
                     <div id="button-container-child-one">
                         <!--Modal for instruction of quiz-->
                         <section onclick="close(event);" class="modal-instruction hide border-blue"
@@ -149,8 +149,7 @@
                     <!--Child container two containing two icons buttons to push them to opposite side-->
                     <!-- Sound Button -->
                     <div id="button-container-child-two">
-                        <div id="player" class="sound-btn border-blue change-color"
-                        aria-label="Toggle sound on and off" onclick="togglePlay();">
+                        <div id="player" class="sound-btn border-blue change-color" onclick="togglePlay();">
                             <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
                             <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
                         </div>
@@ -166,7 +165,7 @@
                         </div>
                     </div>
                     <!--Creating div for when the level has been chosen and add text from JS-->
-                </div>
+                </nav>
             </header>
             <!--Container for choosing which side to play( each side has different questions -->
             <div>
@@ -230,8 +229,8 @@
             </div>
         </div>
         <!-- Audio-->
-        <audio loop id="audio" src="assets/audio/star-wars-main.mp3" preload="none" ></audio>
-        <audio id="answersAudio" src="assets/audio/lightsaber-ignition-6816.mp3" preload="none"></audio>
+        <audio loop id="audio" src="assets/audio/star-wars-main.mp3" type="audio/mpeg" preload="none" ></audio>
+        <audio id="answersAudio" src="assets/audio/lightsaber-ignition-6816.mp3" type="audio/mpeg" preload="none"></audio>
         <!--Footer with copyright and social media links that open on an external page-->
         <footer>
             <div class="container-footer">
