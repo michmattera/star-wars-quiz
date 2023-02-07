@@ -56,12 +56,16 @@ It tests all star wars fan for knowledge on how much they know the Star Wars wor
  
 The main goal of the user is answering correctly at least half of the total of questions to win the quiz.
 
+The game also features a double set of questions ans answer to differentiate from other quiz.
 The questions are divided in:
 - The side chosen : You have 15 different questions for each side(In the main page you can chose either the light side or the dark side).
 - You have different numbers of questions depending on the difficulty level the user chose.
 
+It also saves scores in the user’s local storage so the user can resume the game and allows multiple user names on the same device.
+
 This is a fun and interactive quiz created for the second of five Milestone projects required to complete the Diploma in Software development (eCommerce Applications) program at The Code Institute.
 The main requirements of this project are to use all the technologies learned so far, **HTML5** , **CSS3** AND **JAVASCRIPT**. 
+
 
 ## UX
 ### Ideal Player Demographic
@@ -83,16 +87,22 @@ This quiz is for users that would like to have fun and get their knowledge teste
     - Sound
     - Automated questions and answers
     - Fun and relative questions on the main topic
+3. As a new player I would like to be able to play without reading the instruction first
+4. As a new player I would like to be able to quit the game at any point
 
 #### Old Player
 
 This quiz is for users that have already played.
 1. As an older player I would like to play again and update my score, trying to reach the top.
 2. As an older player I would like to be able to change my username and play again.
+3. As an older player I would like to be able to save different username to play with friends offline
+4. I would like to be challemged in different levels of questions
 
 ## Development Planes
 
-To build an interactive front-end site, that the user can interact with and get back data.
+To build an interactive front-end site.
+
+ The site should respond to the users’ actions, allowing users to actively engage with data, alter the way site displays the site displays the information to win the game.
 For this purpose, I chose an interactive quiz, set in the: **Star wars** world.
 The website presents data and information based on the main topic.
 
@@ -155,13 +165,52 @@ The page was then structured into 3 different sections:
 
 Wireframes were made to organize and make the skeleton of the website. The wireframes were created using the free platform[Uizard](https://app.uizard.io/prototypes)).
 
+From the original idea wireframes were then changed by the developer for better structure.
+In the original idea before the Homapage there was a single page with three different buttons containing:
+
+- Start the quiz
+- Difficulty
+- Leaderboard
 
 <details>
-<summary>Skeleton Plane - UIzard-Wireframes</summary>
+<summary>Original landing page- UIzard-Wireframes</summary>
 
-![Structure map](/assets/images/read-me-images/wirefra)
+![Original-landing-page-wireframe](/assets/images/read-me-images/original-landing-wireframe.png)
 
 </details>
+These buttons were than bringing the user to three different pages :
+
+Second page to choose between the dark or the light side to play.
+
+
+<details>
+<summary>Start quiz- UIzard-Wireframes</summary>
+
+![Start-quiz](/assets/images/read-me-images/original-start-quiz.png)
+</details>
+
+
+A page to choose the difficulty of the quiz.
+
+<details>
+<summary>Difficulty- UIzard-Wireframes</summary>
+
+![Difficulty](/assets/images/read-me-images/difficulty.png)
+</details>
+
+
+A page to be able to see the saved score , and divide the score in two different lists.
+ 
+<details>
+<summary>Leaderboard - UIzard-Wireframes</summary>
+
+![Leaderboard](/assets/images/read-me-images/leaderboard.png)
+</details>
+
+These were than changed for a single page, implementing 3 different modals that were displayed or not based on the user actions ,
+without bringing the user to different pages .
+
+But having everything on a single page.
 
 ## Features
 
