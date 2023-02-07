@@ -28,7 +28,7 @@ bug = when clicking on change side onclick button it shows previous question of 
 3. [Development Planes](#development-planes)
 4. [Features](#features)  
     1. [General Features](#general-features)
-    2. [Pages Features](#pages-features)
+    2. [Sections Features](#pages-features)
     3. [Future features](#future-features)
 5. [Design](#design)
     1. [ Color Palette](#color-palette)
@@ -227,6 +227,27 @@ But having everything on a single page.
     2. The navigation bar with the following icons on the right:
         - Sound = Sound for clicked button and soundtrack for the game
         - Level form = To chose difficulty 
+    3. **Modals** = Each modal open when clicked on the icon in the navigation bar, it overlays by 2 index and has a backdrop-filter that blur all other content. And a close button marked with an "X".
     3. **404 / 505 page** = To redirect user if wrong url was clicked.
+
+### Sections features 
+
+Main page is divided in different sections that has their own features:
+
+1. Navigation bar from left to right:
+    - Instruction modal that opens when clicked on question mark. It has title and instruction for user on how to play and the different explanation of the levels that he can be challenged with.
+2. User modal that open when clicked on user icon . It has an input to insert username with max 15 character and a save button that sabe the username in the local storage and close as well the modal.
+3. House button that bring the user back to the homepage at any time.
+4. Leaderboard modal that open when clicked on cup. It shows if there is any score and username saved in the local storage best 5 scores . It is divided in two different divs:
+    - Green div that shows 5 best players ( username + score) from when user saved the score from playing the light questions and side.
+    - Red div that shows 5 best players ( username + score) from when user saved the score from playing the dark questions and side.
+5. Sound button that is toggled when clicked on the sound button , and can be controlled by the user . If clicked when there is no sound than icon change and soundtrack and sound for answer clicked is audible . Otherwise no sound is heard .
+6. Level form button that when clicked give the possibility to the user to choose difficulty. It is not clickable when game is already on , and it became again clickable when game finish. It give possibility of three difficulty:
+    - Easy = It displays just 7 questions.
+    - Medium = It displays 11 questions.
+    - Difficult = It displays 15 questions.
+
+
+
 
 
