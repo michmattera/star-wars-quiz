@@ -6,7 +6,7 @@ bug = when clicking on change side onclick button it shows previous question of 
 
 # STAR WARS QUIZ
 
-![Star wars Mockup Images](/assets/)
+![Star wars Mockup Images](/assets/images/read-me-images/responsive-star-wars.PNG)
 
 [View the live project here](https://michmattera.github.io/)
 
@@ -48,7 +48,7 @@ It tests all star wars fan for knowledge on how much they know the Star Wars wor
 The main goal of the user is answering correctly at least half of the total of questions to win the quiz.
 
 The questions are divided in:
-- The side chosen : You have 15 differrent questions for each side(In the main page you can chose either the light side or the dark side).
+- The side chosen : You have 15 different questions for each side(In the main page you can chose either the light side or the dark side).
 - You have different numbers of questions depending on the difficulty level the user chose.
 
 This is a fun and interactive quiz created for the second of five Milestone projects required to complete the Diploma in Software development (eCommerce Applications) program at The Code Institute.
@@ -62,29 +62,30 @@ The ideal player for this quiz is:
 
 
 ### Player Goals
+
 #### New Player
 
 This quiz is for users that would like to have fun and get their knowledge tested on **star wars**.
-1. As a new player I would like to get visual stimulated by Star wars symbols at first impact.
-2. As a new player I would like to easy navigate the main page and find all features that reminds me of a game such as : 
+1. As a new player I would like to get visually stimulated by Star wars symbols at first impact.
+2. As a new player I would like to easily navigate the main page and find all features that remind me of a game such as : 
     - Leaderboard
     - Instructions on how to play
     - Inserting username to save
     - Sound
     - Automated questions and answers
-    - Fun and correct questions on main topic
+    - Fun and relative questions on the main topic
 
 #### Old Player
 
 This quiz is for users that have already played.
-1. As an older player I would like to play again and update my score , trying to reach the top.
-2. As an older player I would like to be able to change username and play again.
+1. As an older player I would like to play again and update my score, trying to reach the top.
+2. As an older player I would like to be able to change my username and play again.
 
 ## Development Planes
 
-To build an interactive front-end site , that the user can interact with and get back datas.
-For this purpose I chose an interactive quiz , set in the : **Star wars** world.
-All website presents data and information based on main topic.
+To build an interactive front-end site, that the user can interact with and get back data.
+For this purpose, I chose an interactive quiz, set in the: **Star wars** world.
+The website presents data and information based on the main topic.
 
 Development planes were made in the following order:
 - Strategy
@@ -98,10 +99,10 @@ Used to determine business goals and user needs.
 
 Business goals:
 - Get the user to play.
-- Get the user to insert unsername.
-- Get the user to save score and try different levels of quiz.
-- Get the player to try both side of game quiz.
-- Stimulate user with audio, visual effect and images.
+- Get the user to insert a username.
+- Get the user to save the score and try different levels of the quiz.
+- Get the player to try both sides of the game quiz.
+- Stimulate the user with audio, visual effect, and images.
 
 User needs were determined based on different target audiences: 
 
@@ -127,23 +128,23 @@ The scope plane, based on the goals established on the strategy plane, identifie
         - Instructions on how to play
 - Functionality Requirements:
     - The user will be able to:
-        - Be able to insert username and save score .
+        - Be able to insert username and save the score
         - Play again
 
 ### Structure
 
 The structure was then created like a game-based interface with all the features on just one page.
- Clicking different icons and buttons will show the user different information and presents him with different choice.
+ Clicking different icons and buttons will show the user different information and presents him with different choices.
 
-The page was then structured in 3 different sections:
-    - The heading = With the main title, and a container with main icons for game
-    - Center = with the rapresentation of two buttons where the user click to decide which game and questions to answer
+The page was then structured into 3 different sections:
+    - The heading = That included the main title, and a container with main icons for game
+    - Center = That includes the rapresentation of two buttons where the user clicks to decide which game and questions to answer
     - End = footer with copyright information and developer social media
 
 
 ### Skeleton
 
-Wireframes were made to organize and make the skeleton of the website. The wireframes were created using app.uizard .
+Wireframes were made to organize and make the skeleton of the website. The wireframes were created using the free platform[Uizard](https://app.uizard.io/prototypes)).
 
 
 <details>
@@ -159,12 +160,11 @@ Wireframes were made to organize and make the skeleton of the website. The wiref
 - The heading 
 - The navigation bar with the following icons on the left:
     - Questions mark = Instruction of the game
-    - User = To insert uername and save it
+    - User = To insert username and save it
     - House = To bring the user home whenever he wants
     - Cup = Leaderboard to see the score saved
 - The navigation bar with the following icons on the right:
-    - Sound = Sound for clicked button and soundtrack for game
+    - Sound = Sound for clicked button and soundtrack for the game
     - Level form = To chose difficulty 
-
 
 
