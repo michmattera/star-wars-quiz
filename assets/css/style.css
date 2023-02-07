@@ -192,7 +192,7 @@ select#levels:hover {
   padding: 8px;
   margin: 0 16px;
   width: auto;
-  margin: 0 auto;
+  margin: 5% auto;
   justify-content: center;
 }
 
@@ -369,6 +369,11 @@ input {
   border-radius: 5%;
   font-size: 20px;
   box-shadow: none;
+}
+.save:hover{
+  color: #0783be;
+  background-color: #d8c6c6;
+  border: none;
 }
 .instruction {
   margin: 0 5%;
@@ -654,9 +659,9 @@ i {
   height: auto;
 }
 button {
-  height: 100px;
+  height: 80px;
   width: 80%;
-  margin: 5% 10%;
+  margin: 4% 10%;
 }
 .answer:hover {
   transform: none;
@@ -774,6 +779,10 @@ button {
     height: 55px;
     width: 80%;
     margin: 4% 10%;
+  }
+  .final-btn{
+    height: 65px;
+    margin: 8%;
   }
   .sound-btn {
     height: 28px;
