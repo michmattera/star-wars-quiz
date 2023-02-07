@@ -32,12 +32,14 @@
                 <div id="button-container">
                     <div id="button-container-child-one">
                         <!--Modal for instruction of quiz-->
-                        <section onclick="close(event);" class="modal-instruction hide border-blue">
+                        <section onclick="close(event);" class="modal-instruction hide border-blue"
+                        aria-labelledby="modalTitle" aria-describedby='modalDescription'>
                             <div class="flex flex-direction">
-                                <button class="btn-close instruction">⨉</button>
-                                <h3>Instruction:</h3>
+                                <button type="button" class="btn-close instruction" 
+                                aria-label="Click here to close instruction">⨉</button>
+                                <h3 id="modalTitle">Instruction:</h3>
                                 <br>
-                                <p>
+                                <p id="modalDescription">
                                     Once upon a time there was a galaxy...
                                     <br>
                                     In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
@@ -81,12 +83,14 @@
                         </section>
                         <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
                         <div class="overlay hide"></div>
-                        <button class="btn-open-instruction border-blue change-color"><i
+                        <button class="btn-open-instruction border-blue change-color"
+                         aria-label="Click here to open instruction" type="button"><i
                             class="fa-solid fa-question"></i></button>
                         <!--Modal for username to insert and save-->
-                        <section class="modal-username hidden">
+                        <section class="modal-username hidden" role="dialog">
                             <div class="flex flex-direction">
-                                <button class="btn-close username">⨉</button>
+                                <button class="btn-close username" aria-label="Click here to close username"
+                                type="button">⨉</button>
                                 <h3>
                                     Choose player!
                                 </h3>
@@ -94,23 +98,28 @@
                                     Change the name of your Jedy/Sith and save it !
                                 </p>
                                 <form>
-                                    <input type="text" name="username" id="username" placeholder="username" maxlength="15">
+                                    <input type="text" name="username" id="username" placeholder="username" maxlength="15"
+                                    aria-label="Insert here username">
                                 </form>
-                                <button class="save btn-close">SAVE</button>
+                                <button class="save btn-close" aria-label="Click here to save username and close modal"
+                                type="button">SAVE</button>
                             </div>
                         </section>
                         <!--BTN for username to be outside of div and section otherwise would not be displayed-->
                         <div class="overlay hide"></div>
-                        <button class="btn-open-username border-blue change-color"><i class="fa-solid fa-user"></i></button>
+                        <button class="btn-open-username border-blue change-color" type="button"
+                        aria-label="Click here to open modal username"><i class="fa-solid fa-user"></i></button>
                         <!-- Home button -->
                         <div>
-                            <button class="home-btn border-blue flex change-color">
+                            <button class="home-btn border-blue flex change-color" aria-label="Click here to go to home page"
+                            type="button">
                             <i class="fa-solid fa-house"></i></button>
                         </div>
                         <!--Modal for leaderboard when user click on icon-->
                         <div class="modal-leaderboard hide">
                             <div class="container-players flex row">
-                                <button class="btn-close leaderboard">⨉</button>
+                                <button class="btn-close leaderboard" aria-label="Click here to close modal leaderboard"
+                                type="button">⨉</button>
                                 <!--Text with username and saved score from javscript of player-->
                                 <div class=" players lightPlayers">
                                     <p id="board-score">Score
@@ -127,14 +136,16 @@
                             </div>
                         </div>
                         <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
-                        <button class="btn-open-leaderboard border-blue change-color" onclick="leaderboard();"><i
+                        <button class="btn-open-leaderboard border-blue change-color" onclick="leaderboard();" 
+                        aria-label="Click here to open modal leaderboard" type="button"><i
                             class="fa-solid fa-trophy"></i></button>
                         <div class="overlay hide"></div>
                     </div>
                     <!--Child container two containing two icons buttons to push them to opposite side-->
                     <!-- Sound Button -->
                     <div id="button-container-child-two">
-                        <div id="player" class="sound-btn border-blue change-color" onclick="togglePlay();">
+                        <div id="player" class="sound-btn border-blue change-color"
+                        aria-label="Toggle sound on and off" onclick="togglePlay();">
                             <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
                             <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
                         </div>
@@ -155,9 +166,11 @@
             <!--Container for choosing which side to play( each side has different questions -->
             <div>
                 <div class="container-pick-side flex">
-                    <button data-type="light" class="side" id="light-side">
+                    <button data-type="light" class="side" id="light-side" type="button" 
+                    aria-label="Click here to start the quiz with questions related to the rebellion">
                     </button>
-                    <button data-type="dark" class="side" id="dark-side">
+                    <button data-type="dark" class="side" id="dark-side" type="button"
+                    aria-label="Click here to start the quiz with questions related to the Empire">
                     </button>
                 </div>
             </div>
@@ -169,17 +182,26 @@
                     </div>
                     <p id="winning-message">
                     </p>
-                    <button class="final-btn" onclick="restartGame()">Restart Game</button>
-                    <button class="final-btn save-score-two" onclick="saveHighScore(event)">Save score</button>
-                    <button class="change-side final-btn" onclick="changeSide()"> Change
-                    side!</button>
+                    <button class="final-btn" onclick="restartGame()" aria-label="Click here to restart the game" type="button"
+                    >Restart Game</button>
+                    <button class="final-btn save-score-two" onclick="saveHighScore(event)" type="button"
+                    aria-label="Click here to save score and go to homepage"
+                    >Save score</button>
+                    <button class="change-side final-btn" onclick="changeSide()" type="button"
+                    aria-label="Click here to change side and questions and start other game"
+                    > Change side!</button>
                 </div>
                 <div id="lost" class="hide">
                     <p id="lost-message">
                     </p>
-                    <button class="final-btn" onclick="restartGame()">Restart Game</button>
-                    <button class="final-btn save-score" onclick="saveHighScore(event)">Save score</button>
-                    <button class="change-side final-btn" onclick="changeSide()">Change side</button>
+                    <button class="final-btn" onclick="restartGame()" aria-label="Click here to restart the game" type="button"
+                    >Restart Game</button>
+                    <button class="final-btn save-score" onclick="saveHighScore(event)" aria-label="Click here to save score and go to homepage"
+                    type="button"
+                    >Save score</button>
+                    <button class="change-side final-btn" onclick="changeSide()"
+                    aria-label="Click here to change side and questions and start other game" type="button"
+                    >Change side</button>
                 </div>
             </div>
             <!--Creating div area with question div and answer div to display main game -->
@@ -187,10 +209,14 @@
                 <div id="game-area" class="hide">
                     <div id="question">questionTest</div>
                     <div id="answer-buttons">
-                        <button id="answer-one" class="answer border-green" value="answer-one">Answer 1</button>
-                        <button id="answer-two" class="answer border-green" value="answer-two">Answer 2</button>
-                        <button id="answer-three" class="answer border-green" value="answer-three">Answer 3</button>
-                        <button id="answer-four" class="answer border-green" value="answer-four">Answer 4</button>
+                        <button id="answer-one" class="answer border-green" value="answer-one"
+                        aria-label="Click here to select answer one" type="button">Answer 1</button>
+                        <button id="answer-two" class="answer border-green" value="answer-two" 
+                        aria-label="Click here to select answer two"type="button">Answer 2</button>
+                        <button id="answer-three" class="answer border-green" value="answer-three"
+                        aria-label="Click here to select answer three" type="button">Answer 3</button>
+                        <button id="answer-four" class="answer border-green" value="answer-four"
+                        aria-label="Click here to select answer four" type="button">Answer 4</button>
                     </div>
                 </div>
             </div>
@@ -199,7 +225,7 @@
             </div>
         </div>
         <!-- Audio-->
-        <audio loop id="audio" src="assets/audio/star-wars-main.mp3" preload="none"></audio>
+        <audio loop id="audio" src="assets/audio/star-wars-main.mp3" preload="none" ></audio>
         <audio id="answersAudio" src="assets/audio/lightsaber-ignition-6816.mp3" preload="none"></audio>
         <!--Footer with copyright and social media links that open on an external page-->
         <footer>
