@@ -97,7 +97,7 @@ function runDarkGame() {
   //add event listener for each button clicked
   //run function checker to see if is correct or not
   const buttonList = document.querySelectorAll(".answer");
-  buttonList.forEach(answer => {
+  buttonList.forEach((answer) => {
     answer.addEventListener("click", checker);
   });
   checker();
@@ -124,7 +124,7 @@ function runLightGame() {
   //add event listener for each button clicked
   //run function checker to see if is correct or not
   const buttonList = document.querySelectorAll(".answer");
-  buttonList.forEach(answer => {
+  buttonList.forEach((answer) => {
     answer.addEventListener("click", checker);
   });
   checker();

@@ -18,7 +18,7 @@ const openModalInstruction = function () {
     modalInstruction.classList.remove("hide");
     overlay.classList.remove("hide");
 };
-//open modal username 
+//open modal username
 const openModalUsername = function () {
     modalUsername.classList.remove("hidden");
     overlay.classList.remove("hide");
@@ -35,9 +35,9 @@ function clsModal() {
     modalInstruction.classList.add("hide");
     modalLeaderboard.classList.add("hide");
     overlay.classList.add("hide");
-};
+}
 //select all modals to add same close function clsModal when clicked
-Array.from(document.querySelectorAll(".btn-close")).forEach(closeButtons => {
+Array.from(document.querySelectorAll(".btn-close")).forEach((closeButtons) => {
     closeButtons.addEventListener("click", clsModal);
 });
 
@@ -77,7 +77,7 @@ function togglePlay() {
 function answerSound() {
     const answers = document.querySelectorAll(".answer");
     let answersAudio = document.getElementById("answersAudio");
-    answers.forEach(answer => {
+    answers.forEach((answer) => {
         answer.addEventListener("click", () => {
             answersAudio.currentTime = 0;
             answersAudio.play();
@@ -91,13 +91,13 @@ document.querySelector(".home-btn")
     window.location.reload();
 });
 
-//save button to bring you to home and have leaderboard() with username and score
+//save button to home and have leaderboard() with username and score
 document.querySelector(".save-score")
 .addEventListener("click", function () {
     window.location.reload();
 });
 
-//save button to bring you to home and have leaderboard() with username and score
+//save button to home and have leaderboard() with username and score
 document.querySelector(".save-score-two")
 .addEventListener("click", function () {
     window.location.reload();
