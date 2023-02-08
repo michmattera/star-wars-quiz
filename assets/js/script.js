@@ -100,7 +100,6 @@ function runDarkGame() {
   buttonList.forEach((answer) => {
     answer.addEventListener("click", checker);
   });
-  checker();
 }
 /**
  * When chose side in runLightGame
@@ -127,7 +126,6 @@ function runLightGame() {
   buttonList.forEach((answer) => {
     answer.addEventListener("click", checker);
   });
-  checker();
 }
 
 /**
