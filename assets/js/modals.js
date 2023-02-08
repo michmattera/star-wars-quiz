@@ -57,34 +57,38 @@ const myAudio = document.getElementById("audio");
 const audioOffIcon = document.getElementById("sound-off");
 const audioOnIcon = document.getElementById("sound-on");
 
+/**
+ *  add sound every time user click on sound button
+ *  when clicked icon change and sound stop and restart
+ */
+
 function togglePlay() {
+    //  add sound every time user click on an answer
+    // add currenttime 0 so the sound
+    //if is not finished will restart on next click
+    const answers = document.querySelectorAll(".answer");
+    let answersAudio = document.getElementById("answersAudio");
     if (myAudio.paused) {
+        answers.forEach((answer) => {
+            answer.addEventListener("click", () => {
+                answersAudio.currentTime = 0;
+                answersAudio.play();
+            });
+        });
         myAudio.play();
-        answerSound();
         audioOffIcon.classList.remove("hide");
         audioOnIcon.classList.add("hide");
     } else {
+        answers.forEach((answer) => {
+            answer.addEventListener("click", () => {
+                answersAudio.pause();
+            });
+        })
         myAudio.pause();
-        answersAudio.pause();
         audioOffIcon.classList.add("hide");
         audioOnIcon.classList.remove("hide");
     }
-}
-/**
- * function to add sound every time user click on an answer
- * add currenttime 0 so the sound
- *if is not finished will restart on next click
- */
-function answerSound() {
-    const answers = document.querySelectorAll(".answer");
-    let answersAudio = document.getElementById("answersAudio");
-    answers.forEach((answer) => {
-        answer.addEventListener("click", () => {
-            answersAudio.currentTime = 0;
-            answersAudio.play();
-        });
-    });
-}
+};
 
 //home button
 document.querySelector(".home-btn")
