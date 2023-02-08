@@ -234,6 +234,7 @@ But having everything on a single page.
 
 Main page is divided in different sections that has their own features:
 
+#### Navigation bar:
 1. Navigation bar from left to right:
     - Instruction modal that opens when clicked on question mark. It has title and instruction for user on how to play and the different explanation of the levels that he can be challenged with.
 2. User modal that open when clicked on user icon . It has an input to insert username with max 15 character and a save button that sabe the username in the local storage and close as well the modal.
@@ -246,6 +247,37 @@ Main page is divided in different sections that has their own features:
     - Easy = It displays just 7 questions.
     - Medium = It displays 11 questions.
     - Difficult = It displays 15 questions.
+
+#### Center buttons:
+
+Depending on device center buttons are displayed :
+
+**Horizontal line** 
+<details>
+<summary>Horizontal line</summary>
+
+![Horizontal Line](/assets/images/read-me-)
+</details>
+
+
+**Vertical line**
+<details>
+<summary>Vertical line</summary>
+
+![Vertical Line](/assets/images/read-me-)
+</details>
+
+
+Both buttons has same height and width and are centered in outside container.
+Both buttons has hover effect of main color used ...
+
+1. The green button , has a background image of the rebellion side (the light side) rapresented by **Yoda**.
+When clicked this button it will display light questions on "Rebellion" as main topic.
+It will change all navigation button to ... with as well border of the answers.
+
+2. The red button , has a background image of the Empire ( the dark side ) rapresented byt **Darth Vader**.
+When clicked this button it will displaydark questions on "The empire" as main topic.
+It will change all navigation button to ... with as well border of the answers.
 
 
 
