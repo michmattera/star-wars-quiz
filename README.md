@@ -345,7 +345,7 @@ Based on these colors then was added **#ddd ALTO** between white and grey for th
 #### Border lightsaber effect
 
 In addition to the previous colors were added 3 more colors used for the effect of the border for questions and buttons.
-Followed ![Youtube video](https://www.youtube.com/watch?v=XFuilG5FAIc) to learn how to do lightsaber effect and get the colors from there.
+Followed [Youtube video](https://www.youtube.com/watch?v=XFuilG5FAIc) to learn how to do lightsaber effect and get the colors from there.
 1. **#0F0** = Very bright green.
 2. **#F00** = Very bright red.
 3. **#FFD0D0 COSMOS** = For the color of the border before the effect of the lightsaber a light pick.
@@ -365,7 +365,7 @@ The typography chosen were the following :
     If the other two fonts were unavailable then this save font was chosen.
 
 ### **Images**
-Three main images were created and token from the developer in ![Canva](https://www.canva.com/).
+Three main images were created and token from the developer in [Canva](https://www.canva.com/).
 1. First image of the space used for background.
 2. Second image used to rapresent light side **Yoda** stylized with a lightsaber.
 3. Third and last image to rapresent dark side **Darth Vader** stylized.
@@ -376,7 +376,7 @@ During development of the website many issues and bugs were found by the develop
 Most significant one displayed below:
 1. To inplement sound an icon was added to the navigation section. And create a function with JS to stop and play the sound when clicked .
     - Issue : Developer saw that also if sound was stopping and playing when the button was clicked the icon would not change. In addition when added the second function for the answer sounds , when the window was loading the sound was stopping but the sound for the answer clicked no. When instead you were replaying the game everything was working normally.
-    - Solved: The first function was then changed thanks to ![StackOverflow](https://stackoverflow.com/questions/27368778/
+    - Solved: The first function was then changed thanks to [Stack-Overflow](https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link)
 how-to-toggle-audio-play-pause-with-one-button-or-link). While the second issue the developer saw that the if statement to check if running or not the sound was not working properly in two different functions. So the developer change the 2 single functions and put them together in a longer function to eliminate the issue.
 2. When inplementing the answers and the next question function , an error was found.
     - Issue = The first question was always skipped and then working perfectly after .
@@ -413,5 +413,47 @@ There are all external programs used :
 - [Free screen recorder](https://screencast-o-matic.com/screen-recorder?from=app&installed=true "Link to go to Free screen recorder homepage")
     - Free screen recorder was installed on the pc, and used to screen record all videos for the testing files.
 
+ ## **Testing**
 
+Testing information can be found in a separate testing [file](TESTING.md "Link to testing file")
+
+## **Deployment**
+
+This project was developed using [GitPod](https://www.gitpod.io/ "Link to GitPod site"), which was then committed and pushed to GitHub using the GitPod terminal.
+
+### **Deploying on GitHub Pages**
+To deploy everything to GiHub Pages the following steps were taken:
+
+1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
+2. Locate the [GitHub Repository](https://github.com/michmattera/newline-alebrije "Link to GitHub Repo").
+3. At the top of the repository, select Settings from the menu items.
+4. Scroll down the Settings page to the "Pages" section.
+5. Under "Source" click the drop-down menu labelled "None" and select "Main".
+6. Click save or Ctrl + s.
+7. Scroll back down to the "Pages" section to retrieve the deployed link.
+
+
+## **Credits**
+
+The code for the website was made by the developer, the content and the questions were invented by the developer and not taken from any pre-existing source.
+For the most complex functions the developer was helped from:
+- Slack
+- Stack overflow
+- Tutors
+- Youtube videos
+
+Throughtout all the code where the developer used external help, the source is always commented before the actual code.
+
+
+
+## **Acknowledgements**
+
+- I would like to thank my friends and family for helping me giving me many different feedbacks to improve the website.
+- I would like to thank in particular Francesco for his knowledge on star wars and helping me mading the questions and answers for main game.
+- I would like to thank my tutors and my mentor, Seun, for their invaluable help and guidance throughout the process.
+- Lastly, I would like to thank the amazing people in Slack who helped me with a few issues and tested the site giving me valuable feedbacks.
+
+[Back to top](#star-wars)
+
+***
 
