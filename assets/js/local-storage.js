@@ -21,7 +21,7 @@ saveHighScore = (e) => {
     localStorage.setItem("highScores", JSON.stringify(highScores));
   }
 
-  function addToHighScore(dark, score) {
+  function addToHighScoreDark(dark, score) {
     var highScores = getHighScore();
     highScores[dark].push(score);
     localStorage.setItem("highScores", JSON.stringify(highScores));
@@ -44,7 +44,7 @@ saveHighScore = (e) => {
       side: pickedSide.innerText
     });
   } else {
-    addToHighScore("dark", {
+    addToHighScoreDark("dark", {
       score: positiveScore,
       name: username.value,
       side: pickedSide.innerText
@@ -79,7 +79,8 @@ function leaderboard() {
 function displayDarkScore() {
   // Declaring variable of darkBest from array of localstorage
   // Max number of localstorage to save and then sort is 8.
-  let darkBest = [(dark.dark[0]),
+  let darkBest = 
+  [(dark.dark[0]),
     (dark.dark[1]),
     (dark.dark[2]),
     (dark.dark[3]),
@@ -117,7 +118,8 @@ function displayDarkScore() {
 function displayLightScore() {
   // Declaring varibale of lightBest from array of localstorage light highScores
   // Max number of localstorage to save and then sort is 8.
-  let lightBest = [(light.light[0]),
+  let lightBest = 
+  [(light.light[0]),
     (light.light[1]),
     (light.light[2]),
     (light.light[3]),

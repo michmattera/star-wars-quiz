@@ -52,7 +52,6 @@ openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 Created using information from Stackflow
 https://stackoverflow.com/questions/27368778/
 how-to-toggle-audio-play-pause-with-one-button-or-link*/
-const audioPlayer = document.getElementById("player");
 const myAudio = document.getElementById("audio");
 const audioOffIcon = document.getElementById("sound-off");
 const audioOnIcon = document.getElementById("sound-on");
@@ -83,12 +82,12 @@ function togglePlay() {
             answer.addEventListener("click", () => {
                 answersAudio.pause();
             });
-        })
+        });
         myAudio.pause();
         audioOffIcon.classList.add("hide");
         audioOnIcon.classList.remove("hide");
     }
-};
+}
 
 //home button
 document.querySelector(".home-btn")

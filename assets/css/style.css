@@ -495,8 +495,9 @@ i {
   font-size: 170%;
 }
 
-li{
-  padding-left: 20px;
+.fa-ul>li {
+  position: relative;
+  padding: 0 20px;
 }
 #modal-description{
   padding-bottom: 5px;

@@ -246,4 +246,4 @@ let darkQuestions = [{
   answerThree: "TUSKEN",
   answerFour: "DIANOGA",
 }
-]
+];
