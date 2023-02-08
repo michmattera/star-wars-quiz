@@ -64,29 +64,27 @@
                         aria-label="Click here to open modal username"><i class="fa-solid fa-user"></i></button>
                         <!--Modal for instruction of quiz-->
                         <section onclick="close(event);" class="modal-instruction hide border-blue"
-                        aria-labelledby="modalTitle" aria-describedby='modalDescription' role="dialog">
+                        aria-labelledby="modalTitle" aria-describedby='modal-description' role="dialog">
                             <div class="flex flex-direction">
                                 <button type="button" class="btn-close instruction" 
                                 aria-label="Close instruction">⨉</button>
                                 <h3 id="modalTitle">Instruction:</h3>
                                 <br>
-                                <p id="modalDescription">
+                                <p id="modal-description">
                                     Once upon a time there was a galaxy...
                                     <br>
                                     In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
                                     empire</strong>.
                                     <br>
-                                <ul>
-                                    <i class="fa-solid fa-jedi"></i>
-                                    <li>
+                                <ul class="fa-ul">
+                                    <li><span class="fa-li"><i class="fa-solid fa-jedi"></i></span>
                                         If you chose the rebels , then you will have to click on the green figure (
                                         master
                                         Yoda
                                         ) and you
                                         will play against the Empire.
                                     </li>
-                                    <i class="fa-brands fa-empire"></i>
-                                    <li>
+                                    <li><li><span class="fa-li"><i class="fa-brands fa-empire"></i></span>
                                         If you chose the Empire then you will have to click on the red figure (Darth
                                         Vader)
                                         and you
@@ -100,13 +98,13 @@
                                 You have as well different level that you may choose:
                                 <ul>
                                     <li>
-                                        | <strong>Easy :</strong> You will have 7 different questions.
+                                        <strong>Easy :</strong> You will have 7 different questions.
                                     </li>
                                     <li>
-                                        || <strong>Medium :</strong> You will have11 different questions.
+                                        <strong>Medium :</strong> You will have11 different questions.
                                     </li>
                                     <li>
-                                        ||| <strong>Difficult :</strong> You will have 15 different questions.
+                                        <strong>Difficult :</strong> You will have 15 different questions.
                                     </li>
                                 </ul>
                                 <br>

@@ -378,6 +378,7 @@ input {
 }
 .instruction {
   margin: 0 5%;
+  width: 5%;
 }
 
 .leaderboard:hover {
@@ -492,6 +493,13 @@ select#levels {
 
 i {
   font-size: 170%;
+}
+
+li{
+  padding-left: 20px;
+}
+#modal-description{
+  padding-bottom: 5px;
 }
 
 /*Style leaderboard container and children*/
