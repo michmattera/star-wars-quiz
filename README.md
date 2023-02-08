@@ -55,7 +55,7 @@ It tests all star wars fan for knowledge on how much they know the Star Wars wor
  
 The main goal of the user is answering correctly at least half of the total of questions to win the quiz.
 
-The game also features a double set of questions ans answer to differentiate from other quiz.
+The game also features a double set of questions and answer to differentiate from other quiz.
 The questions are divided in:
 - The side chosen : You have 15 different questions for each side(In the main page you can chose either the light side or the dark side).
 - You have different numbers of questions depending on the difficulty level the user chose.
@@ -95,7 +95,7 @@ This quiz is for users that have already played.
 1. As an older player I would like to play again and update my score, trying to reach the top.
 2. As an older player I would like to be able to change my username and play again.
 3. As an older player I would like to be able to save different username to play with friends offline
-4. I would like to be challemged in different levels of questions
+4. I would like to be challenged in different levels of questions
 
 ## Development Planes
 
@@ -212,12 +212,18 @@ without bringing the user to different pages .
 
 But having everything on a single page.
 
+<details>
+<summary>Final wireframes - UIzard-Wireframes</summary>
+
+![Final wireframes](/assets/images/read-me-images/final-wireframe.jpg)
+</details>
+
 ## Features
 
 ### General features
 
 1. **Fully responsive** = Each section of the webiste is fully responsive and easy to navigate for user.
-2. **Sound effects** = Implemented sound effect such as soundtrack for game and sound effects when clicking an answer.
+2. **Sound effects** = Implemented sound effect such as soundtrack for game( main sound of star wars movies) and sound effects( lightsaber sound effect) when clicking an answer.
 3. **Navigation bar** :
     1. The navigation bar with the following icons on the left:
         - Questions mark = Instruction of the game
@@ -227,8 +233,8 @@ But having everything on a single page.
     2. The navigation bar with the following icons on the right:
         - Sound = Sound for clicked button and soundtrack for the game
         - Level form = To chose difficulty 
-    3. **Modals** = Each modal open when clicked on the icon in the navigation bar, it overlays by 2 index and has a backdrop-filter that blur all other content. And a close button marked with an "X".
-    3. **404 / 505 page** = To redirect user if wrong url was clicked.
+4. **Modals** = Each modal open when clicked on the icon in the navigation bar, it overlays by 2 index and has a backdrop-filter that blur all other content. And a close button marked with an "X".
+5. **404 / 505 page** = To redirect user if wrong url was clicked.
 
 ### Sections features 
 
@@ -237,11 +243,13 @@ Main page is divided in different sections that has their own features:
 #### Navigation bar:
 1. Navigation bar from left to right:
     - Instruction modal that opens when clicked on question mark. It has title and instruction for user on how to play and the different explanation of the levels that he can be challenged with.
-2. User modal that open when clicked on user icon . It has an input to insert username with max 15 character and a save button that sabe the username in the local storage and close as well the modal.
+2. User modal that open when clicked on user icon . It has an input to insert username with max 15 character and a save button that save the username in the local storage and close as well the modal. Save button is not clickable if input field is empty.
 3. House button that bring the user back to the homepage at any time.
 4. Leaderboard modal that open when clicked on cup. It shows if there is any score and username saved in the local storage best 5 scores . It is divided in two different divs:
     - Green div that shows 5 best players ( username + score) from when user saved the score from playing the light questions and side.
     - Red div that shows 5 best players ( username + score) from when user saved the score from playing the dark questions and side.
+    - Close button.
+    If there is no username saved then just the score will be displayed , and in the username list a dash "-".
 5. Sound button that is toggled when clicked on the sound button , and can be controlled by the user . If clicked when there is no sound than icon change and soundtrack and sound for answer clicked is audible . Otherwise no sound is heard .
 6. Level form button that when clicked give the possibility to the user to choose difficulty. It is not clickable when game is already on , and it became again clickable when game finish. It give possibility of three difficulty:
     - Easy = It displays just 7 questions.
@@ -256,7 +264,7 @@ Depending on device center buttons are displayed :
 <details>
 <summary>Horizontal line</summary>
 
-![Horizontal Line](/assets/images/read-me-)
+![Horizontal Line](/assets/images/read-me-images/horizontal.png)
 </details>
 
 
@@ -264,7 +272,7 @@ Depending on device center buttons are displayed :
 <details>
 <summary>Vertical line</summary>
 
-![Vertical Line](/assets/images/read-me-)
+![Vertical Line](/assets/images/read-me-images/vertical.png)
 </details>
 
 
@@ -278,6 +286,50 @@ It will change all navigation button to ... with as well border of the answers.
 2. The red button , has a background image of the Empire ( the dark side ) rapresented byt **Darth Vader**.
 When clicked this button it will displaydark questions on "The empire" as main topic.
 It will change all navigation button to ... with as well border of the answers.
+
+#### Questions and answers
+
+Once clicked on one of the center buttons then the user is presented with 1 question and 4 different options.
+The user still has visible and clickable navigation buttons , all but the level form that during the game became disabled.
+For each answer the correct answer will have a visual effect of green and for the wrong answer red.
+In addition to this at the bottom the user will have a score div , that with each answer correct or incorrect will add a small score box ( Designed as if was a small lightsaber to remain on main game topic).
+
+#### Final message
+
+Final message will have two different outcome :
+1. If the user win will have a congratulation message.
+2. If the user lose will have a consolation message.
+
+Both messages will have as well 3 buttons :
+-   To save the score, that will bring the user home and reload the leaderboard text from localStorage.
+-   To replay the same game.
+-   To change side directly without having to go back to the homepage.
+
+In addition to this the level form to choose the difficulty at this point will be clickable again,
+so the user before playing again or change side can directly change the difficulty, so when clicked on restart or change side will display the correct number of questions.
+
+#### Footer
+
+Footer made by the developer almost not visible when centered the screen to makeit visible just for user that really wanted to find copiryght information and developer social media.
+All content centered in the middle of the footer.
+
+### Future features
+
+Due to limited resources (time constraint, skill of the developer at the moment, and other reasons), some features were not implemented.
+In the future the developer thought of the following features to inplement the game:
+
+1. Add new level of difficulty **Expert** were the user had 19 questions and could win just if guessing all answers.
+2. Differentiate the sound for correct and incorrect andswer.
+3. As in original wireframe , add on the side of the score-container images of the dark and light side depending on the side chosen , to show charachter, and to be more game like visually.
+4. Leaderboard local storage to be able to save as many infinite local storage and get just best 5 .
+
+
+
+## **Technology Used**  
+### **Main Languages Used**
+   * [HTML5](https://en.wikipedia.org/wiki/HTML5)
+   * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)  
+   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
 
 
 
