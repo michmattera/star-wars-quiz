@@ -47,6 +47,13 @@ saveButton.addEventListener("click", closeButtons);
 openModalUsernameBtn.addEventListener("click", openModalUsername);
 openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 
+//create function to not e possible save if input is empty
+function isEmpty(){
+    var i=document.getElementById("username");
+    if(i.value==""){
+        } else {
+        saveButton.classList.remove("disabled");
+    }};
 
 /*Audio Player
 Created using information from Stackflow
