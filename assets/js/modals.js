@@ -47,6 +47,7 @@ saveButton.addEventListener("click", closeButtons);
 openModalUsernameBtn.addEventListener("click", openModalUsername);
 openModalLeaderboardBtn.addEventListener("click", openModalLeaderboard);
 
+
 /*Audio Player
 Created using information from Stackflow
 https://stackoverflow.com/questions/27368778/

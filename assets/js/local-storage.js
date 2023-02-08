@@ -97,7 +97,11 @@ function displayDarkScore() {
       //get just best 5 highscores
       darkBest.splice(5);
       let listTwoName = document.createElement("li");
+      if(bestName === ""){
+      listTwoName.innerText = "-";
+      } else {
       listTwoName.innerText = bestName;
+      }
       let listTwoScore = document.createElement("li");
       listTwoScore.innerText = bestScore;
       document.querySelector("#boardTwo-score").appendChild(listTwoScore);
@@ -132,7 +136,11 @@ function displayLightScore() {
       let listScore = document.createElement("li");
       listScore.innerText = bestScore;
       let listName = document.createElement("li");
-      listName.innerText = bestName;
+      if(bestName === ""){
+        listName.innerText = "-";
+        } else {
+        listName.innerText = bestName;
+        }
       document.querySelector("#board-score").appendChild(listScore);
       document.querySelector("#board-name").appendChild(listName);
     }

@@ -281,9 +281,10 @@ select#levels:hover {
 }
 
 input {
-  width: 80%;
-  margin: 5% 10% 2.5% 10%;
-  height: 30px;
+  width: 75%;
+  margin: 5% 5% 2.5% 5%;
+  height: 25px;
+  padding: 5px;
 }
 
 .modal-instructions .modal-username .modal-leaderboard .flex {
