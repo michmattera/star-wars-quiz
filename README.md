@@ -1,9 +1,3 @@
-bug= icon does not change , sound work good.
-issue = 
-let currentQuestion = lightQuestions[questionNumber]; While writing the function to show next question and answer this variable did not let me show it , too off the variable to let code work
-issue = function to get answer , first question is skipped , for checker and nextQuestion ,try to add setTimeout but still error
-bug = when clicking on change side onclick button it shows previous question of game 
-
 # **STAR WARS QUIZ**
 
 ![Star wars Mockup Images](/assets/images/read-me-images/responsive-star-wars.PNG)
@@ -376,14 +370,48 @@ Three main images were created and token from the developer in ![Canva](https://
 2. Second image used to rapresent light side **Yoda** stylized with a lightsaber.
 3. Third and last image to rapresent dark side **Darth Vader** stylized.
 
+## **Issue and Bugs**
+
+During development of the website many issues and bugs were found by the developer.
+Most significant one displayed below:
+1. To inplement sound an icon was added to the navigation section. And create a function with JS to stop and play the sound when clicked .
+    - Issue : Developer saw that also if sound was stopping and playing when the button was clicked the icon would not change. In addition when added the second function for the answer sounds , when the window was loading the sound was stopping but the sound for the answer clicked no. When instead you were replaying the game everything was working normally.
+    - Solved: The first function was then changed thanks to ![StackOverflow](https://stackoverflow.com/questions/27368778/
+how-to-toggle-audio-play-pause-with-one-button-or-link). While the second issue the developer saw that the if statement to check if running or not the sound was not working properly in two different functions. So the developer change the 2 single functions and put them together in a longer function to eliminate the issue.
+2. When inplementing the answers and the next question function , an error was found.
+    - Issue = The first question was always skipped and then working perfectly after .
+    - Solved = The developer tried to setTimeout for the nextQuestion function but still got the error , so had to set the timeout and as well change the moment the previous function was called to eliminate the issue.
+3. When clicking on forst button to decide which game to play the developer found a new issue.
+    - Issue = when clicking on change side onclick button it shows previous question of game .
+    - Solved = Developer changed all the function to changeSide and discovered that the onclick button was not working properly because of another variable that had the same name declared inside the wrong function. Eliminate variable and rewrite all function to let new function work.
+
 
 ## **Technology Used**  
-### **Main Languages Used**
+
+### **Languages Used**
    * [HTML5](https://en.wikipedia.org/wiki/HTML5)
    * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)  
    * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
 
+### **External Programs-Website Used**
 
+The developer used different external programs throughout the development of this project.
+There are all external programs used :
+- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
+    - Google fonts was used to import the fonts "Nanum Gothic", "Ubuntu" and "Serif" , "Sans-serif" for backup fonts into the style.css file. These fonts were used throughout the project.
+- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
+     - Font Awesome was used to import icons (e.g. social media icons, main buttons icons , instruction icons).
+- [GitPod](https://gitpod.io/ "Link to GitPod homepage")
+     - GitPod was used for writing code, commiting, and then pushing to GitHub.
+- [GitHub](https://github.com/ "Link to GitHub")
+- [Canva](https://www.canva.com/ "Link to Canva homepage")
+     - Canva was used to create and take all images used for the website.
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
+     - Am I Responsive was used in order to see responsive design throughout the process and to generate mockup imagery to be used.
+- [Ezgif](https://ezgif.com/video-to-gif "Link to go to ezgif homepage")
+    - Ezgif was used to convert all videos to gifs for the testing file.
+- [Free screen recorder](https://screencast-o-matic.com/screen-recorder?from=app&installed=true "Link to go to Free screen recorder homepage")
+    - Free screen recorder was installed on the pc, and used to screen record all videos for the testing files.
 
 
 
