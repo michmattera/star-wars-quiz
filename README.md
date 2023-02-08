@@ -34,9 +34,7 @@
 8. [Testing](#testing)
 9. [Deployment](#deployment)
 10. [Credits](#credits)
-    1. [Visuals](#visuals)
-    2. [Content](#content)
-    3. [Code](#code)
+    1. [Code](#code)
 11. [Acknowledgements](#acknowledgements)
 
 
@@ -435,15 +433,16 @@ To deploy everything to GiHub Pages the following steps were taken:
 
 ## **Credits**
 
+### **Code**
+
 The code for the website was made by the developer, the content and the questions were invented by the developer and not taken from any pre-existing source.
-For the most complex functions the developer was helped from:
+For the most complex functions the developer had helped from:
 - Slack
 - Stack overflow
 - Tutors
 - Youtube videos
 
 Throughtout all the code where the developer used external help, the source is always commented before the actual code.
-
 
 
 ## **Acknowledgements**
