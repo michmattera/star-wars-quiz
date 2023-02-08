@@ -4,7 +4,7 @@ let currentQuestion = lightQuestions[questionNumber]; While writing the function
 issue = function to get answer , first question is skipped , for checker and nextQuestion ,try to add setTimeout but still error
 bug = when clicking on change side onclick button it shows previous question of game 
 
-# STAR WARS QUIZ
+# **STAR WARS QUIZ**
 
 ![Star wars Mockup Images](/assets/images/read-me-images/responsive-star-wars.PNG)
 
@@ -19,7 +19,7 @@ bug = when clicking on change side onclick button it shows previous question of 
 </p>
      
 
-## Table of contents
+## **Table of contents**
 ***
 1. [Introduction](#introduction)
 2. [UX](#UX)
@@ -33,23 +33,20 @@ bug = when clicking on change side onclick button it shows previous question of 
 5. [Design](#design)
     1. [ Color Palette](#color-palette)
     2. [ Typography](#typography)
-6. [Design](#design)
-    1. [ Color Palette](#color-palette)
-    2. [ Typography](#typography)
-7. [Issues and Bugs](#issues-and-bugs)
-8. [Technology Used](#technology-used)
+6. [Issues and Bugs](#issues-and-bugs)
+7. [Technology Used](#technology-used)
     1. [Languages Used](#languages-used)
     2. [External Programs-Website Used](#external-programs-website-used)
-9. [Testing](#testing)
-10. [Deployment](#deployment)
-11. [Credits](#credits)
+8. [Testing](#testing)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
     1. [Visuals](#visuals)
     2. [Content](#content)
     3. [Code](#code)
-12. [Acknowledgements](#acknowledgements)
+11. [Acknowledgements](#acknowledgements)
 
 
-## Introduction
+## **Introduction**
 This is a quiz build for all **Star Wars** fan.
 It tests all star wars fan for knowledge on how much they know the Star Wars world.
  
@@ -66,16 +63,17 @@ This is a fun and interactive quiz created for the second of five Milestone proj
 The main requirements of this project are to use all the technologies learned so far, **HTML5** , **CSS3** AND **JAVASCRIPT**. 
 
 
-## UX
-### Ideal Player Demographic
+## **UX**
+
+### **Ideal Player Demographic**
 The ideal player for this quiz is:
 * New player
 * Old player
 
 
-### Player Goals
+### **Player Goals**
 
-#### New Player
+#### **New Player**
 
 This quiz is for users that would like to have fun and get their knowledge tested on **star wars**.
 1. As a new player I would like to get visually stimulated by Star wars symbols at first impact.
@@ -89,7 +87,7 @@ This quiz is for users that would like to have fun and get their knowledge teste
 3. As a new player I would like to be able to play without reading the instruction first
 4. As a new player I would like to be able to quit the game at any point
 
-#### Old Player
+#### **Old Player**
 
 This quiz is for users that have already played.
 1. As an older player I would like to play again and update my score, trying to reach the top.
@@ -97,7 +95,7 @@ This quiz is for users that have already played.
 3. As an older player I would like to be able to save different username to play with friends offline
 4. I would like to be challenged in different levels of questions
 
-## Development Planes
+## **Development Planes**
 
 To build an interactive front-end site.
 
@@ -112,7 +110,7 @@ Development planes were made in the following order:
 - Skeleton
 
 
-### Strategy
+### **Strategy**
 Used to determine business goals and user needs.
 
 Business goals:
@@ -136,7 +134,7 @@ User needs were determined based on different target audiences:
     - Star wars fan
     - Quiz lovers
 
-### Scope
+### **Scope**
 
 The scope plane, based on the goals established on the strategy plane, identified the following two categories.
 - Content Requirements:
@@ -149,7 +147,7 @@ The scope plane, based on the goals established on the strategy plane, identifie
         - Be able to insert username and save the score
         - Play again
 
-### Structure
+### **Structure**
 
 The structure was then created like a game-based interface with all the features on just one page.
  Clicking different icons and buttons will show the user different information and presents him with different choices.
@@ -160,7 +158,7 @@ The page was then structured into 3 different sections:
 3. End = footer with copyright information and developer social media
 
 
-### Skeleton
+### **Skeleton**
 
 Wireframes were made to organize and make the skeleton of the website. The wireframes were created using the free platform 
 [Uizard](https://app.uizard.io/prototypes).
@@ -218,9 +216,9 @@ But having everything on a single page.
 ![Final wireframes](/assets/images/read-me-images/final-wireframe.jpg)
 </details>
 
-## Features
+## **Features**
 
-### General features
+### **General features**
 
 1. **Fully responsive** = Each section of the webiste is fully responsive and easy to navigate for user.
 2. **Sound effects** = Implemented sound effect such as soundtrack for game( main sound of star wars movies) and sound effects( lightsaber sound effect) when clicking an answer.
@@ -236,11 +234,11 @@ But having everything on a single page.
 4. **Modals** = Each modal open when clicked on the icon in the navigation bar, it overlays by 2 index and has a backdrop-filter that blur all other content. And a close button marked with an "X".
 5. **404 / 505 page** = To redirect user if wrong url was clicked.
 
-### Sections features 
+### **Sections features** 
 
 Main page is divided in different sections that has their own features:
 
-#### Navigation bar:
+#### **Navigation bar:**
 1. Navigation bar from left to right:
     - Instruction modal that opens when clicked on question mark. It has title and instruction for user on how to play and the different explanation of the levels that he can be challenged with.
 2. User modal that open when clicked on user icon . It has an input to insert username with max 15 character and a save button that save the username in the local storage and close as well the modal. Save button is not clickable if input field is empty.
@@ -256,7 +254,7 @@ Main page is divided in different sections that has their own features:
     - Medium = It displays 11 questions.
     - Difficult = It displays 15 questions.
 
-#### Center buttons:
+#### **Center buttons:**
 
 Depending on device center buttons are displayed :
 
@@ -287,14 +285,14 @@ It will change all navigation button to ... with as well border of the answers.
 When clicked this button it will displaydark questions on "The empire" as main topic.
 It will change all navigation button to ... with as well border of the answers.
 
-#### Questions and answers
+#### **Questions and answers**
 
 Once clicked on one of the center buttons then the user is presented with 1 question and 4 different options.
 The user still has visible and clickable navigation buttons , all but the level form that during the game became disabled.
 For each answer the correct answer will have a visual effect of green and for the wrong answer red.
 In addition to this at the bottom the user will have a score div , that with each answer correct or incorrect will add a small score box ( Designed as if was a small lightsaber to remain on main game topic).
 
-#### Final message
+#### **Final message**
 
 Final message will have two different outcome :
 1. If the user win will have a congratulation message.
@@ -308,12 +306,12 @@ Both messages will have as well 3 buttons :
 In addition to this the level form to choose the difficulty at this point will be clickable again,
 so the user before playing again or change side can directly change the difficulty, so when clicked on restart or change side will display the correct number of questions.
 
-#### Footer
+#### **Footer**
 
 Footer made by the developer almost not visible when centered the screen to makeit visible just for user that really wanted to find copiryght information and developer social media.
 All content centered in the middle of the footer.
 
-### Future features
+### **Future features**
 
 Due to limited resources (time constraint, skill of the developer at the moment, and other reasons), some features were not implemented.
 In the future the developer thought of the following features to inplement the game:
@@ -323,6 +321,60 @@ In the future the developer thought of the following features to inplement the g
 3. As in original wireframe , add on the side of the score-container images of the dark and light side depending on the side chosen , to show charachter, and to be more game like visually.
 4. Leaderboard local storage to be able to save as many infinite local storage and get just best 5 .
 
+## **Design**
+
+### **Color palette**
+
+The overall theme of the game were green and blue, based on the background picture throughout all the game.
+I chose this picture to remind user of space and planets as in star wars.
+With the picture was then based the color palette for the game:
+
+
+<details>
+<summary>Color palette</summary>
+
+![Color palette](/assets/images/read-me-images/colormind.png)
+</details>
+The color palette were chosen with [Colormind](http://colormind.io/bootstrap/).
+
+#### **Main colors**
+Main colors token from the color palette were the following three:
+
+1. **#112948 BLUE DIANNE** = Chosen mainly for background color for buttons and footer. Used as well for background of modal such as instruction and username.
+2. **#0783BE CURIOUS BLUE** = Chosen mainly for Heading and original color for the border of all buttons. Used as well for save button in the username modal.
+3. **#BFDA46 CONIFER** = Chosen for the color of the light side. All buttons once is started the rebellion questions change the border from #0783BE to #BFDA46, as well as the border of the questions . In addition the final message when played the light side is displayed in this color as well.
+
+The only color chosen outside the color palette was the color rapresenting the dark side that as **BFDA46** was used for the main picture of the dark side , all border for buttons when chosen the dark side and last message was **rgb(136, 0, 0)** a dark red that rapresented the dard side.
+
+Based on these colors then was added **#ddd ALTO** between white and grey for the text with the blue background.
+
+#### Border lightsaber effect
+
+In addition to the previous colors were added 3 more colors used for the effect of the border for questions and buttons.
+Followed ![Youtube video](https://www.youtube.com/watch?v=XFuilG5FAIc) to learn how to do lightsaber effect and get the colors from there.
+1. **#0F0** = Very bright green.
+2. **#F00** = Very bright red.
+3. **#FFD0D0 COSMOS** = For the color of the border before the effect of the lightsaber a light pick.
+4. **WHITE** = For the effect of the text-shadow that remembers the lightsaber.
+
+### **Typography**
+All of the fonts were sourced from [Google Fonts](https://fonts.google.com). 
+The typography chosen were the following :
+1. Main font: 
+    -  "Nanum Gothic"
+    Used for the Main Title and heading. Chosen for the modernity of the font and to be paired nice with secondary font.
+2. Secondary font :
+    -  "Ubuntu"
+    Used for the main questions and text throughout all website. Clean and modern font chosen to give user best experience for screen-readers.
+3. Tertiary :
+    - "Sans-serif" 
+    If the other two fonts were unavailable then this save font was chosen.
+
+### **Images**
+Three main images were created and token from the developer in ![Canva](https://www.canva.com/).
+1. First image of the space used for background.
+2. Second image used to rapresent light side **Yoda** stylized with a lightsaber.
+3. Third and last image to rapresent dark side **Darth Vader** stylized.
 
 
 ## **Technology Used**  
