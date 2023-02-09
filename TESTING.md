@@ -91,7 +91,7 @@ All navigation buttons have been tested and checked :
 <details>
 <summary> Sound :</summary>
 
-![Sound](assets/testing-files)
+![Sound](assets/testing-files/sound.mp4)
 
 </details>
 
