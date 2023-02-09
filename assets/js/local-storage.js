@@ -65,8 +65,7 @@ function get() {
  * otherwise after 500 milliseconds display the light or the dark scores
  */
 function leaderboard() {
-  if ((localStorage.getItem("highScores") === null)) {
-  } else {
+  if ((localStorage.getItem("highScores") === null)) {} else {
     const timeoutLight = setTimeout(displayLightScore, 500);
     const timeoutDark = setTimeout(displayDarkScore, 500);
   }
@@ -79,8 +78,7 @@ function leaderboard() {
 function displayDarkScore() {
   // Declaring variable of darkBest from array of localstorage
   // Max number of localstorage to save and then sort is 8.
-  let darkBest = 
-  [(dark.dark[0]),
+  let darkBest = [(dark.dark[0]),
     (dark.dark[1]),
     (dark.dark[2]),
     (dark.dark[3]),
@@ -92,21 +90,24 @@ function displayDarkScore() {
   darkBest.sort((a, b) => b.score - a.score);
 
   for (j = 0; j < darkBest.length; j++) {
-    if (darkBest[j].side === "dark") {
-      let bestName = (darkBest[j].name);
-      let bestScore = (darkBest[j].score);
-      //get just best 5 highscores
-      darkBest.splice(5);
-      let listTwoName = document.createElement("li");
-      if(bestName === ""){
-      listTwoName.innerText = "-";
-      } else {
-      listTwoName.innerText = bestName;
+    console.log(darkBest[j])
+    if (darkBest[j] != null) {
+      if (darkBest[j].side === "dark") {
+        let bestName = (darkBest[j].name);
+        let bestScore = (darkBest[j].score);
+        //get just best 5 highscores
+        darkBest.splice(5);
+        let listTwoName = document.createElement("li");
+        if (bestName === "") {
+          listTwoName.innerText = "-";
+        } else {
+          listTwoName.innerText = bestName;
+        }
+        let listTwoScore = document.createElement("li");
+        listTwoScore.innerText = bestScore;
+        document.querySelector("#boardTwo-score").appendChild(listTwoScore);
+        document.querySelector("#boardTwo-name").appendChild(listTwoName);
       }
-      let listTwoScore = document.createElement("li");
-      listTwoScore.innerText = bestScore;
-      document.querySelector("#boardTwo-score").appendChild(listTwoScore);
-      document.querySelector("#boardTwo-name").appendChild(listTwoName);
     }
   }
 }
@@ -118,8 +119,7 @@ function displayDarkScore() {
 function displayLightScore() {
   // Declaring varibale of lightBest from array of localstorage light highScores
   // Max number of localstorage to save and then sort is 8.
-  let lightBest = 
-  [(light.light[0]),
+  let lightBest = [(light.light[0]),
     (light.light[1]),
     (light.light[2]),
     (light.light[3]),
@@ -129,22 +129,26 @@ function displayLightScore() {
     (light.light[7])
   ];
   lightBest.sort((a, b) => b.score - a.score);
+  console.log(light)
 
   for (i = 0; i < lightBest.length; i++) {
-    if (lightBest[i].side === "light") {
-      lightBest.splice(5);
-      let bestName = (lightBest[i].name);
-      let bestScore = (lightBest[i].score);
-      let listScore = document.createElement("li");
-      listScore.innerText = bestScore;
-      let listName = document.createElement("li");
-      if(bestName === ""){
-        listName.innerText = "-";
+    console.log(lightBest[i])
+    if (lightBest[i] != null) {
+      if (lightBest[i].side === "light") {
+        lightBest.splice(5);
+        let bestName = (lightBest[i].name);
+        let bestScore = (lightBest[i].score);
+        let listScore = document.createElement("li");
+        listScore.innerText = bestScore;
+        let listName = document.createElement("li");
+        if (bestName === "") {
+          listName.innerText = "-";
         } else {
-        listName.innerText = bestName;
+          listName.innerText = bestName;
         }
-      document.querySelector("#board-score").appendChild(listScore);
-      document.querySelector("#board-name").appendChild(listName);
+        document.querySelector("#board-score").appendChild(listScore);
+        document.querySelector("#board-name").appendChild(listName);
+      }
     }
   }
 }
