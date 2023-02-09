@@ -46,7 +46,7 @@ The following browser have been tested and check:
 
 - Safari:
 
-     ![Safari](assets/testing-files)
+     ![Safari](assets/testing-files/safari.gif)
 
 
 <details>
@@ -94,11 +94,12 @@ All navigation buttons have been tested and checked :
 </details>
 
 <details>
-<summary> Username : Tested if when clicked on username open modal, if clicked save button was disabled if input was empty and not disabled if not empty. In addition clicking the save button will close the window as well.</summary>
+<summary> Instruction : Tested when clicked button for instruction modal will open and display instruction , closing instruction clicking the close button.</summary>
 
-![Username](assets/testing-files/username.gif)
+![Instruction](assets/testing-files/instruction.gif)
 
 </details>
+
 
 Leaderboard : Tested if button when clicked will open modal with two different lists and will display correctly username and score after save it in local storage:
 
@@ -117,15 +118,81 @@ Leaderboard : Tested if button when clicked will open modal with two different l
 </details>
 
 <details>
-<summary> Instruction : Tested when clicked button for instruction modal will open and display instruction , closing instruction clicking the close button.</summary>
+<summary> Username : Tested if when clicked on username open modal, if clicked save button was disabled if input was empty and not disabled if not empty. In addition clicking the save button will close the window as well.</summary>
 
-![Instruction](assets/testing-files/instruction.gif)
+![Username](assets/testing-files/username.gif)
 
 </details>
+
 
 <details>
 <summary> Home : Tested home button that at any time during the game will bring the user to homepage.</summary>
 
 ![Home](assets/testing-files/home.gif)
+
+</details>
+
+
+### **Main game**
+
+Main game was tested in the following categories :
+
+1. Difficulty 
+2. Colors
+3. Final buttons
+4. Score
+
+
+| Features | Checked |
+| --- | --- |
+| Difficulty | :heavy_check_mark: |
+| Colors | :heavy_check_mark: |
+| Final Buttons|  :heavy_check_mark: |
+| Score | :heavy_check_mark: |
+
+The levels :
+- Easy : Easy difficulty displays a total of 7 questions.
+- Medium : Medium difficulty displays a total of 11 questions.
+- Difficult : Difficult difficulty displays a total of 15 questions.
+
+Colors :
+- every time you click on start light game all buttons will display green border , and final message in green.
+- every time you click on start dark game all buttons will display red border , and final message in red.
+
+Score :
+- for each correct answer the button will display green background color, with blue text.
+- for each wrong answer the button will display red background color, andwhite text.
+- As well for each correct and incorrect answer at the bottom will appear small divs if correct green and if wrong red.
+
+The following 2 videos will display the following test: Level - Colors - Score.
+
+<details>
+<summary> Light Game : Tested button to start light game , all colors changed , score is correct and final message of the right color checked.</summary>
+
+![Light Game](assets/testing-files/light-game.gif)
+
+</details>
+
+<details>
+<summary> Dark Game : Tested button to start dark game , all colors changed , score is correct and final message of the right color checked.</summary>
+
+![Dark Game](assets/testing-files/dark-game.gif)
+
+</details>
+
+The final buttons are three , the user chose between restart same game , change side directly without going to homepage first , and save score that will reload page and bring user home , with local storage updated. In adition the button to change levl with the final message is not disabled so user when clicking change difficulty as well.
+
+<details>
+<summary> Restart : Tested when click the restart button user restart same game (optional = change level ).</summary>
+
+![Restart](assets/testing-files/restart.gif)
+
+</details>
+
+
+<details>
+<summary> Change side : Tested when click the change side button user go directly to the other side of the game, if playing light then it goes to dark side and viceversa (optional = change level ).</summary>
+
+![Change side](assets/testing-files/change-side.gif)
 
 </details>
