@@ -20,7 +20,7 @@
 
 ## **Browser testing**
 
-The following browser have been tested and check:
+The following browser has been tested and checked:
 
 | Browser | Checked |
 | --- | --- |
@@ -82,7 +82,7 @@ All navigation buttons have been tested and checked :
 | Home | :heavy_check_mark:|
 
 <details>
-<summary> Levels : Tested that when clicked the level form would show other difficulty and change the difficulty </summary>
+<summary> Levels: Tested that when clicked the level form would show other difficulties and change the difficulty </summary>
 
 ![Levels](assets/testing-files/levels.gif)
 
@@ -96,31 +96,31 @@ All navigation buttons have been tested and checked :
 </details>
 
 <details>
-<summary> Instruction : Tested when clicked button for instruction modal will open and display instruction , closing instruction clicking the close button.</summary>
+<summary> Instruction: Tested when clicked button for instruction modal will open and display instruction, closing instruction clicking the close button.</summary>
 
 ![Instruction](assets/testing-files/instruction.gif)
 
 </details>
 
 
-Leaderboard : Tested if button when clicked will open modal with two different lists and will display correctly username and score after save it in local storage:
+Leaderboard: Tested if the button when clicked will open a modal with two different lists and will display correctly username and score after saving it in local storage:
 
 <details>
-<summary> Leaderboard when inserting username - save - play light game - save score -clicking leaderboard light to see displayed the score with username</summary>
+<summary> Leaderboard when inserting username - save - play the light game - save score -clicking leaderboard light to see displayed the score with username</summary>
 
 ![Leaderboard](assets/testing-files/leaderboard-light.gif)
 
 </details>
 
 <details>
-<summary> Leaderboard when inserting username - save - play dark game - save score -clicking leaderboard dark to see displayed the score with username</summary>
+<summary> Leaderboard when inserting username - save - play the dark game - save score -clicking leaderboard dark to see displayed the score with username</summary>
 
 ![Leaderboard](assets/testing-files/leaderboard-dark.gif)
 
 </details>
 
 <details>
-<summary> Username : Tested if when clicked on username open modal, if clicked save button was disabled if input was empty and not disabled if not empty. In addition clicking the save button will close the window as well.</summary>
+<summary> Username: Tested if when clicked on username open modal, if clicked save button was disabled if the input was empty and not disabled if not empty. In addition clicking the save button will close the window as well.</summary>
 
 ![Username](assets/testing-files/username.gif)
 
@@ -128,7 +128,7 @@ Leaderboard : Tested if button when clicked will open modal with two different l
 
 
 <details>
-<summary> Home : Tested home button that at any time during the game will bring the user to homepage.</summary>
+<summary> Home: Tested home button that at any time during the game will bring the user to the homepage.</summary>
 
 ![Home](assets/testing-files/home.gif)
 
@@ -137,7 +137,7 @@ Leaderboard : Tested if button when clicked will open modal with two different l
 
 ### **Main game**
 
-Main game was tested in the following categories :
+The main game was tested in the following categories :
 
 1. Difficulty 
 2. Colors
@@ -153,39 +153,39 @@ Main game was tested in the following categories :
 | Score | :heavy_check_mark: |
 
 The levels :
-- Easy : Easy difficulty displays a total of 7 questions.
-- Medium : Medium difficulty displays a total of 11 questions.
-- Difficult : Difficult difficulty displays a total of 15 questions.
+- Easy: Easy difficulty displays a total of 7 questions.
+- Medium: Medium difficulty displays a total of 11 questions.
+- Difficult: Difficult difficulty displays a total of 15 questions.
 
 Colors :
-- every time you click on start light game all buttons will display green border , and final message in green.
-- every time you click on start dark game all buttons will display red border , and final message in red.
+- every time you click on the start light game all buttons will display a green border, and the final message is in green.
+- every time you click on start the dark game all buttons will display a red border and the final message in red.
 
 Score :
 - for each correct answer the button will display green background color, with blue text.
-- for each wrong answer the button will display red background color, andwhite text.
+- for each wrong answer the button will display red background color and white text.
 - As well for each correct and incorrect answer at the bottom will appear small divs if correct green and if wrong red.
 
 The following 2 videos will display the following test: Level - Colors - Score.
 
 <details>
-<summary> Light Game : Tested button to start light game , all colors changed , score is correct and final message of the right color checked.</summary>
+<summary> Light Game: Tested the button to start the light game, all colors changed, the score is correct and the final message of the right color was checked.</summary>
 
 ![Light Game](assets/testing-files/light-game.gif)
 
 </details>
 
 <details>
-<summary> Dark Game : Tested button to start dark game , all colors changed , score is correct and final message of the right color checked.</summary>
+<summary> Dark Game: Tested the button to start the dark game, all colors changed, the score is correct and the final message of the right color checked.</summary>
 
 ![Dark Game](assets/testing-files/dark-game.gif)
 
 </details>
 
-The final buttons are three , the user chose between restart same game , change side directly without going to homepage first , and save score that will reload page and bring user home , with local storage updated. In adition the button to change levl with the final message is not disabled so user when clicking change difficulty as well.
+The final buttons are three, the user chose between restarting the same game, changing the side directly without going to the homepage first, and saving a score that will reload the page and bring the user home, with local storage updated. In addition, the button to change the level with the final message is not disabled so the user when clicking changes the difficulty as well.
 
 <details>
-<summary> Restart : Tested when click the restart button user restart same game (optional = change level ).</summary>
+<summary> Restart: Tested when clicking the restart button user restart the same game (optional = change level ).</summary>
 
 ![Restart](assets/testing-files/restart.gif)
 
@@ -193,7 +193,7 @@ The final buttons are three , the user chose between restart same game , change 
 
 
 <details>
-<summary> Change side : Tested when click the change side button user go directly to the other side of the game, if playing light then it goes to dark side and viceversa (optional = change level ).</summary>
+<summary> Change side: Tested when clicking the change side button user goes directly to the other side of the game, if playing light then it goes to the dark side and vice versa (optional = change level ).</summary>
 
 ![Change side](assets/testing-files/change-side.gif)
 
@@ -202,18 +202,18 @@ The final buttons are three , the user chose between restart same game , change 
 
 ### **Social media**
 
-Social media situated just at the bottom of the page bring the user to social media of the developer , both opens in a new page.
+Social media situated just at the bottom of the page bring the user to the social media of the developer, and both open a new page.
 
 
 <details>
-<summary> Github : Tested button with hover effect and that opens in a new page when clicked.</summary>
+<summary> Github: Tested button with hover effect and that opens a new page when clicked.</summary>
 
 ![Github](assets/testing-files/github.gif)
 
 </details>
 
 <details>
-<summary> Linkedin : Tested button with hover effect and that opens in a new page when clicked.</summary>
+<summary> Linkedin: Tested button with hover effect and that opens a new page when clicked.</summary>
 
 ![Linkedin](assets/testing-files/linkedin.gif)
 
@@ -222,7 +222,7 @@ Social media situated just at the bottom of the page bring the user to social me
 
 ## Code validator
 
-All code passed throught validator:
+All codes passed through the validator:
 
 1. Css 
 
@@ -257,7 +257,7 @@ All code passed throught validator:
 
 </details>
 
-3. Javascript files : all javascript file was passed throught jshint , with just 1 warning ( 34	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (runLightGame, runDarkGame), decided to not change functions because of not enough time and believing that the function and the variable are understandable)
+3. Javascript files: all javascript file was passed through jshint, with just 1 warning ( 34     Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (runLightGame, runDarkGame), decided to not change functions because of not enough time and believing that the function and the variable are understandable)
 
 <details>
 <summary>Javascript</summary>
@@ -269,7 +269,7 @@ All code passed throught validator:
 
 ### **Lighthouse**
 
-Lighthouse was checked on every page with desktop and cellphone.
+Lighthouse was checked on every page with the desktop and cellphone.
 
 Desktop: 
 
@@ -320,7 +320,7 @@ Mobile :
 
 ## **Responsive**
 
-The responsiveness of the website was checked and recorded. Website fully responsive from screen bigger than 1500 px to 280px minimum width screen.
+The responsiveness of the website was checked and recorded. The website is fully responsive from a screen bigger than 1500 px to 280px minimum width screen.
 
 <details>
 <summary>Responsive</summary>
