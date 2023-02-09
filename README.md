@@ -2,7 +2,7 @@
 
 ![Star wars Mockup Images](/assets/images/read-me-images/responsive-star-wars.PNG)
 
-[View the live project here](https://michmattera.github.io/)
+[View the live project here](https://michmattera.github.io/star-wars-quiz/)
 
 <p>
 <a href="http://jigsaw.w3.org/css-validator/validator$link">
@@ -16,13 +16,13 @@
 ## **Table of contents**
 ***
 1. [Introduction](#introduction)
-2. [UX](#UX)
+2. [UX](#ux)
     1. [Ideal Player Demographic](#ideal-player-demographic)
     2. [Player Goals](#player-goals) 
 3. [Development Planes](#development-planes)
 4. [Features](#features)  
     1. [General Features](#general-features)
-    2. [Sections Features](#pages-features)
+    2. [Sections Features](#sections-features)
     3. [Future features](#future-features)
 5. [Design](#design)
     1. [ Color Palette](#color-palette)
@@ -327,6 +327,7 @@ With the picture was then based the color palette for the game:
 
 ![Color palette](/assets/images/read-me-images/colormind.png)
 </details>
+
 The color palette were chosen with [Colormind](http://colormind.io/bootstrap/).
 
 #### **Main colors**
@@ -368,7 +369,7 @@ Three main images were created and token from the developer in [Canva](https://w
 2. Second image used to rapresent light side **Yoda** stylized with a lightsaber.
 3. Third and last image to rapresent dark side **Darth Vader** stylized.
 
-## **Issue and Bugs**
+## **Issues and Bugs**
 
 During development of the website many issues and bugs were found by the developer.
 Most significant one displayed below:
@@ -452,7 +453,7 @@ Throughtout all the code where the developer used external help, the source is a
 - I would like to thank my tutors and my mentor, Seun, for their invaluable help and guidance throughout the process.
 - Lastly, I would like to thank the amazing people in Slack who helped me with a few issues and tested the site giving me valuable feedbacks.
 
-[Back to top](#star-wars)
+[Back to top](#star-wars-quiz)
 
 ***
 
