@@ -44,10 +44,12 @@ The following browser have been tested and check:
 
 </details>
 
-- Safari:
+<details>
+<summary> Safari:</summary>
 
-     ![Safari](assets/testing-files/safari.gif)
+![Safari](assets/testing-files/safari.gif)
 
+</details>
 
 <details>
 <summary> Firefox:</summary>
@@ -326,3 +328,7 @@ The responsiveness of the website was checked and recorded. Website fully respon
 ![Responsive](assets/testing-files/responsive.gif)
 
 </details>
+
+[Back to top](#star-wars-quiz-testing)
+
+***
