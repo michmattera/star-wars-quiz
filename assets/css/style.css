@@ -496,6 +496,9 @@ select#levels {
 i {
   font-size: 170%;
 }
+.social-icon:hover{
+  color: #0783be
+}
 
 .fa-ul>li {
   position: relative;
