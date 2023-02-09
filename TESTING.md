@@ -16,7 +16,7 @@
     3. [Social-Media](#social-media)
 3. [Code validator](#code-validator)
      1. [Lighthouse](#lighthouse)
-4. [User testing](#user-testing)
+4. [Responsive](#responsive)
 
 ## **Browser testing**
 
@@ -269,3 +269,34 @@ All code passed throught validator:
 
 Lighthouse was checked on every page with desktop and cellphone.
 
+<details>
+<summary>Index.html desktop</summary>
+
+![Index.html desktop](assets/testing-files/desktop-index.PNG)
+
+</details>
+
+<details>
+<summary>404.html desktop</summary>
+
+![404.html desktop](assets/testing-files/404-desktop.PNG)
+
+</details>
+
+<details>
+<summary>500.html desktop</summary>
+
+![500.html desktop](assets/testing-files/500-desktop.PNG)
+
+</details>
+
+## **Responsive**
+
+The responsiveness of the website was checked and recorded. Website fully responsive from screen bigger than 1500 px to 280px minimum width screen.
+
+<details>
+<summary>Responsive</summary>
+
+![Responsive](assets/testing-files/responsive.gif)
+
+</details>
