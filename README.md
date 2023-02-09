@@ -396,6 +396,7 @@ There are all external programs used :
 - [GitPod](https://gitpod.io/ "Link to GitPod homepage")
      - GitPod was used for writing code, committing, and then pushing to GitHub.
 - [GitHub](https://github.com/ "Link to GitHub")
+     - GitHub was used to store the project after pushing.
 - [Canva](https://www.canva.com/ "Link to Canva homepage")
      - Canva was used to create and take all images used for the website.
 - [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
