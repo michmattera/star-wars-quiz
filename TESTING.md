@@ -104,14 +104,14 @@ All navigation buttons have been tested and checked :
 Leaderboard : Tested if button when clicked will open modal with two different lists and will display correctly username and score after save it in local storage:
 
 <details>
-<summary> Leaderboard when inserting username - save - play **light** game - save score -clicking leaderboard light to see displayed the score with username</summary>
+<summary> Leaderboard when inserting username - save - play light game - save score -clicking leaderboard light to see displayed the score with username</summary>
 
 ![Leaderboard](assets/testing-files/leaderboard-light.gif)
 
 </details>
 
 <details>
-<summary> Leaderboard when inserting username - save - play **dark** game - save score -clicking leaderboard dark to see displayed the score with username</summary>
+<summary> Leaderboard when inserting username - save - play dark game - save score -clicking leaderboard dark to see displayed the score with username</summary>
 
 ![Leaderboard](assets/testing-files/leaderboard-dark.gif)
 
@@ -194,5 +194,25 @@ The final buttons are three , the user chose between restart same game , change 
 <summary> Change side : Tested when click the change side button user go directly to the other side of the game, if playing light then it goes to dark side and viceversa (optional = change level ).</summary>
 
 ![Change side](assets/testing-files/change-side.gif)
+
+</details>
+
+
+### **Social media**
+
+Social media situated just at the bottom of the page bring the user to social media of the developer , both opens in a new page.
+
+
+<details>
+<summary> Github : Tested button with hover effect and that opens in a new page when clicked.</summary>
+
+![Github](assets/testing-files/github.gif)
+
+</details>
+
+<details>
+<summary> Linkedin : Tested button with hover effect and that opens in a new page when clicked.</summary>
+
+![Linkedin](assets/testing-files/linkedin.gif)
 
 </details>
