@@ -22,31 +22,44 @@
 
 The following browser have been tested and check:
 
-| Browser | Description |
+| Browser | Checked |
 | --- | --- |
 | Google chrome | :heavy_check_mark: |
-| Microdoft edge | Show file differences that haven't been staged |
-| Safari| List all new or modified files | :heavy_check_mark:
-| Firefox | List all new or modified files |
-| Opera | List all new or modified files |
+| Microdoft edge | :heavy_check_mark: |
+| Safari|  :heavy_check_mark: |
+| Firefox | :heavy_check_mark: |
+| Opera | :heavy_check_mark:|
 
+<details>
+<summary> Google Chrome:</summary>
 
-- Google Chrome:
+![Google Chrome](assets/testing-files/chrome.gif)
 
-     ![Google Chrome](assets/testing-files)
+</details>
 
-- Microsoft Edge:
+<details>
+<summary> Microsoft Edge:</summary>
 
-     ![Microsoft Edge](assets/testing-files)
+![Microsoft Edge](assets/testing-files/edge.gif)
+
+</details>
 
 - Safari:
 
      ![Safari](assets/testing-files)
 
-- Firefox:
 
-     ![Firefox](assets/testing-files)
+<details>
+<summary> Firefox:</summary>
 
-- Opera:
+![Firefox](assets/testing-files/modzilla-firefox.gif)
 
-     ![Opera](assets/testing-files)
+</details>
+
+
+<details>
+<summary> Opera:</summary>
+
+![Opera](assets/testing-files)
+
+</details>
