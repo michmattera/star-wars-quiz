@@ -264,3 +264,8 @@ All code passed throught validator:
 
 </details>
 
+
+### **Lighthouse**
+
+Lighthouse was checked on every page with desktop and cellphone.
+

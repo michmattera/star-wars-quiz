@@ -909,7 +909,7 @@ button {
   margin-left: -125px;
 }
 .modal-instruction>* {
-  line-height: 19px;
+  line-height: 17.5px;
 }
 }
 @media screen and (max-width: 350px){
