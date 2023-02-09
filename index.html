@@ -1,84 +1,81 @@
 <!--The following code contains index.html , comment along main content and small section comment for better understanding-->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="website for star wars fans that want to test their knowledge">
-    <meta name="keywords" content="star wars, star wars fans, online quiz">
-    <meta name="author" content="Michelle Mattera">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Playfair+Display&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="../star-wars-quiz/assets/favicon/favicon.png">
-    <script src="https://kit.fontawesome.com/73f93bff4b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Star wars quiz</title>
-</head>
-<!--Body of the game page with background image, main button to start quiz picking the side, modals to have different information and footer-->
-
-<body class="index">
-    <div class="page-container" id="modal">
-        <!--Header that containes: main title , container for modal buttons-->
-        <header>
-            <h1 class="heading">
-                Star wars quiz!
-            </h1>
-            <p id="savedTextScore"></p>
-            <p id="savedText"> </p>
-            <p id="pickedSide" class="hide"></p>
-            <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
-            <nav id="button-container">
-                <div id="button-container-child-one">
-                    <!-- Home button -->
-                    <div>
-                        <button class="home-btn border-blue flex change-color"
-                            aria-label="Click here to go to home page" type="button">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="website for star wars fans that want to test their knowledge">
+        <meta name="keywords" content="star wars, star wars fans, online quiz">
+        <meta name="author" content="Michelle Mattera">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Playfair+Display&display=swap"
+            rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="../star-wars-quiz/assets/favicon/favicon.png">
+        <script src="https://kit.fontawesome.com/73f93bff4b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Star wars quiz</title>
+    </head>
+    <!--Body of the game page with background image, main button to start quiz picking the side, modals to have different information and footer-->
+    <body class="index">
+        <div class="page-container" id="modal">
+            <!--Header that containes: main title , container for modal buttons-->
+            <header>
+                <h1 class="heading">
+                    Star wars quiz!
+                </h1>
+                <p id="savedTextScore"></p>
+                <p id="savedText"> </p>
+                <p id="pickedSide" class="hide"></p>
+                <!--Container for all button such as instruction modal, to choose level button, to insert and save username modal and see leaderboard modal-->
+                <nav id="button-container">
+                    <div id="button-container-child-one">
+                        <!-- Home button -->
+                        <div>
+                            <button class="home-btn border-blue flex change-color"
+                                aria-label="Click here to go to home page" type="button">
                             <i class="fa-solid fa-house"></i></button>
-                    </div>
-
-                    <!--Modal for username to insert and save-->
-                    <section class="modal-username hidden" aria-labelledBy="usernameTitle"
-                        aria-describedby="usernameText" role="dialog">
-                        <div class="flex flex-direction">
-                            <button class="btn-close username" aria-label="Click here to close username"
-                                type="button">⨉</button>
-                            <h3 id="usernameTitle">
-                                Choose player!
-                            </h3>
-                            <p id="usernameText">
-                                Change the name of your Jedy/Sith and save it !
-                            </p>
-                            <form>
-                                <input type="text" name="username" id="username" placeholder="username" maxlength="15"
-                                    aria-label="Insert here username" onkeyup="isEmpty()">
-                            </form>
-                            <button class="save btn-close disabled"
-                                aria-label="Click here to save username and close modal" type="button">SAVE</button>
                         </div>
-                    </section>
-                    <!--BTN for username to be outside of div and section otherwise would not be displayed-->
-                    <div class="overlay hide"></div>
-                    <button class="btn-open-username border-blue change-color" type="button"
-                        aria-label="Click here to open modal username"><i class="fa-solid fa-user"></i></button>
-                    <!--Modal for instruction of quiz-->
-                    <section onclick="close(event);" class="modal-instruction hide border-blue"
-                        aria-labelledby="modalTitle" aria-describedby='modal-description' role="dialog">
-                        <div class="flex flex-direction">
-                            <button type="button" class="btn-close instruction"
-                                aria-label="Close instruction">⨉</button>
-                            <h3 id="modalTitle">Instruction:</h3>
-                            <br>
-                            <p id="modal-description">
-                                Once upon a time there was a galaxy...
+                        <!--Modal for username to insert and save-->
+                        <section class="modal-username hidden" aria-labelledBy="usernameTitle"
+                            aria-describedby="usernameText" role="dialog">
+                            <div class="flex flex-direction">
+                                <button class="btn-close username" aria-label="Click here to close username"
+                                    type="button">⨉</button>
+                                <h3 id="usernameTitle">
+                                    Choose player!
+                                </h3>
+                                <p id="usernameText">
+                                    Change the name of your Jedy/Sith and save it !
+                                </p>
+                                <form>
+                                    <input type="text" name="username" id="username" placeholder="username" maxlength="15"
+                                        aria-label="Insert here username" onkeyup="isEmpty()">
+                                </form>
+                                <button class="save btn-close disabled"
+                                    aria-label="Click here to save username and close modal" type="button">SAVE</button>
+                            </div>
+                        </section>
+                        <!--BTN for username to be outside of div and section otherwise would not be displayed-->
+                        <div class="overlay hide"></div>
+                        <button class="btn-open-username border-blue change-color" type="button"
+                            aria-label="Click here to open modal username"><i class="fa-solid fa-user"></i></button>
+                        <!--Modal for instruction of quiz-->
+                        <section onclick="close(event);" class="modal-instruction hide border-blue"
+                            aria-labelledby="modalTitle" aria-describedby='modal-description' role="dialog">
+                            <div class="flex flex-direction">
+                                <button type="button" class="btn-close instruction"
+                                    aria-label="Close instruction">⨉</button>
+                                <h3 id="modalTitle">Instruction:</h3>
                                 <br>
-                                In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
+                                <p id="modal-description">
+                                    Once upon a time there was a galaxy...
+                                    <br>
+                                    In this galaxy you have 2 sides: <strong>The rebels</strong> and <strong>The
                                     empire</strong>.
-                                <br>
+                                    <br>
                                 <ul class="fa-ul">
                                     <li><span class="fa-li"><i class="fa-solid fa-jedi"></i></span>
                                         If you chose the rebels , then you will have to click on the green figure (
@@ -115,141 +112,138 @@
                                 Your goal is to win and answer at least more than half of the questions.
                                 <br>
                                 May the force be with you ...
-                        </div>
-                    </section>
-                    <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
-                    <div class="overlay hide"></div>
-                    <button class="btn-open-instruction border-blue change-color"
-                        aria-label="Click here to open instruction" type="button"><i
+                            </div>
+                        </section>
+                        <!--BTN for instruction to be outside of div and section otherwise would not be displayed-->
+                        <div class="overlay hide"></div>
+                        <button class="btn-open-instruction border-blue change-color"
+                            aria-label="Click here to open instruction" type="button"><i
                             class="fa-solid fa-question"></i></button>
-
-                    <!--Modal to show leaderboard when user click on icon-->
-                    <div class="modal-leaderboard hide" aria-labelledby="leaderboardLists" aria-describedby="listOne">
-                        <div class="container-players flex row" id="leaderboardLists" role="dialog">
-                            <button class="btn-close leaderboard" aria-label="Click here to close modal leaderboard"
-                                type="button">⨉</button>
-                            <!--Text with username and saved score from javscript of player-->
-                            <div id="listOne" class=" players lightPlayers">
-                                <p id="board-score">Score
-                                </p>
-                                <p id="board-name">Jedy
-                                </p>
-                            </div>
-                            <div class=" players darkPlayers">
-                                <p id="boardTwo-score">Score
-                                </p>
-                                <p id="boardTwo-name">Sith
-                                </p>
+                        <!--Modal to show leaderboard when user click on icon-->
+                        <div class="modal-leaderboard hide" aria-labelledby="leaderboardLists" aria-describedby="listOne">
+                            <div class="container-players flex row" id="leaderboardLists" role="dialog">
+                                <button class="btn-close leaderboard" aria-label="Click here to close modal leaderboard"
+                                    type="button">⨉</button>
+                                <!--Text with username and saved score from javscript of player-->
+                                <div id="listOne" class=" players lightPlayers">
+                                    <p id="board-score">Score
+                                    </p>
+                                    <p id="board-name">Jedy
+                                    </p>
+                                </div>
+                                <div class=" players darkPlayers">
+                                    <p id="boardTwo-score">Score
+                                    </p>
+                                    <p id="boardTwo-name">Sith
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
-                    <button class="btn-open-leaderboard border-blue change-color" onclick="leaderboard();"
-                        aria-label="Click here to open modal leaderboard" type="button"><i
+                        <!--BTN for leaderboard to be outside of div and section otherwise would not be displayed-->
+                        <button class="btn-open-leaderboard border-blue change-color" onclick="leaderboard();"
+                            aria-label="Click here to open modal leaderboard" type="button"><i
                             class="fa-solid fa-trophy"></i></button>
-                    <div class="overlay hide"></div>
-                </div>
-
-                <!--Child container two containing two icons buttons to push them to opposite side-->
-                <!-- Sound Button -->
-                <div id="button-container-child-two">
-                    <div id="player" class="sound-btn border-blue change-color" onclick="togglePlay();">
-                        <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
-                        <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
+                        <div class="overlay hide"></div>
                     </div>
-                    <!--Creating form for easy-medium-difficult modality for quiz-->
-                    <div class="choose-level">
-                        <form>
-                            <select name="levels" id="levels" class="border-blue change-color">
-                                <option id="easy" class="level1" value="easy">Easy</option>
-                                <option id="medium" class="level2" value="medium">Medium</option>
-                                <option id="difficult" class="level3" value="difficult">Difficult</option>
-                            </select>
-                        </form>
+                    <!--Child container two containing two icons buttons to push them to opposite side-->
+                    <!-- Sound Button -->
+                    <div id="button-container-child-two">
+                        <div id="player" class="sound-btn border-blue change-color" onclick="togglePlay();">
+                            <div id="sound-on" class=""><i class="fa-solid fa-volume-xmark"></i></div>
+                            <div id="sound-off" class="hide"><i class="fa-solid fa-volume-high"></i></div>
+                        </div>
+                        <!--Creating form for easy-medium-difficult modality for quiz-->
+                        <div class="choose-level">
+                            <form>
+                                <select name="levels" id="levels" class="border-blue change-color">
+                                    <option id="easy" class="level1" value="easy">Easy</option>
+                                    <option id="medium" class="level2" value="medium">Medium</option>
+                                    <option id="difficult" class="level3" value="difficult">Difficult</option>
+                                </select>
+                            </form>
+                        </div>
                     </div>
+                    <!--Creating div for when the level has been chosen and add text from JS-->
+                </nav>
+            </header>
+            <!--Container for choosing which side to play( each side has different questions -->
+            <div>
+                <div class="container-pick-side flex">
+                    <button data-type="light" class="side" id="light-side" type="button"
+                        aria-label="Click here to start the quiz with questions related to the rebellion">
+                    </button>
+                    <button data-type="dark" class="side" id="dark-side" type="button"
+                        aria-label="Click here to start the quiz with questions related to the Empire">
+                    </button>
                 </div>
-                <!--Creating div for when the level has been chosen and add text from JS-->
-            </nav>
-        </header>
-        <!--Container for choosing which side to play( each side has different questions -->
-        <div>
-            <div class="container-pick-side flex">
-                <button data-type="light" class="side" id="light-side" type="button"
-                    aria-label="Click here to start the quiz with questions related to the rebellion">
-                </button>
-                <button data-type="dark" class="side" id="dark-side" type="button"
-                    aria-label="Click here to start the quiz with questions related to the Empire">
-                </button>
             </div>
-        </div>
-        <!--Div showing when user finish to play with different buttons to restart game, save score, play for the other side or go to home-->
-        <div id="message" class="hide">
-            <div id="won" class="hide">
-                <div id="playing-level" class="hide">
-                    <p></p>
+            <!--Div showing when user finish to play with different buttons to restart game, save score, play for the other side or go to home-->
+            <div id="message" class="hide">
+                <div id="won" class="hide">
+                    <div id="playing-level" class="hide">
+                        <p></p>
+                    </div>
+                    <p id="winning-message">
+                    </p>
+                    <button class="final-btn" onclick="restartGame()" aria-label="Click here to restart the game"
+                        type="button">Restart Game</button>
+                    <button class="final-btn save-score-two" onclick="saveHighScore(event)" type="button"
+                        aria-label="Click here to save score and go to homepage">Save score</button>
+                    <button class="change-side final-btn" onclick="changeSide()" type="button"
+                        aria-label="Click here to change side and questions and start other game"> Change side!</button>
                 </div>
-                <p id="winning-message">
-                </p>
-                <button class="final-btn" onclick="restartGame()" aria-label="Click here to restart the game"
-                    type="button">Restart Game</button>
-                <button class="final-btn save-score-two" onclick="saveHighScore(event)" type="button"
-                    aria-label="Click here to save score and go to homepage">Save score</button>
-                <button class="change-side final-btn" onclick="changeSide()" type="button"
-                    aria-label="Click here to change side and questions and start other game"> Change side!</button>
-            </div>
-            <div id="lost" class="hide">
-                <p id="lost-message">
-                </p>
-                <button class="final-btn" onclick="restartGame()" aria-label="Click here to restart the game"
-                    type="button">Restart Game</button>
-                <button class="final-btn save-score" onclick="saveHighScore(event)"
-                    aria-label="Click here to save score and go to homepage" type="button">Save score</button>
-                <button class="change-side final-btn" onclick="changeSide()"
-                    aria-label="Click here to change side and questions and start other game" type="button">Change
+                <div id="lost" class="hide">
+                    <p id="lost-message">
+                    </p>
+                    <button class="final-btn" onclick="restartGame()" aria-label="Click here to restart the game"
+                        type="button">Restart Game</button>
+                    <button class="final-btn save-score" onclick="saveHighScore(event)"
+                        aria-label="Click here to save score and go to homepage" type="button">Save score</button>
+                    <button class="change-side final-btn" onclick="changeSide()"
+                        aria-label="Click here to change side and questions and start other game" type="button">Change
                     side</button>
-            </div>
-        </div>
-        <!--Creating div area with question div and answer div to display main game -->
-        <div>
-            <div id="game-area" class="hide">
-                <div id="question">questionTest</div>
-                <div id="answer-buttons">
-                    <button id="answer-one" class="answer border-green" value="answer-one"
-                        aria-label="Click here to select answer one" type="button">Answer 1</button>
-                    <button id="answer-two" class="answer border-green" value="answer-two"
-                        aria-label="Click here to select answer two" type="button">Answer 2</button>
-                    <button id="answer-three" class="answer border-green" value="answer-three"
-                        aria-label="Click here to select answer three" type="button">Answer 3</button>
-                    <button id="answer-four" class="answer border-green" value="answer-four"
-                        aria-label="Click here to select answer four" type="button">Answer 4</button>
                 </div>
             </div>
+            <!--Creating div area with question div and answer div to display main game -->
+            <div>
+                <div id="game-area" class="hide">
+                    <div id="question">questionTest</div>
+                    <div id="answer-buttons">
+                        <button id="answer-one" class="answer border-green" value="answer-one"
+                            aria-label="Click here to select answer one" type="button">Answer 1</button>
+                        <button id="answer-two" class="answer border-green" value="answer-two"
+                            aria-label="Click here to select answer two" type="button">Answer 2</button>
+                        <button id="answer-three" class="answer border-green" value="answer-three"
+                            aria-label="Click here to select answer three" type="button">Answer 3</button>
+                        <button id="answer-four" class="answer border-green" value="answer-four"
+                            aria-label="Click here to select answer four" type="button">Answer 4</button>
+                    </div>
+                </div>
+            </div>
+            <!--Creating score container for correct or incorrect score -->
+            <div id="score-container">
+            </div>
         </div>
-        <!--Creating score container for correct or incorrect score -->
-        <div id="score-container">
-        </div>
-    </div>
-    <!-- Audio-->
-    <audio loop id="audio" src="assets/audio/star-wars-main.mp3" preload="none"></audio>
-    <audio id="answersAudio" src="assets/audio/lightsaber-ignition-6816.mp3" preload="none"></audio>
-    <!--Footer with copyright and social media links that open on an external page-->
-    <footer>
-        <div class="container-footer">
-            <p>
-                Copyright by Michelle Mattera 2023
-            </p>
-            <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
-                aria-label="Visit github developer page(opens in a new page)" class="social-icon"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
-                aria-label="Visit linkedin developer page(opens in a new page)" class="social-icon"><i
+        <!-- Audio-->
+        <audio loop id="audio" src="assets/audio/star-wars-main.mp3" preload="none"></audio>
+        <audio id="answersAudio" src="assets/audio/lightsaber-ignition-6816.mp3" preload="none"></audio>
+        <!--Footer with copyright and social media links that open on an external page-->
+        <footer>
+            <div class="container-footer">
+                <p>
+                    Copyright by Michelle Mattera 2023
+                </p>
+                <a href="https://github.com/michmattera/star-wars-quiz" target="_blank" rel="noopener"
+                    aria-label="Visit github developer page(opens in a new page)" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/michelle-mattera-a5283019b" target="_blank" rel="noopener"
+                    aria-label="Visit linkedin developer page(opens in a new page)" class="social-icon"><i
                     class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </footer>
-    <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
-    <script src="assets/js/questions.js"></script>
-    <script src="assets/js/modals.js"></script>
-    <script src="assets/js/local-storage.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
-
+            </div>
+        </footer>
+        <!--Link for javascript to execute code, link positioned at the end of the page for better execution-->
+        <script src="assets/js/questions.js"></script>
+        <script src="assets/js/modals.js"></script>
+        <script src="assets/js/local-storage.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
