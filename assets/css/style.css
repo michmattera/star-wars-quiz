@@ -549,6 +549,28 @@ i {
   opacity: 0.3;
 }
 
+/*404 - 500 page*/
+.error-title {
+  font-size: 70px;
+  text-align: center;
+  margin: 5%;
+}
+.error-message {
+  text-align: center;
+  font-size: 40px;
+}
+a.error-button {
+  background-color: #112948;
+  color: #ddd;
+  padding: 15px 25px;
+  margin: 10% 35%;
+  text-decoration: none;
+  width: 30%;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 15%;
+  text-transform: uppercase;
+}
 
 /*For screen with max-width of 1100 px-tablet size*/
 @media screen and (max-width: 1100px) {
