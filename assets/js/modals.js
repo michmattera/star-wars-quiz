@@ -53,7 +53,7 @@ function isEmpty(){
     if(i.value==""){
         } else {
         saveButton.classList.remove("disabled");
-    }};
+    }}
 
 /*Audio Player
 Created using information from Stackflow

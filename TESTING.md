@@ -216,3 +216,51 @@ Social media situated just at the bottom of the page bring the user to social me
 ![Linkedin](assets/testing-files/linkedin.gif)
 
 </details>
+
+
+## Code validator
+
+All code passed throught validator:
+
+1. Css 
+
+<details>
+<summary> Css validator checked</summary>
+
+![Css](assets/testing-files/css-validator.gif)
+
+</details>
+
+2. Html
+
+<details>
+<summary> index.html</summary>
+
+![index.html](assets/testing-files/index-html-validator.gif)
+
+</details>
+
+<details>
+<summary> 404.html</summary>
+
+![404](assets/testing-files/400-html-validator.gif)
+
+</details>
+
+
+<details>
+<summary> 500.html</summary>
+
+![404](assets/testing-files/500-html-validator.gif)
+
+</details>
+
+3. Javascript files : all javascript file was passed throught jshint , with just 1 warning ( 34	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (runLightGame, runDarkGame), decided to not change functions because of not enough time and believing that the function and the variable are understandable)
+
+<details>
+<summary>Javascript</summary>
+
+![Javascript](assets/testing-files/javascript-jshint.gif)
+
+</details>
+

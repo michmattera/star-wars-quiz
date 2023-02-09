@@ -90,7 +90,6 @@ function displayDarkScore() {
   darkBest.sort((a, b) => b.score - a.score);
 
   for (j = 0; j < darkBest.length; j++) {
-    console.log(darkBest[j])
     if (darkBest[j] != null) {
       if (darkBest[j].side === "dark") {
         let bestName = (darkBest[j].name);
@@ -129,10 +128,8 @@ function displayLightScore() {
     (light.light[7])
   ];
   lightBest.sort((a, b) => b.score - a.score);
-  console.log(light)
 
   for (i = 0; i < lightBest.length; i++) {
-    console.log(lightBest[i])
     if (lightBest[i] != null) {
       if (lightBest[i].side === "light") {
         lightBest.splice(5);
