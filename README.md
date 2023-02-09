@@ -223,10 +223,11 @@ But having everything on a single page.
 The main page is divided into different sections that have their features:
 
 #### **Navigation bar:**
-1. Navigation bar from left to right:
-    - Instruction modal that opens when clicked on the question mark. It has a title and instructions for the user on how to play and the different explanations of the levels that he can be challenged with.
+
+ - Navigation bar from left to right:
+1. House button that brings the user back to the homepage at any time.
 2. User modal that opens when clicked on the user icon. It has an input to insert a username with max 15 characters and a save button that saves the username in the local storage and closes it as well as the modal. The save button is not clickable if the input field is empty.
-3. House button that brings the user back to the homepage at any time.
+3. Instruction modal that opens when clicked on the question mark. It has a title and instructions for the user on how to play and the different explanations of the levels that he can be challenged with.
 4. Leaderboard modal that opens when clicked on the cup. It shows if there is any score and username saved in the local storage best 5 scores. It is divided into two different divs:
     - Green div that shows 5 best players ( username + score) from when the user saved the score from playing the light questions and side.
     - Red div that shows 5 best players ( username + score) from when the user saved the score from playing the dark questions and side.
@@ -259,15 +260,15 @@ Depending on the device center buttons are displayed :
 
 
 Both buttons have the same height and width and are centered in the outside container.
-Both buttons have a hover effect of the main color used ...
+Both buttons have a hover effect of the main color used **#112948 BLUE DIANNE**
 
 1. The green button, has a background image of the rebellion side (the light side) represented by **Yoda**.
 When clicking this button it will display light questions on "Rebellion" as the main topic.
-It will change all navigation buttons to ... with as well border of the answers.
+It will change all navigation buttons to  **#BFDA46 CONIFER**  with as well border of the answers.
 
 2. The red button has a background image of the Empire ( the dark side ) represented byt **Darth Vader**.
 When clicking this button it will display dark questions on "The empire" as the main topic.
-It will change all navigation buttons to ... with as well border of the answers.
+It will change all navigation buttons to **RGB (136, 0, 0)**  with as well border of the answers.
 
 #### **Questions and answers**
 
