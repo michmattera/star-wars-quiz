@@ -99,3 +99,33 @@ All navigation buttons have been tested and checked :
 ![Username](assets/testing-files/username.gif)
 
 </details>
+
+Leaderboard : Tested if button when clicked will open modal with two different lists and will display correctly username and score after save it in local storage:
+
+<details>
+<summary> Leaderboard when inserting username - save - play **light** game - save score -clicking leaderboard light to see displayed the score with username</summary>
+
+![Leaderboard](assets/testing-files/leaderboard-light.gif)
+
+</details>
+
+<details>
+<summary> Leaderboard when inserting username - save - play **dark** game - save score -clicking leaderboard dark to see displayed the score with username</summary>
+
+![Leaderboard](assets/testing-files/leaderboard-dark.gif)
+
+</details>
+
+<details>
+<summary> Instruction : Tested when clicked button for instruction modal will open and display instruction , closing instruction clicking the close button.</summary>
+
+![Instruction](assets/testing-files/instruction.gif)
+
+</details>
+
+<details>
+<summary> Home : Tested home button that at any time during the game will bring the user to homepage.</summary>
+
+![Home](assets/testing-files/home.gif)
+
+</details>
