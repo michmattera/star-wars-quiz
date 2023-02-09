@@ -269,6 +269,8 @@ All code passed throught validator:
 
 Lighthouse was checked on every page with desktop and cellphone.
 
+Desktop: 
+
 <details>
 <summary>Index.html desktop</summary>
 
@@ -289,6 +291,30 @@ Lighthouse was checked on every page with desktop and cellphone.
 ![500.html desktop](assets/testing-files/500-desktop.PNG)
 
 </details>
+
+Mobile :
+
+<details>
+<summary>Index.html mobile</summary>
+
+![Index.html mobile](assets/testing-files/index-mobile.PNG)
+
+</details>
+
+<details>
+<summary>404.html mobile</summary>
+
+![404.html mobile](assets/testing-files/404-mobile.PNG)
+
+</details>
+
+<details>
+<summary>500.html mobile</summary>
+
+![500.html mobile](assets/testing-files/500-mobile.PNG)
+
+</details>
+
 
 ## **Responsive**
 
