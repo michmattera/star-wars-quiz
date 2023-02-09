@@ -11,7 +11,7 @@
 ***
 1. [Browser Testing](#browser-testing)
 2. [Manual Testing](#manual-Testing)
-    1. [Navigation Links](#navigation-links)
+    1. [Navigation Buttons](#navigation-buttons)
     2. [Main game](#main-game)
     3. [Social-Media](#social-media)
 3. [Code validator](#code-validator)
@@ -61,5 +61,41 @@ The following browser have been tested and check:
 <summary> Opera:</summary>
 
 ![Opera](assets/testing-files)
+
+</details>
+
+## **Manual testing**
+
+### **Navigation buttons**
+
+All navigation buttons have been tested and checked :
+
+| Button | Checked |
+| --- | --- |
+| Levels | :heavy_check_mark: |
+| Sound | :heavy_check_mark: |
+| Instruction|  :heavy_check_mark: |
+| Leaderboard | :heavy_check_mark: |
+| Username | :heavy_check_mark:|
+| Home | :heavy_check_mark:|
+
+<details>
+<summary> Levels : Tested that when clicked the level form would show other difficulty and change the difficulty </summary>
+
+![Levels](assets/testing-files/levels.gif)
+
+</details>
+
+<details>
+<summary> Sound :</summary>
+
+![Sound](assets/testing-files)
+
+</details>
+
+<details>
+<summary> Username : Tested if when clicked on username open modal, if clicked save button was disabled if input was empty and not disabled if not empty. In addition clicking the save button will close the window as well.</summary>
+
+![Username](assets/testing-files/username.gif)
 
 </details>
