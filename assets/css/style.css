@@ -579,9 +579,16 @@ a.error-button {
   border-radius: 15%;
   text-transform: uppercase;
 }
+a.error-button:hover{
+  color: #ddd;
+  background-color: #112948;
+}
 .container-error{
   width: 60%;
   margin: 5% 20%;
+}
+.error-message{
+  font-size: 38px ;
 }
 
 /*For screen with max-width of 1100 px-tablet size*/
@@ -792,6 +799,10 @@ button {
   height: 18px;
   width: 25px;
 }
+/*404/500 page*/
+a.error-button {
+  width: 25%;
+}
  
 }
 
@@ -910,6 +921,22 @@ button {
 }
 .modal-instruction>* {
   line-height: 17.5px;
+}
+/*404/500 page*/
+.error-message{
+  font-size: 30px ;
+}
+.error-title{
+  font-size: 50px;
+}
+a.error-button{
+  width: 45%;
+  padding: 5px;
+  margin: 10% auto;
+}
+.container-error {
+  width: 90%;
+  margin: 5%;
 }
 }
 @media screen and (max-width: 350px){
